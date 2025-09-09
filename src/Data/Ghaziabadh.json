@@ -1,0 +1,11532 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.7 375dc00a",
+  "osm3s": {
+    "timestamp_osm_base": "2025-07-01T19:17:45Z",
+    "timestamp_areas_base": "2025-06-25T21:32:45Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 1680256740,
+  "lat": 28.6719016,
+  "lon": 77.4365977,
+  "tags": {
+    "addr:housename": "Hindi Bhawan",
+    "addr:postcode": "201001",
+    "addr:street": "Lohia Nagar",
+    "building": "public",
+    "name": "HIndi Bhawan"
+  }
+},
+{
+  "type": "node",
+  "id": 1703751201,
+  "lat": 28.6655321,
+  "lon": 77.3277318,
+  "tags": {
+    "addr:postcode": "201011",
+    "addr:street": "Chander Nagar",
+    "building": "public",
+    "name": "BEL Officers Club"
+  }
+},
+{
+  "type": "node",
+  "id": 2665019610,
+  "lat": 28.6408876,
+  "lon": 77.3840092,
+  "tags": {
+    "addr:housename": "Ashiana Upwan",
+    "addr:housenumber": "Tower 2",
+    "addr:postcode": "201014",
+    "addr:street": "Mall Road",
+    "building": "apartments",
+    "building:levels": "13",
+    "name": "Ashiana Upwan"
+  }
+},
+{
+  "type": "node",
+  "id": 2665019613,
+  "lat": 28.6419389,
+  "lon": 77.3832523,
+  "tags": {
+    "addr:housename": "G.C. Centrum",
+    "addr:postcode": "201010",
+    "building": "apartments",
+    "name": "G.C. Centrum"
+  }
+},
+{
+  "type": "node",
+  "id": 2677016391,
+  "lat": 28.6425913,
+  "lon": 77.3795134,
+  "tags": {
+    "building": "apartments",
+    "name": "East Avenue Apartment"
+  }
+},
+{
+  "type": "node",
+  "id": 3245990861,
+  "lat": 28.6768133,
+  "lon": 77.3539795,
+  "tags": {
+    "building": "college",
+    "name": "Institute of Management Education (IME)"
+  }
+},
+{
+  "type": "node",
+  "id": 3248662761,
+  "lat": 28.6789858,
+  "lon": 77.3735012,
+  "tags": {
+    "addr:housenumber": "9/9th Mile Stone",
+    "addr:street": "GT Road",
+    "building": "industrial",
+    "name": "Dass Hitachi Limited"
+  }
+},
+{
+  "type": "node",
+  "id": 3316236811,
+  "lat": 28.6405295,
+  "lon": 77.3758342,
+  "tags": {
+    "addr:postcode": "201014",
+    "building": "residential",
+    "building:levels": "17",
+    "name": "Jaipuria Sunrise Greens Main Enterance"
+  }
+},
+{
+  "type": "node",
+  "id": 3796594276,
+  "lat": 28.6489551,
+  "lon": 77.3678807,
+  "tags": {
+    "addr:city": "Indirapuram",
+    "addr:postcode": "201014",
+    "addr:street": "Madan Mohan Malviya Marg",
+    "building": "school",
+    "building:levels": "2",
+    "name": "G D Goenka"
+  }
+},
+{
+  "type": "node",
+  "id": 3888057878,
+  "lat": 28.6781145,
+  "lon": 77.4660412,
+  "tags": {
+    "building": "residential",
+    "name": "Director's Bungalow"
+  }
+},
+{
+  "type": "node",
+  "id": 3888057880,
+  "lat": 28.6779709,
+  "lon": 77.4648403,
+  "tags": {
+    "building": "yes",
+    "name": "Pump House"
+  }
+},
+{
+  "type": "node",
+  "id": 8815779263,
+  "lat": 28.6417840,
+  "lon": 77.4078008,
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:country": "IN",
+    "addr:housenumber": "KA 406B",
+    "addr:postcode": "201009",
+    "addr:street": "Pratap Vihar Sector 12",
+    "building": "yes",
+    "building:levels": "4",
+    "height": "16",
+    "image": "https://ibb.co/LZ9ntbr",
+    "name": "KA 406B",
+    "source": "gps/bing;aerial imagery"
+  }
+},
+{
+  "type": "node",
+  "id": 8816956800,
+  "lat": 28.6313931,
+  "lon": 77.4131638,
+  "tags": {
+    "addr:": "private",
+    "addr:city": "Ghaziabad",
+    "addr:country": "IN",
+    "addr:housenumber": "206/14",
+    "addr:postcode": "201009",
+    "addr:postcode:source": "201009",
+    "addr:state": "Uttar Pradesh",
+    "addr:street": "Raghunathpuri",
+    "building": "residential",
+    "name": "Akabarpur Bharampur",
+    "plot_number": "206/14",
+    "source": "survey;aerial imagery",
+    "website": "Http://Raghunathpuriplot.weebly.com"
+  }
+},
+{
+  "type": "way",
+  "id": 71847462,
+  "center": {
+    "lat": 28.6342191,
+    "lon": 77.3698775
+  },
+  "nodes": [
+    853833828,
+    12190324363,
+    853832466,
+    853834573,
+    853834135,
+    853832888,
+    853832545,
+    853832153,
+    853834228,
+    853833827,
+    853833424,
+    853833078,
+    853832737,
+    12190324425,
+    12190324370,
+    12190324414,
+    12190210788,
+    12190324410,
+    12190324398,
+    12190324339,
+    12190324423,
+    853833828
+  ],
+  "tags": {
+    "addr:housenumber": "9",
+    "building": "yes",
+    "building:levels": "4",
+    "name": "Shipra Mall",
+    "name:hi": "शिप्रा मॉल",
+    "shop": "mall"
+  }
+},
+{
+  "type": "way",
+  "id": 71941085,
+  "center": {
+    "lat": 28.6370417,
+    "lon": 77.3687779
+  },
+  "nodes": [
+    855135499,
+    855134361,
+    855135307,
+    855134653,
+    855135499
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:postcode": "201010",
+    "addr:street": "Doctor Sushila Naiyar Marg",
+    "building": "residential",
+    "building:levels": "13",
+    "height": "0",
+    "name": "parshavnath building"
+  }
+},
+{
+  "type": "way",
+  "id": 71941223,
+  "center": {
+    "lat": 28.6370127,
+    "lon": 77.3683822
+  },
+  "nodes": [
+    855134627,
+    855135089,
+    855134511,
+    855135592,
+    855134627
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:postcode": "201010",
+    "addr:street": "Doctor Sushila Naiyar Marg",
+    "building": "residential",
+    "building:levels": "20",
+    "name": "parshavnath majestic"
+  }
+},
+{
+  "type": "way",
+  "id": 149102997,
+  "center": {
+    "lat": 28.6386061,
+    "lon": 77.3777110
+  },
+  "nodes": [
+    1621290754,
+    1621290756,
+    1621290753,
+    1621290751,
+    1621290748,
+    1621290741,
+    1621290745,
+    1621290747,
+    1621290754
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Royale Tower"
+  }
+},
+{
+  "type": "way",
+  "id": 155614745,
+  "center": {
+    "lat": 28.6679210,
+    "lon": 77.4293642
+  },
+  "nodes": [
+    1680159012,
+    1680159018,
+    9852310343,
+    1680159015,
+    1680159012
+  ],
+  "tags": {
+    "addr:housename": "State Bank of India",
+    "addr:postcode": "201001",
+    "amenity": "public_building",
+    "building": "yes",
+    "name": "State Bank of India"
+  }
+},
+{
+  "type": "way",
+  "id": 161137326,
+  "center": {
+    "lat": 28.6814560,
+    "lon": 77.5043943
+  },
+  "nodes": [
+    1731390796,
+    1731390797,
+    1731390798,
+    1731390795,
+    1731390796
+  ],
+  "tags": {
+    "addr:housename": "Inmantec Institutions",
+    "addr:housenumber": "Adhyatmik Nagar, near dasna railway corssing, NH-24, Ghaziabad",
+    "addr:postcode": "201009",
+    "addr:street": "Adhyatmik Nagar",
+    "amenity": "college",
+    "building": "yes",
+    "name": "Inmantec Institutions"
+  }
+},
+{
+  "type": "way",
+  "id": 196047084,
+  "center": {
+    "lat": 28.6430923,
+    "lon": 77.3268896
+  },
+  "nodes": [
+    9861606671,
+    2064126119,
+    2064126122,
+    2064126124,
+    2064126123,
+    2064126121,
+    2064126126,
+    2064126120,
+    2064126127,
+    9861606671
+  ],
+  "tags": {
+    "addr:city": "Sahibabad, Ghaziabad",
+    "addr:housenumber": "Kaushambi Corporate Office",
+    "addr:postcode": "201010",
+    "addr:street": "Kaushambu",
+    "building": "commercial",
+    "name": "Dabur India Ltd"
+  }
+},
+{
+  "type": "way",
+  "id": 196622512,
+  "center": {
+    "lat": 28.6450059,
+    "lon": 77.3263169
+  },
+  "nodes": [
+    2069323889,
+    2069323887,
+    2069323890,
+    2069323888,
+    2069323889
+  ],
+  "tags": {
+    "amenity": "cinema",
+    "building": "yes",
+    "name": "East End Mall"
+  }
+},
+{
+  "type": "way",
+  "id": 256295558,
+  "center": {
+    "lat": 28.6957737,
+    "lon": 77.4516534
+  },
+  "nodes": [
+    2619655013,
+    2619655018,
+    2619655022,
+    2619655025,
+    2619655013
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:housename": "N Block HIG",
+    "addr:housenumber": "1-12",
+    "addr:postcode": "201002",
+    "addr:street": "Sanjay Nagar",
+    "building": "apartments",
+    "building:levels": "3",
+    "name": "N1-N12"
+  }
+},
+{
+  "type": "way",
+  "id": 256300563,
+  "center": {
+    "lat": 28.6949077,
+    "lon": 77.4504589
+  },
+  "nodes": [
+    2619690361,
+    2619690363,
+    2619690365,
+    2619690367,
+    2619690361
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:postcode": "201002",
+    "addr:street": "F Block, Sanjay Nagar",
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "name": "Masjid",
+    "religion": "muslim"
+  }
+},
+{
+  "type": "way",
+  "id": 256301642,
+  "center": {
+    "lat": 28.6853937,
+    "lon": 77.4894484
+  },
+  "nodes": [
+    2619704388,
+    2619704389,
+    2619704390,
+    2619704392,
+    2619704388
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:housename": "D Block",
+    "addr:street": "Govindpuram",
+    "amenity": "school",
+    "area": "yes",
+    "building": "no",
+    "name": "Guru Ram Rai Public School",
+    "religion": "muslim"
+  }
+},
+{
+  "type": "way",
+  "id": 351074059,
+  "center": {
+    "lat": 28.6451080,
+    "lon": 77.4162291
+  },
+  "nodes": [
+    3567877298,
+    3567877050,
+    3567877056,
+    3567877304,
+    3567877298
+  ],
+  "tags": {
+    "building": "school",
+    "name": "New Rainbow Public School"
+  }
+},
+{
+  "type": "way",
+  "id": 351074070,
+  "center": {
+    "lat": 28.6509284,
+    "lon": 77.4223748
+  },
+  "nodes": [
+    3567879583,
+    3567879504,
+    3567879542,
+    3567879703,
+    3567879583
+  ],
+  "tags": {
+    "building": "school",
+    "name": "Children's Academy Senior Secondary School"
+  }
+},
+{
+  "type": "way",
+  "id": 351074092,
+  "center": {
+    "lat": 28.6508053,
+    "lon": 77.4285465
+  },
+  "nodes": [
+    3567879563,
+    3567879531,
+    3567879514,
+    3567879545,
+    3567879563
+  ],
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "building:levels": "2",
+    "name": "GuruDwara",
+    "religion": "sikh",
+    "service_times": "24/7"
+  }
+},
+{
+  "type": "way",
+  "id": 351074185,
+  "center": {
+    "lat": 28.6464679,
+    "lon": 77.4095642
+  },
+  "nodes": [
+    3567877806,
+    3567877802,
+    3567877657,
+    3567877662,
+    3567877806
+  ],
+  "tags": {
+    "amenity": "library",
+    "building": "yes",
+    "name": "Rajendra Library"
+  }
+},
+{
+  "type": "way",
+  "id": 351074248,
+  "center": {
+    "lat": 28.6478811,
+    "lon": 77.4305966
+  },
+  "nodes": [
+    3567878609,
+    3567878484,
+    3567878469,
+    3567878598,
+    3567878609
+  ],
+  "tags": {
+    "address": "Kotgaon Fatak Road, Railway Station Rd, Vijay Nagar, Ghaziabad, Uttar Pradesh 201009",
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "name": "Raileshwar Mahadev",
+    "religion": "hindu"
+  }
+},
+{
+  "type": "way",
+  "id": 351074296,
+  "center": {
+    "lat": 28.6459267,
+    "lon": 77.4183163
+  },
+  "nodes": [
+    3567877599,
+    3567877389,
+    3567877358,
+    3567877363,
+    3567877599
+  ],
+  "tags": {
+    "amenity": "library",
+    "building": "yes",
+    "name": "Gurukul Library"
+  }
+},
+{
+  "type": "way",
+  "id": 351074365,
+  "center": {
+    "lat": 28.6469395,
+    "lon": 77.4144755
+  },
+  "nodes": [
+    3567878133,
+    3567878123,
+    3567877892,
+    3567878099,
+    3567878133
+  ],
+  "tags": {
+    "amenity": "fast_food",
+    "brand": "Domino's",
+    "brand:wikidata": "Q839466",
+    "building": "yes",
+    "cuisine": "pizza",
+    "name": "Domino's",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 351074401,
+  "center": {
+    "lat": 28.6463417,
+    "lon": 77.4182067
+  },
+  "nodes": [
+    3567877829,
+    3567877805,
+    3567877627,
+    3567877645,
+    3567877829
+  ],
+  "tags": {
+    "building": "school",
+    "name": "Indirapuram Public School"
+  }
+},
+{
+  "type": "way",
+  "id": 351081259,
+  "center": {
+    "lat": 28.6442538,
+    "lon": 77.4168229
+  },
+  "nodes": [
+    3567970613,
+    3585387106,
+    3585387094,
+    3585387090,
+    3585387099,
+    3567970611,
+    3567970605,
+    3567970610,
+    3567970613
+  ],
+  "tags": {
+    "building": "school",
+    "name": "East Delhi Public School"
+  }
+},
+{
+  "type": "way",
+  "id": 351083953,
+  "center": {
+    "lat": 28.6476886,
+    "lon": 77.3451961
+  },
+  "nodes": [
+    3567984246,
+    3567984238,
+    3567984231,
+    3567984242,
+    3567984246
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Gulati Wardi Wala",
+    "shop": "clothes"
+  }
+},
+{
+  "type": "way",
+  "id": 351087470,
+  "center": {
+    "lat": 28.6653570,
+    "lon": 77.3826462
+  },
+  "nodes": [
+    3568010087,
+    3568010108,
+    3568010102,
+    3568010106,
+    3568010006,
+    3568009874,
+    3568010020,
+    3568010029,
+    3568010004,
+    3568010032,
+    3568010078,
+    3568010068,
+    3568010056,
+    3568010051,
+    3568010087
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:housename": "SG Homes",
+    "addr:housenumber": "Sector 3, Vasundhara",
+    "addr:postcode": "201012",
+    "building": "yes",
+    "name": "SG Homes"
+  }
+},
+{
+  "type": "way",
+  "id": 351087944,
+  "center": {
+    "lat": 28.6685182,
+    "lon": 77.3766225
+  },
+  "nodes": [
+    3568010574,
+    3568010556,
+    3568010554,
+    3568010558,
+    3568010563,
+    3568010560,
+    3568010564,
+    3568010565,
+    3568010574
+  ],
+  "tags": {
+    "addr:city": "Ghazaibad",
+    "addr:housename": "Mewar Institute of Management",
+    "addr:housenumber": "Sector - 4C, Vasundhara, Delhi-Gzb",
+    "addr:postcode": "201012",
+    "amenity": "college",
+    "building": "yes",
+    "name": "Mewar Institute of Management"
+  }
+},
+{
+  "type": "way",
+  "id": 351126797,
+  "center": {
+    "lat": 28.6902842,
+    "lon": 77.3474307
+  },
+  "nodes": [
+    3568541015,
+    3568540998,
+    12951602344,
+    12951602346,
+    12951602345,
+    3568540993,
+    12951602347,
+    12951602348,
+    3568541001,
+    3568541015
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Charms"
+  }
+},
+{
+  "type": "way",
+  "id": 351126831,
+  "center": {
+    "lat": 28.6855191,
+    "lon": 77.3453857
+  },
+  "nodes": [
+    3568537284,
+    3568537277,
+    3568537264,
+    3568537266,
+    3568537284
+  ],
+  "tags": {
+    "building": "yes",
+    "leisure": "sports_centre",
+    "name": "shyam sports"
+  }
+},
+{
+  "type": "way",
+  "id": 351126880,
+  "center": {
+    "lat": 28.6875868,
+    "lon": 77.3461577
+  },
+  "nodes": [
+    3568538710,
+    3568538701,
+    3568538588,
+    3568538700,
+    3568538710
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Kairalis Kripa APPTS"
+  }
+},
+{
+  "type": "way",
+  "id": 351127017,
+  "center": {
+    "lat": 28.6901739,
+    "lon": 77.3484334
+  },
+  "nodes": [
+    3568540999,
+    3568541006,
+    3568540686,
+    3568540680,
+    3568540999
+  ],
+  "tags": {
+    "building": "hospital",
+    "name": "v care hospital"
+  }
+},
+{
+  "type": "way",
+  "id": 351127286,
+  "center": {
+    "lat": 28.6843078,
+    "lon": 77.3556503
+  },
+  "nodes": [
+    3568537213,
+    3568537088,
+    3568537085,
+    3568537212,
+    12949254700,
+    12949256402,
+    12949256403,
+    12949256401,
+    3568537213
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Ved Sadan"
+  }
+},
+{
+  "type": "way",
+  "id": 351127470,
+  "center": {
+    "lat": 28.6886661,
+    "lon": 77.3563685
+  },
+  "nodes": [
+    3568539164,
+    3568539159,
+    3568538986,
+    3568539093,
+    3568539164
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Eighteen Star Apartment"
+  }
+},
+{
+  "type": "way",
+  "id": 351127545,
+  "center": {
+    "lat": 28.6891587,
+    "lon": 77.3475447
+  },
+  "nodes": [
+    3568539609,
+    3568539636,
+    3568539472,
+    3568539438,
+    12951630050,
+    12951630051,
+    3568539609
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Krishna APT"
+  }
+},
+{
+  "type": "way",
+  "id": 351133213,
+  "center": {
+    "lat": 28.6501888,
+    "lon": 77.3521683
+  },
+  "nodes": [
+    3568603617,
+    3568603665,
+    3568603457,
+    3568603412,
+    3568603617
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Uncle House"
+  }
+},
+{
+  "type": "way",
+  "id": 351133223,
+  "center": {
+    "lat": 28.6509227,
+    "lon": 77.3529823
+  },
+  "nodes": [
+    3568604104,
+    3568604108,
+    3568603990,
+    3568603984,
+    3568604104
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Friend House"
+  }
+},
+{
+  "type": "way",
+  "id": 351133271,
+  "center": {
+    "lat": 28.6507927,
+    "lon": 77.3528297
+  },
+  "nodes": [
+    3568603986,
+    3568603989,
+    3568603972,
+    3568603957,
+    3568603986
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Friend House"
+  }
+},
+{
+  "type": "way",
+  "id": 351133308,
+  "center": {
+    "lat": 28.6509870,
+    "lon": 77.3530602
+  },
+  "nodes": [
+    3568604109,
+    3568604114,
+    3568604103,
+    3568604094,
+    3568604109
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Friend House"
+  }
+},
+{
+  "type": "way",
+  "id": 351133315,
+  "center": {
+    "lat": 28.6500784,
+    "lon": 77.3535947
+  },
+  "nodes": [
+    3568603471,
+    3568603417,
+    3568603158,
+    3568603404,
+    3568603471
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Sister House"
+  }
+},
+{
+  "type": "way",
+  "id": 351133331,
+  "center": {
+    "lat": 28.6502628,
+    "lon": 77.3522446
+  },
+  "nodes": [
+    3568603672,
+    3568603797,
+    3568603613,
+    3568603469,
+    3568603672
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Uncle House"
+  }
+},
+{
+  "type": "way",
+  "id": 351133338,
+  "center": {
+    "lat": 28.6492289,
+    "lon": 77.3523888
+  },
+  "nodes": [
+    3568602045,
+    3568602077,
+    3568602028,
+    3568602003,
+    3568602045
+  ],
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "name": "Shivji Temple",
+    "religion": "hindu"
+  }
+},
+{
+  "type": "way",
+  "id": 351133344,
+  "center": {
+    "lat": 28.6514691,
+    "lon": 77.3528093
+  },
+  "nodes": [
+    3568604152,
+    3568604141,
+    3568604129,
+    3568604139,
+    3568604152
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Ramesh Chai",
+    "shop": "tea"
+  }
+},
+{
+  "type": "way",
+  "id": 351133346,
+  "center": {
+    "lat": 28.6511518,
+    "lon": 77.3528315
+  },
+  "nodes": [
+    3568604126,
+    3568604119,
+    3568604111,
+    3568604118,
+    3568604126
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Mausi House"
+  }
+},
+{
+  "type": "way",
+  "id": 351133350,
+  "center": {
+    "lat": 28.6516126,
+    "lon": 77.3523642
+  },
+  "nodes": [
+    3568604164,
+    3568604147,
+    3568604155,
+    3568604172,
+    3568604164
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Uncle House"
+  }
+},
+{
+  "type": "way",
+  "id": 351133358,
+  "center": {
+    "lat": 28.6501773,
+    "lon": 77.3524984
+  },
+  "nodes": [
+    3568603602,
+    3568603643,
+    3568603453,
+    3568603416,
+    3568603602
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Friend House"
+  }
+},
+{
+  "type": "way",
+  "id": 351133364,
+  "center": {
+    "lat": 28.6505604,
+    "lon": 77.3535724
+  },
+  "nodes": [
+    3568603943,
+    3568603914,
+    3568603856,
+    3568603894,
+    3568603943
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Friend House"
+  }
+},
+{
+  "type": "way",
+  "id": 351133374,
+  "center": {
+    "lat": 28.6515675,
+    "lon": 77.3527280
+  },
+  "nodes": [
+    3568604166,
+    3568604157,
+    3568604142,
+    3568604151,
+    3568604166
+  ],
+  "tags": {
+    "amenity": "fast_food",
+    "building": "yes",
+    "name": "Golgappe"
+  }
+},
+{
+  "type": "way",
+  "id": 351133438,
+  "center": {
+    "lat": 28.6501711,
+    "lon": 77.3535262
+  },
+  "nodes": [
+    3568603636,
+    3568603490,
+    3568603415,
+    3568603452,
+    3568603636
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "house 57"
+  }
+},
+{
+  "type": "way",
+  "id": 351133465,
+  "center": {
+    "lat": 28.6508674,
+    "lon": 77.3532011
+  },
+  "nodes": [
+    3568603987,
+    3568604097,
+    3568603978,
+    3568603965,
+    3568603987
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Friend HouseS"
+  }
+},
+{
+  "type": "way",
+  "id": 351133479,
+  "center": {
+    "lat": 28.6502562,
+    "lon": 77.3534421
+  },
+  "nodes": [
+    3568603687,
+    3568603645,
+    3568603470,
+    3568603628,
+    3568603687
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Angry Aunt House"
+  }
+},
+{
+  "type": "way",
+  "id": 351133497,
+  "center": {
+    "lat": 28.6517493,
+    "lon": 77.3522566
+  },
+  "nodes": [
+    3568604186,
+    3568604181,
+    3568604165,
+    3568604175,
+    3568604186
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Aunt HOuse"
+  }
+},
+{
+  "type": "way",
+  "id": 351133517,
+  "center": {
+    "lat": 28.6503372,
+    "lon": 77.3526495
+  },
+  "nodes": [
+    3568603807,
+    3568603839,
+    3568603668,
+    3568603624,
+    3568603807
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Friend House"
+  }
+},
+{
+  "type": "way",
+  "id": 351133567,
+  "center": {
+    "lat": 28.6486657,
+    "lon": 77.3509106
+  },
+  "nodes": [
+    3568601720,
+    3568601378,
+    3568601331,
+    3568601379,
+    3568601720
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Ramprastha Building"
+  }
+},
+{
+  "type": "way",
+  "id": 351133581,
+  "center": {
+    "lat": 28.6507163,
+    "lon": 77.3530698
+  },
+  "nodes": [
+    3568603985,
+    3568603956,
+    3568603924,
+    3568603968,
+    3568603985
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Friend House"
+  }
+},
+{
+  "type": "way",
+  "id": 351133597,
+  "center": {
+    "lat": 28.6508562,
+    "lon": 77.3529044
+  },
+  "nodes": [
+    3568603992,
+    3568604102,
+    3568603983,
+    3568603975,
+    3568603992
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Friend House"
+  }
+},
+{
+  "type": "way",
+  "id": 351133653,
+  "center": {
+    "lat": 28.6503992,
+    "lon": 77.3527194
+  },
+  "nodes": [
+    3568603844,
+    3568603878,
+    3568603692,
+    3568603669,
+    3568603844
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Uncle House"
+  }
+},
+{
+  "type": "way",
+  "id": 351135948,
+  "center": {
+    "lat": 28.6849133,
+    "lon": 77.3514826
+  },
+  "nodes": [
+    3568621639,
+    3568621634,
+    3568621628,
+    3568621626,
+    3568621631,
+    3568621622,
+    3568621388,
+    3568621593,
+    3568621604,
+    3568621611,
+    3568621600,
+    3568621603,
+    3568621619,
+    3568621621,
+    3568621639
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "class rooms"
+  }
+},
+{
+  "type": "way",
+  "id": 351135957,
+  "center": {
+    "lat": 28.6837039,
+    "lon": 77.3540517
+  },
+  "nodes": [
+    3568621325,
+    3568621331,
+    3568621332,
+    3568621326,
+    3568621325
+  ],
+  "tags": {
+    "amenity": "cafe",
+    "building": "yes",
+    "cuisine": "pizza;burger;chinese;italian",
+    "name": "golden bowl"
+  }
+},
+{
+  "type": "way",
+  "id": 351135970,
+  "center": {
+    "lat": 28.6864026,
+    "lon": 77.3446151
+  },
+  "nodes": [
+    3568621861,
+    3568621855,
+    3568621831,
+    3568621833,
+    3568621861
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "samosa",
+    "shop": "confectionery"
+  }
+},
+{
+  "type": "way",
+  "id": 351135999,
+  "center": {
+    "lat": 28.6851110,
+    "lon": 77.3445315
+  },
+  "nodes": [
+    3568621685,
+    12951243822,
+    12951243823,
+    3568621678,
+    3568621635,
+    3568621642,
+    3568621685
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Ocean Apartment C 4"
+  }
+},
+{
+  "type": "way",
+  "id": 351136012,
+  "center": {
+    "lat": 28.6895519,
+    "lon": 77.3482011
+  },
+  "nodes": [
+    3568622377,
+    3568622366,
+    3568622354,
+    12950145438,
+    3568622375,
+    3568622377
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Mangalam"
+  }
+},
+{
+  "type": "way",
+  "id": 351136027,
+  "center": {
+    "lat": 28.6888151,
+    "lon": 77.3455750
+  },
+  "nodes": [
+    3568622282,
+    3568622289,
+    3568622266,
+    3568622253,
+    3568622282
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "HiTech APT A 55"
+  }
+},
+{
+  "type": "way",
+  "id": 351136048,
+  "center": {
+    "lat": 28.6861129,
+    "lon": 77.3444879
+  },
+  "nodes": [
+    3568621813,
+    3568621809,
+    3568621789,
+    3568621793,
+    3568621813
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "suraj electonics",
+    "shop": "electronics"
+  }
+},
+{
+  "type": "way",
+  "id": 351136059,
+  "center": {
+    "lat": 28.6901035,
+    "lon": 77.3477822
+  },
+  "nodes": [
+    3568622418,
+    3568622423,
+    3568622406,
+    3568622399,
+    3568622418
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Tushar Appt A 74"
+  }
+},
+{
+  "type": "way",
+  "id": 351136071,
+  "center": {
+    "lat": 28.6865263,
+    "lon": 77.3448985
+  },
+  "nodes": [
+    3568621879,
+    3568621876,
+    3568621851,
+    3568621856,
+    3568621879
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "balaji stationery",
+    "shop": "stationery"
+  }
+},
+{
+  "type": "way",
+  "id": 351136086,
+  "center": {
+    "lat": 28.6889892,
+    "lon": 77.3463924
+  },
+  "nodes": [
+    3568622300,
+    3568622303,
+    12951659412,
+    3568622290,
+    3568622278,
+    3568622300
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Rishis Aman 3"
+  }
+},
+{
+  "type": "way",
+  "id": 351136097,
+  "center": {
+    "lat": 28.6856329,
+    "lon": 77.3450190
+  },
+  "nodes": [
+    3568621753,
+    3568621747,
+    3568621711,
+    3568621716,
+    3568621753
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Meenal 4 B3"
+  }
+},
+{
+  "type": "way",
+  "id": 351136105,
+  "center": {
+    "lat": 28.6860954,
+    "lon": 77.3437542
+  },
+  "nodes": [
+    3568621807,
+    3568621775,
+    3568621787,
+    3568621817,
+    3568621807
+  ],
+  "tags": {
+    "building": "commercial",
+    "name": "Meenal"
+  }
+},
+{
+  "type": "way",
+  "id": 351136107,
+  "center": {
+    "lat": 28.6861630,
+    "lon": 77.3443742
+  },
+  "nodes": [
+    3568621822,
+    3568621814,
+    3568621795,
+    3568621799,
+    3568621822
+  ],
+  "tags": {
+    "building": "yes",
+    "craft": "clockmaker",
+    "name": "sanjay watch maker"
+  }
+},
+{
+  "type": "way",
+  "id": 351136127,
+  "center": {
+    "lat": 28.6858914,
+    "lon": 77.3451869
+  },
+  "nodes": [
+    3568621786,
+    3568621783,
+    3568621750,
+    3568621755,
+    12951639469,
+    12951639470,
+    3568621786
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "JNC Aptts 3"
+  }
+},
+{
+  "type": "way",
+  "id": 351136158,
+  "center": {
+    "lat": 28.6877436,
+    "lon": 77.3438702
+  },
+  "nodes": [
+    3568622053,
+    3568622036,
+    3568622012,
+    3568622029,
+    3568622053
+  ],
+  "tags": {
+    "amenity": "bank",
+    "brand": "Bank of Baroda",
+    "brand:wikidata": "Q2003797",
+    "building": "yes",
+    "name": "Bank of Baroda"
+  }
+},
+{
+  "type": "way",
+  "id": 351319908,
+  "center": {
+    "lat": 28.6779230,
+    "lon": 77.3507983
+  },
+  "nodes": [
+    3570949793,
+    3570949809,
+    3570949813,
+    3570949769,
+    3570949585,
+    3570949494,
+    3570949390,
+    3570949503,
+    3570949516,
+    12950201464,
+    3570949793
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Rajnigandha Apartment"
+  }
+},
+{
+  "type": "way",
+  "id": 351320197,
+  "center": {
+    "lat": 28.6437085,
+    "lon": 77.3500291
+  },
+  "nodes": [
+    3570951575,
+    3570951554,
+    3570951517,
+    3570951538,
+    3570951575
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Friends HOuse"
+  }
+},
+{
+  "type": "way",
+  "id": 351320503,
+  "center": {
+    "lat": 28.6455038,
+    "lon": 77.3603820
+  },
+  "nodes": [
+    3570953573,
+    3570953574,
+    3570953559,
+    3570953558,
+    3570953573
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:housenumber": "Plot 34",
+    "addr:postcode": "201014",
+    "addr:street": "Niti Khand 1, Indirapuram",
+    "building": "yes",
+    "description": "Software development company",
+    "name": "Halo Technologies"
+  }
+},
+{
+  "type": "way",
+  "id": 351320538,
+  "center": {
+    "lat": 28.6437443,
+    "lon": 77.3503771
+  },
+  "nodes": [
+    3570951571,
+    3570951552,
+    3570951520,
+    3570951537,
+    3570951571
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "House"
+  }
+},
+{
+  "type": "way",
+  "id": 351324133,
+  "center": {
+    "lat": 28.6938945,
+    "lon": 77.3453083
+  },
+  "nodes": [
+    3570972779,
+    3570972921,
+    3570972790,
+    3570972757,
+    3570972779
+  ],
+  "tags": {
+    "brand": "Hyundai",
+    "brand:wikidata": "Q55931",
+    "building": "yes",
+    "name": "Hyundai",
+    "shop": "car_repair"
+  }
+},
+{
+  "type": "way",
+  "id": 351324214,
+  "center": {
+    "lat": 28.6927838,
+    "lon": 77.3445490
+  },
+  "nodes": [
+    3570972482,
+    3570972481,
+    3570972471,
+    3570972472,
+    3570972482
+  ],
+  "tags": {
+    "addr:city": "Sahibabad",
+    "addr:housenumber": "25",
+    "addr:postcode": "201005",
+    "addr:street": "150 Ft Road",
+    "building": "apartments",
+    "building:levels": "4",
+    "name": "Dwarika Apartments, Plot No 25"
+  }
+},
+{
+  "type": "way",
+  "id": 351324223,
+  "center": {
+    "lat": 28.6936143,
+    "lon": 77.3451095
+  },
+  "nodes": [
+    3570972736,
+    3570972767,
+    3570972732,
+    3570972706,
+    3570972736
+  ],
+  "tags": {
+    "brand": "Hyundai",
+    "brand:wikidata": "Q55931",
+    "building": "yes",
+    "name": "Hyundai",
+    "shop": "car"
+  }
+},
+{
+  "type": "way",
+  "id": 351324258,
+  "center": {
+    "lat": 28.6929658,
+    "lon": 77.3439853
+  },
+  "nodes": [
+    3570972488,
+    3570972485,
+    3570972475,
+    3570972476,
+    3570972488
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Dwarka 27"
+  }
+},
+{
+  "type": "way",
+  "id": 351338764,
+  "center": {
+    "lat": 28.6923141,
+    "lon": 77.3465254
+  },
+  "nodes": [
+    3571080847,
+    12953389552,
+    3571080844,
+    3571080789,
+    12953389554,
+    12953389553,
+    3571080800,
+    12953389551,
+    3571080847
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Texla Estate's"
+  }
+},
+{
+  "type": "way",
+  "id": 351338823,
+  "center": {
+    "lat": 28.6909321,
+    "lon": 77.3470670
+  },
+  "nodes": [
+    3571079954,
+    12951665115,
+    3571080198,
+    12951665114,
+    3571079950,
+    3571079908,
+    3571079954
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Charms 7 A 169"
+  }
+},
+{
+  "type": "way",
+  "id": 351339029,
+  "center": {
+    "lat": 28.6908282,
+    "lon": 77.3471284
+  },
+  "nodes": [
+    3571079903,
+    3571079940,
+    3571079911,
+    3571077977,
+    3571079903
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Yadu Apartment"
+  }
+},
+{
+  "type": "way",
+  "id": 351339048,
+  "center": {
+    "lat": 28.6910308,
+    "lon": 77.3456615
+  },
+  "nodes": [
+    3571080203,
+    3571080251,
+    3571080232,
+    3571079977,
+    3571080203
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Ekta Sadan A187"
+  }
+},
+{
+  "type": "way",
+  "id": 351339081,
+  "center": {
+    "lat": 28.6924753,
+    "lon": 77.3458016
+  },
+  "nodes": [
+    3571080859,
+    3571080856,
+    3571080821,
+    3571080825,
+    3571080859
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Banke Bihari Kunj A 3"
+  }
+},
+{
+  "type": "way",
+  "id": 351340829,
+  "center": {
+    "lat": 28.6889238,
+    "lon": 77.3448973
+  },
+  "nodes": [
+    3571094606,
+    3571094594,
+    12951782203,
+    12951782204,
+    12951782205,
+    12951782202,
+    3571094270,
+    3571094279,
+    3571094606
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "United Homes A 51"
+  }
+},
+{
+  "type": "way",
+  "id": 351404304,
+  "center": {
+    "lat": 28.6644849,
+    "lon": 77.3790777
+  },
+  "nodes": [
+    3571652331,
+    3571652357,
+    3571652342,
+    3571652340,
+    3571652328,
+    3571652330,
+    3571652295,
+    3571652293,
+    3571652174,
+    3571652177,
+    3571652117,
+    3571652112,
+    3571652093,
+    3571652097,
+    3571651970,
+    3571651922,
+    3571651951,
+    3571651958,
+    3571651977,
+    3571651972,
+    3571652125,
+    3571652137,
+    3571652158,
+    3571652149,
+    3571652301,
+    3571652306,
+    3571652318,
+    3571652317,
+    3571652331
+  ],
+  "tags": {
+    "building": "yes",
+    "building:levels": "4",
+    "name": "Block D"
+  }
+},
+{
+  "type": "way",
+  "id": 351404540,
+  "center": {
+    "lat": 28.6619545,
+    "lon": 77.3605192
+  },
+  "nodes": [
+    3571650080,
+    3571650124,
+    3571650072,
+    3571650016,
+    3571650080
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:housenumber": "C2 Sector 14A Vasundhara",
+    "addr:postcode": "201012",
+    "addr:street": "friend society road",
+    "air_conditioning": "yes",
+    "amenity": "restaurant",
+    "brand": "Cocoon Restaurant",
+    "building": "yes",
+    "capacity": "50",
+    "cuisine": "indian;chinese;continental;fast_food",
+    "delivery": "yes",
+    "diet:non-vegetarian": "yes",
+    "diet:vegetarian": "yes",
+    "email": "cocoonrestro@gmail.com",
+    "internet_access": "yes",
+    "name": "Cocoon Restaurant",
+    "opening_hours": "Mo-Su 12:00-23:00",
+    "outdoor_seating": "yes",
+    "phone": "+91 85870 00709",
+    "website": "http://www.cocoonrestro.com/"
+  }
+},
+{
+  "type": "way",
+  "id": 351414389,
+  "center": {
+    "lat": 28.6810521,
+    "lon": 77.3461870
+  },
+  "nodes": [
+    3571739831,
+    3571739827,
+    3571739816,
+    3571739815,
+    3571739808,
+    3571739809,
+    3571739811,
+    3571739813,
+    3571739831
+  ],
+  "tags": {
+    "brand": "Honda",
+    "brand:wikidata": "Q9584",
+    "building": "yes",
+    "name": "Honda",
+    "shop": "motorcycle"
+  }
+},
+{
+  "type": "way",
+  "id": 351570500,
+  "center": {
+    "lat": 28.6598595,
+    "lon": 77.3318027
+  },
+  "nodes": [
+    3573780779,
+    3573780799,
+    3573780750,
+    3573780736,
+    3573780779
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Fair Deal Cars Pvt Ltd. Service Centre",
+    "service": "repair"
+  }
+},
+{
+  "type": "way",
+  "id": 351570634,
+  "center": {
+    "lat": 28.6533812,
+    "lon": 77.3272434
+  },
+  "nodes": [
+    3573780259,
+    3573780310,
+    3573780271,
+    3573780206,
+    3573780259
+  ],
+  "tags": {
+    "building": "commercial",
+    "name": "Pacific Business Park"
+  }
+},
+{
+  "type": "way",
+  "id": 351570678,
+  "center": {
+    "lat": 28.6607153,
+    "lon": 77.3324424
+  },
+  "nodes": [
+    3573780948,
+    3573780987,
+    3573780860,
+    3573780848,
+    3573780871,
+    3573780806,
+    3573780948
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Times of India",
+    "office": "newspaper"
+  }
+},
+{
+  "type": "way",
+  "id": 351576589,
+  "center": {
+    "lat": 28.6554128,
+    "lon": 77.3682051
+  },
+  "nodes": [
+    3573866084,
+    3573866027,
+    3573866017,
+    3573866025,
+    3573866018,
+    3573866035,
+    3573866038,
+    3573866046,
+    3573866040,
+    3573866057,
+    3573866063,
+    3573866072,
+    3573866084
+  ],
+  "tags": {
+    "amenity": "school",
+    "building": "yes",
+    "name": "Vidya Bal Bhawan Public School"
+  }
+},
+{
+  "type": "way",
+  "id": 351576781,
+  "center": {
+    "lat": 28.6548150,
+    "lon": 77.3590343
+  },
+  "nodes": [
+    3573865886,
+    3573865867,
+    3573865861,
+    3573865883,
+    3573865886
+  ],
+  "tags": {
+    "amenity": "clinic",
+    "building": "yes",
+    "name": "Dr. Rajiv Saxena"
+  }
+},
+{
+  "type": "way",
+  "id": 351576890,
+  "center": {
+    "lat": 28.6522988,
+    "lon": 77.3521121
+  },
+  "nodes": [
+    3573864624,
+    3573864593,
+    3573864149,
+    3573864180,
+    3573864624
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "A2Z Departmentl Store",
+    "shop": "variety_store"
+  }
+},
+{
+  "type": "way",
+  "id": 351576899,
+  "center": {
+    "lat": 28.6524873,
+    "lon": 77.3519615
+  },
+  "nodes": [
+    3573864823,
+    3573864685,
+    3573864623,
+    3573864664,
+    3573864823
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Uncle House"
+  }
+},
+{
+  "type": "way",
+  "id": 351576944,
+  "center": {
+    "lat": 28.6523990,
+    "lon": 77.3520354
+  },
+  "nodes": [
+    3573864680,
+    3573864636,
+    3573864187,
+    3573864620,
+    3573864680
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Uncle House"
+  }
+},
+{
+  "type": "way",
+  "id": 351577006,
+  "center": {
+    "lat": 28.6531133,
+    "lon": 77.3499434
+  },
+  "nodes": [
+    3573865294,
+    3573865311,
+    3573865299,
+    3573865318,
+    3573865337,
+    3573865355,
+    3573865334,
+    3576117163,
+    3576117162,
+    3576117161,
+    3573865320,
+    3573865346,
+    3573865159,
+    3573865117,
+    3573865140,
+    3573865114,
+    3573865052,
+    3573865013,
+    3573865000,
+    3573864999,
+    3573864892,
+    3573864884,
+    3573864879,
+    3573864870,
+    3573864891,
+    3573865003,
+    3573865017,
+    3573865004,
+    3573865030,
+    3573865036,
+    3573865042,
+    3573865057,
+    3573865053,
+    3573865070,
+    3573865047,
+    3573865058,
+    3573865048,
+    3573865084,
+    3573865082,
+    3573865088,
+    3573865111,
+    3573865104,
+    3573865116,
+    3573865123,
+    3573865136,
+    3573865145,
+    3573865160,
+    3573865167,
+    3573865163,
+    3573865146,
+    3573865098,
+    3573865132,
+    3573865154,
+    3573865175,
+    3573865162,
+    3573865294
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:postcode": "201010",
+    "addr:street": "Ramprastha Greens",
+    "building": "residential",
+    "building:levels": "15",
+    "name": "Zen Spire"
+  }
+},
+{
+  "type": "way",
+  "id": 351577013,
+  "center": {
+    "lat": 28.6523015,
+    "lon": 77.3495970
+  },
+  "nodes": [
+    3573864840,
+    3573864672,
+    3573864097,
+    3573864106,
+    3576097178,
+    3576097177,
+    3573864141,
+    3576097180,
+    3576097179,
+    3573864151,
+    3576117103,
+    3576117095,
+    3576117093,
+    3576097189,
+    3573864644,
+    3573864633,
+    3573864840
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:postcode": "201010",
+    "addr:street": "Ramprastha Greens",
+    "building": "residential",
+    "building:levels": "15",
+    "name": "Max City Park Sapphire"
+  }
+},
+{
+  "type": "way",
+  "id": 351606999,
+  "center": {
+    "lat": 28.6548387,
+    "lon": 77.4128511
+  },
+  "nodes": [
+    3574193824,
+    3574193822,
+    3574193800,
+    3574193799,
+    3574193793,
+    3574193794,
+    3574193375,
+    3574193378,
+    3574193816,
+    3574193818,
+    3574193811,
+    3574193812,
+    3574193824
+  ],
+  "tags": {
+    "building": "school",
+    "name": "S.S.K Pubilc School"
+  }
+},
+{
+  "type": "way",
+  "id": 351607000,
+  "center": {
+    "lat": 28.6583950,
+    "lon": 77.4105210
+  },
+  "nodes": [
+    3574195348,
+    3574195357,
+    3574195367,
+    3574195370,
+    3574195373,
+    3574195374,
+    3574195372,
+    3574195371,
+    3574195368,
+    3574195366,
+    3574195369,
+    3574195355,
+    3574195356,
+    3574195352,
+    3574195351,
+    3574195346,
+    3574195348
+  ],
+  "tags": {
+    "building": "school",
+    "name": "C.S.H.P.  Public School"
+  }
+},
+{
+  "type": "way",
+  "id": 351607001,
+  "center": {
+    "lat": 28.6581146,
+    "lon": 77.4109782
+  },
+  "nodes": [
+    3574195365,
+    3574195364,
+    3574195361,
+    3574195360,
+    3574195363,
+    3574195362,
+    3574195359,
+    3574195358,
+    3574195353,
+    3574195354,
+    3574195350,
+    3574195349,
+    3574195347,
+    3574195344,
+    3574195338,
+    3574195345,
+    3574195365
+  ],
+  "tags": {
+    "building": "school",
+    "name": "Children's Academy"
+  }
+},
+{
+  "type": "way",
+  "id": 351607012,
+  "center": {
+    "lat": 28.6544842,
+    "lon": 77.4146983
+  },
+  "nodes": [
+    3574193374,
+    3574193369,
+    3574193357,
+    3574193361,
+    3574193374
+  ],
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "name": "Saraswati Mandir",
+    "religion": "hindu"
+  }
+},
+{
+  "type": "way",
+  "id": 351607015,
+  "center": {
+    "lat": 28.6552801,
+    "lon": 77.4113570
+  },
+  "nodes": [
+    3574193838,
+    3574193833,
+    3574193826,
+    3574193828,
+    3574193838
+  ],
+  "tags": {
+    "building": "hospital",
+    "name": "Aloki Hospital"
+  }
+},
+{
+  "type": "way",
+  "id": 351607044,
+  "center": {
+    "lat": 28.6542084,
+    "lon": 77.4116265
+  },
+  "nodes": [
+    3574193320,
+    3574193313,
+    3574193296,
+    3574193301,
+    3574193320
+  ],
+  "tags": {
+    "building": "hotel",
+    "name": "Hotel Abhinandan"
+  }
+},
+{
+  "type": "way",
+  "id": 351607067,
+  "center": {
+    "lat": 28.6548192,
+    "lon": 77.4142657
+  },
+  "nodes": [
+    3574193819,
+    3574193814,
+    3574193802,
+    3574193809,
+    3574193795,
+    3574193390,
+    3574193383,
+    3574193387,
+    3574193819
+  ],
+  "tags": {
+    "building": "school",
+    "name": "Bloom Public School"
+  }
+},
+{
+  "type": "way",
+  "id": 351618966,
+  "center": {
+    "lat": 28.6796218,
+    "lon": 77.3460140
+  },
+  "nodes": [
+    3574339851,
+    3574339849,
+    3574339835,
+    3574339836,
+    3574339851
+  ],
+  "tags": {
+    "brand": "TVS",
+    "brand:wikidata": "Q3300084",
+    "building": "yes",
+    "name": "TVS",
+    "shop": "motorcycle"
+  }
+},
+{
+  "type": "way",
+  "id": 351632378,
+  "center": {
+    "lat": 28.6720440,
+    "lon": 77.3304532
+  },
+  "nodes": [
+    3574454550,
+    3574454551,
+    3574454538,
+    3574454539,
+    3574454533,
+    3574454534,
+    3574454554,
+    3574454555,
+    3574454508,
+    3574454507,
+    3574454513,
+    3574454514,
+    3574454517,
+    3574454518,
+    3574454528,
+    3574454526,
+    3574454524,
+    3574454523,
+    3574454522,
+    3574454521,
+    3574454530,
+    3574454529,
+    3574454520,
+    3574454519,
+    3574454515,
+    3574454516,
+    3574454510,
+    3574454509,
+    3574454506,
+    3574454505,
+    3574454527,
+    3574454525,
+    3574454531,
+    3574454532,
+    3574454542,
+    3574454543,
+    3574454550
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Block E, Alaknanda Apartment",
+    "tourism": "apartment"
+  }
+},
+{
+  "type": "way",
+  "id": 351632396,
+  "center": {
+    "lat": 28.6705890,
+    "lon": 77.3361118
+  },
+  "nodes": [
+    3574454121,
+    3574454131,
+    3574454095,
+    3574454082,
+    5534334382,
+    3574454121
+  ],
+  "tags": {
+    "atm": "yes",
+    "building": "yes",
+    "name": "Punjab National Bank ATM"
+  }
+},
+{
+  "type": "way",
+  "id": 351632483,
+  "center": {
+    "lat": 28.6679700,
+    "lon": 77.3310099
+  },
+  "nodes": [
+    3574453191,
+    3574453236,
+    3574453160,
+    3574453083,
+    3574453164,
+    3574453173,
+    3574453191
+  ],
+  "tags": {
+    "building": "residential",
+    "building:levels": "8",
+    "name": "Gaur Residency"
+  }
+},
+{
+  "type": "way",
+  "id": 351638360,
+  "center": {
+    "lat": 28.6652259,
+    "lon": 77.3753204
+  },
+  "nodes": [
+    3574507059,
+    3574507064,
+    3574507062,
+    3574507066,
+    3574507061,
+    3574507065,
+    3574507058,
+    3574507067,
+    3574507063,
+    3574507068,
+    3574507060,
+    3574507057,
+    3574507055,
+    3574507056,
+    3574507051,
+    3574507048,
+    3574507049,
+    3574507045,
+    3574507044,
+    3574507043,
+    3574507046,
+    3574507047,
+    3574507052,
+    3574507050,
+    3574507053,
+    3574507054,
+    3574507059
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:housenumber": "Sector 6, Vasundhara",
+    "addr:postcode": "201012",
+    "amenity": "school",
+    "building": "school",
+    "name": "Amity International School",
+    "wikidata": "Q4746968",
+    "wikipedia": "en:Amity International School Vasundhara"
+  }
+},
+{
+  "type": "way",
+  "id": 351641150,
+  "center": {
+    "lat": 28.6384420,
+    "lon": 77.3665876
+  },
+  "nodes": [
+    3574558425,
+    3574558428,
+    3574558395,
+    3574558292,
+    3574558240,
+    3574558241,
+    3574558235,
+    3574558238,
+    3574558081,
+    3574558074,
+    3574558425
+  ],
+  "tags": {
+    "addr:block_number": "4",
+    "addr:city": "Ghaziabad",
+    "addr:housenumber": "6",
+    "addr:postcode": "201010",
+    "addr:street": "Vaibhav Khand",
+    "addr:unit": "2",
+    "building": "residential",
+    "name": "Express Garden"
+  }
+},
+{
+  "type": "way",
+  "id": 351641152,
+  "center": {
+    "lat": 28.6384738,
+    "lon": 77.3672599
+  },
+  "nodes": [
+    3574558430,
+    3574558431,
+    3574558409,
+    3574558408,
+    3574558275,
+    3574558276,
+    3574558272,
+    3574558271,
+    3574558233,
+    3574558236,
+    3574558248,
+    3574558250,
+    3574558232,
+    3574558234,
+    3574558268,
+    3574558267,
+    3574558277,
+    3574558278,
+    3574558407,
+    3574558405,
+    3574558433,
+    3574558435,
+    3574558197,
+    3574558196,
+    3574558430
+  ],
+  "tags": {
+    "addr:block_number": "3",
+    "addr:city": "Ghaziabad",
+    "addr:housenumber": "6",
+    "addr:postcode": "201010",
+    "addr:street": "Vaibhav Khand",
+    "addr:unit": "3",
+    "building": "residential",
+    "name": "Express Garden"
+  }
+},
+{
+  "type": "way",
+  "id": 351641562,
+  "center": {
+    "lat": 28.6385432,
+    "lon": 77.3679439
+  },
+  "nodes": [
+    3574558421,
+    3574558415,
+    3574558434,
+    3574558436,
+    3574558220,
+    3574558216,
+    3574558253,
+    3574558251,
+    3574558421
+  ],
+  "tags": {
+    "addr:block_number": "2",
+    "addr:city": "Ghaziabad",
+    "addr:housenumber": "6",
+    "addr:postcode": "201010",
+    "addr:street": "Vaibhav Khand",
+    "addr:unit": "2",
+    "building": "residential",
+    "name": "Express Garden"
+  }
+},
+{
+  "type": "way",
+  "id": 351641564,
+  "center": {
+    "lat": 28.6385692,
+    "lon": 77.3684547
+  },
+  "nodes": [
+    3574558424,
+    3574558418,
+    3574558437,
+    3574558439,
+    3574558228,
+    3574558224,
+    3574558257,
+    3574558256,
+    3574558424
+  ],
+  "tags": {
+    "addr:block_number": "1",
+    "addr:city": "Ghaziabad",
+    "addr:housenumber": "6",
+    "addr:postcode": "201010",
+    "addr:street": "Vaibhav Khand",
+    "addr:unit": "1",
+    "building": "residential",
+    "name": "Express Garden"
+  }
+},
+{
+  "type": "way",
+  "id": 351644985,
+  "center": {
+    "lat": 28.6726754,
+    "lon": 77.3271683
+  },
+  "nodes": [
+    3574586314,
+    3574586316,
+    3574586309,
+    3574586303,
+    3574586314
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "ICICI Bank"
+  }
+},
+{
+  "type": "way",
+  "id": 351794503,
+  "center": {
+    "lat": 28.6722167,
+    "lon": 77.3311893
+  },
+  "nodes": [
+    3576056784,
+    3576056785,
+    3576056829,
+    3576056842,
+    3576056795,
+    3576056790,
+    3576056734,
+    3576056746,
+    3576056692,
+    3576056683,
+    3576056784
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Diwakar Model School"
+  }
+},
+{
+  "type": "way",
+  "id": 351794592,
+  "center": {
+    "lat": 28.6693668,
+    "lon": 77.3293208
+  },
+  "nodes": [
+    3576056311,
+    3576056325,
+    3576056312,
+    3576056301,
+    3576056311
+  ],
+  "tags": {
+    "amenity": "bank",
+    "brand": "Syndicate Bank",
+    "brand:wikidata": "Q2004088",
+    "building": "yes",
+    "name": "Syndicate Bank"
+  }
+},
+{
+  "type": "way",
+  "id": 351811486,
+  "center": {
+    "lat": 28.6450486,
+    "lon": 77.3273646
+  },
+  "nodes": [
+    3576213047,
+    3576213048,
+    3576213039,
+    3576213037,
+    3576213047
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:housenumber": "G-11",
+    "addr:postcode": "201010",
+    "addr:street": "Aditya Plaza-2 Kaushambi",
+    "building": "yes",
+    "name": "www.medylife.com"
+  }
+},
+{
+  "type": "way",
+  "id": 351811740,
+  "center": {
+    "lat": 28.6365679,
+    "lon": 77.3277762
+  },
+  "nodes": [
+    3576212604,
+    3576212607,
+    12749595404,
+    12749595405,
+    12749595406,
+    12749595407,
+    3576212465,
+    12749595408,
+    12749595409,
+    12749595410,
+    12749595411,
+    3576212459,
+    3576212478,
+    12749595412,
+    12749595413,
+    12749595414,
+    3576450956,
+    3576450953,
+    3576450942,
+    3576450926,
+    3576450939,
+    3576212484,
+    3576450962,
+    12749595415,
+    3576212599,
+    12749595416,
+    3576212594,
+    3576212604
+  ],
+  "tags": {
+    "brand": "Radisson Blu",
+    "brand:wikidata": "Q7281341",
+    "building": "yes",
+    "name": "Radisson BLU Kaushambi Dehli NCR",
+    "operator": "Radisson",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 351814452,
+  "center": {
+    "lat": 28.6547798,
+    "lon": 77.3691720
+  },
+  "nodes": [
+    3576228532,
+    3576228537,
+    3576228525,
+    3576228523,
+    3576228532
+  ],
+  "tags": {
+    "addr:city": "ghaziabad",
+    "addr:housenumber": "351",
+    "addr:postcode": "201012",
+    "addr:street": "sector 11",
+    "building": "residential",
+    "name": "11/351"
+  }
+},
+{
+  "type": "way",
+  "id": 351844282,
+  "center": {
+    "lat": 28.6490169,
+    "lon": 77.3668363
+  },
+  "nodes": [
+    3576453935,
+    3576453933,
+    3576453918,
+    3576453919,
+    3576453935
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:housenumber": "UG-08, SG Alpha Tower, Sector 9, Vasundhara, Ghaziabad, 201012, India",
+    "addr:postcode": "201012",
+    "building": "yes",
+    "building:levels": "8",
+    "description": "UG-08, SG Alpha Tower, Sector 9, Vasundhara, Ghaziabad, 201012, India",
+    "name": "SG Alpha Tower"
+  }
+},
+{
+  "type": "way",
+  "id": 351855173,
+  "center": {
+    "lat": 28.6683789,
+    "lon": 77.4265707
+  },
+  "nodes": [
+    3576553556,
+    3576553558,
+    3576553547,
+    3576553546,
+    3576553556
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "saraswati copy center",
+    "shop": "stationery"
+  }
+},
+{
+  "type": "way",
+  "id": 351868712,
+  "center": {
+    "lat": 28.6572218,
+    "lon": 77.3229156
+  },
+  "nodes": [
+    3576664503,
+    7546155771,
+    7546155769,
+    7546155770,
+    3576664515,
+    3576664504,
+    3576664490,
+    3576664503
+  ],
+  "tags": {
+    "addr:city": "ghaziabad",
+    "addr:housenumber": "42",
+    "addr:postcode": "201011",
+    "addr:street": "a",
+    "building": "yes",
+    "building:levels": "3",
+    "name": "A42"
+  }
+},
+{
+  "type": "way",
+  "id": 351868804,
+  "center": {
+    "lat": 28.6612922,
+    "lon": 77.3241101
+  },
+  "nodes": [
+    3576665453,
+    3576665473,
+    3576665433,
+    3576665411,
+    3576665453
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Miss World",
+    "organic": "no",
+    "second_hand": "no",
+    "shop": "clothes",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "way",
+  "id": 351868872,
+  "center": {
+    "lat": 28.6607657,
+    "lon": 77.3234760
+  },
+  "nodes": [
+    3576665297,
+    3576665343,
+    3576665310,
+    3576665279,
+    3576665297
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Yash Sports Wear",
+    "organic": "no",
+    "second_hand": "no",
+    "shop": "clothes",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "way",
+  "id": 351874853,
+  "center": {
+    "lat": 28.6636176,
+    "lon": 77.3228971
+  },
+  "nodes": [
+    3576722861,
+    3576722860,
+    3576722827,
+    3576722828,
+    3576722861
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Dr Lal Path Labs"
+  }
+},
+{
+  "type": "way",
+  "id": 351874858,
+  "center": {
+    "lat": 28.6629544,
+    "lon": 77.3212855
+  },
+  "nodes": [
+    3576722637,
+    3576722636,
+    3576722587,
+    3576722588,
+    3576722637
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "XS Residency"
+  }
+},
+{
+  "type": "way",
+  "id": 351874902,
+  "center": {
+    "lat": 28.6636181,
+    "lon": 77.3231045
+  },
+  "nodes": [
+    3576722859,
+    3576722863,
+    3576722829,
+    3576722826,
+    3576722859
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "The Makeover Unisex Salon",
+    "shop": "beauty",
+    "wheelchair": "no"
+  }
+},
+{
+  "type": "way",
+  "id": 352206615,
+  "center": {
+    "lat": 28.6694965,
+    "lon": 77.4250636
+  },
+  "nodes": [
+    3579643088,
+    3579643086,
+    3579643085,
+    3579643087,
+    3579643088
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Rajiv paint shop",
+    "opening_hours": "Mo-Sa 11:30-19:30; PH off",
+    "payment:cash": "yes",
+    "payment:google_pay": "yes",
+    "shop": "paint"
+  }
+},
+{
+  "type": "way",
+  "id": 352209569,
+  "center": {
+    "lat": 28.6937615,
+    "lon": 77.3408731
+  },
+  "nodes": [
+    3579666721,
+    3579666716,
+    3579666699,
+    3579666709,
+    3579666721
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Sahyog Apartment"
+  }
+},
+{
+  "type": "way",
+  "id": 352209632,
+  "center": {
+    "lat": 28.6938311,
+    "lon": 77.3406065
+  },
+  "nodes": [
+    3579666727,
+    3579666679,
+    3579666689,
+    3579666730,
+    3579666727
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Banke Bihari Apartment"
+  }
+},
+{
+  "type": "way",
+  "id": 352209648,
+  "center": {
+    "lat": 28.6907880,
+    "lon": 77.3410717
+  },
+  "nodes": [
+    3579665270,
+    3579665272,
+    3579665266,
+    3579665265,
+    3579665270
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Mannat Homes"
+  }
+},
+{
+  "type": "way",
+  "id": 352218066,
+  "center": {
+    "lat": 28.6701183,
+    "lon": 77.4262280
+  },
+  "nodes": [
+    3579752486,
+    3579752485,
+    3579752474,
+    3579752479,
+    3579752486
+  ],
+  "tags": {
+    "amenity": "events_venue",
+    "building": "yes",
+    "internet_access": "no",
+    "name": "meenamal dharamshala place"
+  }
+},
+{
+  "type": "way",
+  "id": 352221910,
+  "center": {
+    "lat": 28.6864082,
+    "lon": 77.3437540
+  },
+  "nodes": [
+    3579776177,
+    3579776169,
+    3579776161,
+    3579776162,
+    3579776177
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "jeeva store",
+    "shop": "greengrocer"
+  }
+},
+{
+  "type": "way",
+  "id": 352247649,
+  "center": {
+    "lat": 28.6347708,
+    "lon": 77.3672842
+  },
+  "nodes": [
+    3580031627,
+    3580031666,
+    3580031654,
+    3580031652,
+    3580031647,
+    3580031653,
+    3580031642,
+    3580031608,
+    3580031621,
+    3580031625,
+    3580031626,
+    3580031622,
+    3580031627
+  ],
+  "tags": {
+    "building": "yes",
+    "building:levels": "15",
+    "name": "A-3"
+  }
+},
+{
+  "type": "way",
+  "id": 352254199,
+  "center": {
+    "lat": 28.6519638,
+    "lon": 77.3530516
+  },
+  "nodes": [
+    3580096707,
+    3580096710,
+    3580096703,
+    3580096704,
+    3580096711,
+    3580096712,
+    3580096709,
+    3580096708,
+    3580096705,
+    3580096706,
+    3580096697,
+    3580096695,
+    3580096702,
+    3580096700,
+    3580096694,
+    3580096693,
+    3580096696,
+    3580096698,
+    3580096701,
+    3580096699,
+    3580096707
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Department"
+  }
+},
+{
+  "type": "way",
+  "id": 352281640,
+  "center": {
+    "lat": 28.6404537,
+    "lon": 77.3256708
+  },
+  "nodes": [
+    3580346297,
+    3580346300,
+    3580346302,
+    3580346298,
+    3580346297
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:housenumber": "D-2",
+    "addr:postcode": "201010",
+    "addr:street": "Kaushambi",
+    "building": "yes",
+    "building:levels": "3",
+    "name": "Krist Jyoti Capuchin Provincialate"
+  }
+},
+{
+  "type": "way",
+  "id": 352281648,
+  "center": {
+    "lat": 28.6448516,
+    "lon": 77.3222942
+  },
+  "nodes": [
+    3580346327,
+    3580346333,
+    3580346334,
+    3580346328,
+    3580346327
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:housenumber": "D-75, Behind Kaushambi Metro Station",
+    "addr:postcode": "201010",
+    "brand": "OYO",
+    "brand:wikidata": "Q24906315",
+    "building": "yes",
+    "name": "OYO Townhouse",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 352294982,
+  "center": {
+    "lat": 28.6591158,
+    "lon": 77.4268259
+  },
+  "nodes": [
+    3580467292,
+    3580467293,
+    3580467275,
+    3580467274,
+    3580467277,
+    3580467279,
+    3580467284,
+    3580467287,
+    3580467292
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Hotel Elite"
+  }
+},
+{
+  "type": "way",
+  "id": 352429480,
+  "center": {
+    "lat": 28.6770581,
+    "lon": 77.4208355
+  },
+  "nodes": [
+    3582321472,
+    3582321470,
+    3582321468,
+    3582321469,
+    3582321472
+  ],
+  "tags": {
+    "amenity": "hospital",
+    "building": "yes",
+    "check_date": "2024-08-06",
+    "emergency": "yes",
+    "healthcare": "hospital",
+    "name": "Kansal Hospital",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 352433916,
+  "center": {
+    "lat": 28.6436404,
+    "lon": 77.3246349
+  },
+  "nodes": [
+    3582351217,
+    3582351218,
+    3582351209,
+    3582351208,
+    3582351217
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Kala Stuti Academy, D-12, Kaushambi, Ghaziabad, Uttar Pradesh, India, 201010"
+  }
+},
+{
+  "type": "way",
+  "id": 352439731,
+  "center": {
+    "lat": 28.6650882,
+    "lon": 77.3780038
+  },
+  "nodes": [
+    3582395821,
+    3582395823,
+    3582395824,
+    3582395825,
+    3582395827,
+    3582395830,
+    3582395828,
+    3582395839,
+    3582395856,
+    3582395836,
+    3582395833,
+    3582395829,
+    3582395831,
+    3582395826,
+    3582395821
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:housename": "Arunima Palace",
+    "addr:housenumber": "Sector 4C, Vasundhara",
+    "addr:postcode": "201012",
+    "building": "yes",
+    "name": "Arunima Palace"
+  }
+},
+{
+  "type": "way",
+  "id": 352466841,
+  "center": {
+    "lat": 28.6550690,
+    "lon": 77.3612180
+  },
+  "nodes": [
+    3582573945,
+    3582573947,
+    3582573948,
+    3582573946,
+    3582573945
+  ],
+  "tags": {
+    "addr:postcode": "201012",
+    "building": "yes",
+    "name": "Vasundhaa Hospital"
+  }
+},
+{
+  "type": "way",
+  "id": 352536150,
+  "center": {
+    "lat": 28.7034861,
+    "lon": 77.4503890
+  },
+  "nodes": [
+    3583029420,
+    3583029426,
+    3583029416,
+    3583029408,
+    3583029420
+  ],
+  "tags": {
+    "brand": "Honda",
+    "brand:wikidata": "Q9584",
+    "building": "yes",
+    "name": "Honda",
+    "shop": "car"
+  }
+},
+{
+  "type": "way",
+  "id": 352540864,
+  "center": {
+    "lat": 28.6839832,
+    "lon": 77.4295528
+  },
+  "nodes": [
+    3583068080,
+    3583068075,
+    3583068061,
+    3583068073,
+    3583068080
+  ],
+  "tags": {
+    "brand": "Hyundai",
+    "building": "yes",
+    "name": "Hyundai",
+    "shop": "car"
+  }
+},
+{
+  "type": "way",
+  "id": 352541245,
+  "center": {
+    "lat": 28.6731838,
+    "lon": 77.4175103
+  },
+  "nodes": [
+    3583071556,
+    3583071569,
+    3583071532,
+    3583071523,
+    3583071556
+  ],
+  "tags": {
+    "addr:city": "GHAZIABAD",
+    "addr:district": "Ghaziabad",
+    "addr:housenumber": "B-170",
+    "addr:postcode": "201001",
+    "addr:street": "PATEL NGAR-2",
+    "building": "office",
+    "name": "Nakron Infra Pvt Ltd"
+  }
+},
+{
+  "type": "way",
+  "id": 352565703,
+  "center": {
+    "lat": 28.6323327,
+    "lon": 77.4514448
+  },
+  "nodes": [
+    3583284157,
+    11061896941,
+    11061896942,
+    11061896943,
+    3583284149,
+    3583284133,
+    3583284141,
+    11061896939,
+    11061896940,
+    3583284157
+  ],
+  "tags": {
+    "building": "school",
+    "name": "Step Up School"
+  }
+},
+{
+  "type": "way",
+  "id": 352568638,
+  "center": {
+    "lat": 28.6697477,
+    "lon": 77.4251023
+  },
+  "nodes": [
+    3583301897,
+    3583301908,
+    3583301773,
+    3583301764,
+    3583301897
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:district": "uttar pradesh",
+    "addr:housenumber": "137",
+    "addr:postcode": "201001",
+    "addr:street": "mukand nagar road",
+    "building": "yes",
+    "male": "yes",
+    "mobile": "+91-09540511495",
+    "name": "ASIF HAIR SALON",
+    "opening_hours": "Mo-Su 08:00-23:00",
+    "payment:cash": "yes",
+    "payment:upi": "yes",
+    "shop": "hairdresser"
+  }
+},
+{
+  "type": "way",
+  "id": 352568694,
+  "center": {
+    "lat": 28.6698535,
+    "lon": 77.4262019
+  },
+  "nodes": [
+    3583301939,
+    3583301943,
+    3583301924,
+    3583301923,
+    3583301939
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:district": "uttar pradesh",
+    "addr:postcode": "201001",
+    "addr:street": "Hapur Road",
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "name": "meenamal temple",
+    "religion": "hindu"
+  }
+},
+{
+  "type": "way",
+  "id": 352716731,
+  "center": {
+    "lat": 28.6782689,
+    "lon": 77.4647892
+  },
+  "nodes": [
+    3584900229,
+    3584900230,
+    3584900218,
+    3584900216,
+    3584900229
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Sub-Station Building"
+  }
+},
+{
+  "type": "way",
+  "id": 352721486,
+  "center": {
+    "lat": 28.6884951,
+    "lon": 77.3413609
+  },
+  "nodes": [
+    3584986177,
+    3584986168,
+    3584986161,
+    3584986171,
+    3584986177
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "sandeep general store",
+    "shop": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 352721523,
+  "center": {
+    "lat": 28.6899177,
+    "lon": 77.3428576
+  },
+  "nodes": [
+    3584989776,
+    3584989766,
+    3584989764,
+    3584989768,
+    12951142897,
+    12951142898,
+    3584989776
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Mahagun Estates"
+  }
+},
+{
+  "type": "way",
+  "id": 352721573,
+  "center": {
+    "lat": 28.6902296,
+    "lon": 77.3402171
+  },
+  "nodes": [
+    3584990317,
+    3584990328,
+    12951489109,
+    12951489110,
+    12951489111,
+    12951489112,
+    3584990303,
+    3584989790,
+    3584990317
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "B R Aptt 2"
+  }
+},
+{
+  "type": "way",
+  "id": 352721586,
+  "center": {
+    "lat": 28.6901605,
+    "lon": 77.3413642
+  },
+  "nodes": [
+    3584990309,
+    3584989788,
+    3584989782,
+    3584990297,
+    3584990309
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Shivansh"
+  }
+},
+{
+  "type": "way",
+  "id": 352721615,
+  "center": {
+    "lat": 28.6880963,
+    "lon": 77.3413793
+  },
+  "nodes": [
+    3584986146,
+    3584986135,
+    3584986132,
+    3584986133,
+    3584986146
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "bikaner",
+    "shop": "confectionery"
+  }
+},
+{
+  "type": "way",
+  "id": 352721617,
+  "center": {
+    "lat": 28.6885750,
+    "lon": 77.3417806
+  },
+  "nodes": [
+    3584986187,
+    3584986170,
+    3584986160,
+    3584986176,
+    3584986187
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "car shringar",
+    "shop": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 352721631,
+  "center": {
+    "lat": 28.6902605,
+    "lon": 77.3411174
+  },
+  "nodes": [
+    3584990327,
+    3584990345,
+    3584990305,
+    3584989792,
+    3584990327
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "AadyaShree Constructions 867"
+  }
+},
+{
+  "type": "way",
+  "id": 352723773,
+  "center": {
+    "lat": 28.6309633,
+    "lon": 77.4343454
+  },
+  "nodes": [
+    3585002562,
+    3585002592,
+    3585002593,
+    3585002577,
+    4946513012,
+    3585002564,
+    3585002565,
+    3585002558,
+    3585002562
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:street": "Crossings Republik",
+    "building": "yes",
+    "name": "Panchsheel Square Mall",
+    "shop": "mall"
+  }
+},
+{
+  "type": "way",
+  "id": 352726472,
+  "center": {
+    "lat": 28.6898446,
+    "lon": 77.3417558
+  },
+  "nodes": [
+    3585033907,
+    3585033841,
+    3585033808,
+    3585033823,
+    3585033842,
+    3585033833,
+    3585033849,
+    3585033865,
+    3585033860,
+    3585033891,
+    3585033907
+  ],
+  "tags": {
+    "building": "school",
+    "building:levels": "2",
+    "name": "spring field public school"
+  }
+},
+{
+  "type": "way",
+  "id": 352726478,
+  "center": {
+    "lat": 28.6876823,
+    "lon": 77.3433227
+  },
+  "nodes": [
+    3585033546,
+    3585033562,
+    3585033539,
+    3585033528,
+    3585033546
+  ],
+  "tags": {
+    "amenity": "bank",
+    "branch": "shalimar garden",
+    "brand": "State Bank of India",
+    "brand:wikidata": "Q1340361",
+    "building": "yes",
+    "name": "State Bank of India",
+    "short_name": "SBI"
+  }
+},
+{
+  "type": "way",
+  "id": 352726482,
+  "center": {
+    "lat": 28.6879660,
+    "lon": 77.3432772
+  },
+  "nodes": [
+    3585033601,
+    3585033590,
+    3585033582,
+    3585033594,
+    3585033601
+  ],
+  "tags": {
+    "amenity": "bank",
+    "brand": "ICICI Bank",
+    "brand:wikidata": "Q1653258",
+    "building": "yes",
+    "name": "ICICI Bank",
+    "short_name": "ICICI"
+  }
+},
+{
+  "type": "way",
+  "id": 352726485,
+  "center": {
+    "lat": 28.6899553,
+    "lon": 77.3403017
+  },
+  "nodes": [
+    3585033898,
+    3585033859,
+    3585033837,
+    3585033879,
+    3585033898
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Navjyoti Sareen Kunj"
+  }
+},
+{
+  "type": "way",
+  "id": 352726488,
+  "center": {
+    "lat": 28.6883962,
+    "lon": 77.3427389
+  },
+  "nodes": [
+    3585033646,
+    3585033625,
+    3585033614,
+    3585033630,
+    3585033646
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Ocean's Ambika Palace"
+  }
+},
+{
+  "type": "way",
+  "id": 352726494,
+  "center": {
+    "lat": 28.6873435,
+    "lon": 77.3408075
+  },
+  "nodes": [
+    3585033501,
+    3585033474,
+    3585033447,
+    3585033473,
+    3585033501
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Aman Residency"
+  }
+},
+{
+  "type": "way",
+  "id": 352726497,
+  "center": {
+    "lat": 28.6875330,
+    "lon": 77.3432269
+  },
+  "nodes": [
+    3585033532,
+    3585033513,
+    3585033496,
+    3585033516,
+    3585033532
+  ],
+  "tags": {
+    "brand": "Muthoot Finance",
+    "brand:wikidata": "Q6943861",
+    "building": "yes",
+    "name": "Muthoot Finance",
+    "office": "financial"
+  }
+},
+{
+  "type": "way",
+  "id": 352726535,
+  "center": {
+    "lat": 28.6868021,
+    "lon": 77.3430017
+  },
+  "nodes": [
+    3585033399,
+    3585033395,
+    3585033080,
+    3585033085,
+    3585033399
+  ],
+  "tags": {
+    "amenity": "restaurant",
+    "building": "yes",
+    "name": "madras cafe"
+  }
+},
+{
+  "type": "way",
+  "id": 352726556,
+  "center": {
+    "lat": 28.6890041,
+    "lon": 77.3430751
+  },
+  "nodes": [
+    3585033737,
+    3585033721,
+    3585033701,
+    3585033709,
+    3585033737
+  ],
+  "tags": {
+    "amenity": "driving_school",
+    "building": "yes",
+    "name": "tyagi motors"
+  }
+},
+{
+  "type": "way",
+  "id": 352726573,
+  "center": {
+    "lat": 28.6885253,
+    "lon": 77.3407368
+  },
+  "nodes": [
+    3585033653,
+    3585033656,
+    3585033638,
+    3585033637,
+    3585033653
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "aggarwal sweets",
+    "shop": "confectionery"
+  }
+},
+{
+  "type": "way",
+  "id": 352726590,
+  "center": {
+    "lat": 28.6866878,
+    "lon": 77.3432117
+  },
+  "nodes": [
+    3585033062,
+    3585033071,
+    3585033087,
+    3585033083,
+    3585033062
+  ],
+  "tags": {
+    "brand": "Mother Dairy",
+    "brand:wikidata": "Q6917320",
+    "building": "yes",
+    "name": "Mother Dairy",
+    "shop": "dairy"
+  }
+},
+{
+  "type": "way",
+  "id": 352726598,
+  "center": {
+    "lat": 28.6901714,
+    "lon": 77.3394371
+  },
+  "nodes": [
+    3585033921,
+    3585033924,
+    3585033910,
+    3585033906,
+    3585033921
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Alka Plaza"
+  }
+},
+{
+  "type": "way",
+  "id": 352726607,
+  "center": {
+    "lat": 28.6863290,
+    "lon": 77.3430367
+  },
+  "nodes": [
+    3585033018,
+    3585033029,
+    3585033020,
+    3585033011,
+    3585033018
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "anuj electronics",
+    "shop": "electronics"
+  }
+},
+{
+  "type": "way",
+  "id": 352726617,
+  "center": {
+    "lat": 28.6875176,
+    "lon": 77.3420103
+  },
+  "nodes": [
+    3585033559,
+    3585033517,
+    3585033493,
+    3585033533,
+    3585033559
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Kartik Niketan"
+  }
+},
+{
+  "type": "way",
+  "id": 352726620,
+  "center": {
+    "lat": 28.6893903,
+    "lon": 77.3407624
+  },
+  "nodes": [
+    3585033786,
+    3585033790,
+    3585033779,
+    3585033777,
+    3585033786
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "my home"
+  }
+},
+{
+  "type": "way",
+  "id": 352726623,
+  "center": {
+    "lat": 28.6861884,
+    "lon": 77.3434101
+  },
+  "nodes": [
+    3585033017,
+    3585033010,
+    3585033004,
+    3585033006,
+    3585033017
+  ],
+  "tags": {
+    "brand": "Airtel",
+    "brand:wikidata": "Q854867",
+    "building": "yes",
+    "name": "Airtel",
+    "shop": "mobile_phone"
+  }
+},
+{
+  "type": "way",
+  "id": 352728921,
+  "center": {
+    "lat": 28.6890311,
+    "lon": 77.3394463
+  },
+  "nodes": [
+    3585055454,
+    3585055457,
+    3585055448,
+    3585055444,
+    3585055454
+  ],
+  "tags": {
+    "building": "hospital",
+    "name": "vardhman nursing"
+  }
+},
+{
+  "type": "way",
+  "id": 352728926,
+  "center": {
+    "lat": 28.6875403,
+    "lon": 77.3397014
+  },
+  "nodes": [
+    3585055281,
+    3585055299,
+    3585055283,
+    3585055268,
+    3585055281
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "J P Apartment"
+  }
+},
+{
+  "type": "way",
+  "id": 352728962,
+  "center": {
+    "lat": 28.6889515,
+    "lon": 77.3392778
+  },
+  "nodes": [
+    3585055451,
+    3585055441,
+    3585055439,
+    3585055447,
+    3585055451
+  ],
+  "tags": {
+    "amenity": "bank",
+    "brand": "Corporation Bank",
+    "brand:wikidata": "Q2003387",
+    "building": "yes",
+    "name": "Corporation Bank"
+  }
+},
+{
+  "type": "way",
+  "id": 352728968,
+  "center": {
+    "lat": 28.6874041,
+    "lon": 77.3397706
+  },
+  "nodes": [
+    3585055266,
+    3585055278,
+    3585055265,
+    3585055256,
+    3585055266
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Ayush Apt"
+  }
+},
+{
+  "type": "way",
+  "id": 352741442,
+  "center": {
+    "lat": 28.6724195,
+    "lon": 77.4758848
+  },
+  "nodes": [
+    3585165979,
+    3585165967,
+    3585165924,
+    3585165941,
+    3585165979
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Narmada Tower"
+  }
+},
+{
+  "type": "way",
+  "id": 352742369,
+  "center": {
+    "lat": 28.6858502,
+    "lon": 77.3427815
+  },
+  "nodes": [
+    3585182003,
+    3585181687,
+    3585181646,
+    3585181658,
+    3585182003
+  ],
+  "tags": {
+    "brand": "Lenskart",
+    "brand:wikidata": "Q17068753",
+    "building": "yes",
+    "name": "Lenskart",
+    "shop": "optician"
+  }
+},
+{
+  "type": "way",
+  "id": 352742440,
+  "center": {
+    "lat": 28.6868952,
+    "lon": 77.3400913
+  },
+  "nodes": [
+    3585182694,
+    3585182701,
+    3585182086,
+    3585182076,
+    3585182694
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Padmavathi Appartment"
+  }
+},
+{
+  "type": "way",
+  "id": 352742457,
+  "center": {
+    "lat": 28.6886560,
+    "lon": 77.3376585
+  },
+  "nodes": [
+    3585182730,
+    3585182733,
+    3585182727,
+    3585182723,
+    3585182730
+  ],
+  "tags": {
+    "building": "school",
+    "name": "green field public school"
+  }
+},
+{
+  "type": "way",
+  "id": 352742627,
+  "center": {
+    "lat": 28.6860694,
+    "lon": 77.3424536
+  },
+  "nodes": [
+    3585182029,
+    3585182017,
+    3585181675,
+    3585181689,
+    3585182029
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "kottail",
+    "shop": "clothes"
+  }
+},
+{
+  "type": "way",
+  "id": 352742646,
+  "center": {
+    "lat": 28.6856775,
+    "lon": 77.3424584
+  },
+  "nodes": [
+    3585181652,
+    3585181626,
+    3585181631,
+    3585181661,
+    3585181652
+  ],
+  "tags": {
+    "amenity": "bank",
+    "brand": "Axis Bank",
+    "brand:wikidata": "Q2003549",
+    "building": "yes",
+    "name": "Axis Bank"
+  }
+},
+{
+  "type": "way",
+  "id": 352742670,
+  "center": {
+    "lat": 28.6857193,
+    "lon": 77.3430659
+  },
+  "nodes": [
+    3585181670,
+    3585181657,
+    3585181620,
+    12894594701,
+    3585181670
+  ],
+  "tags": {
+    "amenity": "doctors",
+    "building": "yes",
+    "healthcare": "doctor",
+    "healthcare:speciality": "dermatology",
+    "layer": "-1",
+    "name": "harmukh clinic"
+  }
+},
+{
+  "type": "way",
+  "id": 352742760,
+  "center": {
+    "lat": 28.6845213,
+    "lon": 77.3428957
+  },
+  "nodes": [
+    3585180794,
+    3585180257,
+    3585180240,
+    3585180283,
+    3585180794
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Good Will Manjula Appt"
+  }
+},
+{
+  "type": "way",
+  "id": 352742826,
+  "center": {
+    "lat": 28.6868264,
+    "lon": 77.3412909
+  },
+  "nodes": [
+    3585182075,
+    3585182699,
+    3585182092,
+    3585182068,
+    3585182075
+  ],
+  "tags": {
+    "building": "yes",
+    "healthcare": "alternative",
+    "healthcare:speciality": "homeopathy",
+    "name": "homeopethic"
+  }
+},
+{
+  "type": "way",
+  "id": 352742915,
+  "center": {
+    "lat": 28.6852893,
+    "lon": 77.3432326
+  },
+  "nodes": [
+    3585181605,
+    3585181599,
+    3585180866,
+    3585180873,
+    3585181605
+  ],
+  "tags": {
+    "amenity": "bank",
+    "brand": "HDFC Bank",
+    "brand:wikidata": "Q631047",
+    "building": "yes",
+    "name": "HDFC Bank",
+    "short_name": "HDFC"
+  }
+},
+{
+  "type": "way",
+  "id": 352742973,
+  "center": {
+    "lat": 28.6870739,
+    "lon": 77.3406198
+  },
+  "nodes": [
+    3585182716,
+    3585182707,
+    3585182703,
+    3585182713,
+    3585182716
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "seema dairy",
+    "shop": "convenience"
+  }
+},
+{
+  "type": "way",
+  "id": 352742994,
+  "center": {
+    "lat": 28.6840835,
+    "lon": 77.3421155
+  },
+  "nodes": [
+    3585179777,
+    3585180197,
+    3585179744,
+    3585179726,
+    12951692325,
+    12951692326,
+    3585179777
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Shipra Apt"
+  }
+},
+{
+  "type": "way",
+  "id": 352743045,
+  "center": {
+    "lat": 28.6840996,
+    "lon": 77.3430541
+  },
+  "nodes": [
+    3585180224,
+    3585179767,
+    3585179747,
+    3585180198,
+    3585180224
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "AniTech C 81"
+  }
+},
+{
+  "type": "way",
+  "id": 352743314,
+  "center": {
+    "lat": 28.6545398,
+    "lon": 77.4371330
+  },
+  "nodes": [
+    3585182412,
+    3585182436,
+    3585182427,
+    3585182441,
+    3585182458,
+    3585183006,
+    3585182461,
+    3585182409,
+    12951277478,
+    3585182414,
+    3585182394,
+    12951277477,
+    3585181891,
+    3585181843,
+    3585181875,
+    3585181885,
+    3585182396,
+    3585182401,
+    3585182412
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Park View Apartment"
+  }
+},
+{
+  "type": "way",
+  "id": 352743629,
+  "center": {
+    "lat": 28.6543313,
+    "lon": 77.4373626
+  },
+  "nodes": [
+    3585182442,
+    3585182419,
+    3585181143,
+    3585181178,
+    3585182442
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Park View Apartments 1"
+  }
+},
+{
+  "type": "way",
+  "id": 352743688,
+  "center": {
+    "lat": 28.6548922,
+    "lon": 77.4357265
+  },
+  "nodes": [
+    3585183050,
+    3585183315,
+    3585183037,
+    3585182467,
+    3585183050
+  ],
+  "tags": {
+    "brand": "DMart",
+    "brand:wikidata": "Q5203271",
+    "building": "yes",
+    "name": "DMart",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "way",
+  "id": 352744883,
+  "center": {
+    "lat": 28.6747479,
+    "lon": 77.4544395
+  },
+  "nodes": [
+    3585199278,
+    3585199286,
+    3585199279,
+    3585199283,
+    3585199296,
+    3585199300,
+    3585199295,
+    3585199302,
+    3585199290,
+    3585199293,
+    3585199306,
+    3585199307,
+    3585199294,
+    3585199292,
+    3585199289,
+    3585199288,
+    3585199281,
+    3585199284,
+    3585199238,
+    3585199235,
+    3585199268,
+    3585199267,
+    3585199272,
+    3585199273,
+    3585199277,
+    3585199276,
+    3585199269,
+    3585199270,
+    3585199265,
+    3585199266,
+    3585199247,
+    3585199243,
+    3585199263,
+    3585199261,
+    3585199241,
+    3585199240,
+    3585199278
+  ],
+  "tags": {
+    "building": "school",
+    "name": "Ingraham Institute English School"
+  }
+},
+{
+  "type": "way",
+  "id": 352767307,
+  "center": {
+    "lat": 28.6829777,
+    "lon": 77.4515964
+  },
+  "nodes": [
+    3585379903,
+    9860837240,
+    9860837241,
+    9860837242,
+    3585379895,
+    9860837243,
+    9860837244,
+    9860837245,
+    9860837246,
+    9860837239,
+    3585379893,
+    9860837238,
+    3585379792,
+    9860837237,
+    9860837236,
+    3585379791,
+    9860837235,
+    9860837234,
+    3585379894,
+    9860837233,
+    9860837232,
+    9860837231,
+    9860837230,
+    3585379898,
+    3585379901,
+    3585379902,
+    3585379906,
+    3585379907,
+    3585379903
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad, Uttar Pradesh",
+    "addr:postcode": "201002",
+    "addr:street": "Near Little Leaders Play School",
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "denomination": "hare_krishna",
+    "name": "ISKCON Temple, Ghaziabad",
+    "name:hi": "इस्कॉन मंदिर, गाजियाबाद",
+    "religion": "hindu"
+  }
+},
+{
+  "type": "way",
+  "id": 352767886,
+  "center": {
+    "lat": 28.6782398,
+    "lon": 77.4327870
+  },
+  "nodes": [
+    3585379982,
+    3585379987,
+    3585379986,
+    3585379980,
+    3585379982
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Jain's C 243"
+  }
+},
+{
+  "type": "way",
+  "id": 352768271,
+  "center": {
+    "lat": 28.6591780,
+    "lon": 77.4357646
+  },
+  "nodes": [
+    3585384011,
+    3585384044,
+    3585384027,
+    3585383994,
+    3585384011
+  ],
+  "tags": {
+    "amenity": "bank",
+    "brand": "HDFC Bank",
+    "brand:wikidata": "Q631047",
+    "building": "yes",
+    "name": "HDFC Bank",
+    "short_name": "HDFC"
+  }
+},
+{
+  "type": "way",
+  "id": 352768316,
+  "center": {
+    "lat": 28.6589873,
+    "lon": 77.4351731
+  },
+  "nodes": [
+    3585383574,
+    3585383555,
+    3585383529,
+    3585383543,
+    3585383574
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "COBB Italy",
+    "shop": "clothes"
+  }
+},
+{
+  "type": "way",
+  "id": 352768328,
+  "center": {
+    "lat": 28.6595194,
+    "lon": 77.4358432
+  },
+  "nodes": [
+    3585384622,
+    3585384482,
+    3585384426,
+    3585384452,
+    3585384622
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Louis Phillipe",
+    "shop": "clothes"
+  }
+},
+{
+  "type": "way",
+  "id": 352768375,
+  "center": {
+    "lat": 28.6593534,
+    "lon": 77.4353033
+  },
+  "nodes": [
+    3585384410,
+    3585384090,
+    3585384051,
+    3585384072,
+    3585384410
+  ],
+  "tags": {
+    "brand": "Kalyan Jewellers",
+    "brand:wikidata": "Q6354854",
+    "building": "yes",
+    "name": "Kalyan Jewellers",
+    "shop": "jewelry"
+  }
+},
+{
+  "type": "way",
+  "id": 352770478,
+  "center": {
+    "lat": 28.6739041,
+    "lon": 77.4504109
+  },
+  "nodes": [
+    3585398401,
+    3585398404,
+    3585398400,
+    3585398399,
+    3585398401
+  ],
+  "tags": {
+    "building": "school",
+    "name": "Ingraham Higher Secondary School"
+  }
+},
+{
+  "type": "way",
+  "id": 352779286,
+  "center": {
+    "lat": 28.6616505,
+    "lon": 77.4387262
+  },
+  "nodes": [
+    3585486244,
+    3585486241,
+    3585486227,
+    3585486214,
+    3585485831,
+    3585485674,
+    3585485333,
+    3585485342,
+    3585485681,
+    3585485675,
+    3585485838,
+    3585485843,
+    3585485848,
+    3585486244
+  ],
+  "tags": {
+    "building": "school",
+    "name": "Saraswati Shisu Mandir"
+  }
+},
+{
+  "type": "way",
+  "id": 352779365,
+  "center": {
+    "lat": 28.6614005,
+    "lon": 77.4384419
+  },
+  "nodes": [
+    3585485350,
+    3585485387,
+    3585485357,
+    3585485320,
+    3585485350
+  ],
+  "tags": {
+    "building": "school",
+    "name": "Saraswati Shisu Mandir"
+  }
+},
+{
+  "type": "way",
+  "id": 352779704,
+  "center": {
+    "lat": 28.6746860,
+    "lon": 77.4399029
+  },
+  "nodes": [
+    3585488095,
+    3585488097,
+    3585488068,
+    3585488065,
+    3585488095
+  ],
+  "tags": {
+    "amenity": "restaurant",
+    "brand": "Pizza Hut",
+    "brand:wikidata": "Q191615",
+    "brand:wikipedia": "en:Pizza Hut",
+    "building": "yes",
+    "cuisine": "pizza",
+    "name": "Pizza Hut"
+  }
+},
+{
+  "type": "way",
+  "id": 352779875,
+  "center": {
+    "lat": 28.6615973,
+    "lon": 77.4381978
+  },
+  "nodes": [
+    3585485833,
+    3585485806,
+    3585485355,
+    3585485371,
+    3585485833
+  ],
+  "tags": {
+    "building": "school",
+    "name": "Saraswati Shisu Mandir"
+  }
+},
+{
+  "type": "way",
+  "id": 352779919,
+  "center": {
+    "lat": 28.6612644,
+    "lon": 77.4381799
+  },
+  "nodes": [
+    3585485349,
+    3585485340,
+    3585485061,
+    3585485077,
+    3585485349
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Saraswati Shisu Mandir"
+  }
+},
+{
+  "type": "way",
+  "id": 352780030,
+  "center": {
+    "lat": 28.6612864,
+    "lon": 77.4387846
+  },
+  "nodes": [
+    3585485312,
+    3585485356,
+    3585485324,
+    3585485070,
+    3585485080,
+    3585485091,
+    3585485312
+  ],
+  "tags": {
+    "building": "school",
+    "name": "Saraswati Shisu Mandir"
+  }
+},
+{
+  "type": "way",
+  "id": 352780239,
+  "center": {
+    "lat": 28.6471478,
+    "lon": 77.4323470
+  },
+  "nodes": [
+    3585491800,
+    3585491474,
+    3585491464,
+    3585491484,
+    3585491800
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Electric Loco Shed, Ghaziabad (NR)",
+    "operator": "Northern Railway of India"
+  }
+},
+{
+  "type": "way",
+  "id": 352780671,
+  "center": {
+    "lat": 28.6618120,
+    "lon": 77.3255006
+  },
+  "nodes": [
+    3585495602,
+    3585495605,
+    3585495598,
+    3585495597,
+    3585495601,
+    3585495596,
+    3585495602
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "C184"
+  }
+},
+{
+  "type": "way",
+  "id": 352783969,
+  "center": {
+    "lat": 28.6496063,
+    "lon": 77.3420876
+  },
+  "nodes": [
+    3585529871,
+    3585529877,
+    3585529878,
+    3585529872,
+    3585529871
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:housenumber": "4F-CS-28, Ansal Plaza, Sector - 1, Vaishali",
+    "addr:postcode": "201010",
+    "addr:street": "Madan Mohan Malviya Marg",
+    "building": "commercial",
+    "building:levels": "4",
+    "name": "KBV Research",
+    "smoking": "outside"
+  }
+},
+{
+  "type": "way",
+  "id": 352785079,
+  "center": {
+    "lat": 28.6922295,
+    "lon": 77.3432721
+  },
+  "nodes": [
+    3585542186,
+    3585542185,
+    3585542179,
+    3585542181,
+    3585542186
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Gopal Apartment 3"
+  }
+},
+{
+  "type": "way",
+  "id": 352785094,
+  "center": {
+    "lat": 28.6405698,
+    "lon": 77.3782276
+  },
+  "nodes": [
+    3585542832,
+    3585542831,
+    3585542826,
+    3585542825,
+    3585542469,
+    3585542470,
+    3585542793,
+    3585542795,
+    3585542832
+  ],
+  "tags": {
+    "building": "retail",
+    "name": "Jaipuria Mall"
+  }
+},
+{
+  "type": "way",
+  "id": 352785096,
+  "center": {
+    "lat": 28.6356616,
+    "lon": 77.3743092
+  },
+  "nodes": [
+    3585542467,
+    3591680750,
+    3591680753,
+    5200574280,
+    5200574279,
+    3585542468,
+    3585542467
+  ],
+  "tags": {
+    "addr:housename": "Regalia Heights",
+    "addr:postcode": "201014",
+    "addr:street": "Shipra Sun City Road",
+    "building": "residential",
+    "building:levels": "18",
+    "name": "Regalia Heights"
+  }
+},
+{
+  "type": "way",
+  "id": 352795682,
+  "center": {
+    "lat": 28.6721345,
+    "lon": 77.4362982
+  },
+  "nodes": [
+    3585648114,
+    3585648094,
+    3585648047,
+    3585648067,
+    3585648114
+  ],
+  "tags": {
+    "amenity": "social_centre",
+    "building": "yes",
+    "name": "Hindi Bhawan",
+    "source:name": "survey"
+  }
+},
+{
+  "type": "way",
+  "id": 352795914,
+  "center": {
+    "lat": 28.6648280,
+    "lon": 77.4370519
+  },
+  "nodes": [
+    3585646468,
+    3585646469,
+    3585646440,
+    3585646439,
+    3585646468
+  ],
+  "tags": {
+    "amenity": "doctors",
+    "building": "yes",
+    "healthcare": "doctor",
+    "layer": "1",
+    "name": "Homopathic medicines"
+  }
+},
+{
+  "type": "way",
+  "id": 352800547,
+  "center": {
+    "lat": 28.6876329,
+    "lon": 77.4510004
+  },
+  "nodes": [
+    3585696780,
+    3585697015,
+    3585696776,
+    3585696754,
+    3585696780
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:housenumber": "B1 & B2",
+    "addr:postcode": "201002",
+    "addr:street": "Sector 23, Sanjay Nagar",
+    "building": "hospital",
+    "description": "The Yashoda Cancer Institute has a team of highly skilled and experienced doctors who specialize in various fields of cancer treatment. The institute has medical oncologists, radiation oncologists, surgical oncologists.",
+    "image": "https://www.yashodahealthcare.com/yashoda-cancer-institute",
+    "name": "Yashoda Cancer Institute",
+    "website": "https://www.yashodahealthcare.com/yashoda-cancer-institute"
+  }
+},
+{
+  "type": "way",
+  "id": 352800679,
+  "center": {
+    "lat": 28.6641131,
+    "lon": 77.4348336
+  },
+  "nodes": [
+    3585697447,
+    3585697457,
+    3585697441,
+    3585697432,
+    3585697447
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Goodluck India Limited"
+  }
+},
+{
+  "type": "way",
+  "id": 352800782,
+  "center": {
+    "lat": 28.6642354,
+    "lon": 77.4347681
+  },
+  "nodes": [
+    3585697466,
+    3585697476,
+    3585697461,
+    3585697450,
+    3585697466
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Goodluck India Limited"
+  }
+},
+{
+  "type": "way",
+  "id": 352921089,
+  "center": {
+    "lat": 28.6697718,
+    "lon": 77.4322689
+  },
+  "nodes": [
+    3587087125,
+    3587087137,
+    3587086957,
+    3587086962,
+    3587086899,
+    3587086897,
+    3587086871,
+    3587086870,
+    3587086862,
+    3587086860,
+    3587086852,
+    3587086851,
+    3587086840,
+    3587086838,
+    3587086825,
+    3587086821,
+    3587087125
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:district": "uttar pradesh",
+    "addr:postcode": "201001",
+    "addr:street": "patrl nagar road",
+    "building": "hospital",
+    "building:levels": "5",
+    "name": "Santosh hospital"
+  }
+},
+{
+  "type": "way",
+  "id": 352921169,
+  "center": {
+    "lat": 28.6753083,
+    "lon": 77.4725901
+  },
+  "nodes": [
+    3587087275,
+    3587087284,
+    12953183897,
+    12953183898,
+    3587087277,
+    3587087272,
+    3587087275
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Bharti’s House"
+  }
+},
+{
+  "type": "way",
+  "id": 352927459,
+  "center": {
+    "lat": 28.6714335,
+    "lon": 77.4604264
+  },
+  "nodes": [
+    3587188558,
+    3587188555,
+    3587188556,
+    3587188554,
+    3587188553,
+    3587188546,
+    3587188545,
+    3595751585,
+    3595751586,
+    3595751587,
+    3595751588,
+    3595751590,
+    3595751589,
+    3587188557,
+    3587188558
+  ],
+  "tags": {
+    "building": "school",
+    "name": "St. Mary's Convent School Shastri Nagar"
+  }
+},
+{
+  "type": "way",
+  "id": 352929876,
+  "center": {
+    "lat": 28.6462788,
+    "lon": 77.3808403
+  },
+  "nodes": [
+    3587209720,
+    3587209719,
+    3587209715,
+    3587209717,
+    3587209711,
+    3587209710,
+    3587209707,
+    3587209705,
+    3587209699,
+    3587209703,
+    3587209720
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Gaur"
+  }
+},
+{
+  "type": "way",
+  "id": 352929928,
+  "center": {
+    "lat": 28.6366385,
+    "lon": 77.3688985
+  },
+  "nodes": [
+    3587209135,
+    3587209137,
+    3587209118,
+    3587209117,
+    3587209135
+  ],
+  "tags": {
+    "building": "retail",
+    "name": "Majestic Arcade"
+  }
+},
+{
+  "type": "way",
+  "id": 352932567,
+  "center": {
+    "lat": 28.6963626,
+    "lon": 77.4842173
+  },
+  "nodes": [
+    3587231059,
+    3587231032,
+    3587231025,
+    3587231048,
+    3587231059
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Mathru Chaya"
+  }
+},
+{
+  "type": "way",
+  "id": 352963387,
+  "center": {
+    "lat": 28.6659730,
+    "lon": 77.4708817
+  },
+  "nodes": [
+    3587491125,
+    3587491126,
+    3587491122,
+    3587491121,
+    3587491125
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:district": "Ghaziabad",
+    "addr:housenumber": "105,",
+    "addr:postcode": "201002",
+    "addr:street": "Chiranjeev vihar, sector-2,",
+    "building": "office",
+    "building:levels": "2",
+    "description": "Manufacturer and exporter of catalytic ethylene generators for fruit ripening.",
+    "name": "HundredX Agritech Pvt Ltd",
+    "smoking": "outside",
+    "website": "https://www.hundredxag.com"
+  }
+},
+{
+  "type": "way",
+  "id": 352966118,
+  "center": {
+    "lat": 28.6553233,
+    "lon": 77.4524742
+  },
+  "nodes": [
+    3587510516,
+    3587510514,
+    3587510513,
+    3587510515,
+    3587510516
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:district": "Ghaziabad",
+    "addr:housenumber": "4/54",
+    "addr:postcode": "201002",
+    "addr:street": "Kavi Nagar industrial area",
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "name": "Shri Surya Putra Shani Dev Samiti"
+  }
+},
+{
+  "type": "way",
+  "id": 353150400,
+  "center": {
+    "lat": 28.6532337,
+    "lon": 77.4520649
+  },
+  "nodes": [
+    3589177479,
+    3589177478,
+    3589177476,
+    3589177477,
+    3589177479
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:district": "Ghaziabad",
+    "addr:housenumber": "Vivekanand Nagar",
+    "addr:postcode": "201002",
+    "amenity": "post_office",
+    "building": "yes",
+    "name": "Vivekanand Nagar Post office"
+  }
+},
+{
+  "type": "way",
+  "id": 353150405,
+  "center": {
+    "lat": 28.6547073,
+    "lon": 77.4516692
+  },
+  "nodes": [
+    3589179798,
+    3589179802,
+    3589177486,
+    3589177487,
+    3589177485,
+    3589177484,
+    3589179798
+  ],
+  "tags": {
+    "building": "school",
+    "name": "MVM School"
+  }
+},
+{
+  "type": "way",
+  "id": 353151062,
+  "center": {
+    "lat": 28.6792916,
+    "lon": 77.3435401
+  },
+  "nodes": [
+    3589182116,
+    3589182117,
+    3589182114,
+    3589182115,
+    3589182116
+  ],
+  "tags": {
+    "building": "school",
+    "name": "N R Aryan Public School"
+  }
+},
+{
+  "type": "way",
+  "id": 353176307,
+  "center": {
+    "lat": 28.6747238,
+    "lon": 77.4500754
+  },
+  "nodes": [
+    3589416791,
+    3589416785,
+    3589416786,
+    3589416789,
+    3589416790,
+    3589416795,
+    3589416794,
+    3589416799,
+    3589416796,
+    3589416802,
+    3589416791
+  ],
+  "tags": {
+    "amenity": "bank",
+    "building": "yes",
+    "name": "Allahabad bank Ingraham Institute"
+  }
+},
+{
+  "type": "way",
+  "id": 353757471,
+  "center": {
+    "lat": 28.6554240,
+    "lon": 77.4277124
+  },
+  "nodes": [
+    3595728969,
+    3595728922,
+    3595728896,
+    3595728923,
+    3595728969
+  ],
+  "tags": {
+    "amenity": "post_office",
+    "building": "yes",
+    "name": "Post Office Ghaziabad",
+    "operator": "India Post",
+    "operator:wikidata": "Q3519720"
+  }
+},
+{
+  "type": "way",
+  "id": 353768985,
+  "center": {
+    "lat": 28.6709365,
+    "lon": 77.4594730
+  },
+  "nodes": [
+    3595815450,
+    3595815455,
+    3595815452,
+    3595815449,
+    3595815450
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "SubhashTailor"
+  }
+},
+{
+  "type": "way",
+  "id": 354309526,
+  "center": {
+    "lat": 28.6823034,
+    "lon": 77.4886417
+  },
+  "nodes": [
+    3600430578,
+    12951115045,
+    12951115044,
+    3600430580,
+    3600430574,
+    3600430573,
+    3600430578
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Vijendra Smrithi"
+  }
+},
+{
+  "type": "way",
+  "id": 354710481,
+  "center": {
+    "lat": 28.6515376,
+    "lon": 77.4117691
+  },
+  "nodes": [
+    3604132725,
+    3604132718,
+    3604132719,
+    3604132715,
+    3604132714,
+    3604132705,
+    3604132693,
+    3604132694,
+    3604132709,
+    3604132712,
+    3604132720,
+    3604132716,
+    3604132722,
+    3604132724,
+    3604132730,
+    3604132728,
+    3604132733,
+    3604132731,
+    3604132726,
+    3604132725
+  ],
+  "tags": {
+    "building": "school",
+    "name": "Leelawati Public School"
+  }
+},
+{
+  "type": "way",
+  "id": 354712325,
+  "center": {
+    "lat": 28.6521217,
+    "lon": 77.4135902
+  },
+  "nodes": [
+    3604162161,
+    3604162160,
+    3604162154,
+    3604162157,
+    3604162161
+  ],
+  "tags": {
+    "building": "school",
+    "name": "Golden Public School"
+  }
+},
+{
+  "type": "way",
+  "id": 354776665,
+  "center": {
+    "lat": 28.6817779,
+    "lon": 77.3400196
+  },
+  "nodes": [
+    3604554122,
+    3604554124,
+    3604550583,
+    3604550579,
+    3604554122
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Jai Durge Aptt 2"
+  }
+},
+{
+  "type": "way",
+  "id": 354779352,
+  "center": {
+    "lat": 28.6694826,
+    "lon": 77.4690970
+  },
+  "nodes": [
+    3604577691,
+    3584999438,
+    3584999437,
+    3604577692,
+    3604577691
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:housenumber": "A-7",
+    "addr:postcode": "201001",
+    "addr:street": "Sector 5A, Chiranjeev Vihar",
+    "building": "house",
+    "building:levels": "2",
+    "name": "Abhi Agarwal's House"
+  }
+},
+{
+  "type": "way",
+  "id": 354780114,
+  "center": {
+    "lat": 28.6731414,
+    "lon": 77.4745345
+  },
+  "nodes": [
+    3604583350,
+    3604583351,
+    3604583352,
+    3604583353,
+    3604583354,
+    3604583355,
+    3604583356,
+    3604583357,
+    3604583358,
+    3604583359,
+    3604583350
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad, UP, India",
+    "addr:postcode": "201001",
+    "addr:street": "Chiranjeev Vihar",
+    "building": "commercial",
+    "building:levels": "2",
+    "name": "Ansal Chiranjev Plaza -1",
+    "smoking": "no"
+  }
+},
+{
+  "type": "way",
+  "id": 354785535,
+  "center": {
+    "lat": 28.6869933,
+    "lon": 77.3410222
+  },
+  "nodes": [
+    3604612165,
+    3604612819,
+    3604612504,
+    3604612503,
+    3604612165
+  ],
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "name": "shiv chowk",
+    "religion": "hindu"
+  }
+},
+{
+  "type": "way",
+  "id": 374524928,
+  "center": {
+    "lat": 28.6444578,
+    "lon": 77.3818883
+  },
+  "nodes": [
+    3779215459,
+    3779215460,
+    3779215461,
+    3779215462,
+    3779215463,
+    3779215464,
+    3779215465,
+    3779215466,
+    3779215467,
+    3779215468,
+    3779215469,
+    3779215470,
+    3779215471,
+    3779215472,
+    3779215473,
+    3779215474,
+    3779215475,
+    3779215476,
+    3779215477,
+    3779215478,
+    3779215479,
+    3779215480,
+    3779215481,
+    3779215482,
+    3779215459
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:postcode": "201014",
+    "addr:street": "Mall Road",
+    "building": "apartments",
+    "name": "Angel Mercury Apartment"
+  }
+},
+{
+  "type": "way",
+  "id": 374534760,
+  "center": {
+    "lat": 28.6930066,
+    "lon": 77.3437430
+  },
+  "nodes": [
+    3779305259,
+    3779305260,
+    3779305261,
+    3779305262,
+    3779305259
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Ajnara Residency"
+  }
+},
+{
+  "type": "way",
+  "id": 377692530,
+  "center": {
+    "lat": 28.6521071,
+    "lon": 77.3486663
+  },
+  "nodes": [
+    3810795330,
+    3810795331,
+    3810795332,
+    3810795333,
+    3810795330
+  ],
+  "tags": {
+    "building": "residential",
+    "building:levels": "14",
+    "name": "JM Park Sapphire"
+  }
+},
+{
+  "type": "way",
+  "id": 377692531,
+  "center": {
+    "lat": 28.6504175,
+    "lon": 77.3509089
+  },
+  "nodes": [
+    3810795334,
+    3810795335,
+    3810795336,
+    3810795337,
+    3810795334
+  ],
+  "tags": {
+    "building": "residential",
+    "name": "Pearl Court"
+  }
+},
+{
+  "type": "way",
+  "id": 401767560,
+  "center": {
+    "lat": 28.6408242,
+    "lon": 77.3694285
+  },
+  "nodes": [
+    4041741189,
+    4041741190,
+    4041741191,
+    4041741192,
+    4041741193,
+    4041741194,
+    4041741195,
+    3574558727,
+    4041741196,
+    4041741197,
+    4041741198,
+    4041741199,
+    4041741200,
+    4041741201,
+    4041741202,
+    4041741203,
+    4041741204,
+    4041741205,
+    4041741206,
+    4041741207,
+    4041741208,
+    4041741209,
+    4041741210,
+    4041741211,
+    4041741189
+  ],
+  "tags": {
+    "building": "commercial",
+    "name": "Presidium School Indirapuram"
+  }
+},
+{
+  "type": "way",
+  "id": 472952188,
+  "center": {
+    "lat": 28.6530888,
+    "lon": 77.3555025
+  },
+  "nodes": [
+    4671268165,
+    4671268166,
+    4671268167,
+    4671268168,
+    4671268169,
+    4671268165
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:housenumber": "Vasundhara Post Office",
+    "addr:postcode": "201012",
+    "addr:street": "Sector 17",
+    "addr:unit": "Vasundhara",
+    "amenity": "post_office",
+    "building": "yes",
+    "name": "Vasundhara Post Office",
+    "operator": "India Post"
+  }
+},
+{
+  "type": "way",
+  "id": 472952189,
+  "center": {
+    "lat": 28.6520096,
+    "lon": 77.3558766
+  },
+  "nodes": [
+    4671268170,
+    4671268171,
+    4671268172,
+    4671268173,
+    4671268170
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:housenumber": "Police Post, Sector 17",
+    "addr:postcode": "201012",
+    "addr:street": "Vasundhra",
+    "amenity": "police",
+    "building": "yes",
+    "name": "Police Post, Sector 17, Vasundhara",
+    "operator": "Uttar Pradesh Police"
+  }
+},
+{
+  "type": "way",
+  "id": 473613239,
+  "center": {
+    "lat": 28.6398849,
+    "lon": 77.3265582
+  },
+  "nodes": [
+    4676901017,
+    4676901018,
+    4676901006,
+    4676901007,
+    4676901002,
+    4676901001,
+    4676900998,
+    4676900997,
+    4676901000,
+    4676900999,
+    4676901008,
+    4676901009,
+    4676901013,
+    4676901012,
+    4676901015,
+    4676901016,
+    4676901017
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Angel Mega Mall",
+    "shop": "mall"
+  }
+},
+{
+  "type": "way",
+  "id": 473613250,
+  "center": {
+    "lat": 28.6428950,
+    "lon": 77.3408994
+  },
+  "nodes": [
+    4676901052,
+    4676901054,
+    4676901056,
+    4676901058,
+    4676901053,
+    4676901055,
+    4676901051,
+    4676901047,
+    4676901049,
+    4676901050,
+    4676901052
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Shopprix Mall",
+    "shop": "mall"
+  }
+},
+{
+  "type": "way",
+  "id": 473613274,
+  "center": {
+    "lat": 28.6399654,
+    "lon": 77.3428287
+  },
+  "nodes": [
+    4676901010,
+    4676901014,
+    4676901011,
+    4676901005,
+    4676901010
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Skytech Magadh"
+  }
+},
+{
+  "type": "way",
+  "id": 475412046,
+  "center": {
+    "lat": 28.6554066,
+    "lon": 77.3682583
+  },
+  "nodes": [
+    4691579140,
+    4691579141,
+    4691579142,
+    4691579143,
+    4691579140
+  ],
+  "tags": {
+    "addr:city": "ghaziabad",
+    "addr:postcode": "201012",
+    "addr:street": "Sec-11, Behind Mother Dairy Booth, Vasundhara",
+    "building": "school",
+    "email": "vidyabalbhawanvasundhara@gmail.com",
+    "name": "Vidya Bal Bhawan Public School",
+    "phone": "0120-4554649"
+  }
+},
+{
+  "type": "way",
+  "id": 483434521,
+  "center": {
+    "lat": 28.6762422,
+    "lon": 77.5010962
+  },
+  "nodes": [
+    4761698546,
+    4761698578,
+    4761698577,
+    4761698576,
+    4761698575,
+    4761698579,
+    4761698580,
+    4761698574,
+    4761698587,
+    4761698586,
+    4761698585,
+    4761698584,
+    4761698543,
+    4761698554,
+    4761698572,
+    4761698555,
+    4761698556,
+    4761698557,
+    4761698558,
+    4761698559,
+    4761698560,
+    4761698561,
+    4761698562,
+    4761698563,
+    4761698564,
+    4765115934,
+    4761698565,
+    4761698566,
+    4761698567,
+    4761698568,
+    4761698569,
+    4761698570,
+    4761698571,
+    4761698550,
+    4761698549,
+    4761698548,
+    4761698547,
+    4761698546
+  ],
+  "tags": {
+    "building": "university",
+    "building:material": "brick",
+    "name": "Back Block",
+    "operator": "AKGEC",
+    "roof:colour": "blanchedalmond",
+    "roof:material": "concrete"
+  }
+},
+{
+  "type": "way",
+  "id": 483434526,
+  "center": {
+    "lat": 28.6766360,
+    "lon": 77.5007748
+  },
+  "nodes": [
+    4761695355,
+    4761698588,
+    4765115935,
+    4761698589,
+    4761695354,
+    4761698593,
+    4761698592,
+    4761698591,
+    4761698590,
+    4761695355
+  ],
+  "tags": {
+    "building": "university",
+    "building:colour": "burlywood",
+    "building:levels": "3",
+    "building:material": "concrete",
+    "height": "10.01",
+    "name": "Main Block",
+    "operator": "AKGEC",
+    "roof:colour": "dimgrey",
+    "roof:height": "0.02",
+    "roof:material": "concrete"
+  }
+},
+{
+  "type": "way",
+  "id": 483465652,
+  "center": {
+    "lat": 28.6767931,
+    "lon": 77.4999315
+  },
+  "nodes": [
+    4762024981,
+    4762024980,
+    4765115933,
+    4762024979,
+    4762024978,
+    4762024977,
+    4762024976,
+    4762024975,
+    4762024974,
+    4762024973,
+    4762024972,
+    4762024971,
+    4762024970,
+    4762024969,
+    4762024968,
+    4762024967,
+    4762024966,
+    4762024965,
+    4762024981
+  ],
+  "tags": {
+    "building": "university",
+    "building:material": "concrete",
+    "name": "MCA Block",
+    "operator": "AKGEC",
+    "roof:colour": "dimgrey",
+    "roof:material": "concrete"
+  }
+},
+{
+  "type": "way",
+  "id": 483465653,
+  "center": {
+    "lat": 28.6775567,
+    "lon": 77.5020196
+  },
+  "nodes": [
+    4762024997,
+    4762024996,
+    4762024995,
+    4762024994,
+    4762024993,
+    4762024992,
+    4762024991,
+    4762024990,
+    4762024989,
+    4762024988,
+    4762024987,
+    4762024986,
+    4762024985,
+    4762024984,
+    4762024983,
+    4762024982,
+    7873117915,
+    4762024997
+  ],
+  "tags": {
+    "building": "yes",
+    "building:material": "brick",
+    "name": "Faith centre",
+    "operator": "AKGEC",
+    "roof:colour": "dimgrey",
+    "roof:material": "3",
+    "roof:shape": "pyramidal"
+  }
+},
+{
+  "type": "way",
+  "id": 483465662,
+  "center": {
+    "lat": 28.6743901,
+    "lon": 77.5037434
+  },
+  "nodes": [
+    4762026586,
+    4762026585,
+    4762026584,
+    4762026583,
+    4762026582,
+    4762026581,
+    4762026580,
+    4762026579,
+    4762026578,
+    4762026577,
+    4762026576,
+    4762026575,
+    4762026574,
+    4762026573,
+    4762026572,
+    4762026571,
+    4762026570,
+    4762026569,
+    4762026568,
+    4762026567,
+    4762026586
+  ],
+  "tags": {
+    "building": "yes",
+    "building:material": "brick",
+    "name": "Mess",
+    "operator": "AKGEC",
+    "roof:colour": "blanchedalmond",
+    "roof:material": "concrete"
+  }
+},
+{
+  "type": "way",
+  "id": 483465678,
+  "center": {
+    "lat": 28.6764213,
+    "lon": 77.5022788
+  },
+  "nodes": [
+    4762026807,
+    4762026806,
+    4762026805,
+    4762026804,
+    4762026803,
+    4762026802,
+    4762026801,
+    4762026800,
+    4762026807
+  ],
+  "tags": {
+    "building": "yes",
+    "building:material": "brick",
+    "name": "Workshop",
+    "operator": "AKGEC",
+    "roof:material": "brick"
+  }
+},
+{
+  "type": "way",
+  "id": 483465680,
+  "center": {
+    "lat": 28.6766517,
+    "lon": 77.5018498
+  },
+  "nodes": [
+    4762026936,
+    4762026808,
+    4762026935,
+    4762026934,
+    4762026933,
+    4762026932,
+    4762026931,
+    4762026930,
+    4762026929,
+    4762026928,
+    4762026927,
+    4762026926,
+    4762026925,
+    4762026924,
+    4762026923,
+    4762026922,
+    4762026921,
+    4762026820,
+    4762026819,
+    4762026818,
+    4762026817,
+    4762026816,
+    4762026815,
+    4762026814,
+    4762026813,
+    4762026811,
+    4762026810,
+    4762026809,
+    4762026936
+  ],
+  "tags": {
+    "building": "university",
+    "building:levels": "3",
+    "building:material": "brick",
+    "name": "Mechanical Block",
+    "operator": "AKGEC",
+    "roof:colour": "blanchedalmond",
+    "roof:material": "concrete"
+  }
+},
+{
+  "type": "way",
+  "id": 487614701,
+  "center": {
+    "lat": 28.7272612,
+    "lon": 77.3369395
+  },
+  "nodes": [
+    9835502406,
+    4800616985,
+    4800616986,
+    4800616987,
+    4800616988,
+    4800616989,
+    4800642933,
+    9835502406
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:housenumber": "Bharat City",
+    "addr:street": "Indraprastha Yojna",
+    "building": "residential",
+    "building:levels": "13",
+    "name": "Tower A-B"
+  }
+},
+{
+  "type": "way",
+  "id": 487614702,
+  "center": {
+    "lat": 28.7275887,
+    "lon": 77.3365510
+  },
+  "nodes": [
+    4800616990,
+    4800616991,
+    4800616984,
+    4800616992,
+    4800616993,
+    4800616994,
+    4800616995,
+    4800616990
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:housenumber": "Bharat City",
+    "addr:street": "Indraprastha Yojna",
+    "building": "residential",
+    "building:levels": "13",
+    "name": "Tower C-D"
+  }
+},
+{
+  "type": "way",
+  "id": 487614704,
+  "center": {
+    "lat": 28.7290307,
+    "lon": 77.3377043
+  },
+  "nodes": [
+    4800617002,
+    4800617003,
+    4800617004,
+    4800617005,
+    4800617006,
+    4800617007,
+    4800617008,
+    4800617009,
+    4800617010,
+    4800617002
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:housenumber": "Bharat City",
+    "addr:street": "Indraprastha Yojna",
+    "building": "residential",
+    "building:levels": "14",
+    "name": "Residential Tower"
+  }
+},
+{
+  "type": "way",
+  "id": 487614705,
+  "center": {
+    "lat": 28.7290637,
+    "lon": 77.3385537
+  },
+  "nodes": [
+    4800617011,
+    4800617012,
+    4800617013,
+    4800617014,
+    4800617015,
+    4800617016,
+    4800617011
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:housenumber": "Bharat City",
+    "addr:street": "Indraprastha Yojna",
+    "building": "residential",
+    "building:levels": "14",
+    "name": "Phase 2 Tower"
+  }
+},
+{
+  "type": "way",
+  "id": 487653616,
+  "center": {
+    "lat": 28.7263048,
+    "lon": 77.3358434
+  },
+  "nodes": [
+    4800937591,
+    4800937592,
+    4800937593,
+    4800937594,
+    4800937591
+  ],
+  "tags": {
+    "amenity": "school",
+    "building": "school",
+    "name": "Local School"
+  }
+},
+{
+  "type": "way",
+  "id": 487653621,
+  "center": {
+    "lat": 28.7257514,
+    "lon": 77.3356496
+  },
+  "nodes": [
+    4800938034,
+    4800937618,
+    4800937540,
+    4800937537,
+    4800938034
+  ],
+  "tags": {
+    "amenity": "marketplace",
+    "building": "yes",
+    "name": "Market Opp. Bharat City"
+  }
+},
+{
+  "type": "way",
+  "id": 528353805,
+  "center": {
+    "lat": 28.6344647,
+    "lon": 77.3418306
+  },
+  "nodes": [
+    5134767445,
+    5134767446,
+    5134767447,
+    5134767448,
+    5134767449,
+    5134767450,
+    5134767445
+  ],
+  "tags": {
+    "building": "yes",
+    "building:levels": "3",
+    "club": "sport,social,cinema,gym,hall",
+    "name": "gaur green avenue club",
+    "opening_hours": "Tu-Su 08:00-22:00",
+    "operator": "GGARWA"
+  }
+},
+{
+  "type": "way",
+  "id": 533892896,
+  "center": {
+    "lat": 28.6368307,
+    "lon": 77.3426181
+  },
+  "nodes": [
+    5178921700,
+    5178921701,
+    4676900464,
+    4676900466,
+    5178921702,
+    5178921703,
+    5178921700
+  ],
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "denomination": "hindu",
+    "name": "hanuman mandir",
+    "religion": "hindu"
+  }
+},
+{
+  "type": "way",
+  "id": 536967391,
+  "center": {
+    "lat": 28.6398640,
+    "lon": 77.3685388
+  },
+  "nodes": [
+    5200574272,
+    5200574273,
+    5200574274,
+    5200574275,
+    3574558717,
+    3574558723,
+    5200574276,
+    5200574277,
+    5200574278,
+    5200574272
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Indirapuram Habitat Center",
+    "shop": "mall"
+  }
+},
+{
+  "type": "way",
+  "id": 574281386,
+  "center": {
+    "lat": 28.6716282,
+    "lon": 77.3299532
+  },
+  "nodes": [
+    5512973168,
+    5512973169,
+    5512973170,
+    5512973171,
+    5512973168
+  ],
+  "tags": {
+    "building": "apartments",
+    "name": "Shivalika Apartments"
+  }
+},
+{
+  "type": "way",
+  "id": 611947080,
+  "center": {
+    "lat": 28.6417363,
+    "lon": 77.3228525
+  },
+  "nodes": [
+    5793351671,
+    5793351672,
+    5793351673,
+    5793351674,
+    5793351675,
+    5793351676,
+    5793351677,
+    5793351678,
+    5793351679,
+    5793351680,
+    5793351681,
+    5793351682,
+    5793351683,
+    5793351684,
+    5793351685,
+    5793351686,
+    5793351687,
+    5793351688,
+    5793351671
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:postcode": "201010",
+    "addr:street": "Kaushambi",
+    "building": "apartments",
+    "building:levels": "14",
+    "name": "Sumeru Apartments"
+  }
+},
+{
+  "type": "way",
+  "id": 630106347,
+  "center": {
+    "lat": 28.6289250,
+    "lon": 77.4392237
+  },
+  "nodes": [
+    5950438189,
+    5950438190,
+    5950438191,
+    5950438192,
+    5950438193,
+    5950438194,
+    5950438195,
+    5950438196,
+    5950438189
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:housenumber": "Yantra",
+    "addr:postcode": "201016",
+    "addr:street": "Paramount Symphony",
+    "building": "apartments",
+    "building:flats": "22",
+    "building:levels": "22",
+    "name": "Yantra"
+  }
+},
+{
+  "type": "way",
+  "id": 630106348,
+  "center": {
+    "lat": 28.6285109,
+    "lon": 77.4390288
+  },
+  "nodes": [
+    5950438197,
+    5950438198,
+    5950438199,
+    5950438200,
+    5950438201,
+    5950438202,
+    5950438203,
+    5950438204,
+    5950438197
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:housenumber": "Nimbus",
+    "addr:postcode": "201016",
+    "addr:street": "Paramount Symphony",
+    "building": "apartments",
+    "building:flats": "22",
+    "building:levels": "22",
+    "name": "Nimbus"
+  }
+},
+{
+  "type": "way",
+  "id": 630106349,
+  "center": {
+    "lat": 28.6280708,
+    "lon": 77.4389100
+  },
+  "nodes": [
+    5950438205,
+    5950438206,
+    5950438207,
+    5950438208,
+    5950438209,
+    5950438210,
+    5950438211,
+    5950438212,
+    5950438213,
+    5950438214,
+    5950438215,
+    5950438216,
+    5950438217,
+    5950438218,
+    5950438205
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:housenumber": "Orchid",
+    "addr:postcode": "201016",
+    "addr:street": "Paramount Symphony",
+    "building": "apartments",
+    "building:flats": "24",
+    "building:levels": "24",
+    "name": "Orchid"
+  }
+},
+{
+  "type": "way",
+  "id": 630106350,
+  "center": {
+    "lat": 28.6278330,
+    "lon": 77.4396487
+  },
+  "nodes": [
+    5950438219,
+    5950438220,
+    5950438221,
+    5950438222,
+    5950438223,
+    5950438224,
+    5950438225,
+    5950438233,
+    5950438226,
+    5950438227,
+    5950438228,
+    5950438229,
+    5950438230,
+    5950438231,
+    5950438232,
+    5950438219
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:housenumber": "Mapple",
+    "addr:postcode": "201016",
+    "addr:street": "Paramount Symphony",
+    "building": "apartments",
+    "building:flats": "24",
+    "building:levels": "24",
+    "name": "Mapple"
+  }
+},
+{
+  "type": "way",
+  "id": 630106351,
+  "center": {
+    "lat": 28.6282397,
+    "lon": 77.4399966
+  },
+  "nodes": [
+    5950438234,
+    5950438235,
+    5950438236,
+    5950438237,
+    5950438238,
+    5950438239,
+    5950438240,
+    5950438241,
+    5950438234
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:housenumber": "Yucca",
+    "addr:postcode": "201016",
+    "addr:street": "Paramount Symphony",
+    "building": "apartments",
+    "building:flats": "22",
+    "building:levels": "22",
+    "name": "Yucca"
+  }
+},
+{
+  "type": "way",
+  "id": 630106352,
+  "center": {
+    "lat": 28.6286690,
+    "lon": 77.4401851
+  },
+  "nodes": [
+    5950438242,
+    5950438243,
+    5950438244,
+    5950438245,
+    5950438246,
+    5950438247,
+    5950438248,
+    5950438249,
+    5950438242
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:housenumber": "Solitaire",
+    "addr:postcode": "201016",
+    "addr:street": "Paramount Symphony",
+    "building": "apartments",
+    "building:flats": "22",
+    "building:levels": "22",
+    "name": "Solitaire"
+  }
+},
+{
+  "type": "way",
+  "id": 630106353,
+  "center": {
+    "lat": 28.6287937,
+    "lon": 77.4397383
+  },
+  "nodes": [
+    5950438250,
+    5950438251,
+    5950438252,
+    5950438253,
+    5950438254,
+    5950438255,
+    5950438256,
+    5950438257,
+    5950438258,
+    5950438259,
+    5950438260,
+    5950438261,
+    5950438250
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:housenumber": "Panaroma",
+    "addr:postcode": "201016",
+    "addr:street": "Paramount Symphony",
+    "building": "apartments",
+    "building:flats": "10",
+    "building:levels": "10",
+    "name": "Panaroma"
+  }
+},
+{
+  "type": "way",
+  "id": 704228957,
+  "center": {
+    "lat": 28.6837560,
+    "lon": 77.4047498
+  },
+  "nodes": [
+    6612442532,
+    6612442533,
+    6612442534,
+    6612442535,
+    6612442536,
+    6612442532
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "New Building"
+  }
+},
+{
+  "type": "way",
+  "id": 704228964,
+  "center": {
+    "lat": 28.6835066,
+    "lon": 77.4073359
+  },
+  "nodes": [
+    6612442563,
+    6612442564,
+    6612442565,
+    6612442566,
+    6612442563
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "New Building"
+  }
+},
+{
+  "type": "way",
+  "id": 704228965,
+  "center": {
+    "lat": 28.6834556,
+    "lon": 77.4075603
+  },
+  "nodes": [
+    6612442567,
+    6612442568,
+    6612442569,
+    6612442570,
+    6612442571,
+    6612442572,
+    6612442567
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "New Building"
+  }
+},
+{
+  "type": "way",
+  "id": 704228966,
+  "center": {
+    "lat": 28.6815311,
+    "lon": 77.4080796
+  },
+  "nodes": [
+    6612442573,
+    6612442574,
+    6612442575,
+    6612442576,
+    6612442573
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "New Building"
+  }
+},
+{
+  "type": "way",
+  "id": 751774171,
+  "center": {
+    "lat": 28.6487071,
+    "lon": 77.4430469
+  },
+  "nodes": [
+    7027730435,
+    7027730432,
+    7027730433,
+    7027730434,
+    7027730435
+  ],
+  "tags": {
+    "building": "hospital",
+    "name": "Shankar Lal Hospital"
+  }
+},
+{
+  "type": "way",
+  "id": 770028585,
+  "center": {
+    "lat": 28.7961906,
+    "lon": 77.5382453
+  },
+  "nodes": [
+    7188559585,
+    7188559685,
+    7188559785,
+    7188559786,
+    7188559585
+  ],
+  "tags": {
+    "building": "university",
+    "building:levels": "1",
+    "building:levels:underground": "1",
+    "height": "3,04",
+    "name": "SRM",
+    "name:ur": "ایس آر ایم",
+    "roof:levels": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 779897399,
+  "center": {
+    "lat": 28.6904858,
+    "lon": 77.3455158
+  },
+  "nodes": [
+    7282305713,
+    7282305714,
+    7282305715,
+    7282305716,
+    7282305717,
+    8897824143,
+    7282305713
+  ],
+  "tags": {
+    "addr:city": "Sahibabad",
+    "addr:postcode": "201005",
+    "addr:street": "Shalimar Garden Ext 2",
+    "building": "school",
+    "layer": "1",
+    "name": "St Mary School"
+  }
+},
+{
+  "type": "way",
+  "id": 788925849,
+  "center": {
+    "lat": 28.6467069,
+    "lon": 77.3474880
+  },
+  "nodes": [
+    7375919740,
+    7394481640,
+    7375919741,
+    7375919742,
+    7375919743,
+    7375919740
+  ],
+  "tags": {
+    "building": "yes",
+    "building:levels": "2",
+    "name": "dh"
+  }
+},
+{
+  "type": "way",
+  "id": 834242060,
+  "center": {
+    "lat": 28.6548982,
+    "lon": 77.4145960
+  },
+  "nodes": [
+    7787548824,
+    7787548825,
+    7787548826,
+    7787548827,
+    7787548824
+  ],
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "name": "Shiva Temple",
+    "religion": "hindu"
+  }
+},
+{
+  "type": "way",
+  "id": 834242061,
+  "center": {
+    "lat": 28.6547364,
+    "lon": 77.4149480
+  },
+  "nodes": [
+    7787548828,
+    7787548829,
+    7787548830,
+    7787548831,
+    7787548828
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Radha swami shop",
+    "shop": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 835255357,
+  "center": {
+    "lat": 28.7520926,
+    "lon": 77.4998815
+  },
+  "nodes": [
+    7796503314,
+    7966199080,
+    7796503315,
+    7796503316,
+    7796503317,
+    7796503314
+  ],
+  "tags": {
+    "amenity": "conference_centre",
+    "building": "yes",
+    "name": "Auditorium"
+  }
+},
+{
+  "type": "way",
+  "id": 843919838,
+  "center": {
+    "lat": 28.6747238,
+    "lon": 77.5015467
+  },
+  "nodes": [
+    7872291176,
+    7872291177,
+    7872291178,
+    7872291179,
+    7872291180,
+    7872291176
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "AKGEC Skills Foundation"
+  }
+},
+{
+  "type": "way",
+  "id": 843919843,
+  "center": {
+    "lat": 28.6765518,
+    "lon": 77.5001204
+  },
+  "nodes": [
+    7872354456,
+    7872354457,
+    7872354458,
+    7872354459,
+    7872354460,
+    7872354461,
+    7872354462,
+    7872354463,
+    7872354464,
+    7872354465,
+    7872354466,
+    7872354467,
+    7872354468,
+    7872354469,
+    7872354470,
+    7872354471,
+    7872354472,
+    7872354473,
+    7872354474,
+    7872354475,
+    7872354476,
+    7872354477,
+    7872354478,
+    7872354479,
+    7872354480,
+    7872354481,
+    7872354482,
+    4762024971,
+    7872354456
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "TIFAC  Core"
+  }
+},
+{
+  "type": "way",
+  "id": 843919858,
+  "center": {
+    "lat": 28.6752337,
+    "lon": 77.5022683
+  },
+  "nodes": [
+    7872354585,
+    7872354586,
+    7872354587,
+    7872354588,
+    7872354589,
+    7872354590,
+    7872354591,
+    7872354592,
+    7872354593,
+    7872354594,
+    7872354595,
+    7872354596,
+    7872354597,
+    7872354598,
+    7872354599,
+    7872354600,
+    7872354601,
+    7872354602,
+    7872354603,
+    7872354644,
+    7872354604,
+    7872354605,
+    7872354606,
+    7872354607,
+    7872354608,
+    7872354609,
+    7872354610,
+    7872354585
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "MBA Block"
+  }
+},
+{
+  "type": "way",
+  "id": 843919888,
+  "center": {
+    "lat": 28.6770596,
+    "lon": 77.5032344
+  },
+  "nodes": [
+    7872354818,
+    7872354819,
+    7872354820,
+    7872354821,
+    7872354822,
+    7872354823,
+    7872354824,
+    7872354825,
+    7872354826,
+    7872354827,
+    7872354828,
+    7872354829,
+    7872354830,
+    7872354818
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Faculty Residence"
+  }
+},
+{
+  "type": "way",
+  "id": 843919890,
+  "center": {
+    "lat": 28.6766624,
+    "lon": 77.5029684
+  },
+  "nodes": [
+    7872354844,
+    7872354845,
+    7872354846,
+    7872354847,
+    7872354848,
+    7872354849,
+    7872354850,
+    7872354851,
+    7872354852,
+    7872354853,
+    7872354844
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Faculty Residence"
+  }
+},
+{
+  "type": "way",
+  "id": 843919900,
+  "center": {
+    "lat": 28.6727790,
+    "lon": 77.5044050
+  },
+  "nodes": [
+    7872354911,
+    7872354912,
+    7872354913,
+    7872354914,
+    7872354915,
+    7872354916,
+    7872354917,
+    7872354918,
+    7872354919,
+    7872354920,
+    7872354921,
+    7872354922,
+    7872354923,
+    7872354924,
+    7872354925,
+    7872354926,
+    7872354927,
+    7872354911
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Dr. Ram Saran Garg Indo German Hospital"
+  }
+},
+{
+  "type": "way",
+  "id": 844002004,
+  "center": {
+    "lat": 28.6765681,
+    "lon": 77.5013922
+  },
+  "nodes": [
+    7873045258,
+    7873045259,
+    7873045260,
+    7873045261,
+    7873105084,
+    7873045262,
+    7873045263,
+    7873045264,
+    7873045265,
+    7873045266,
+    7873045267,
+    7873045268,
+    7873045269,
+    7873119985,
+    7873045270,
+    7873045271,
+    7873045272,
+    7873045258
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Mechanical Canteen"
+  }
+},
+{
+  "type": "way",
+  "id": 851780831,
+  "center": {
+    "lat": 28.6356616,
+    "lon": 77.3743428
+  },
+  "nodes": [
+    3585542468,
+    3585542467,
+    3591680750,
+    3591680753,
+    3585542468
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Shipra building"
+  }
+},
+{
+  "type": "way",
+  "id": 852005586,
+  "center": {
+    "lat": 28.7530268,
+    "lon": 77.4990531
+  },
+  "nodes": [
+    7947421696,
+    7947421697,
+    7947421698,
+    7947421699,
+    7947421696
+  ],
+  "tags": {
+    "building": "residential",
+    "name": "staff quartes"
+  }
+},
+{
+  "type": "way",
+  "id": 852005587,
+  "center": {
+    "lat": 28.7528587,
+    "lon": 77.4992706
+  },
+  "nodes": [
+    7947421700,
+    7947421701,
+    7947421702,
+    7947421703,
+    7947421704,
+    7947421705,
+    7947421706,
+    7947421700
+  ],
+  "tags": {
+    "building": "residential",
+    "name": "staff quarters"
+  }
+},
+{
+  "type": "way",
+  "id": 852005589,
+  "center": {
+    "lat": 28.7524098,
+    "lon": 77.4990672
+  },
+  "nodes": [
+    7947421721,
+    7947421722,
+    7966199075,
+    7947421723,
+    7947421724,
+    7947421728,
+    7947421727,
+    7947421726,
+    7947421725,
+    7947421721
+  ],
+  "tags": {
+    "building": "college",
+    "building:levels": "5",
+    "name": "Technology Business Incubator"
+  }
+},
+{
+  "type": "way",
+  "id": 852967119,
+  "center": {
+    "lat": 28.7540398,
+    "lon": 77.4961316
+  },
+  "nodes": [
+    7955828313,
+    7955828314,
+    7955828315,
+    7955828318,
+    7955828316,
+    7955828313
+  ],
+  "tags": {
+    "building": "college",
+    "name": "guard room"
+  }
+},
+{
+  "type": "way",
+  "id": 852971163,
+  "center": {
+    "lat": 28.7520006,
+    "lon": 77.4986843
+  },
+  "nodes": [
+    7955871489,
+    7955871490,
+    7955871491,
+    7955871492,
+    7966231603,
+    7955871489
+  ],
+  "tags": {
+    "building": "college",
+    "building:levels": "4",
+    "name": "tagore hall of residence"
+  }
+},
+{
+  "type": "way",
+  "id": 852971164,
+  "center": {
+    "lat": 28.7515464,
+    "lon": 77.4994918
+  },
+  "nodes": [
+    7955871493,
+    7955871494,
+    7955871495,
+    7955871496,
+    7966199059,
+    7955871493
+  ],
+  "tags": {
+    "building": "dormitory",
+    "building:levels": "6",
+    "name": "Aryabhatt Hall of Residence"
+  }
+},
+{
+  "type": "way",
+  "id": 852971167,
+  "center": {
+    "lat": 28.7516604,
+    "lon": 77.4992903
+  },
+  "nodes": [
+    7955871504,
+    7955871505,
+    7966221565,
+    7955871506,
+    7966221567,
+    7966167734,
+    7966221568,
+    7966221566,
+    7955871507,
+    7955871508,
+    7955871509,
+    7955871510,
+    7955871504
+  ],
+  "tags": {
+    "building": "dormitory",
+    "building:levels": "4",
+    "name": "Vivekananda Hall of Residence"
+  }
+},
+{
+  "type": "way",
+  "id": 852971168,
+  "center": {
+    "lat": 28.7518254,
+    "lon": 77.4989513
+  },
+  "nodes": [
+    7955871511,
+    7966231606,
+    7955871512,
+    7955871513,
+    7955871514,
+    7955871511
+  ],
+  "tags": {
+    "building": "college",
+    "building:levels": "4",
+    "name": "multi purpose complex"
+  }
+},
+{
+  "type": "way",
+  "id": 853355725,
+  "center": {
+    "lat": 28.7516160,
+    "lon": 77.4987180
+  },
+  "nodes": [
+    7960121582,
+    7960121583,
+    7960121584,
+    7960122085,
+    7960121582
+  ],
+  "tags": {
+    "amenity": "fast_food",
+    "building": "yes",
+    "name": "big treat"
+  }
+},
+{
+  "type": "way",
+  "id": 853355726,
+  "center": {
+    "lat": 28.7525379,
+    "lon": 77.4987595
+  },
+  "nodes": [
+    7960122086,
+    7960122087,
+    7960122088,
+    7960122089,
+    7960122086
+  ],
+  "tags": {
+    "amenity": "fast_food",
+    "building": "yes",
+    "name": "amul"
+  }
+},
+{
+  "type": "way",
+  "id": 853355727,
+  "center": {
+    "lat": 28.7530355,
+    "lon": 77.4999835
+  },
+  "nodes": [
+    7960122090,
+    7960122091,
+    7960122092,
+    7960122093,
+    7960122090
+  ],
+  "tags": {
+    "amenity": "cafe",
+    "brand": "Cafe Coffee Day",
+    "brand:wikidata": "Q5017235",
+    "brand:wikipedia": "en:Café Coffee Day",
+    "building": "yes",
+    "cuisine": "coffee_shop",
+    "name": "Cafe Coffee Day",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 895880020,
+  "center": {
+    "lat": 28.6675244,
+    "lon": 77.4500914
+  },
+  "nodes": [
+    8327572749,
+    8327572750,
+    8327572751,
+    8327572752,
+    8327572749
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:housenumber": "A- 1/329,Swadeshi Polytex Compound",
+    "addr:postcode": "201009",
+    "addr:street": "Kavi Nagar Industrial Area",
+    "building": "industrial",
+    "building:levels": "1",
+    "name": "RS Packaging",
+    "source": "https://www.rspackaging.co.in/"
+  }
+},
+{
+  "type": "way",
+  "id": 911094675,
+  "center": {
+    "lat": 28.6450235,
+    "lon": 77.3232443
+  },
+  "nodes": [
+    8459917482,
+    8459917483,
+    8459917484,
+    8459917485,
+    8459917482
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Rousha Inn",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 911095210,
+  "center": {
+    "lat": 28.6450657,
+    "lon": 77.3275493
+  },
+  "nodes": [
+    8459937323,
+    8459937324,
+    8459937325,
+    8459937326,
+    8459937323
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Hotel Sunshine Inn",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 924893064,
+  "center": {
+    "lat": 28.6443430,
+    "lon": 77.3516216
+  },
+  "nodes": [
+    9855679163,
+    8583851337,
+    9855679161,
+    9855679162,
+    12145752449,
+    9855679163
+  ],
+  "tags": {
+    "building": "school",
+    "name": "St.  Thomas School"
+  }
+},
+{
+  "type": "way",
+  "id": 954870191,
+  "center": {
+    "lat": 28.6647722,
+    "lon": 77.4371419
+  },
+  "nodes": [
+    8838171077,
+    8838171078,
+    8838171079,
+    8838171080,
+    8838171081,
+    8838171082,
+    8838171083,
+    8838171084,
+    8838171085,
+    8838171086,
+    8838171087,
+    8838171089,
+    8838171090,
+    8838171091,
+    8838171092,
+    8838171093,
+    8838171077
+  ],
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "name": "Shiv Mandir",
+    "religion": "hindu"
+  }
+},
+{
+  "type": "way",
+  "id": 956264186,
+  "center": {
+    "lat": 28.6668208,
+    "lon": 77.4377975
+  },
+  "nodes": [
+    8850118345,
+    8850118346,
+    12949430899,
+    12949430900,
+    8850118347,
+    8850118348,
+    12949430898,
+    8850118351,
+    8850118345
+  ],
+  "tags": {
+    "building": "school",
+    "name": "Ghaziabad Public School"
+  }
+},
+{
+  "type": "way",
+  "id": 956482401,
+  "center": {
+    "lat": 28.6623535,
+    "lon": 77.4382404
+  },
+  "nodes": [
+    8852041672,
+    8852041673,
+    8852041674,
+    8852041675,
+    8852041672
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Modern Sanitar tiles",
+    "shop": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 956482402,
+  "center": {
+    "lat": 28.6647587,
+    "lon": 77.4351015
+  },
+  "nodes": [
+    8852041676,
+    8852041677,
+    8852041678,
+    8852041679,
+    8852041680,
+    8852041681,
+    8852041676
+  ],
+  "tags": {
+    "amenity": "doctors",
+    "building": "yes",
+    "healthcare": "doctor",
+    "name": "Dr.Bali"
+  }
+},
+{
+  "type": "way",
+  "id": 1038616370,
+  "center": {
+    "lat": 28.6406834,
+    "lon": 77.3468393
+  },
+  "nodes": [
+    9565107046,
+    9565107047,
+    9565107048,
+    9565107049,
+    9565107050,
+    9565107051,
+    9565107052,
+    9565107053,
+    9565107054,
+    9565107055,
+    9565107046
+  ],
+  "tags": {
+    "addr:city": "Indirapuram",
+    "addr:postcode": "201014",
+    "addr:street": "Hindon Elevated Road",
+    "building": "yes",
+    "building:levels": "0",
+    "name": "St Francis School"
+  }
+},
+{
+  "type": "way",
+  "id": 1038618139,
+  "center": {
+    "lat": 28.6792445,
+    "lon": 77.3584628
+  },
+  "nodes": [
+    9565152645,
+    9565152646,
+    9565152647,
+    9565152648,
+    9565152645
+  ],
+  "tags": {
+    "addr:city": "Sahibabad",
+    "addr:postcode": "201005",
+    "building": "apartments",
+    "building:levels": "4",
+    "name": "MahaLaxmi Plaza",
+    "note": "Add shops & offices with seperate nodes"
+  }
+},
+{
+  "type": "way",
+  "id": 1038618510,
+  "center": {
+    "lat": 28.6792268,
+    "lon": 77.3579449
+  },
+  "nodes": [
+    9565152649,
+    9565152650,
+    9565152651,
+    9565152652,
+    9565152649
+  ],
+  "tags": {
+    "addr:city": "Sahibabad",
+    "addr:postcode": "201005",
+    "building": "apartments",
+    "building:levels": "0",
+    "name": "Keshav Kunj"
+  }
+},
+{
+  "type": "way",
+  "id": 1039104778,
+  "center": {
+    "lat": 28.6385413,
+    "lon": 77.3500806
+  },
+  "nodes": [
+    9569032198,
+    9569032197,
+    9569032196,
+    9569032195,
+    9569032194,
+    9569032193,
+    9569032192,
+    9569032191,
+    9569032190,
+    9569032189,
+    9569032188,
+    9569032187,
+    9569032186,
+    9569032185,
+    9569032184,
+    9569032183,
+    9569032182,
+    9569032181,
+    9569032180,
+    9569032179,
+    9569032178,
+    9569032177,
+    9569032176,
+    9569032175,
+    9569032198
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Common Service Center And Jan Seva Kendra"
+  }
+},
+{
+  "type": "way",
+  "id": 1054778502,
+  "center": {
+    "lat": 28.6578686,
+    "lon": 77.3663315
+  },
+  "nodes": [
+    9692583171,
+    9692583172,
+    9694399195,
+    9692583174,
+    9692583171
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:postcode": "201012",
+    "building": "detached",
+    "landuse": "religious",
+    "name": "Ram Mandir",
+    "religion": "hindu"
+  }
+},
+{
+  "type": "way",
+  "id": 1059019902,
+  "center": {
+    "lat": 28.6338429,
+    "lon": 77.3668000
+  },
+  "nodes": [
+    9730661743,
+    9730661744,
+    9730661745,
+    9730661746,
+    9730661743
+  ],
+  "tags": {
+    "amenity": "bank",
+    "branch": "Vaibhav Khand  Ghaziabad",
+    "brand": "State Bank of India",
+    "brand:wikidata": "Q1340361",
+    "building": "yes",
+    "name": "State Bank of India",
+    "short_name": "SBI"
+  }
+},
+{
+  "type": "way",
+  "id": 1071239110,
+  "center": {
+    "lat": 28.7447155,
+    "lon": 77.4648076
+  },
+  "nodes": [
+    9830718980,
+    9830718979,
+    9830718978,
+    9830718977,
+    9830718980
+  ],
+  "tags": {
+    "building": "commercial",
+    "building:levels": "4",
+    "landuse": "commercial",
+    "name": "Duhai Depot Admin Building",
+    "smoking": "no",
+    "source": "https://ncrtc.in;local knowledge"
+  }
+},
+{
+  "type": "way",
+  "id": 1086642595,
+  "center": {
+    "lat": 28.6549870,
+    "lon": 77.4715219
+  },
+  "nodes": [
+    9956604599,
+    9956604600,
+    9956604601,
+    9956604602,
+    9956604599
+  ],
+  "tags": {
+    "building": "industrial",
+    "building:levels": "2",
+    "name": "WAREHOUSE"
+  }
+},
+{
+  "type": "way",
+  "id": 1086642596,
+  "center": {
+    "lat": 28.6547820,
+    "lon": 77.4722298
+  },
+  "nodes": [
+    9956604603,
+    9956604604,
+    9956604605,
+    9956604606,
+    9956604603
+  ],
+  "tags": {
+    "building": "commercial",
+    "name": "UNDER-CONSTRUCTED HOTEL"
+  }
+},
+{
+  "type": "way",
+  "id": 1086642597,
+  "center": {
+    "lat": 28.6543882,
+    "lon": 77.4717130
+  },
+  "nodes": [
+    9956604607,
+    9956604608,
+    9956604609,
+    9956604610,
+    9956604607
+  ],
+  "tags": {
+    "building": "industrial",
+    "name": "BROKEN DOWN WAREHOUSE"
+  }
+},
+{
+  "type": "way",
+  "id": 1086642600,
+  "center": {
+    "lat": 28.6535543,
+    "lon": 77.4716385
+  },
+  "nodes": [
+    9956611719,
+    9956611720,
+    9956611721,
+    9956611722,
+    9956611719
+  ],
+  "tags": {
+    "building": "commercial",
+    "name": "TK TRADERS"
+  }
+},
+{
+  "type": "way",
+  "id": 1131120992,
+  "center": {
+    "lat": 28.6304714,
+    "lon": 77.4493246
+  },
+  "nodes": [
+    10542632101,
+    10542632102,
+    10542632103,
+    10542632104,
+    10542632105,
+    10542632106,
+    10542632101
+  ],
+  "tags": {
+    "building": "school",
+    "name": "Vishwa Bharati Public School"
+  }
+},
+{
+  "type": "way",
+  "id": 1144312132,
+  "center": {
+    "lat": 28.6676792,
+    "lon": 77.3681066
+  },
+  "nodes": [
+    10651394225,
+    10651394226,
+    11278972694,
+    11279794813,
+    10651394227,
+    10651394228,
+    11278972695,
+    10651394225
+  ],
+  "tags": {
+    "building": "train_station",
+    "internet_access": "wlan",
+    "layer": "2",
+    "name": "Sahibabad",
+    "name:hi": "साहिबाबाद",
+    "network": "RapidX",
+    "operator": "National Capital Region Transport Corporation",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "A03",
+    "station": "subway",
+    "subway": "yes",
+    "wikidata": "Q118121120",
+    "wikipedia": "en:Sahibabad RRTS station"
+  }
+},
+{
+  "type": "way",
+  "id": 1145168624,
+  "center": {
+    "lat": 28.6798533,
+    "lon": 77.5057051
+  },
+  "nodes": [
+    10658019196,
+    10658019197,
+    10658019198,
+    10658019199,
+    10658019200,
+    10658019196
+  ],
+  "tags": {
+    "building": "residential",
+    "name": "IMS Engineering College Hostel"
+  }
+},
+{
+  "type": "way",
+  "id": 1145169803,
+  "center": {
+    "lat": 28.6802415,
+    "lon": 77.5100047
+  },
+  "nodes": [
+    10658031662,
+    10658031663,
+    10658031664,
+    4228122956,
+    10658031665,
+    4228122962,
+    4228122977,
+    10658031666,
+    10658031667,
+    10658031662
+  ],
+  "tags": {
+    "building": "university",
+    "name": "IMS Engineering College"
+  }
+},
+{
+  "type": "way",
+  "id": 1145170812,
+  "center": {
+    "lat": 28.6823810,
+    "lon": 77.4916055
+  },
+  "nodes": [
+    10658033760,
+    10658033761,
+    10658033762,
+    10658033763,
+    10658033760
+  ],
+  "tags": {
+    "building": "school",
+    "name": "Brightland School"
+  }
+},
+{
+  "type": "way",
+  "id": 1163802967,
+  "center": {
+    "lat": 28.6411148,
+    "lon": 77.3238018
+  },
+  "nodes": [
+    10823625039,
+    10823625040,
+    10823625041,
+    10823625042,
+    10823625043,
+    10823625039
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:housenumber": "Site No.5",
+    "addr:postcode": "201010",
+    "addr:state": "Uttar Pradesh",
+    "addr:street": "behind EDM Mall, Kaushambi",
+    "building": "yes",
+    "contact:phone": "8800094990",
+    "description": "Petals World School is an ideal globally recognized school in Kaushambi, Ghaziabad. We offer academic classes from pre-nursery to class 2. We also provide a 1:20 teacher student ratio, integrated labs, state-of-the-art infrastructure, and many more.",
+    "name": "Petals World School Kaushambi Ghaziabad"
+  }
+},
+{
+  "type": "way",
+  "id": 1163811475,
+  "center": {
+    "lat": 28.6451996,
+    "lon": 77.3430789
+  },
+  "nodes": [
+    10823727080,
+    10823727081,
+    10823727082,
+    10823727083,
+    10823727080
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:housenumber": "Plot no. 21",
+    "addr:postcode": "201019",
+    "addr:street": "Sector 5, Vaishali",
+    "building": "yes",
+    "contact:phone": "9990257573",
+    "description": "At Petals Preschool & Daycare in Vaishali, we believe in learning through play as it is the best preschool chain in Ghaziabad. We provide preschool programs like play school, nursery, pre-nursery, and kindergarten.",
+    "name": "Petals Preschool and Daycare Creche Vaishali Ghaziabad"
+  }
+},
+{
+  "type": "way",
+  "id": 1170518391,
+  "center": {
+    "lat": 28.6928200,
+    "lon": 77.3302887
+  },
+  "nodes": [
+    10880654455,
+    10880654456,
+    10880654457,
+    10880654458,
+    10880654455
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "BIKANERWALA",
+    "opening_hours": "Mo-Su 08:00-22:00",
+    "payment:cash": "yes",
+    "payment:cashless": "yes",
+    "shop": "sweets_shop"
+  }
+},
+{
+  "type": "way",
+  "id": 1170518392,
+  "center": {
+    "lat": 28.6939696,
+    "lon": 77.3291457
+  },
+  "nodes": [
+    10880654459,
+    10880654460,
+    10880654461,
+    10880654462,
+    10880654459
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "MOTHER BAKERY",
+    "opening_hours": "Mo-Su 08:00-22:00",
+    "shop": "bakery"
+  }
+},
+{
+  "type": "way",
+  "id": 1170518396,
+  "center": {
+    "lat": 28.6945497,
+    "lon": 77.3283675
+  },
+  "nodes": [
+    10880654476,
+    10880654477,
+    10880654478,
+    10880654479,
+    10880654476
+  ],
+  "tags": {
+    "building": "school",
+    "building:levels": "2",
+    "name": "BHAGWAN DAS SCHOOL"
+  }
+},
+{
+  "type": "way",
+  "id": 1170518404,
+  "center": {
+    "lat": 28.6956180,
+    "lon": 77.3297647
+  },
+  "nodes": [
+    10880690816,
+    10880690817,
+    10880690818,
+    10880690819,
+    10880690816
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "VARUN TVS",
+    "shop": "bicycle"
+  }
+},
+{
+  "type": "way",
+  "id": 1170518406,
+  "center": {
+    "lat": 28.6900282,
+    "lon": 77.3606717
+  },
+  "nodes": [
+    10880690827,
+    10880690828,
+    10880690829,
+    10880690830,
+    9857296795,
+    9857296792,
+    10880690827
+  ],
+  "tags": {
+    "building": "school",
+    "name": "AIR FORCE SCHOOL"
+  }
+},
+{
+  "type": "way",
+  "id": 1176635570,
+  "center": {
+    "lat": 28.7422077,
+    "lon": 77.4677346
+  },
+  "nodes": [
+    10931977153,
+    10931976928,
+    10931977048,
+    10931977127,
+    10931976976,
+    10931976996,
+    10931977102,
+    10931977133,
+    10931977032,
+    10931977168,
+    10931941946,
+    10931977153
+  ],
+  "tags": {
+    "building": "train_station",
+    "internet_access": "wlan",
+    "layer": "1",
+    "name": "Duhai Depot Station",
+    "name:hi": "दुहाई डिपो स्टेशन",
+    "operator": "National Capital Region Transport Corporation"
+  }
+},
+{
+  "type": "way",
+  "id": 1179994848,
+  "center": {
+    "lat": 28.6543854,
+    "lon": 77.4116942
+  },
+  "nodes": [
+    10959514261,
+    10959514262,
+    10959514263,
+    10959514264,
+    10959514261
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Steal Point",
+    "shop": "mall"
+  }
+},
+{
+  "type": "way",
+  "id": 1179994849,
+  "center": {
+    "lat": 28.6545235,
+    "lon": 77.4117380
+  },
+  "nodes": [
+    10959514265,
+    10959514266,
+    10959514267,
+    10959514268,
+    10959514265
+  ],
+  "tags": {
+    "amenity": "restaurant",
+    "building": "yes",
+    "cuisine": "pizza",
+    "name": "Rocker's Pizza"
+  }
+},
+{
+  "type": "way",
+  "id": 1179994850,
+  "center": {
+    "lat": 28.6540221,
+    "lon": 77.4116191
+  },
+  "nodes": [
+    10959514269,
+    10959514270,
+    10959514271,
+    10959514272,
+    10959514269
+  ],
+  "tags": {
+    "amenity": "bank",
+    "brand": "Union Bank of India",
+    "brand:wikidata": "Q2004078",
+    "building": "yes",
+    "name": "Union Bank of India"
+  }
+},
+{
+  "type": "way",
+  "id": 1179994853,
+  "center": {
+    "lat": 28.6445919,
+    "lon": 77.4161010
+  },
+  "nodes": [
+    10959514293,
+    10959514294,
+    10959514295,
+    10959514296,
+    10959514297,
+    10959514298,
+    10959514293
+  ],
+  "tags": {
+    "building": "school",
+    "name": "DAV Public School"
+  }
+},
+{
+  "type": "way",
+  "id": 1179994854,
+  "center": {
+    "lat": 28.6448435,
+    "lon": 77.4169768
+  },
+  "nodes": [
+    10959514299,
+    10959514300,
+    10959514301,
+    10959514302,
+    10959514303,
+    10959514304,
+    10959514299
+  ],
+  "tags": {
+    "building": "school",
+    "name": "Gautam Public Senoir Secondary School"
+  }
+},
+{
+  "type": "way",
+  "id": 1183610010,
+  "center": {
+    "lat": 28.6588318,
+    "lon": 77.4731793
+  },
+  "nodes": [
+    10991492988,
+    11909810078,
+    10991492989,
+    10991492990,
+    10991492991,
+    10991492992,
+    10991492993,
+    10991492994,
+    11909810079,
+    11909810080,
+    11909810081,
+    11909810082,
+    10991492995,
+    10991492996,
+    11909810083,
+    11909810084,
+    11909810085,
+    10991492997,
+    10991492998,
+    10991492999,
+    11909810077,
+    10991492988
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:postcode": "201001",
+    "addr:street": "Delhi - Meerut Expressway",
+    "building": "apartments",
+    "building:levels": "30",
+    "height": "0",
+    "layer": "1",
+    "name": "Landcraft GolfLinks Pandav Nagar"
+  }
+},
+{
+  "type": "way",
+  "id": 1183864022,
+  "center": {
+    "lat": 28.6450476,
+    "lon": 77.4892794
+  },
+  "nodes": [
+    10994129065,
+    10994129066,
+    10994129067,
+    10994129068,
+    10994129065
+  ],
+  "tags": {
+    "addr:city": "Ghazibad",
+    "addr:postcode": "201002",
+    "addr:street": "Aditya World City",
+    "building": "apartments",
+    "name": "Tower A"
+  }
+},
+{
+  "type": "way",
+  "id": 1183864526,
+  "center": {
+    "lat": 28.6445639,
+    "lon": 77.4880424
+  },
+  "nodes": [
+    10994138493,
+    10994138494,
+    10994138495,
+    10994138496,
+    10994138493
+  ],
+  "tags": {
+    "addr:city": "Ghazibad",
+    "addr:locality": "Aditya World City",
+    "addr:postcode": "201002",
+    "addr:street": "Ghazibad",
+    "building": "apartments",
+    "name": "Tower J"
+  }
+},
+{
+  "type": "way",
+  "id": 1208480541,
+  "center": {
+    "lat": 28.6749145,
+    "lon": 77.4414552
+  },
+  "nodes": [
+    11197580473,
+    11197580474,
+    11197580475,
+    11197580476,
+    11197580473
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "FIITJEE RDC GHAIZBAD",
+    "office": "educational_institution"
+  }
+},
+{
+  "type": "way",
+  "id": 1208663940,
+  "center": {
+    "lat": 28.6591647,
+    "lon": 77.4486211
+  },
+  "nodes": [
+    11198942975,
+    11198942976,
+    11198942977,
+    11198942978,
+    11198942975
+  ],
+  "tags": {
+    "amenity": "police",
+    "building": "yes",
+    "name": "Police Station",
+    "operator": "UP Police"
+  }
+},
+{
+  "type": "way",
+  "id": 1208703354,
+  "center": {
+    "lat": 28.6507031,
+    "lon": 77.4376572
+  },
+  "nodes": [
+    11199229770,
+    11199229771,
+    11199229772,
+    11199229773,
+    11199229770
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:postcode": "201009",
+    "addr:street": "MMH college",
+    "amenity": "post_office",
+    "building": "yes",
+    "name": "India Post",
+    "operator": "India Post",
+    "operator:wikidata": "Q3519720"
+  }
+},
+{
+  "type": "way",
+  "id": 1211633985,
+  "center": {
+    "lat": 28.6466013,
+    "lon": 77.4438660
+  },
+  "nodes": [
+    11225405956,
+    11225405955,
+    11225405957,
+    11225405958,
+    11225405956
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Goel Stationary",
+    "shop": "stationery"
+  }
+},
+{
+  "type": "way",
+  "id": 1217270563,
+  "center": {
+    "lat": 28.7271713,
+    "lon": 77.4715468
+  },
+  "nodes": [
+    11278972677,
+    11278972674,
+    11278930706,
+    11278972675,
+    11279794824,
+    11278972676,
+    11935376243,
+    11935376244,
+    11279794829,
+    11278972677
+  ],
+  "tags": {
+    "building": "train_station",
+    "internet_access": "wlan",
+    "layer": "2",
+    "name": "Duhai",
+    "name:hi": "दुहाई",
+    "operator": "National Capital Region Transport Corporation"
+  }
+},
+{
+  "type": "way",
+  "id": 1217270564,
+  "center": {
+    "lat": 28.6995187,
+    "lon": 77.4456668
+  },
+  "nodes": [
+    11278972682,
+    11279874654,
+    11278972679,
+    11278972680,
+    11279874648,
+    11278972681,
+    11278972682
+  ],
+  "tags": {
+    "building": "train_station",
+    "internet_access": "wlan",
+    "layer": "2",
+    "name": "Guldhar",
+    "name:hi": "गुलधर",
+    "operator": "National Capital Region Transport Corporation"
+  }
+},
+{
+  "type": "way",
+  "id": 1217270565,
+  "center": {
+    "lat": 28.6724601,
+    "lon": 77.4136406
+  },
+  "nodes": [
+    11278972687,
+    11278972684,
+    11278972685,
+    11278972686,
+    11278972687
+  ],
+  "tags": {
+    "building": "train_station",
+    "internet_access": "wlan",
+    "layer": "2",
+    "name": "Ghaziabad",
+    "name:hi": "ग़ाज़ियाबाद",
+    "operator": "National Capital Region Transport Corporation"
+  }
+},
+{
+  "type": "way",
+  "id": 1219280912,
+  "center": {
+    "lat": 28.6512091,
+    "lon": 77.4318513
+  },
+  "nodes": [
+    11297567580,
+    11297567581,
+    11297567582,
+    11297567583,
+    11297567580
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Railway shed"
+  }
+},
+{
+  "type": "way",
+  "id": 1220298876,
+  "center": {
+    "lat": 28.6528669,
+    "lon": 77.4625447
+  },
+  "nodes": [
+    11307701540,
+    11307701541,
+    11307701542,
+    11307701543,
+    11307701544,
+    11307701545,
+    11307701546,
+    11307701547,
+    11307701548,
+    11307701549,
+    11307701550,
+    11307701551,
+    11307701552,
+    11307701553,
+    11307701540
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "RTO Office Ghaziabad"
+  }
+},
+{
+  "type": "way",
+  "id": 1221800368,
+  "center": {
+    "lat": 28.6756860,
+    "lon": 77.4413266
+  },
+  "nodes": [
+    11331409124,
+    11331409125,
+    11331409126,
+    11331409127,
+    11331409128,
+    11331409129,
+    11331409130,
+    11331409131,
+    11331409132,
+    11331409133,
+    11331409134,
+    11331409135,
+    11331409124
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "BSNL office",
+    "operator": "BSNL",
+    "operator:wikidata": "Q278834",
+    "telecom": "exchange"
+  }
+},
+{
+  "type": "way",
+  "id": 1221800369,
+  "center": {
+    "lat": 28.6752714,
+    "lon": 77.4411451
+  },
+  "nodes": [
+    11331409137,
+    11331409138,
+    11331409139,
+    11331409140,
+    11331409137
+  ],
+  "tags": {
+    "amenity": "post_office",
+    "building": "yes",
+    "name": "Post office",
+    "operator": "India Post",
+    "operator:wikidata": "Q3519720"
+  }
+},
+{
+  "type": "way",
+  "id": 1221800370,
+  "center": {
+    "lat": 28.6825714,
+    "lon": 77.4476434
+  },
+  "nodes": [
+    11331409141,
+    11331409142,
+    11331409143,
+    11331409144,
+    11331409141
+  ],
+  "tags": {
+    "amenity": "fast_food",
+    "building": "yes",
+    "cuisine": "momos",
+    "diet:vegetarian": "yes",
+    "name": "Babu Fast Food"
+  }
+},
+{
+  "type": "way",
+  "id": 1232613703,
+  "center": {
+    "lat": 28.6461705,
+    "lon": 77.4443496
+  },
+  "nodes": [
+    11434275968,
+    11434341269,
+    11434341270,
+    11468701780,
+    11434341271,
+    11434275968
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:district": "ghaziabad",
+    "addr:housenumber": "A-229",
+    "addr:postcode": "201001",
+    "addr:street": "New Panchwati Colony",
+    "barrier": "wall",
+    "building": "house",
+    "building:colour": "#ffa378",
+    "building:facade:colour": "#ffa378",
+    "building:levels": "5",
+    "height": "15",
+    "house": "residential",
+    "name": "Akshat's Home",
+    "roof:colour": "#948e8b"
+  }
+},
+{
+  "type": "way",
+  "id": 1235837763,
+  "center": {
+    "lat": 28.6978241,
+    "lon": 77.3357927
+  },
+  "nodes": [
+    11473096553,
+    11473096554,
+    11473096555,
+    11473096556,
+    11473096553
+  ],
+  "tags": {
+    "addr:district": "Ghaziabad",
+    "addr:housenumber": "A-131/3",
+    "addr:street": "Defence Colony , Bhopur",
+    "building": "yes",
+    "building:colour": "black",
+    "building:material": "tiles",
+    "name": "Naam Daan Center",
+    "roof:colour": "gray"
+  }
+},
+{
+  "type": "way",
+  "id": 1235858568,
+  "center": {
+    "lat": 28.6466739,
+    "lon": 77.4445995
+  },
+  "nodes": [
+    11473349683,
+    11473349684,
+    11473349685,
+    11473349686,
+    11473349683
+  ],
+  "tags": {
+    "building": "house",
+    "building:levels": "2",
+    "name": "Raunak's House"
+  }
+},
+{
+  "type": "way",
+  "id": 1236658061,
+  "center": {
+    "lat": 28.6449663,
+    "lon": 77.4442594
+  },
+  "nodes": [
+    11483350202,
+    11483350203,
+    11483350204,
+    11483350205,
+    11483350202
+  ],
+  "tags": {
+    "building": "school",
+    "building:levels": "2",
+    "name": "Jindal Public School"
+  }
+},
+{
+  "type": "way",
+  "id": 1244606479,
+  "center": {
+    "lat": 28.6445331,
+    "lon": 77.4427971
+  },
+  "nodes": [
+    11569439434,
+    11569439435,
+    11569439436,
+    11569439437,
+    11569439434
+  ],
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "name": "Chota Hanuman Mandir",
+    "religion": "hindu"
+  }
+},
+{
+  "type": "way",
+  "id": 1244842237,
+  "center": {
+    "lat": 28.6274157,
+    "lon": 77.4212629
+  },
+  "nodes": [
+    11572211910,
+    11572229057,
+    11572229058,
+    11572211911,
+    11572211912,
+    11572211913,
+    11572211910
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Mahadev Madhav Nidhi Charitable Trustr"
+  }
+},
+{
+  "type": "way",
+  "id": 1246263293,
+  "center": {
+    "lat": 28.6608429,
+    "lon": 77.4255563
+  },
+  "nodes": [
+    11586547210,
+    11586547211,
+    11586547212,
+    11586547213,
+    11586547214,
+    11586547215,
+    11586547210
+  ],
+  "tags": {
+    "alt_name": "Madurima Bakery",
+    "building": "yes",
+    "name": "Jugal Bakers",
+    "shop": "bakery"
+  }
+},
+{
+  "type": "way",
+  "id": 1251133274,
+  "center": {
+    "lat": 28.6538589,
+    "lon": 77.4447441
+  },
+  "nodes": [
+    11630210936,
+    11630210937,
+    11630210938,
+    11630210939,
+    11630210936
+  ],
+  "tags": {
+    "addr:city": "ghaziabad",
+    "addr:district": "ghaziabad",
+    "addr:housenumber": "3rd, K-23",
+    "addr:postcode": "201001",
+    "addr:street": "Rakesh Marg",
+    "amenity": "restaurant",
+    "building": "yes",
+    "name": "Madan Sweets And Restaurant",
+    "opening_hours": "Mo-Su 08:00-23:00",
+    "phone": "08810010101"
+  }
+},
+{
+  "type": "way",
+  "id": 1251506200,
+  "center": {
+    "lat": 28.6697054,
+    "lon": 77.4481986
+  },
+  "nodes": [
+    11633734638,
+    11633734639,
+    11633734640,
+    11633734641,
+    11633734642,
+    11633734643,
+    11633734644,
+    11633734645,
+    11633734646,
+    11633734647,
+    11633734648,
+    11633734649,
+    11633734650,
+    11633734638
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "K.D.B public school",
+    "name:hi": "के॰डी॰बी पब्लिक स्कूल",
+    "office": "educational_institution"
+  }
+},
+{
+  "type": "way",
+  "id": 1257141790,
+  "center": {
+    "lat": 28.8338443,
+    "lon": 77.5736136
+  },
+  "nodes": [
+    11687714196,
+    11687714197,
+    11687714198,
+    11687714199,
+    11687714200,
+    11687714201,
+    11687714202,
+    11687714196
+  ],
+  "tags": {
+    "addr:city": "Modinagaer",
+    "addr:district": "Ghaziabad",
+    "addr:postcode": "201204",
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "name": "Gurudwara",
+    "religion": "sikh"
+  }
+},
+{
+  "type": "way",
+  "id": 1257143002,
+  "center": {
+    "lat": 28.8389427,
+    "lon": 77.5828726
+  },
+  "nodes": [
+    12908654271,
+    12908654272,
+    12908654274,
+    12908654276,
+    12908654271
+  ],
+  "tags": {
+    "building": "school",
+    "name": "Dayawati public school"
+  }
+},
+{
+  "type": "way",
+  "id": 1257143003,
+  "center": {
+    "lat": 28.8383619,
+    "lon": 77.5837996
+  },
+  "nodes": [
+    12908654277,
+    12908654281,
+    12908654280,
+    12908654278,
+    12908654279,
+    12908654277
+  ],
+  "tags": {
+    "building": "school",
+    "name": "Global public school"
+  }
+},
+{
+  "type": "way",
+  "id": 1257144807,
+  "center": {
+    "lat": 28.8334424,
+    "lon": 77.5738948
+  },
+  "nodes": [
+    11687764481,
+    11687764482,
+    11687764483,
+    11687764484,
+    11687764481
+  ],
+  "tags": {
+    "building": "commercial",
+    "name": "Anil cloth store"
+  }
+},
+{
+  "type": "way",
+  "id": 1257146197,
+  "center": {
+    "lat": 28.8327983,
+    "lon": 77.5732816
+  },
+  "nodes": [
+    11687758657,
+    11687758658,
+    11687758659,
+    11687758660,
+    11687758657
+  ],
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "name": "Chatri mandir",
+    "religion": "hindu"
+  }
+},
+{
+  "type": "way",
+  "id": 1257146198,
+  "center": {
+    "lat": 28.8395171,
+    "lon": 77.5811232
+  },
+  "nodes": [
+    11687758661,
+    9813822780,
+    11687758662,
+    11687758663,
+    11687758661
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "ambar cinema hall",
+    "shop": "mall"
+  }
+},
+{
+  "type": "way",
+  "id": 1257147061,
+  "center": {
+    "lat": 28.8290406,
+    "lon": 77.5690769
+  },
+  "nodes": [
+    11687773184,
+    11687773185,
+    11687773186,
+    11687773187,
+    11687773184
+  ],
+  "tags": {
+    "amenity": "restaurant",
+    "building": "yes",
+    "name": "raja food court"
+  }
+},
+{
+  "type": "way",
+  "id": 1257149042,
+  "center": {
+    "lat": 28.8326026,
+    "lon": 77.5744964
+  },
+  "nodes": [
+    11687771712,
+    11687771713,
+    11687771714,
+    11687771715,
+    11687771712
+  ],
+  "tags": {
+    "building": "college",
+    "name": "ginni devi modi girls pg college"
+  }
+},
+{
+  "type": "way",
+  "id": 1257698175,
+  "center": {
+    "lat": 28.6512393,
+    "lon": 77.4512215
+  },
+  "nodes": [
+    11693042560,
+    11693042561,
+    11693042562,
+    11693042563,
+    11693042564,
+    11693042565,
+    11693042560
+  ],
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "name": "Shiv Temple",
+    "religion": "hindu"
+  }
+},
+{
+  "type": "way",
+  "id": 1257701777,
+  "center": {
+    "lat": 28.6740934,
+    "lon": 77.4522000
+  },
+  "nodes": [
+    11693115905,
+    11693115906,
+    11693115907,
+    11693115908,
+    11693115905
+  ],
+  "tags": {
+    "building": "school",
+    "name": "ingraham institute"
+  }
+},
+{
+  "type": "way",
+  "id": 1257701778,
+  "center": {
+    "lat": 28.6743971,
+    "lon": 77.4522153
+  },
+  "nodes": [
+    11693115909,
+    11693115914,
+    11693115910,
+    11693115911,
+    11693115913,
+    11693115912,
+    11693115909
+  ],
+  "tags": {
+    "building": "school",
+    "name": "Ingraham"
+  }
+},
+{
+  "type": "way",
+  "id": 1257890720,
+  "center": {
+    "lat": 28.6372172,
+    "lon": 77.3611633
+  },
+  "nodes": [
+    3585439965,
+    3585439962,
+    3585439957,
+    3585439958,
+    3585439965
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "L block"
+  }
+},
+{
+  "type": "way",
+  "id": 1257891107,
+  "center": {
+    "lat": 28.6370355,
+    "lon": 77.3609183
+  },
+  "nodes": [
+    3585439955,
+    3585439961,
+    3585439953,
+    3585439950,
+    3585439955
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "K block"
+  }
+},
+{
+  "type": "way",
+  "id": 1257893231,
+  "center": {
+    "lat": 28.6367967,
+    "lon": 77.3608567
+  },
+  "nodes": [
+    3585439950,
+    3585439955,
+    3585439942,
+    3585439944,
+    3585439950
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "J block"
+  }
+},
+{
+  "type": "way",
+  "id": 1257893922,
+  "center": {
+    "lat": 28.6369216,
+    "lon": 77.3615859
+  },
+  "nodes": [
+    3585636698,
+    10994480834,
+    3585636591,
+    3585636694,
+    3585636698
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "G block"
+  }
+},
+{
+  "type": "way",
+  "id": 1257894248,
+  "center": {
+    "lat": 28.6366569,
+    "lon": 77.3615587
+  },
+  "nodes": [
+    3585636694,
+    3585636588,
+    3585636583,
+    3585636591,
+    3585636694
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "H block"
+  }
+},
+{
+  "type": "way",
+  "id": 1257894359,
+  "center": {
+    "lat": 28.6365185,
+    "lon": 77.3614335
+  },
+  "nodes": [
+    3585636588,
+    3585636583,
+    3585636582,
+    3585636584,
+    3585636588
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "I block"
+  }
+},
+{
+  "type": "way",
+  "id": 1257897124,
+  "center": {
+    "lat": 28.6375935,
+    "lon": 77.3617111
+  },
+  "nodes": [
+    5942380585,
+    5942380586,
+    5942380587,
+    5942380588,
+    5942380590,
+    5942380377,
+    12649301439,
+    12649301431,
+    12649301432,
+    12649301433,
+    5942380379,
+    12649301438,
+    12649301434,
+    5942380380,
+    12649301440,
+    12649301435,
+    12649301436,
+    12649301437,
+    5942380384,
+    5942380585
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Community Hall"
+  }
+},
+{
+  "type": "way",
+  "id": 1257898123,
+  "center": {
+    "lat": 28.6371290,
+    "lon": 77.3619674
+  },
+  "nodes": [
+    12749676312,
+    12749676313,
+    12749676314,
+    12749676315,
+    12749676316,
+    12749676312
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "F block"
+  }
+},
+{
+  "type": "way",
+  "id": 1257898301,
+  "center": {
+    "lat": 28.6369589,
+    "lon": 77.3620447
+  },
+  "nodes": [
+    12749676319,
+    12749676321,
+    12749676317,
+    12749676319
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "E block"
+  }
+},
+{
+  "type": "way",
+  "id": 1257898355,
+  "center": {
+    "lat": 28.6370330,
+    "lon": 77.3622868
+  },
+  "nodes": [
+    3587083620,
+    11694531930,
+    11694531931,
+    3587083614,
+    12749676320,
+    12749676318,
+    3587083620
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "D block"
+  }
+},
+{
+  "type": "way",
+  "id": 1257898803,
+  "center": {
+    "lat": 28.6375272,
+    "lon": 77.3620628
+  },
+  "nodes": [
+    5942380341,
+    5942380383,
+    11694531972,
+    3587083642,
+    11694531973,
+    12626484532,
+    11694531974,
+    5942380341
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "C block"
+  }
+},
+{
+  "type": "way",
+  "id": 1257899231,
+  "center": {
+    "lat": 28.6374229,
+    "lon": 77.3623132
+  },
+  "nodes": [
+    11694531973,
+    11694525926,
+    5942380349,
+    5942380350,
+    5942380351,
+    5942380352,
+    11694531973
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "E block"
+  }
+},
+{
+  "type": "way",
+  "id": 1257900601,
+  "center": {
+    "lat": 28.6378179,
+    "lon": 77.3614549
+  },
+  "nodes": [
+    11694557622,
+    11694557623,
+    12626484531,
+    3585636730,
+    11694557624,
+    11694557622
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "P block"
+  }
+},
+{
+  "type": "way",
+  "id": 1257900754,
+  "center": {
+    "lat": 28.6379550,
+    "lon": 77.3613034
+  },
+  "nodes": [
+    3585636730,
+    3585636738,
+    3585636736,
+    3585636735,
+    12645216115,
+    11694557624,
+    3585636730
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "O Block"
+  }
+},
+{
+  "type": "way",
+  "id": 1257901254,
+  "center": {
+    "lat": 28.6375099,
+    "lon": 77.3612737
+  },
+  "nodes": [
+    3585636716,
+    3585636703,
+    11694542448,
+    12749668595,
+    12749668593,
+    12749668591,
+    12749668588,
+    12626484537,
+    3585636714,
+    3585636716
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "M block"
+  }
+},
+{
+  "type": "way",
+  "id": 1257902061,
+  "center": {
+    "lat": 28.6374847,
+    "lon": 77.3609120
+  },
+  "nodes": [
+    12749668589,
+    12749668587,
+    11694542449,
+    12749668586,
+    12749668596,
+    12749668594,
+    12749668592,
+    12749668589
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "N block"
+  }
+},
+{
+  "type": "way",
+  "id": 1257902776,
+  "center": {
+    "lat": 28.6381410,
+    "lon": 77.3618528
+  },
+  "nodes": [
+    11694565807,
+    12749653608,
+    12749653609,
+    12749653610,
+    11694565807
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "A block"
+  }
+},
+{
+  "type": "way",
+  "id": 1257902874,
+  "center": {
+    "lat": 28.6379210,
+    "lon": 77.3623545
+  },
+  "nodes": [
+    11694544163,
+    11694544164,
+    12749653606,
+    12749653607,
+    11694544163
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "B block"
+  }
+},
+{
+  "type": "way",
+  "id": 1257909152,
+  "center": {
+    "lat": 28.6359400,
+    "lon": 77.3616646
+  },
+  "nodes": [
+    11694561863,
+    11694561864,
+    11694561865,
+    11694561866,
+    11694561863
+  ],
+  "tags": {
+    "amenity": "fast_food",
+    "building": "yes",
+    "name": "wood box"
+  }
+},
+{
+  "type": "way",
+  "id": 1257909319,
+  "center": {
+    "lat": 28.6360673,
+    "lon": 77.3619030
+  },
+  "nodes": [
+    11694606537,
+    11694606538,
+    11694606539,
+    11694606540,
+    11694606537
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Jawed Habib",
+    "shop": "hairdresser"
+  }
+},
+{
+  "type": "way",
+  "id": 1257911373,
+  "center": {
+    "lat": 28.6360177,
+    "lon": 77.3609010
+  },
+  "nodes": [
+    5942380354,
+    11694583112,
+    11694583113,
+    855134324,
+    11694494903,
+    5942380354
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Foodczaar",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "way",
+  "id": 1257912955,
+  "center": {
+    "lat": 28.6365178,
+    "lon": 77.3604886
+  },
+  "nodes": [
+    5942380357,
+    5942380358,
+    11694632883,
+    5942380356,
+    5942380357
+  ],
+  "tags": {
+    "brand": "Lenskart",
+    "brand:wikidata": "Q17068753",
+    "building": "yes",
+    "name": "Lenskart",
+    "shop": "optician"
+  }
+},
+{
+  "type": "way",
+  "id": 1257913614,
+  "center": {
+    "lat": 28.6364031,
+    "lon": 77.3605785
+  },
+  "nodes": [
+    5942380358,
+    11694635917,
+    11694635918,
+    11694635919,
+    5942380358
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Bikaner",
+    "shop": "confectionery"
+  }
+},
+{
+  "type": "way",
+  "id": 1257914318,
+  "center": {
+    "lat": 28.6361602,
+    "lon": 77.3620177
+  },
+  "nodes": [
+    11694641506,
+    11694641507,
+    11694641508,
+    11694641509,
+    11694641510,
+    11694641506
+  ],
+  "tags": {
+    "amenity": "fast_food",
+    "building": "yes",
+    "name": "French oven"
+  }
+},
+{
+  "type": "way",
+  "id": 1257918512,
+  "center": {
+    "lat": 28.6363062,
+    "lon": 77.3622875
+  },
+  "nodes": [
+    11694671086,
+    11694671087,
+    11694671088,
+    11694671089,
+    11694671086
+  ],
+  "tags": {
+    "amenity": "fast_food",
+    "building": "yes",
+    "name": "Burger Singh"
+  }
+},
+{
+  "type": "way",
+  "id": 1257918976,
+  "center": {
+    "lat": 28.6360148,
+    "lon": 77.3617846
+  },
+  "nodes": [
+    11694561866,
+    11694561865,
+    11694606538,
+    11694606537,
+    11694561866
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Perfection",
+    "shop": "hairdresser"
+  }
+},
+{
+  "type": "way",
+  "id": 1257919696,
+  "center": {
+    "lat": 28.6363525,
+    "lon": 77.3623592
+  },
+  "nodes": [
+    11694642488,
+    11694671088,
+    11694642489,
+    11694642490,
+    11694642488
+  ],
+  "tags": {
+    "amenity": "fast_food",
+    "building": "yes",
+    "name": "Dada ji ki rasoi"
+  }
+},
+{
+  "type": "way",
+  "id": 1257920941,
+  "center": {
+    "lat": 28.6385838,
+    "lon": 77.3621909
+  },
+  "nodes": [
+    11694640247,
+    11694640248,
+    5942380363,
+    5942380362,
+    11694640247
+  ],
+  "tags": {
+    "brand": "Cromā",
+    "brand:wikidata": "Q5187683",
+    "building": "yes",
+    "name": "Cromā",
+    "shop": "electronics"
+  }
+},
+{
+  "type": "way",
+  "id": 1257921005,
+  "center": {
+    "lat": 28.6385773,
+    "lon": 77.3620047
+  },
+  "nodes": [
+    11694640247,
+    11694705750,
+    11694705751,
+    11694640248,
+    11694640247
+  ],
+  "tags": {
+    "amenity": "bank",
+    "brand": "ICICI Bank",
+    "brand:wikidata": "Q1653258",
+    "building": "yes",
+    "name": "ICICI Bank",
+    "short_name": "ICICI"
+  }
+},
+{
+  "type": "way",
+  "id": 1257943275,
+  "center": {
+    "lat": 28.6385708,
+    "lon": 77.3618040
+  },
+  "nodes": [
+    11694888790,
+    11694888791,
+    11694705751,
+    11694705750,
+    11694888790
+  ],
+  "tags": {
+    "amenity": "food_court",
+    "building": "yes",
+    "name": "Cinnamon Kitchen"
+  }
+},
+{
+  "type": "way",
+  "id": 1258255790,
+  "center": {
+    "lat": 28.6546640,
+    "lon": 77.4456076
+  },
+  "nodes": [
+    11697514216,
+    11697514217,
+    11697514218,
+    11697514219,
+    11697514216
+  ],
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "name": "Vaishno Mata Mandir",
+    "religion": "hindu"
+  }
+},
+{
+  "type": "way",
+  "id": 1258267034,
+  "center": {
+    "lat": 28.6717775,
+    "lon": 77.4607971
+  },
+  "nodes": [
+    11697574747,
+    11697574748,
+    11697574749,
+    11697574750,
+    11697574751,
+    11697574747
+  ],
+  "tags": {
+    "building": "school",
+    "name": "ST. MARY'S CONVENT SCHOOL"
+  }
+},
+{
+  "type": "way",
+  "id": 1258267829,
+  "center": {
+    "lat": 28.6721125,
+    "lon": 77.4615358
+  },
+  "nodes": [
+    11697632029,
+    11697632030,
+    11697632031,
+    11697632032,
+    11697632033,
+    11697632034,
+    11697632029
+  ],
+  "tags": {
+    "building": "school",
+    "name": "uttam School Auditorium"
+  }
+},
+{
+  "type": "way",
+  "id": 1258616576,
+  "center": {
+    "lat": 28.6530516,
+    "lon": 77.4523256
+  },
+  "nodes": [
+    11700537916,
+    11700537917,
+    11700537918,
+    11700537919,
+    11700537916
+  ],
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "name": "Gayatari Mandir",
+    "religion": "hindu"
+  }
+},
+{
+  "type": "way",
+  "id": 1266420925,
+  "center": {
+    "lat": 28.7341781,
+    "lon": 77.2790729
+  },
+  "nodes": [
+    11763315512,
+    11763315513,
+    11763315514,
+    11763315515,
+    11763315516,
+    11763315517,
+    11763315518,
+    11763315519,
+    11763315512
+  ],
+  "tags": {
+    "addr:housenumber": "8",
+    "addr:street": "agam kuan",
+    "building": "industrial",
+    "name": "murmur factory"
+  }
+},
+{
+  "type": "way",
+  "id": 1268175302,
+  "center": {
+    "lat": 28.6796474,
+    "lon": 77.4376893
+  },
+  "nodes": [
+    11778496404,
+    11778496405,
+    11778496406,
+    11778496407,
+    11778496404
+  ],
+  "tags": {
+    "amenity": "shelter",
+    "building": "yes",
+    "name": "Shelter Home",
+    "operator": "Nagar Nigam Ghaziabad"
+  }
+},
+{
+  "type": "way",
+  "id": 1270547099,
+  "center": {
+    "lat": 28.6457245,
+    "lon": 77.4431187
+  },
+  "nodes": [
+    11796827427,
+    11796827428,
+    11796827429,
+    11796827430,
+    11796827427
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Uttam Enterprises",
+    "shop": "trade"
+  }
+},
+{
+  "type": "way",
+  "id": 1272967600,
+  "center": {
+    "lat": 28.6717153,
+    "lon": 77.4819121
+  },
+  "nodes": [
+    11821178568,
+    11821209769,
+    11821209770,
+    11821209771,
+    11821178568
+  ],
+  "tags": {
+    "addr:city": "Shastri Nagar",
+    "addr:district": "ghaziabad",
+    "addr:housenumber": "BD-282",
+    "addr:postcode": "201002",
+    "addr:street": "Avantika Colony",
+    "building": "yes",
+    "name": "Namdaan Center Ghaziabad"
+  }
+},
+{
+  "type": "way",
+  "id": 1272977974,
+  "center": {
+    "lat": 28.6592658,
+    "lon": 77.4352765
+  },
+  "nodes": [
+    11821286392,
+    11821286393,
+    11821286394,
+    11821286395,
+    11821286392
+  ],
+  "tags": {
+    "brand": "Malabar Gold and Diamonds",
+    "brand:wikidata": "Q60748883",
+    "building": "yes",
+    "name": "Malabar Gold and Diamonds",
+    "shop": "jewelry"
+  }
+},
+{
+  "type": "way",
+  "id": 1272979321,
+  "center": {
+    "lat": 28.6596463,
+    "lon": 77.4354570
+  },
+  "nodes": [
+    11821306752,
+    11821306753,
+    11821306754,
+    11821306755,
+    11821306752
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Janki Jewellers",
+    "shop": "jewelry"
+  }
+},
+{
+  "type": "way",
+  "id": 1277857512,
+  "center": {
+    "lat": 28.7873007,
+    "lon": 77.4952872
+  },
+  "nodes": [
+    11862539777,
+    11862539778,
+    11862539779,
+    11862539780,
+    11862539781,
+    11862539782,
+    11862539777
+  ],
+  "tags": {
+    "building": "retail",
+    "name": "VIKAS MARKET"
+  }
+},
+{
+  "type": "way",
+  "id": 1287107832,
+  "center": {
+    "lat": 28.6460020,
+    "lon": 77.4405694
+  },
+  "nodes": [
+    11937415396,
+    11937415397,
+    11937415398,
+    11937415399,
+    11937415396
+  ],
+  "tags": {
+    "brand": "Mother Dairy",
+    "brand:wikidata": "Q6917320",
+    "building": "yes",
+    "name": "Mother Dairy",
+    "shop": "dairy"
+  }
+},
+{
+  "type": "way",
+  "id": 1289816883,
+  "center": {
+    "lat": 28.7031327,
+    "lon": 77.4354854
+  },
+  "nodes": [
+    11959775388,
+    11959775389,
+    11959775390,
+    11959775391,
+    11959775392,
+    11959775393,
+    11959775394,
+    11959775395,
+    11959775396,
+    11959775397,
+    11959775398,
+    11959775399,
+    11959775400,
+    11959775401,
+    11959775402,
+    11959775403,
+    11959775404,
+    11959775405,
+    11959775406,
+    11959775407,
+    11959775408,
+    11959775409,
+    11959775410,
+    11959775411,
+    11959775412,
+    11959775413,
+    11959775414,
+    11959775415,
+    11959775416,
+    11959775417,
+    11959775418,
+    11959775419,
+    11959775420,
+    11959775421,
+    11959775422,
+    11959775423,
+    11959775424,
+    11959775425,
+    11959775426,
+    11959775427,
+    11959775428,
+    11959775429,
+    11959775430,
+    11959775431,
+    11959775432,
+    11959775433,
+    11959775434,
+    11959775435,
+    11959775436,
+    11959775437,
+    11959775438,
+    11959775439,
+    11959775440,
+    11959775441,
+    11959775442,
+    11959775443,
+    11959775444,
+    11959775445,
+    11959775446,
+    11959775447,
+    11959775448,
+    11959775449,
+    11959775388
+  ],
+  "tags": {
+    "addr:city": "Rajnagar Extension",
+    "addr:district": "Ghaziabad",
+    "addr:housenumber": "phase-2 gulmahor garden society",
+    "addr:postcode": "201017",
+    "building": "residential",
+    "building:levels": "14",
+    "ele": "1.20",
+    "height": "50",
+    "name": "Phase-2 Tower 17 & 18"
+  }
+},
+{
+  "type": "way",
+  "id": 1292557854,
+  "center": {
+    "lat": 28.6497520,
+    "lon": 77.3465087
+  },
+  "nodes": [
+    11982415216,
+    11982415217,
+    11982415218,
+    11982415219,
+    11982415216
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Ramprastha Greens Office",
+    "office": "estate_agent"
+  }
+},
+{
+  "type": "way",
+  "id": 1297129473,
+  "center": {
+    "lat": 28.6932077,
+    "lon": 77.4400609
+  },
+  "nodes": [
+    12017894210,
+    12017894213,
+    12017894209,
+    12017894212,
+    12017894208,
+    12017894211,
+    12017894210
+  ],
+  "tags": {
+    "amenity": "hospital",
+    "building": "yes",
+    "healthcare": "hospital",
+    "name": "Navin Hospital"
+  }
+},
+{
+  "type": "way",
+  "id": 1298278009,
+  "center": {
+    "lat": 28.6992098,
+    "lon": 77.4279322
+  },
+  "nodes": [
+    12027555813,
+    12027555817,
+    12027555818,
+    12949354773,
+    12949354774,
+    12889199088,
+    12027555813
+  ],
+  "tags": {
+    "addr:city": "Rajnagar Extension",
+    "addr:district": "Ghaziabad",
+    "addr:postcode": "201017",
+    "building": "apartments",
+    "name": "Bluemoon Homes"
+  }
+},
+{
+  "type": "way",
+  "id": 1302897714,
+  "center": {
+    "lat": 28.7713484,
+    "lon": 77.5110954
+  },
+  "nodes": [
+    12066569837,
+    12066569835,
+    12066569838,
+    12066569836,
+    12066569837
+  ],
+  "tags": {
+    "amenity": "hospital",
+    "building": "yes",
+    "healthcare": "hospital",
+    "name": "Muradnagar Metro Hospital"
+  }
+},
+{
+  "type": "way",
+  "id": 1302899498,
+  "center": {
+    "lat": 28.8298624,
+    "lon": 77.5699719
+  },
+  "nodes": [
+    12066605440,
+    12066605441,
+    12066605444,
+    12066605442,
+    12066605440
+  ],
+  "tags": {
+    "amenity": "post_office",
+    "building": "yes",
+    "name": "Modinagar Post Office",
+    "post_office": "bureau"
+  }
+},
+{
+  "type": "way",
+  "id": 1344747639,
+  "center": {
+    "lat": 28.6656904,
+    "lon": 77.4230056
+  },
+  "nodes": [
+    12441175134,
+    12441175135,
+    12441175136,
+    12441175137,
+    12441175134
+  ],
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "name": "thakurdwara temple",
+    "religion": "hindu"
+  }
+},
+{
+  "type": "way",
+  "id": 1344750203,
+  "center": {
+    "lat": 28.6697991,
+    "lon": 77.4313816
+  },
+  "nodes": [
+    12441192329,
+    12441192330,
+    12441192331,
+    12441192332,
+    12441192329
+  ],
+  "tags": {
+    "amenity": "bus_station",
+    "building": "no",
+    "bus": "yes",
+    "internet_access": "no",
+    "name": "purana bus adda / old bus station",
+    "public_transport": "station"
+  }
+},
+{
+  "type": "way",
+  "id": 1344750204,
+  "center": {
+    "lat": 28.6700630,
+    "lon": 77.4252221
+  },
+  "nodes": [
+    12441192333,
+    3583301908,
+    12441192334,
+    12441192335,
+    12441192336,
+    12441192337,
+    12441192333
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:district": "uttar pradesh",
+    "addr:housenumber": "137",
+    "addr:postcode": "201001",
+    "addr:street": "mukand nagar road",
+    "building": "school",
+    "building:levels": "2",
+    "name": "Seth mukand lal inter college"
+  }
+},
+{
+  "type": "way",
+  "id": 1344752100,
+  "center": {
+    "lat": 28.6670411,
+    "lon": 77.4213087
+  },
+  "nodes": [
+    12441189117,
+    12441189118,
+    12441189119,
+    12441189120,
+    12441189117
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "priyanshu beej shop",
+    "shop": "farm"
+  }
+},
+{
+  "type": "way",
+  "id": 1344752101,
+  "center": {
+    "lat": 28.6668399,
+    "lon": 77.4215004
+  },
+  "nodes": [
+    12441189121,
+    12441189122,
+    12441189123,
+    12441189124,
+    12441189121
+  ],
+  "tags": {
+    "amenity": "fast_food",
+    "building": "yes",
+    "name": "Bille chowmien shop"
+  }
+},
+{
+  "type": "way",
+  "id": 1360683560,
+  "center": {
+    "lat": 28.6856893,
+    "lon": 77.3447677
+  },
+  "nodes": [
+    12596172283,
+    3568537277,
+    12596172284,
+    12596172285,
+    12596172283
+  ],
+  "tags": {
+    "building": "yes",
+    "layer": "1",
+    "name": "gaur plaza",
+    "shop": "mall"
+  }
+},
+{
+  "type": "way",
+  "id": 1360683849,
+  "center": {
+    "lat": 28.6855950,
+    "lon": 77.3432508
+  },
+  "nodes": [
+    12596180185,
+    12596180186,
+    12596180187,
+    12596180188,
+    12596180185
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Sai Sadan C 10"
+  }
+},
+{
+  "type": "way",
+  "id": 1360688547,
+  "center": {
+    "lat": 28.6884841,
+    "lon": 77.3437154
+  },
+  "nodes": [
+    12596231362,
+    12596231363,
+    12596231364,
+    12596231365,
+    12596231362
+  ],
+  "tags": {
+    "building": "yes",
+    "layer": "1",
+    "name": "sm world",
+    "shop": "mall"
+  }
+},
+{
+  "type": "way",
+  "id": 1360689405,
+  "center": {
+    "lat": 28.6877515,
+    "lon": 77.3433661
+  },
+  "nodes": [
+    12596234848,
+    12596234849,
+    12596234850,
+    3585033562,
+    12596234848
+  ],
+  "tags": {
+    "amenity": "bank",
+    "brand": "State Bank of India",
+    "brand:wikidata": "Q1340361",
+    "building": "yes",
+    "name": "State Bank of India",
+    "short_name": "SBI"
+  }
+},
+{
+  "type": "way",
+  "id": 1360690110,
+  "center": {
+    "lat": 28.6892161,
+    "lon": 77.3423244
+  },
+  "nodes": [
+    12596245203,
+    12596245204,
+    12596245205,
+    12596245206,
+    12596245203
+  ],
+  "tags": {
+    "amenity": "restaurant",
+    "building": "yes",
+    "name": "aapki rasoi"
+  }
+},
+{
+  "type": "way",
+  "id": 1360690125,
+  "center": {
+    "lat": 28.6893224,
+    "lon": 77.3434246
+  },
+  "nodes": [
+    12596223758,
+    12596223759,
+    12596223760,
+    12596223761,
+    12596223758
+  ],
+  "tags": {
+    "building": "yes",
+    "leisure": "fitness_centre",
+    "name": "gym"
+  }
+},
+{
+  "type": "way",
+  "id": 1360691033,
+  "center": {
+    "lat": 28.6879006,
+    "lon": 77.3402590
+  },
+  "nodes": [
+    12596194227,
+    12596194228,
+    12596194229,
+    12596194230,
+    12596194227
+  ],
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "name": "hanuman mandir",
+    "religion": "hindu"
+  }
+},
+{
+  "type": "way",
+  "id": 1360691535,
+  "center": {
+    "lat": 28.6859918,
+    "lon": 77.3439286
+  },
+  "nodes": [
+    12596252169,
+    12596252170,
+    12596252171,
+    12596252172,
+    12596252169
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "vastra lok",
+    "shop": "clothes"
+  }
+},
+{
+  "type": "way",
+  "id": 1360699268,
+  "center": {
+    "lat": 28.6858652,
+    "lon": 77.3465272
+  },
+  "nodes": [
+    12596325924,
+    12596325925,
+    12596325926,
+    12596325927,
+    12596325928,
+    12596325929,
+    12596325930,
+    12596325931,
+    12596325924
+  ],
+  "tags": {
+    "building": "hospital",
+    "layer": "1",
+    "name": "ESIC hospital"
+  }
+},
+{
+  "type": "way",
+  "id": 1360703797,
+  "center": {
+    "lat": 28.6918752,
+    "lon": 77.3464624
+  },
+  "nodes": [
+    12596382720,
+    12596382721,
+    12596382722,
+    12596382723,
+    12596382720
+  ],
+  "tags": {
+    "building": "cowshed",
+    "name": "virendra milk"
+  }
+},
+{
+  "type": "way",
+  "id": 1360703877,
+  "center": {
+    "lat": 28.6881080,
+    "lon": 77.3399537
+  },
+  "nodes": [
+    12596374907,
+    12596374908,
+    12596374909,
+    12596374910,
+    12596374907
+  ],
+  "tags": {
+    "building": "cowshed",
+    "name": "gaushala"
+  }
+},
+{
+  "type": "way",
+  "id": 1360704073,
+  "center": {
+    "lat": 28.6875910,
+    "lon": 77.3410564
+  },
+  "nodes": [
+    12596374911,
+    12596374912,
+    3585033499,
+    3585033527,
+    12596374911
+  ],
+  "tags": {
+    "building": "hospital",
+    "name": "shreya hospital"
+  }
+},
+{
+  "type": "way",
+  "id": 1360704226,
+  "center": {
+    "lat": 28.6882625,
+    "lon": 77.3403308
+  },
+  "nodes": [
+    12596382030,
+    12596382031,
+    12596382032,
+    12596382033,
+    12596382030
+  ],
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "name": "mata mandir",
+    "religion": "hindu"
+  }
+},
+{
+  "type": "way",
+  "id": 1360705041,
+  "center": {
+    "lat": 28.6924292,
+    "lon": 77.3425355
+  },
+  "nodes": [
+    12596377573,
+    12596377574,
+    12596377575,
+    12596377576,
+    12596377573
+  ],
+  "tags": {
+    "building": "school",
+    "name": "kidzee"
+  }
+},
+{
+  "type": "way",
+  "id": 1360706475,
+  "center": {
+    "lat": 28.6893742,
+    "lon": 77.3403944
+  },
+  "nodes": [
+    12596383459,
+    12596383460,
+    12596383461,
+    12596383462,
+    12596383459
+  ],
+  "tags": {
+    "building": "yes",
+    "craft": "electrician",
+    "name": "shivani electricals"
+  }
+},
+{
+  "type": "way",
+  "id": 1360708122,
+  "center": {
+    "lat": 28.6896164,
+    "lon": 77.3397107
+  },
+  "nodes": [
+    12596409996,
+    12596409997,
+    12596409998,
+    12596409999,
+    12596409996
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "shalimar garden bijli ghar",
+    "office": "energy_supplier"
+  }
+},
+{
+  "type": "way",
+  "id": 1360708474,
+  "center": {
+    "lat": 28.6896164,
+    "lon": 77.3406308
+  },
+  "nodes": [
+    12596411993,
+    12596411994,
+    12596411995,
+    12596411996,
+    12596411993
+  ],
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "name": "sai mandir",
+    "religion": "hindu"
+  }
+},
+{
+  "type": "way",
+  "id": 1360708770,
+  "center": {
+    "lat": 28.6878517,
+    "lon": 77.3434776
+  },
+  "nodes": [
+    12596408385,
+    12596408386,
+    12596408387,
+    12596408388,
+    12596408385
+  ],
+  "tags": {
+    "amenity": "prep_school",
+    "building": "yes",
+    "name": "matrix academy"
+  }
+},
+{
+  "type": "way",
+  "id": 1360708954,
+  "center": {
+    "lat": 28.6857547,
+    "lon": 77.3429385
+  },
+  "nodes": [
+    12596379295,
+    12596379296,
+    12596379297,
+    12894594702,
+    12596379295
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "khadi",
+    "shop": "clothes"
+  }
+},
+{
+  "type": "way",
+  "id": 1364306139,
+  "center": {
+    "lat": 28.6506125,
+    "lon": 77.3529541
+  },
+  "nodes": [
+    12633684222,
+    12633684223,
+    12633684224,
+    12633684225,
+    12633684222
+  ],
+  "tags": {
+    "building": "house",
+    "name": "My House"
+  }
+},
+{
+  "type": "way",
+  "id": 1364306750,
+  "center": {
+    "lat": 28.6500916,
+    "lon": 77.3531320
+  },
+  "nodes": [
+    12633680828,
+    12633680829,
+    12633680830,
+    12633680831,
+    12633680832,
+    12633680828
+  ],
+  "tags": {
+    "building": "school",
+    "name": "Milind Acdemy"
+  }
+},
+{
+  "type": "way",
+  "id": 1364308112,
+  "center": {
+    "lat": 28.6494487,
+    "lon": 77.3516506
+  },
+  "nodes": [
+    12633691308,
+    12633691309,
+    12633691310,
+    12633691311,
+    12633691308
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Ramprastha  building"
+  }
+},
+{
+  "type": "way",
+  "id": 1364308322,
+  "center": {
+    "lat": 28.6497323,
+    "lon": 77.3521367
+  },
+  "nodes": [
+    12633693290,
+    12633693291,
+    12633693292,
+    12633693293,
+    12633693290
+  ],
+  "tags": {
+    "building": "yes",
+    "leisure": "fitness_centre",
+    "name": "Max Fitness Gym"
+  }
+},
+{
+  "type": "way",
+  "id": 1364308452,
+  "center": {
+    "lat": 28.6496984,
+    "lon": 77.3523133
+  },
+  "nodes": [
+    12633671745,
+    12633671746,
+    12633671747,
+    12633671748,
+    12633671745
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Sandeep Drycleaners",
+    "shop": "dry_cleaning"
+  }
+},
+{
+  "type": "way",
+  "id": 1364308854,
+  "center": {
+    "lat": 28.6503621,
+    "lon": 77.3508945
+  },
+  "nodes": [
+    12633704423,
+    12633704424,
+    12633704425,
+    12633704426,
+    12633704423
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Pearl  court"
+  }
+},
+{
+  "type": "way",
+  "id": 1364309627,
+  "center": {
+    "lat": 28.6490602,
+    "lon": 77.3513760
+  },
+  "nodes": [
+    12633714733,
+    12633714734,
+    12633714735,
+    12633714736,
+    12633714733
+  ],
+  "tags": {
+    "amenity": "police",
+    "building": "yes",
+    "name": "Vaishali POlice Station"
+  }
+},
+{
+  "type": "way",
+  "id": 1364309953,
+  "center": {
+    "lat": 28.6473370,
+    "lon": 77.3512416
+  },
+  "nodes": [
+    12633712142,
+    12633712143,
+    12633712144,
+    12633712145,
+    12633712142
+  ],
+  "tags": {
+    "building": "school",
+    "name": "KR  Manglam School"
+  }
+},
+{
+  "type": "way",
+  "id": 1364310721,
+  "center": {
+    "lat": 28.6496623,
+    "lon": 77.3522727
+  },
+  "nodes": [
+    12633714335,
+    12633714336,
+    12633714337,
+    12633714338,
+    12633714335
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Grocery Store",
+    "shop": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1364313704,
+  "center": {
+    "lat": 28.6479987,
+    "lon": 77.3523136
+  },
+  "nodes": [
+    12633756206,
+    12633756207,
+    12633756208,
+    12633756209,
+    12633756206
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Santosh Medical Store",
+    "shop": "medical_supply"
+  }
+},
+{
+  "type": "way",
+  "id": 1364314890,
+  "center": {
+    "lat": 28.6488929,
+    "lon": 77.3517955
+  },
+  "nodes": [
+    12633756210,
+    12633756211,
+    12633756212,
+    12633756213,
+    12633756210
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "old building"
+  }
+},
+{
+  "type": "way",
+  "id": 1364315740,
+  "center": {
+    "lat": 28.6459744,
+    "lon": 77.3488646
+  },
+  "nodes": [
+    12633791301,
+    12633791302,
+    12633791303,
+    12633791304,
+    12633791301
+  ],
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "name": "Kali Mata Mandir",
+    "religion": "hindu"
+  }
+},
+{
+  "type": "way",
+  "id": 1364315924,
+  "center": {
+    "lat": 28.6462002,
+    "lon": 77.3485965
+  },
+  "nodes": [
+    12633746183,
+    12633746184,
+    12633746185,
+    12633746186,
+    12633746183
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Satyarth Medical Store",
+    "shop": "medical_supply"
+  }
+},
+{
+  "type": "way",
+  "id": 1364316352,
+  "center": {
+    "lat": 28.6466575,
+    "lon": 77.3478454
+  },
+  "nodes": [
+    12633796161,
+    12633796162,
+    12633796163,
+    12633796164,
+    12633796161
+  ],
+  "tags": {
+    "amenity": "fast_food",
+    "building": "yes",
+    "cuisine": "pizza",
+    "name": "Roms Pizza"
+  }
+},
+{
+  "type": "way",
+  "id": 1364316896,
+  "center": {
+    "lat": 28.6468700,
+    "lon": 77.3475629
+  },
+  "nodes": [
+    12633782979,
+    12633782980,
+    12633782981,
+    12633782982,
+    12633782979
+  ],
+  "tags": {
+    "brand": "Patanjali Ayurved",
+    "brand:wikidata": "Q19856023",
+    "building": "yes",
+    "name": "Patanjali Store",
+    "shop": "convenience"
+  }
+},
+{
+  "type": "way",
+  "id": 1364317029,
+  "center": {
+    "lat": 28.6470297,
+    "lon": 77.3472115
+  },
+  "nodes": [
+    12633786516,
+    12633786517,
+    12633786518,
+    12633786519,
+    12633786516
+  ],
+  "tags": {
+    "amenity": "dentist",
+    "building": "yes",
+    "healthcare": "dentist",
+    "name": "PANT DENSTIST"
+  }
+},
+{
+  "type": "way",
+  "id": 1364317285,
+  "center": {
+    "lat": 28.6474273,
+    "lon": 77.3465409
+  },
+  "nodes": [
+    12633801934,
+    12633801935,
+    12633801936,
+    12633801937,
+    12633801934
+  ],
+  "tags": {
+    "amenity": "restaurant",
+    "building": "yes",
+    "name": "Mohan Dhaba"
+  }
+},
+{
+  "type": "way",
+  "id": 1364318220,
+  "center": {
+    "lat": 28.6465715,
+    "lon": 77.3440929
+  },
+  "nodes": [
+    12633807426,
+    12633807427,
+    12633807428,
+    12633807429,
+    12633807426
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Lemon Soda Shop",
+    "shop": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1364318771,
+  "center": {
+    "lat": 28.6508882,
+    "lon": 77.3533403
+  },
+  "nodes": [
+    12633789669,
+    12633789670,
+    12633789671,
+    12633789672,
+    12633789669
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Negi Shop",
+    "shop": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1364319034,
+  "center": {
+    "lat": 28.6509780,
+    "lon": 77.3532596
+  },
+  "nodes": [
+    12633825105,
+    12633825106,
+    12633825107,
+    12633825108,
+    12633825105
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "A1 Pharmacy",
+    "shop": "medical_supply"
+  }
+},
+{
+  "type": "way",
+  "id": 1364808518,
+  "center": {
+    "lat": 28.6511082,
+    "lon": 77.3531324
+  },
+  "nodes": [
+    12638989262,
+    12638989263,
+    12638989264,
+    12638989265,
+    12638989262
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Sabji Wala",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "way",
+  "id": 1364808785,
+  "center": {
+    "lat": 28.6512848,
+    "lon": 77.3529923
+  },
+  "nodes": [
+    12638987609,
+    12638987610,
+    12638987611,
+    12638987612,
+    12638987609
+  ],
+  "tags": {
+    "amenity": "fast_food",
+    "building": "yes",
+    "name": "Chat Corner"
+  }
+},
+{
+  "type": "way",
+  "id": 1364809930,
+  "center": {
+    "lat": 28.6506473,
+    "lon": 77.3533593
+  },
+  "nodes": [
+    12638995964,
+    12638995965,
+    12638995966,
+    12638995967,
+    12638995964
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Annupurna Store",
+    "shop": "variety_store"
+  }
+},
+{
+  "type": "way",
+  "id": 1364810008,
+  "center": {
+    "lat": 28.6503390,
+    "lon": 77.3530592
+  },
+  "nodes": [
+    12638981272,
+    12638981273,
+    12638981274,
+    12638981275,
+    12638981272
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Bhagwati Stationaries",
+    "shop": "stationery"
+  }
+},
+{
+  "type": "way",
+  "id": 1364811108,
+  "center": {
+    "lat": 28.6502668,
+    "lon": 77.3537060
+  },
+  "nodes": [
+    12638997379,
+    12638997380,
+    12638997381,
+    12638997382,
+    12638997379
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Open Court"
+  }
+},
+{
+  "type": "way",
+  "id": 1364811340,
+  "center": {
+    "lat": 28.6503687,
+    "lon": 77.3533547
+  },
+  "nodes": [
+    12638991198,
+    12638991199,
+    12638991200,
+    12639010601,
+    12638991198
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Jhule"
+  }
+},
+{
+  "type": "way",
+  "id": 1364811476,
+  "center": {
+    "lat": 28.6506578,
+    "lon": 77.3526411
+  },
+  "nodes": [
+    12638993599,
+    12638993600,
+    12639012201,
+    12639012202,
+    12638993599
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Coach House"
+  }
+},
+{
+  "type": "way",
+  "id": 1364811527,
+  "center": {
+    "lat": 28.6504755,
+    "lon": 77.3532696
+  },
+  "nodes": [
+    12639012181,
+    12639012182,
+    12639012183,
+    12639012184,
+    12639012181
+  ],
+  "tags": {
+    "amenity": "food_court",
+    "building": "yes",
+    "name": "Burger Stall"
+  }
+},
+{
+  "type": "way",
+  "id": 1364812278,
+  "center": {
+    "lat": 28.6505290,
+    "lon": 77.3528568
+  },
+  "nodes": [
+    12638995216,
+    12638995217,
+    12638995218,
+    12638995219,
+    12638995216
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Kothi"
+  }
+},
+{
+  "type": "way",
+  "id": 1364812783,
+  "center": {
+    "lat": 28.6502026,
+    "lon": 77.3529288
+  },
+  "nodes": [
+    12638995220,
+    12638995221,
+    12638995222,
+    12638995223,
+    12638995220
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Friend House"
+  }
+},
+{
+  "type": "way",
+  "id": 1364813932,
+  "center": {
+    "lat": 28.6505035,
+    "lon": 77.3524897
+  },
+  "nodes": [
+    12639009144,
+    12639009145,
+    12639009146,
+    12639009147,
+    12639009144
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Uncle House"
+  }
+},
+{
+  "type": "way",
+  "id": 1364814547,
+  "center": {
+    "lat": 28.6529479,
+    "lon": 77.3524895
+  },
+  "nodes": [
+    12639031243,
+    12639031244,
+    12639031245,
+    12639031246,
+    12639031243
+  ],
+  "tags": {
+    "building": "commercial",
+    "name": "Vidyapeeth"
+  }
+},
+{
+  "type": "way",
+  "id": 1364815162,
+  "center": {
+    "lat": 28.6410001,
+    "lon": 77.3537202
+  },
+  "nodes": [
+    12639037651,
+    12137260539,
+    12639037652,
+    12639037653,
+    12639037651
+  ],
+  "tags": {
+    "building": "school",
+    "name": "IPS school"
+  }
+},
+{
+  "type": "way",
+  "id": 1366530384,
+  "center": {
+    "lat": 28.6686561,
+    "lon": 77.4260532
+  },
+  "nodes": [
+    12655829907,
+    12655829908,
+    12655829909,
+    12655829910,
+    12655829907
+  ],
+  "tags": {
+    "amenity": "fast_food",
+    "building": "yes",
+    "name": "gandhi puri shop"
+  }
+},
+{
+  "type": "way",
+  "id": 1366530386,
+  "center": {
+    "lat": 28.6679928,
+    "lon": 77.4264884
+  },
+  "nodes": [
+    12655829915,
+    12655829916,
+    12655829917,
+    12655829918,
+    12655829915
+  ],
+  "tags": {
+    "amenity": "bank",
+    "atm": "yes",
+    "brand": "Bank of Maharashtra",
+    "brand:wikidata": "Q2004304",
+    "building": "yes",
+    "drive_through": "yes",
+    "name": "Bank of Maharashtra"
+  }
+},
+{
+  "type": "way",
+  "id": 1370058736,
+  "center": {
+    "lat": 28.6695124,
+    "lon": 77.4246764
+  },
+  "nodes": [
+    12688198396,
+    12688198397,
+    12688198398,
+    12688198399,
+    12688198396
+  ],
+  "tags": {
+    "amenity": "food_court",
+    "building": "yes",
+    "name": "Pinki veerji naan wale"
+  }
+},
+{
+  "type": "way",
+  "id": 1376966508,
+  "center": {
+    "lat": 28.6667299,
+    "lon": 77.4212204
+  },
+  "nodes": [
+    12749714311,
+    12749714312,
+    12749714313,
+    12749714314,
+    12749714311
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "fireworks mittal",
+    "shop": "pyrotechnics"
+  }
+},
+{
+  "type": "way",
+  "id": 1376970399,
+  "center": {
+    "lat": 28.6696314,
+    "lon": 77.4252468
+  },
+  "nodes": [
+    12749701395,
+    12749701396,
+    12749701397,
+    12749701398,
+    12749701395
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:district": "uttar pradesh",
+    "addr:housenumber": "137",
+    "addr:postcode": "201001",
+    "addr:street": "mukand nagar road",
+    "building": "yes",
+    "name": "Vipin electrical works",
+    "opening_hours": "Mo-Fr 10:00-19:00",
+    "payment:cash": "yes",
+    "payment:gpay": "yes",
+    "shop": "repair"
+  }
+},
+{
+  "type": "way",
+  "id": 1382262117,
+  "center": {
+    "lat": 28.6505633,
+    "lon": 77.3409909
+  },
+  "nodes": [
+    12797546093,
+    12797546094,
+    12797546095,
+    12797546096,
+    12797546093
+  ],
+  "tags": {
+    "access": "yes",
+    "amenity": "parking",
+    "building": "yes",
+    "capacity": "500",
+    "fee": "yes",
+    "layer": "1",
+    "name": "Vaishali Metro Station Multi Level Car Parkin",
+    "parking": "multi-storey",
+    "payment:cash": "yes",
+    "payment:upi": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 1386363547,
+  "center": {
+    "lat": 28.6503491,
+    "lon": 77.3461548
+  },
+  "nodes": [
+    12835220827,
+    12835220828,
+    12835220829,
+    12835220830,
+    12835220827
+  ],
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "name": "Durga Temple",
+    "name:hi": "दुर्गा मंदिर",
+    "religion": "hindu",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1386363548,
+  "center": {
+    "lat": 28.6509244,
+    "lon": 77.3490077
+  },
+  "nodes": [
+    12835220831,
+    12835220832,
+    12835220833,
+    12835220834,
+    12835220835,
+    12835220831
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Deep Vatika",
+    "office": "educational_institution"
+  }
+},
+{
+  "type": "way",
+  "id": 1387981809,
+  "center": {
+    "lat": 28.6396791,
+    "lon": 77.4277435
+  },
+  "nodes": [
+    12848645525,
+    12848645526,
+    12848645527,
+    12848645528,
+    12848645525
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:district": "Ghaziabad",
+    "addr:postcode": "201009",
+    "addr:street": "Delhi-Meerut Expressway",
+    "building": "school",
+    "highway": "tertiary_link",
+    "landuse": "education",
+    "name": "Shri Krishna Inter College"
+  }
+},
+{
+  "type": "way",
+  "id": 1388162828,
+  "center": {
+    "lat": 28.6474458,
+    "lon": 77.4285496
+  },
+  "nodes": [
+    12850265432,
+    12850265433,
+    12850265434,
+    12850265435,
+    12850265432
+  ],
+  "tags": {
+    "addr:city": "Ghaziabad",
+    "addr:district": "Ghaziabad",
+    "addr:housenumber": "D-Block",
+    "addr:postcode": "201009",
+    "addr:street": "Railway Station Road, Vijay Nagar",
+    "address": "Railway Station Rd, New Vijay Nagar Colony, D-Block, Sector 9, Vijay Nagar, Ghaziabad, Uttar Pradesh 201009",
+    "amenity": "events_venue",
+    "building": "yes",
+    "name": "Utsav Bhawan"
+  }
+}
+
+  ]
+}
