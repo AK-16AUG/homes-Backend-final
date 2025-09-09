@@ -34,7 +34,7 @@ const app = express();
 app.use(morgan('dev'));
 app.use(express.json());
 const corsOptions = {
-  origin: [process.env.FRONTEND_URL,"http://localhost:3000","https://www.motherhomes.co.in"] // frontend URL from .env
+  origin: [process.env.FRONTEND_URL,"http://localhost:5173","https://www.motherhomes.co.in"] // frontend URL from .env
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH"], // added PATCH
   credentials: true, // allow cookies/auth headers
 };
@@ -198,3 +198,4 @@ dbConnect().then(() => {
 
 
 export default app;
+
