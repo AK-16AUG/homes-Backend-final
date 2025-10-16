@@ -3,7 +3,7 @@ Great! Here's your updated `README.md` including the **folder structure** you me
 ---
 
 ```markdown
-# 🏠 Homes Backend (TypeScript + Express + MongoDB)
+
 
 This project is a backend API built with **Node.js**, **Express**, and **TypeScript**, implementing user authentication with features like **registration**, **login**, **JWT token generation**, **bcrypt-based password hashing**, and **MongoDB** for database operations.
 
