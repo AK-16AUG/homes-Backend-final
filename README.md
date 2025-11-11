@@ -1,9 +1,3 @@
-Great! Here's your updated `README.md` including the **folder structure** you mentioned:
-
----
-
-```markdown
-# 🏠 Homes Backend (TypeScript + Express + MongoDB)
 
 
 
