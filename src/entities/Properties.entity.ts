@@ -16,6 +16,8 @@ export interface PropertyType extends Document {
   furnishing_type: "Semi-furnished" | "Fully furnished" | "Raw";
   city: string;
   state: string;
+  address: string;
+  flat_no?: string;
   scheduledVisit: Types.ObjectId[];
   total_views: number;
   leads: Types.ObjectId[];
@@ -47,6 +49,8 @@ const PropertySchema = new Schema<PropertyType>(
     },
     city: { type: String, required: true },
     state: { type: String, required: true },
+    address: { type: String, required: true },
+    flat_no: { type: String },
     area: { type: String, required: true },
     latitude: { type: String },
     longitude: { type: String },

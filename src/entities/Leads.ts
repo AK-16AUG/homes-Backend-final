@@ -10,6 +10,7 @@ export interface IRealEstateLead extends Document {
     phone?: string;
     email?: string;
   };
+  location?: string;
   status: 'new' | 'contacted' | 'converted' | 'archived';
   notes?: string;
   source?: string;
@@ -52,6 +53,10 @@ const RealEstateLeadSchema = new Schema<IRealEstateLead, IRealEstateLeadModel>({
       trim: true,
       lowercase: true
     }
+  },
+  location: {
+    type: String,
+    trim: true
   },
   status: {
     type: String,
