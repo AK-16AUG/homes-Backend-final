@@ -20,7 +20,7 @@ export class LeadsDao {
         try {
             const result = await RealEstateLeadModel.findById(id)
                 .populate('user_id', 'name email phone')
-                .populate('matchedProperties', 'title price location');
+                .populate('matchedProperties', 'property_name rate address flat_no');
             if (result) {
                 logger.info("LeadsDao -> getLeadById success", { id });
             } else {
@@ -35,8 +35,8 @@ export class LeadsDao {
 
     async getAllLeads(filter = {}, page = 1, limit = 10) {
         logger.info("LeadsDao -> getAllLeads called", { filter, page, limit });
-        console.log("Get all leads", filter,limit );
-        
+        console.log("Get all leads", filter, limit);
+
         try {
             const skip = (page - 1) * limit;
             const [results, total] = await Promise.all([
@@ -59,11 +59,11 @@ export class LeadsDao {
         logger.info("LeadsDao -> updateLead called", { id, data });
         try {
             const result = await RealEstateLeadModel.findByIdAndUpdate(
-                id, 
-                data, 
+                id,
+                data,
                 { new: true }
             )
-                .populate('matchedProperties', 'title price location');
+                .populate('matchedProperties', 'property_name rate address flat_no');
             if (result) {
                 logger.info("LeadsDao -> updateLead success", { id });
             } else {
@@ -118,7 +118,7 @@ export class LeadsDao {
     async getLeadsByUserEmail(email: string) {
         logger.info("LeadsDao -> getLeadsByUserEmail called", { email });
         try {
-          const result = await RealEstateLeadModel.findOne({ "contactInfo.email": email });
+            const result = await RealEstateLeadModel.findOne({ "contactInfo.email": email });
 
             logger.info("LeadsDao -> getLeadsByUserEmail success");
             return result;

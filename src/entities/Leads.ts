@@ -1,7 +1,7 @@
 import { Schema, model, Document, Model, Types } from "mongoose";
 
 export interface IRealEstateLead extends Document {
- 
+
   searchQuery: string;
   timestamp: Date;
   matchedProperties: Types.ObjectId[];
@@ -11,7 +11,7 @@ export interface IRealEstateLead extends Document {
     email?: string;
   };
   location?: string;
-  status: 'new' | 'contacted' | 'converted' | 'archived';
+  status: 'new' | 'inquiry' | 'contacted' | 'converted' | 'archived';
   notes?: string;
   source?: string;
   priority?: 'low' | 'medium' | 'high';
@@ -26,7 +26,7 @@ const RealEstateLeadSchema = new Schema<IRealEstateLead, IRealEstateLeadModel>({
 
   searchQuery: {
     type: String,
-    
+
     trim: true
   },
   timestamp: {
@@ -60,7 +60,7 @@ const RealEstateLeadSchema = new Schema<IRealEstateLead, IRealEstateLeadModel>({
   },
   status: {
     type: String,
-    enum: ['new', 'contacted', 'converted', 'archived'],
+    enum: ['new', 'inquiry', 'contacted', 'converted', 'archived'],
     default: 'new',
     index: true
   },
@@ -80,7 +80,7 @@ const RealEstateLeadSchema = new Schema<IRealEstateLead, IRealEstateLeadModel>({
     default: 'medium'
   }
 }, {
-  timestamps: true, 
+  timestamps: true,
   toJSON: { virtuals: true },
   toObject: { virtuals: true }
 });
@@ -90,7 +90,7 @@ RealEstateLeadSchema.index({ user_id: 1, status: 1 });
 RealEstateLeadSchema.index({ 'contactInfo.email': 1 });
 
 // Static methods
-RealEstateLeadSchema.statics.findLeadsByUser = async function(
+RealEstateLeadSchema.statics.findLeadsByUser = async function (
   userId: Types.ObjectId
 ): Promise<IRealEstateLead[]> {
   return this.find({ user_id: userId })
@@ -99,7 +99,7 @@ RealEstateLeadSchema.statics.findLeadsByUser = async function(
     .sort({ timestamp: -1 });
 };
 
-RealEstateLeadSchema.statics.findLeadsByStatus = async function(
+RealEstateLeadSchema.statics.findLeadsByStatus = async function (
   status: string
 ): Promise<IRealEstateLead[]> {
   return this.find({ status })
@@ -109,13 +109,13 @@ RealEstateLeadSchema.statics.findLeadsByStatus = async function(
 };
 
 // Virtual for lead age (in days)
-RealEstateLeadSchema.virtual('ageInDays').get(function() {
+RealEstateLeadSchema.virtual('ageInDays').get(function () {
   const diff = Date.now() - this.timestamp.getTime();
   return Math.floor(diff / (1000 * 60 * 60 * 24));
 });
 
 // Middleware to update timestamp when status changes
-RealEstateLeadSchema.pre('save', function(next) {
+RealEstateLeadSchema.pre('save', function (next) {
   if (this.isModified('status')) {
     this.timestamp = new Date();
   }
