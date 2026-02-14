@@ -15,34 +15,35 @@ export interface UserType extends Document {
   password: string;
   role: string;
   isVerified: boolean;
-  address?: Address; 
-  otp:string;
+  address?: Address;
+  otp: string;
 }
 
 const UserSchema = new Schema<UserType>(
   {
     User_Name: {
       type: String,
-     
+
     },
     phone_no: {
       type: Number,
-     
+
     },
     email: {
       type: String,
       required: true,
       unique: true,
+      lowercase: true,
     },
     password: {
       type: String,
-     
+
     },
-    
+
     role: {
       type: String,
       default: "user",
-    
+
     },
     isVerified: {
       type: Boolean,
@@ -55,8 +56,8 @@ const UserSchema = new Schema<UserType>(
       country: { type: String, default: "" },
       postalCode: { type: String, default: "" }
     },
-    otp:{
-      type:String
+    otp: {
+      type: String
     }
   },
   {

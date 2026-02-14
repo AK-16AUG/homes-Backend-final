@@ -1,11 +1,91 @@
 import { Request, Response } from "express";
 import PropertyServices from "../services/Property.service.js";
+import PropertyModel from "../entities/Properties.entity.js";
 import statusCode from "../common/constant/StatusCode.js";
 import errorResponse from "../common/constant/Error.js";
+import * as xlsx from "xlsx";
 
 const propertyService = new PropertyServices();
 
 export default class PropertyController {
+  async bulkUploadProperties(req: Request, res: Response) {
+    try {
+      if (!req.file) {
+        return res.status(statusCode.BAD_REQUEST).json({
+          message: "No file uploaded",
+        });
+      }
+
+      const workbook = xlsx.read(req.file.buffer, { type: "buffer" });
+      const sheetName = workbook.SheetNames[0];
+      const sheet = workbook.Sheets[sheetName];
+      const rows: any[] = xlsx.utils.sheet_to_json(sheet);
+
+      if (rows.length === 0) {
+        return res.status(statusCode.BAD_REQUEST).json({
+          message: "Excel sheet is empty",
+        });
+      }
+
+      let successCount = 0;
+      let skipCount = 0;
+      const errors = [];
+
+      for (const row of rows) {
+        try {
+          // Clean the row data to match model expectations
+          const cleanRow = {
+            property_name: row.property_name?.toString(),
+            description: row.description?.toString(),
+            rate: row.rate?.toString(),
+            category: row.category?.toString()?.toLowerCase(),
+            perPersonPrice: row.perPersonPrice?.toString(),
+            totalCapacity: row.totalCapacity?.toString(),
+            furnishing_type: row.furnishing_type?.toString(),
+            city: row.city?.toString(),
+            state: row.state?.toString(),
+            address: row.address?.toString(),
+            flat_no: row.flat_no?.toString(),
+            area: row.area?.toString(),
+            bed: Number(row.bed) || 0,
+            bathroom: Number(row.bathroom) || 0,
+            availability: row.availability === "false" ? false : true,
+          };
+
+          // Check for exact duplicate in DB
+          const isDuplicate = await PropertyModel.findOne(cleanRow);
+
+          if (isDuplicate) {
+            skipCount++;
+            continue;
+          }
+
+          await propertyService.createProperty(cleanRow);
+          successCount++;
+        } catch (err: any) {
+          errors.push({ row, error: err.message });
+        }
+      }
+
+      return res.status(statusCode.OK).json({
+        message: "Bulk upload completed",
+        summary: {
+          total: rows.length,
+          success: successCount,
+          skipped: skipCount,
+          failed: errors.length,
+        },
+        errors: errors.length > 0 ? errors : undefined,
+      });
+    } catch (error: any) {
+      console.error("Bulk upload error:", error);
+      return res.status(statusCode.INTERNAL_SERVER_ERROR).json({
+        error: errorResponse.INTERNAL_SERVER_ERROR,
+        message: error.message,
+      });
+    }
+  }
+
   async createProperty(req: Request, res: Response) {
     try {
       const property = await propertyService.createProperty(req.body);
@@ -62,7 +142,7 @@ export default class PropertyController {
       // Remove existingImages from updateData if present
       if ('existingImages' in updateData) {
         delete updateData.existingImages;
-        
+
       }
 
       const updatedProperty = await propertyService.updateProperty(

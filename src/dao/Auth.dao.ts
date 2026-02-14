@@ -1,14 +1,16 @@
-// src/dao/Auth.dao.ts
 import ResetPassModel from "../entities/ResetPass.entitiy.js";
 import User from "../entities/User.entitiy.js";
+import VerificationModel from "../entities/Verification.entity.js";
 import { logger } from "../utils/logger.js";
 
 export default class AuthDao {
   private user!: typeof User;
   private Reset!: typeof ResetPassModel;
+  private Verification!: typeof VerificationModel;
   constructor() {
     this.user = User;
     this.Reset = ResetPassModel;
+    this.Verification = VerificationModel;
   }
 
   async findByEmail(email: string) {
@@ -76,6 +78,40 @@ export default class AuthDao {
     } catch (error) {
       logger.error("Error in updatePassword:", error);
       throw new Error("Failed to update password");
+    }
+  }
+
+  async findVerificationByEmail(email: string) {
+    try {
+      logger.info("src->dao->auth.dao->findVerificationByEmail");
+      return await this.Verification.findOne({ email });
+    } catch (error) {
+      logger.error("Error in findVerificationByEmail:", error);
+      throw new Error("Failed to find verification by email");
+    }
+  }
+
+  async createOrUpdateVerification(email: string, otp: string) {
+    try {
+      logger.info("src->dao->auth.dao->createOrUpdateVerification");
+      return await this.Verification.findOneAndUpdate(
+        { email },
+        { otp, createdAt: new Date() },
+        { upsert: true, new: true }
+      );
+    } catch (error) {
+      logger.error("Error in createOrUpdateVerification:", error);
+      throw new Error("Failed to save verification OTP");
+    }
+  }
+
+  async deleteVerification(email: string) {
+    try {
+      logger.info("src->dao->auth.dao->deleteVerification");
+      return await this.Verification.deleteOne({ email });
+    } catch (error) {
+      logger.error("Error in deleteVerification:", error);
+      throw new Error("Failed to delete verification entry");
     }
   }
 }

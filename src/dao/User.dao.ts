@@ -44,7 +44,7 @@ export default class UserDao {
   async findByEmail(email: string) {
     try {
       logger.info("src->dao->user.dao->findByEmail");
-      return await this.user.findOne({ email });
+      return await this.user.findOne({ email: email.toLowerCase() });
     } catch (error) {
       logger.error("Failed finding user by email", error);
       throw new Error("Failed to find user");

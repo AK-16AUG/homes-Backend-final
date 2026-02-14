@@ -5,5 +5,6 @@ const router = express.Router();
 
 router.get("/dashboard/revenue", DashboardController.getRevenueSummary);
 router.get("/dashboard/monthly-revenue", DashboardController.getMonthlyRevenue);
+router.get("/dashboard/comprehensive", DashboardController.getComprehensiveStats);
 
-export default router; 
+export default router;
