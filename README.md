@@ -5,7 +5,6 @@
 
 ## 🚀 Features
 
-
 - ✅ User Registration with hashed passwords
 - ✅ Login with JWT Authentication
 - ✅ MongoDB integration using Mongoose
