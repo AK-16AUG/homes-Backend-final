@@ -1,6 +1,6 @@
 
 import { logger } from "../utils/logger.js";
-import { ServiceDao, AmentiesDao } from "../dao/serives&Amenties.dao.js";
+import { ServiceDao, AmentiesDao } from "../dao/ServicesAmenities.dao.js";
 
 export class ServiceService {
     private serviceDao: ServiceDao;
@@ -9,7 +9,7 @@ export class ServiceService {
         this.serviceDao = new ServiceDao();
     }
 
-    async createService(data:any) {
+    async createService(data: any) {
         logger.info("ServiceService -> createService called", { data });
         if (!data.name) throw new Error("Service name is required");
         return this.serviceDao.createService(data);
@@ -49,7 +49,7 @@ export class AmentiesService {
         this.amentiesDao = new AmentiesDao();
     }
 
-    async createAmenties(data:any) {
+    async createAmenties(data: any) {
         logger.info("AmentiesService -> createAmenties called", { data });
         if (!data.name) throw new Error("Amenity name is required");
         return this.amentiesDao.createAmenties(data);

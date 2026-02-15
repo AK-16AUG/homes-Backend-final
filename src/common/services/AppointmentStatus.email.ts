@@ -167,34 +167,31 @@ const APPOINTMENT_STATUS_TEMPLATE = (
             ${appointmentDetails.status}
           </span>
         </div>
-        ${
-          appointmentDetails.status === "Rescheduled" && appointmentDetails.newScheduleTime
-            ? `<div class="detail-row">
+        ${appointmentDetails.status === "Rescheduled" && appointmentDetails.newScheduleTime
+      ? `<div class="detail-row">
                 <span class="detail-label">New Time:</span>
                 <span>${formatDate(appointmentDetails.newScheduleTime)} at ${formatTime(appointmentDetails.newScheduleTime)}</span>
               </div>`
-            : ""
-        }
-        ${
-          appointmentDetails.phone
-            ? `<div class="detail-row">
+      : ""
+    }
+        ${appointmentDetails.phone
+      ? `<div class="detail-row">
                 <span class="detail-label">Contact Phone:</span>
                 <span>${appointmentDetails.phone}</span>
               </div>`
-            : ""
-        }
+      : ""
+    }
       </div>
 
       <p class="message">
-        ${
-          appointmentDetails.status === "Pending"
-            ? "Your appointment is pending confirmation. We'll notify you once it's confirmed."
-            : appointmentDetails.status === "Confirmed"
-            ? "Your appointment has been confirmed! We look forward to showing you the property."
-            : appointmentDetails.status === "Cancelled"
-            ? "Your appointment has been cancelled. Please contact us if you'd like to reschedule."
-            : "Your appointment has been rescheduled. Please make note of the new time."
-        }
+        ${appointmentDetails.status === "Pending"
+      ? "Your appointment is pending confirmation. We'll notify you once it's confirmed."
+      : appointmentDetails.status === "Confirmed"
+        ? "Your appointment has been confirmed! We look forward to showing you the property."
+        : appointmentDetails.status === "Cancelled"
+          ? "Your appointment has been cancelled. Please contact us if you'd like to reschedule."
+          : "Your appointment has been rescheduled. Please make note of the new time."
+    }
       </p>
 
       <a href="${process.env.CONTACT_LINK || "#"}" class="button">Contact Us</a>
@@ -202,11 +199,10 @@ const APPOINTMENT_STATUS_TEMPLATE = (
 
     <div class="footer">
       <p>© ${new Date().getFullYear()} MotherHomes.co.in. All rights reserved.</p>
-      ${
-        appointmentDetails.whatsappUpdates
-          ? "<p>You are subscribed to WhatsApp updates for this appointment.</p>"
-          : ""
-      }
+      ${appointmentDetails.whatsappUpdates
+      ? "<p>You are subscribed to WhatsApp updates for this appointment.</p>"
+      : ""
+    }
     </div>
   </div>
 </body>
@@ -231,11 +227,16 @@ const transporter = nodemailer.createTransport({
 });
 
 // Verify transporter
+// Verify transporter
 transporter.verify((error) => {
   if (error) {
-    console.error("Email server connection failed:", error);
+    if (error.message.includes("Username and Password not accepted") || error.message.includes("Invalid login")) {
+      console.warn("⚠️  Email configuration issue: Invalid credentials. Email features will not work.");
+    } else {
+      console.warn("⚠️  Email server connection failed:", error.message);
+    }
   } else {
-    console.log("Email server is ready to send messages");
+    console.log("✅ Email server is ready to send messages");
   }
 });
 
@@ -251,7 +252,7 @@ export const sendAppointmentStatusEmail = async (
     }
 
     // Ensure schedule_Time is properly initialized
-   
+
 
     const appointmentDetails: EmailAppointmentDetails = {
       property_name: property.property_name || "Unknown Property",
@@ -259,7 +260,7 @@ export const sendAppointmentStatusEmail = async (
       status: appointment.status as "Pending" | "Confirmed" | "Cancelled" | "Rescheduled",
       phone: appointment.phone,
       whatsappUpdates: appointment.whatsappUpdates,
-      ...(appointment.status === "Rescheduled" && { 
+      ...(appointment.status === "Rescheduled" && {
         newScheduleTime: appointment.schedule_Time
       })
     };

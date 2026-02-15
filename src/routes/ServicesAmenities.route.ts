@@ -1,5 +1,5 @@
 import { Router, Request, Response } from "express";
-import { AmenityModel, ServiceModel } from "../entities/serives&Amenties.entity.js";
+import { AmenityModel, ServiceModel } from "../entities/ServicesAmenities.entity.js";
 
 const router = Router();
 

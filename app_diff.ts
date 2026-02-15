@@ -7,7 +7,7 @@ import authRouter from './routes/Auth.routes.js';
 import propertyRouter from './routes/Property.routes.js';
 // import { authSwaggerDefinitions } from './Schema/auth.swagger.js';
 // import { propertySwaggerDefinitions } from './Schema/property.swagger.js';
-import router from './routes/ServicesAmenities.route.js';
+import router from './routes/Amenties&service.route.js';
 // import { serviceAmenitiesSwaggerDefinitions } from './Schema/amenties&services.swaggger.js';
 import appointmentRouter from './routes/Appointment.routes.js';
 // import { appointmentSwaggerDefinitions } from './Schema/appointment.swagger.js';
@@ -193,6 +193,14 @@ app.post("/api/resetsendemail", asyncHandler(async (req: Request, res: Response)
     });
   }
 }));
-// Server startup logic is handled in entry points (src/Server.ts or api/index.ts)
+dbConnect().then(() => {
+  app.listen(PORT, "0.0.0.0", () => {
+    console.log(`Server listening on http://0.0.0.0:${PORT}`);
+    console.log(`Swagger docs at http://0.0.0.0:${PORT}/api/docs`);
+  });
+
+}).catch((error: Error) => {
+  console.error("Database connection failed", error);
+});
 
 export default app;

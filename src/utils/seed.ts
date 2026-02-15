@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { AmenityModel, ServiceModel } from "../entities/serives&Amenties.entity.js";
+import { AmenityModel, ServiceModel } from "../entities/ServicesAmenities.entity.js";
 import PropertyModel from "../entities/Properties.entity.js";
 import dbConnect from "../db/db.connect.js";
 
@@ -36,11 +36,11 @@ const seedAmenitiesAndServices = async () => {
 
   console.log("Amenities and Services seeded successfully!");
   return {
-    amenityMap: insertedAmenities.reduce((acc, a:any) => {
+    amenityMap: insertedAmenities.reduce((acc, a: any) => {
       acc[a.name] = a._id;
       return acc;
     }, {} as Record<string, mongoose.Types.ObjectId>),
-    serviceMap: insertedServices.reduce((acc, s:any) => {
+    serviceMap: insertedServices.reduce((acc, s: any) => {
       acc[s.name] = s._id;
       return acc;
     }, {} as Record<string, mongoose.Types.ObjectId>)
@@ -62,19 +62,17 @@ const seedProperties = async (amenityMap: Record<string, mongoose.Types.ObjectId
       description: "A beautiful luxury apartment in the city center.",
       rate: "50000",
       category: "rent",
-      location: {
-        type: "Point",
-        coordinates: [77.5946, 12.9716] // Bangalore
-      },
-      amenties: [
-        amenityMap["Wifi"], 
-        amenityMap["Gym"], 
-        amenityMap["Lift"], 
+      latitude: "12.9716",
+      longitude: "77.5946",
+      amenities: [
+        amenityMap["Wifi"],
+        amenityMap["Gym"],
+        amenityMap["Lift"],
         amenityMap["Maintenance Staff"]
       ],
       services: [
-        serviceMap["Security"], 
-        serviceMap["Laundry"], 
+        serviceMap["Security"],
+        serviceMap["Laundry"],
         serviceMap["Airport Transfer"]
       ],
       images: [imageUrls[0], imageUrls[0], imageUrls[0]],
@@ -82,11 +80,13 @@ const seedProperties = async (amenityMap: Record<string, mongoose.Types.ObjectId
       furnishing_type: "Fully furnished",
       city: "Bangalore",
       state: "Karnataka",
+      address: "123 Luxury Lane, Bangalore",
+      area: "1500 sqft",
       scheduledVisit: [],
       total_views: 0,
       bed: 3,
       bathroom: 2,
-      leadss: [],
+      leads: [],
       availability: true,
       currentTenant: null
     },
@@ -95,17 +95,15 @@ const seedProperties = async (amenityMap: Record<string, mongoose.Types.ObjectId
       description: "Spacious 2BHK flat with modern interiors and sunlight.",
       rate: "30000",
       category: "rent",
-      location: {
-        type: "Point",
-        coordinates: [72.5714, 23.0225] // Ahmedabad
-      },
-      amenties: [
-        amenityMap["Parking"], 
-        amenityMap["Swimming Pool"], 
+      latitude: "23.0225",
+      longitude: "72.5714",
+      amenities: [
+        amenityMap["Parking"],
+        amenityMap["Swimming Pool"],
         amenityMap["Power Backup"]
       ],
       services: [
-        serviceMap["Cleaning"], 
+        serviceMap["Cleaning"],
         serviceMap["Cafeteria"]
       ],
       images: [imageUrls[1], imageUrls[1], imageUrls[1]],
@@ -113,11 +111,13 @@ const seedProperties = async (amenityMap: Record<string, mongoose.Types.ObjectId
       furnishing_type: "Semi-furnished",
       city: "Ahmedabad",
       state: "Gujarat",
+      address: "456 Modern Ave, Ahmedabad",
+      area: "1100 sqft",
       scheduledVisit: [],
       total_views: 0,
       bed: 2,
       bathroom: 1,
-      leadss: [],
+      leads: [],
       availability: true,
       currentTenant: null
     },
@@ -126,16 +126,14 @@ const seedProperties = async (amenityMap: Record<string, mongoose.Types.ObjectId
       description: "Compact and affordable studio apartment near IT hub.",
       rate: "15000",
       category: "rent",
-      location: {
-        type: "Point",
-        coordinates: [78.4867, 17.3850] // Hyderabad
-      },
-      amenties: [
-        amenityMap["Wifi"], 
+      latitude: "17.3850",
+      longitude: "78.4867",
+      amenities: [
+        amenityMap["Wifi"],
         amenityMap["Lift"]
       ],
       services: [
-        serviceMap["Cleaning"], 
+        serviceMap["Cleaning"],
         serviceMap["Laundry"]
       ],
       images: [imageUrls[2], imageUrls[2]],
@@ -143,11 +141,13 @@ const seedProperties = async (amenityMap: Record<string, mongoose.Types.ObjectId
       furnishing_type: "Raw",
       city: "Hyderabad",
       state: "Telangana",
+      address: "789 Studio St, Hyderabad",
+      area: "500 sqft",
       scheduledVisit: [],
       total_views: 0,
       bed: 1,
       bathroom: 1,
-      leadss: [],
+      leads: [],
       availability: true,
       currentTenant: null
     },
@@ -156,18 +156,16 @@ const seedProperties = async (amenityMap: Record<string, mongoose.Types.ObjectId
       description: "Premium sea-facing villa with 5-star facilities.",
       rate: "120000",
       category: "rent",
-      location: {
-        type: "Point",
-        coordinates: [73.8567, 15.2993] // Goa
-      },
-      amenties: [
-        amenityMap["Gym"], 
-        amenityMap["Swimming Pool"], 
+      latitude: "15.2993",
+      longitude: "73.8567",
+      amenities: [
+        amenityMap["Gym"],
+        amenityMap["Swimming Pool"],
         amenityMap["Security"]
       ],
       services: [
-        serviceMap["Room Service"], 
-        serviceMap["Concierge"], 
+        serviceMap["Room Service"],
+        serviceMap["Concierge"],
         serviceMap["Spa"]
       ],
       images: [imageUrls[3], imageUrls[3], imageUrls[3]],
@@ -175,11 +173,13 @@ const seedProperties = async (amenityMap: Record<string, mongoose.Types.ObjectId
       furnishing_type: "Fully furnished",
       city: "Goa",
       state: "Goa",
+      address: "101 Beach Rd, Goa",
+      area: "3000 sqft",
       scheduledVisit: [],
       total_views: 0,
       bed: 4,
       bathroom: 3,
-      leadss: [],
+      leads: [],
       availability: true,
       currentTenant: null
     },
@@ -188,19 +188,17 @@ const seedProperties = async (amenityMap: Record<string, mongoose.Types.ObjectId
       description: "High-rise duplex apartment in NCR with panoramic view.",
       rate: "75000",
       category: "rent",
-      location: {
-        type: "Point",
-        coordinates: [77.1025, 28.7041] // Delhi
-      },
-      amenties: [
-        amenityMap["Wifi"], 
-        amenityMap["Parking"], 
-        amenityMap["Power Backup"], 
+      latitude: "28.7041",
+      longitude: "77.1025",
+      amenities: [
+        amenityMap["Wifi"],
+        amenityMap["Parking"],
+        amenityMap["Power Backup"],
         amenityMap["Security"]
       ],
       services: [
-        serviceMap["Security"], 
-        serviceMap["Concierge"], 
+        serviceMap["Security"],
+        serviceMap["Concierge"],
         serviceMap["Airport Transfer"]
       ],
       images: [imageUrls[4], imageUrls[4], imageUrls[4]],
@@ -208,11 +206,13 @@ const seedProperties = async (amenityMap: Record<string, mongoose.Types.ObjectId
       furnishing_type: "Fully furnished",
       city: "Delhi",
       state: "Delhi NCR",
+      address: "202 Duplex Dr, Delhi",
+      area: "2500 sqft",
       scheduledVisit: [],
       total_views: 0,
       bed: 4,
       bathroom: 4,
-      leadss: [],
+      leads: [],
       availability: true,
       currentTenant: null
     }

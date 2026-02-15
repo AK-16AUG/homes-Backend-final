@@ -96,11 +96,16 @@ const transporter = nodemailer.createTransport({
   }
 });
 // Verify connection configuration
+// Verify connection configuration
 transporter.verify((error) => {
   if (error) {
-    console.error("Email server connection failed:", error);
+    if (error.message.includes("Username and Password not accepted") || error.message.includes("Invalid login")) {
+         console.warn("⚠️  Email configuration issue: Invalid credentials. Email features will not work.");
+    } else {
+         console.warn("⚠️  Email server connection failed:", error.message);
+    }
   } else {
-    console.log("Email server is ready to take our messages");
+    console.log("✅ Email server is ready to take our messages");
   }
 });
 

@@ -1,6 +1,6 @@
 // Properties.entity.ts
 import { Document, Schema, model, Types } from "mongoose";
-import { AmenityModel, ServiceModel } from "./serives&Amenties.entity.js";
+import { AmenityModel, ServiceModel } from "./ServicesAmenities.entity.js";
 
 export interface PropertyType extends Document {
   property_name: string;

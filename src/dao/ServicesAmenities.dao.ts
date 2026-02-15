@@ -2,8 +2,8 @@ import {
   ServiceModel,
   AmenityModel,
   ServiceType,
-  
-} from "../entities/serives&Amenties.entity.js";
+
+} from "../entities/ServicesAmenities.entity.js";
 import { logger } from "../utils/logger.js";
 
 export class ServiceDao {
