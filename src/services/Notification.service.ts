@@ -1,15 +1,72 @@
 import { sendRentReminderEmail, sendPaymentDetailsUpdatedEmail, sendUserPaymentDueAdminEmail } from "../common/services/reminder.emai.js";
+import { sendAdminNotificationEmail } from "../common/services/email.js";
 import NotificationDao from "../dao/Notification.dao.js";
 import UserDao from "../dao/User.dao.js";
 import { logger } from "../utils/logger.js";
 
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL || "dollybindal706@gmail.com";
+
 export default class NotificationService {
   private notificationDao: NotificationDao;
-  private userDao:UserDao
+  private userDao: UserDao
 
   constructor() {
     this.notificationDao = new NotificationDao();
-    this.userDao= new UserDao();
+    this.userDao = new UserDao();
+  }
+
+  async createLeadNotification(data: {
+    user_id: string;
+    property_id: string;
+    leadDetails?: string;
+  }) {
+    try {
+      logger.info("src->services->notification.service->createLeadNotification");
+      const description = "New Lead submitted";
+      const notification = await this.notificationDao.createNotification({
+        user_id: data.user_id,
+        property_id: data.property_id,
+        description,
+      });
+      // Send email to admin
+      await sendAdminNotificationEmail(
+        ADMIN_EMAIL,
+        "New Lead Received — MotherHomes",
+        `A new lead has been submitted${data.leadDetails ? `: <strong>${data.leadDetails}</strong>` : "."}`
+      );
+      return notification;
+    } catch (error: any) {
+      logger.error("Error creating lead notification");
+      logger.debug(error);
+      // Don't throw — notification failure should not block lead creation
+    }
+  }
+
+  async createAppointmentNotification(data: {
+    user_id: string;
+    property_id: string;
+    appointmentDetails?: string;
+  }) {
+    try {
+      logger.info("src->services->notification.service->createAppointmentNotification");
+      const description = "New Appointment booked";
+      const notification = await this.notificationDao.createNotification({
+        user_id: data.user_id,
+        property_id: data.property_id,
+        description,
+      });
+      // Send email to admin
+      await sendAdminNotificationEmail(
+        ADMIN_EMAIL,
+        "New Appointment Booked — MotherHomes",
+        `A new appointment has been booked${data.appointmentDetails ? `: <strong>${data.appointmentDetails}</strong>` : "."}`
+      );
+      return notification;
+    } catch (error: any) {
+      logger.error("Error creating appointment notification");
+      logger.debug(error);
+      // Don't throw — notification failure should not block appointment creation
+    }
   }
 
   async createNotification(data: {

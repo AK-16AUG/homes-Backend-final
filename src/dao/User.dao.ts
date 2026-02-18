@@ -16,17 +16,25 @@ export default class UserDao {
   async createUser(userData: any) {
     try {
       logger.info("src->dao->user.dao->createUser");
-      // Check if user already exists
+      // Check if user already exists by email
       const existingUser = await this.user.findOne({ email: userData.email });
       if (existingUser) {
         throw new Error("User already exists");
       }
 
+      // Check if phone number is already registered
+      if (userData.phone_no) {
+        const existingPhone = await this.user.findOne({ phone_no: userData.phone_no });
+        if (existingPhone) {
+          throw new Error("Phone number already registered");
+        }
+      }
+
       const data = await this.user.create(userData);
       return data;
-    } catch (error) {
+    } catch (error: any) {
       logger.error("Failed user creation", error);
-      throw new Error("Failed user creation");
+      throw new Error(error.message || "Failed user creation");
     }
   }
   async DeleteUser(email: any) {
