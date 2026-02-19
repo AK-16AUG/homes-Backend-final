@@ -1,19 +1,21 @@
 import { Request, Response } from "express";
 import AppointmentServices from "../services/Appointment.services.js";
+import NotificationService from "../services/Notification.service.js";
 import { logger } from "../utils/logger.js";
 
 export default class AppointmentController {
   private appointmentServices: AppointmentServices;
+  private notificationService: NotificationService;
 
   constructor() {
-    
     this.appointmentServices = new AppointmentServices();
+    this.notificationService = new NotificationService();
   }
 
   createAppointment = async (req: Request, res: Response): Promise<Response> => {
     try {
       logger.info("src->controllers->appointment.controller->createAppointment");
-      const { user_id, property_id, phone, status,schedule_Time } = req.body;
+      const { user_id, property_id, phone, status, schedule_Time } = req.body;
 
       if (!user_id || !property_id) {
         return res.status(400).json({ message: "user_id and property_id are required" });
@@ -26,6 +28,15 @@ export default class AppointmentController {
         status,
         schedule_Time
       });
+
+      // Fire-and-forget: create notification + send admin email
+      if (createdAppointment?.user_id && createdAppointment?.property_id) {
+        this.notificationService.createAppointmentNotification({
+          user_id: String(createdAppointment.user_id),
+          property_id: String(createdAppointment.property_id),
+          appointmentDetails: `Appointment for property ${createdAppointment.property_id}${schedule_Time ? ` at ${schedule_Time}` : ""}`,
+        }).catch((err) => console.error("Appointment notification error:", err));
+      }
 
       return res.status(201).json({ message: "Appointment created successfully", appointment: createdAppointment });
     } catch (error: any) {
@@ -51,16 +62,16 @@ export default class AppointmentController {
       return res.status(404).json({ message: error.message || "Appointment not found" });
     }
   };
-getAppointmentByUserId = async (req: Request, res: Response): Promise<Response> => {
+  getAppointmentByUserId = async (req: Request, res: Response): Promise<Response> => {
     try {
       logger.info("src->controllers->appointment.controller->getAppointmentByUserId");
-      const { userid,propertyid } = req.params;
+      const { userid, propertyid } = req.params;
 
       if (!userid) {
         return res.status(400).json({ message: "Appointment ID is required" });
       }
 
-      const appointment = await this.appointmentServices.getAppointmentByUserId(userid,propertyid);
+      const appointment = await this.appointmentServices.getAppointmentByUserId(userid, propertyid);
 
       return res.status(200).json({ message: "Appointment fetched successfully", appointment });
     } catch (error: any) {
@@ -85,7 +96,7 @@ getAppointmentByUserId = async (req: Request, res: Response): Promise<Response> 
       return res.status(404).json({ message: error.message || "Appointment not found" });
     }
   };
-getAppointmentByPropertyId = async (req: Request, res: Response): Promise<Response> => {
+  getAppointmentByPropertyId = async (req: Request, res: Response): Promise<Response> => {
     try {
       logger.info("src->controllers->appointment.controller->getAppointmentByPropertyId");
       const { propertyid } = req.params;
@@ -132,7 +143,7 @@ getAppointmentByPropertyId = async (req: Request, res: Response): Promise<Respon
     } catch (error: any) {
       logger.error("Error in updateAppointment:", error);
       return res.status(404).json({ message: error.message || "Failed to update appointment" });
-      
+
     }
   };
 

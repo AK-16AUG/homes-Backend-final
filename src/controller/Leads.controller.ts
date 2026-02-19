@@ -1,17 +1,29 @@
 import { Request, Response } from "express";
 import LeadsService from "../services/Leads.service.js";
+import NotificationService from "../services/Notification.service.js";
 import statusCode from "../common/constant/StatusCode.js";
 import errorResponse from "../common/constant/Error.js";
 
 const leadsService = new LeadsService();
+const notificationService = new NotificationService();
 
 export default class LeadsController {
   async createLead(req: Request, res: Response) {
     try {
       const lead = await leadsService.createLead(req.body);
-      return res.status(statusCode.CREATED).json({ 
-        message: "Lead created successfully", 
-        lead 
+
+      // Fire-and-forget: create notification + send admin email
+      if (lead?.user_id && lead?.property_id) {
+        notificationService.createLeadNotification({
+          user_id: String(lead.user_id),
+          property_id: String(lead.property_id),
+          leadDetails: `Lead for property ${lead.property_id} by user ${lead.user_id}`,
+        }).catch((err) => console.error("Lead notification error:", err));
+      }
+
+      return res.status(statusCode.CREATED).json({
+        message: "Lead created successfully",
+        lead
       });
     } catch (error: any) {
       return res.status(statusCode.BAD_REQUEST).json({
@@ -24,9 +36,9 @@ export default class LeadsController {
   async updateLead(req: Request, res: Response) {
     try {
       const lead = await leadsService.updateLeadById(req.params.id, req.body);
-      return res.status(statusCode.OK).json({ 
-        message: "Lead updated successfully", 
-        lead 
+      return res.status(statusCode.OK).json({
+        message: "Lead updated successfully",
+        lead
       });
     } catch (error: any) {
       return res.status(statusCode.NOT_FOUND).json({
@@ -66,9 +78,9 @@ export default class LeadsController {
   async deleteLead(req: Request, res: Response) {
     try {
       const lead = await leadsService.deleteLeadById(req.params.id);
-      return res.status(statusCode.OK).json({ 
-        message: "Lead deleted successfully", 
-        lead 
+      return res.status(statusCode.OK).json({
+        message: "Lead deleted successfully",
+        lead
       });
     } catch (error: any) {
       return res.status(statusCode.NOT_FOUND).json({

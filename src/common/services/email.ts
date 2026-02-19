@@ -100,14 +100,76 @@ const transporter = nodemailer.createTransport({
 transporter.verify((error) => {
   if (error) {
     if (error.message.includes("Username and Password not accepted") || error.message.includes("Invalid login")) {
-         console.warn("⚠️  Email configuration issue: Invalid credentials. Email features will not work.");
+      console.warn("⚠️  Email configuration issue: Invalid credentials. Email features will not work.");
     } else {
-         console.warn("⚠️  Email server connection failed:", error.message);
+      console.warn("⚠️  Email server connection failed:", error.message);
     }
   } else {
     console.log("✅ Email server is ready to take our messages");
   }
 });
+
+export const sendAdminNotificationEmail = async (
+  to: string,
+  subject: string,
+  body: string
+): Promise<EmailResult> => {
+  try {
+    if (!to) {
+      throw new Error("Recipient email is required");
+    }
+
+    const htmlContent = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${subject}</title>
+  <style>
+    body { background-color: #f4f4f7; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; line-height: 1.6; color: #333333; }
+    .container { max-width: 600px; margin: 40px auto; background: #ffffff; padding: 40px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    h1 { font-size: 22px; margin-bottom: 16px; color: #2d3748; border-bottom: 2px solid #f0f0f0; padding-bottom: 12px; }
+    .body-text { font-size: 15px; color: #444; margin-bottom: 20px; }
+    .badge { display: inline-block; background: #3b82f6; color: #fff; padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 600; margin-bottom: 20px; }
+    .footer { margin-top: 40px; font-size: 12px; color: #777; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔔 ${subject}</h1>
+    <p class="body-text">${body}</p>
+    <p class="body-text">Please log in to the admin portal to view the details.</p>
+    <div class="footer">
+      <p>© ${new Date().getFullYear()} MotherHomes.co.in. All rights reserved.</p>
+    </div>
+  </div>
+</body>
+</html>`;
+
+    const mailOptions: any = {
+      from: `"${process.env.APP_NAME || "MotherHomes"}" <${process.env.EMAIL}>`,
+      to,
+      subject,
+      html: htmlContent,
+      priority: "high",
+    };
+
+    const info: any = await transporter.sendMail(mailOptions);
+    console.log("Admin notification email sent: %s", info.messageId);
+
+    return {
+      success: true,
+      message: "Admin notification email sent successfully",
+    };
+  } catch (error) {
+    console.error("Error sending admin notification email:", error);
+    return {
+      success: false,
+      message: error instanceof Error ? error.message : "Failed to send admin notification email",
+      error,
+    };
+  }
+};
 
 export const sendOtpEmail = async (to: string, otp: string): Promise<EmailResult> => {
   try {
@@ -117,7 +179,7 @@ export const sendOtpEmail = async (to: string, otp: string): Promise<EmailResult
 
     const htmlContent = EMAIL_TEMPLATE.replace("[OTP_CODE]", otp);
 
-    const mailOptions:any = {
+    const mailOptions: any = {
       from: `"${process.env.APP_NAME || "Your Company"}" <${process.env.EMAIL}>`,
       to,
       subject: "Your Email Verification Code",
@@ -125,9 +187,9 @@ export const sendOtpEmail = async (to: string, otp: string): Promise<EmailResult
       priority: 'high',
     };
 
-    const info:any = await transporter.sendMail(mailOptions);
+    const info: any = await transporter.sendMail(mailOptions);
     console.log("Message sent: %s", info.messageId);
-    
+
     return {
       success: true,
       message: "OTP email sent successfully",

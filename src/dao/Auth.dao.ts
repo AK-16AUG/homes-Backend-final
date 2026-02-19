@@ -66,6 +66,9 @@ export default class AuthDao {
       logger.info("src->dao->auth.dao->updatePassword");
       const check: any = await this.Reset.findOne({ email });
       console.log(check);
+      if (!check) {
+        throw new Error("No password reset request found for this email. Please request a new OTP.");
+      }
       if (check.isVerified == true) {
         const data = await this.user.updateOne(
           { email },
@@ -74,10 +77,10 @@ export default class AuthDao {
         this.Reset.deleteOne({ email });
         return data;
       }
-      throw new Error("Email is not verified");
-    } catch (error) {
+      throw new Error("Email is not verified. Please verify your OTP before resetting your password.");
+    } catch (error: any) {
       logger.error("Error in updatePassword:", error);
-      throw new Error("Failed to update password");
+      throw new Error(error.message || "Failed to update password");
     }
   }
 
