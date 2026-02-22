@@ -18,17 +18,22 @@ const fileFilter = (
   file: MulterFile,
   cb: FileFilterCallback
 ) => {
-  const allowedTypes = ['.jpeg', '.jpg', '.png', '.webp'];
-  const allowedMimeTypes = ['image/jpeg', 'image/png', 'image/webp'];
-
-  const extname = path.extname(file.originalname).toLowerCase();
-  const isValidExt = allowedTypes.includes(extname);
-  const isValidMime = allowedMimeTypes.includes(file.mimetype);
-
-  if (isValidExt && isValidMime) {
+  if (
+    file.mimetype === "image/jpeg" ||
+    file.mimetype === "image/png" ||
+    file.mimetype === "image/webp" ||
+    file.mimetype === "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" ||
+    file.mimetype === "application/vnd.ms-excel"
+  ) {
     cb(null, true);
   } else {
-    cb(new Error(`Invalid file type. Only ${allowedTypes.join(', ')} images are allowed`));
+    // Also allow by extension if mimetype check fails (sometimes browser specific)
+    const ext = file.originalname.split('.').pop()?.toLowerCase();
+    if (ext === 'xlsx' || ext === 'xls') {
+      cb(null, true);
+    } else {
+      cb(new Error("Invalid file type. Only JPEG, PNG, WEBP, and Excel files are allowed."));
+    }
   }
 };
 
@@ -37,7 +42,7 @@ const upload = multer({
   storage,
   fileFilter,
   limits: {
-     fileSize: 10 * 1024 * 1024, // 10MB limit (use numeric value directly)
+    fileSize: 10 * 1024 * 1024, // 10MB limit (use numeric value directly)
     files: 10 // Maximum 10 files (use numeric value directly)
   }
 });
@@ -47,8 +52,8 @@ export const handleMulterErrors = (err: unknown, req: Request, res: Response, ne
   if (err instanceof multer.MulterError) {
     // A Multer error occurred when uploading
     return res.status(400).json({
-      error: err.code === 'LIMIT_FILE_SIZE' 
-        ? 'File size too large. Max 10MB allowed' 
+      error: err.code === 'LIMIT_FILE_SIZE'
+        ? 'File size too large. Max 10MB allowed'
         : err.message
     });
   } else if (err instanceof Error) {

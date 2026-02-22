@@ -29,7 +29,8 @@
   },
   "scripts": {
     "build": "tsc",
-    "start": "npm run build && node dist/Server.js"
+    "start": "npm run build && node dist/Server.js",
+    "dev": "node --loader ts-node/esm src/Server.ts"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
