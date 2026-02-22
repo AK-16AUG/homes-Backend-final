@@ -53,9 +53,16 @@ export default class LeadsController {
 
   async getAllLeads(req: Request, res: Response) {
     try {
-      const { page = 1, limit = 10, ...filter } = req.query;
+      const { page = 1, limit = 10, status, source, priority } = req.query;
       const pageNum = Number(page) || 1;
       const limitNum = Number(limit) || 10;
+
+      // Only pass known, valid filter fields to avoid accidental MongoDB mismatches
+      const filter: Record<string, any> = {};
+      if (status) filter.status = status;
+      if (source) filter.source = source;
+      if (priority) filter.priority = priority;
+
       const leads = await leadsService.getAllLeads(filter, pageNum, limitNum);
       return res.status(statusCode.OK).json(leads);
     } catch (error: any) {
