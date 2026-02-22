@@ -26,8 +26,8 @@ export default class TenantDao {
         { $push: { Payments: paymentWithUser } },
         { new: true }
       )
-      .populate("users", "-password")
-      .populate("property_id");
+        .populate("users", "-password")
+        .populate("property_id");
 
       if (result) {
         logger.info("TenantDao -> addPayment success", { tenantId });
@@ -51,7 +51,7 @@ export default class TenantDao {
       const result = await this.tenant
         .findById(id)
         .populate("users", "-password")
-        .populate("property_id").populate("Payments.user_id","-password");
+        .populate("property_id").populate("Payments.user_id", "-password");
 
       if (result) {
         logger.info("TenantDao -> getTenantById success", { id });
@@ -129,7 +129,8 @@ export default class TenantDao {
           .populate("users", "-password")
           .populate("property_id")
           .skip(skip)
-          .limit(limit),
+          .limit(limit)
+          .lean(),
         this.tenant.countDocuments(filter),
       ]);
 
@@ -194,8 +195,8 @@ export default class TenantDao {
         { $addToSet: { users: userId } },
         { new: true }
       )
-      .populate("users", "-password")
-      .populate("property_id");
+        .populate("users", "-password")
+        .populate("property_id");
 
       if (result) {
         logger.info("TenantDao -> addUserToTenant success", { tenantId });
@@ -213,18 +214,18 @@ export default class TenantDao {
   async removeUserFromTenant(tenantId: string, userId: string) {
     logger.info("TenantDao -> removeUserFromTenant called", { tenantId, userId });
     console.log(userId);
-    const tenant:any = await this.tenant.findById(tenantId);
-const currentMembers = parseInt(tenant.members) || 0;
+    const tenant: any = await this.tenant.findById(tenantId);
+    const currentMembers = parseInt(tenant.members) || 0;
     try {
-     const result = await this.tenant.findByIdAndUpdate(
-  tenantId,
-  { 
-    $set: { members: (currentMembers - 1).toString() } ,
-    $pull: { users: userId } 
-  },
-  { new: true }
-).populate("users", "-password")
-      .populate("property_id");
+      const result = await this.tenant.findByIdAndUpdate(
+        tenantId,
+        {
+          $set: { members: (currentMembers - 1).toString() },
+          $pull: { users: userId }
+        },
+        { new: true }
+      ).populate("users", "-password")
+        .populate("property_id");
 
       if (result) {
         logger.info("TenantDao -> removeUserFromTenant success", { tenantId });

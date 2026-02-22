@@ -52,8 +52,18 @@ export default class PropertyController {
             availability: row.availability === "false" ? false : true,
           };
 
-          // Check for exact duplicate in DB
-          const isDuplicate = await PropertyModel.findOne(cleanRow);
+          // Check for duplicate based on specific unique fields
+          const duplicateQuery: any = {
+            property_name: cleanRow.property_name,
+            city: cleanRow.city,
+          };
+
+          // Only include flat_no in query if it's provided
+          if (cleanRow.flat_no) {
+            duplicateQuery.flat_no = cleanRow.flat_no;
+          }
+
+          const isDuplicate = await PropertyModel.findOne(duplicateQuery);
 
           if (isDuplicate) {
             skipCount++;

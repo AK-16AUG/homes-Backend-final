@@ -44,7 +44,8 @@ export class LeadsDao {
                     .populate('matchedProperties')
                     .sort({ timestamp: -1 })
                     .skip(skip)
-                    .limit(limit),
+                    .limit(limit)
+                    .lean(),
                 RealEstateLeadModel.countDocuments(filter)
             ]);
             logger.info("LeadsDao -> getAllLeads success", { count: results.length, total });

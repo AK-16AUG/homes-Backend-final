@@ -58,82 +58,116 @@ const DashboardController = {
   async getComprehensiveStats(_req: Request, res: Response) {
     try {
       const now = new Date();
-      const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
+      const startOfCurrentMonth = new Date(now.getFullYear(), now.getMonth(), 1);
       const startOfLastMonth = new Date(now.getFullYear(), now.getMonth() - 1, 1);
       const startOfLast7Days = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
       const startOfPrevious7Days = new Date(now.getTime() - 14 * 24 * 60 * 60 * 1000);
+      const sixMonthsAgo = new Date(now.getFullYear(), now.getMonth() - 5, 1);
 
       const parseSafe = (val: any) => parseFloat(String(val || "0").replace(/[^0-9.]/g, "")) || 0;
 
-      // 0. Fetch initial data once
-      const [allTenants, allConvertedLeads] = await Promise.all([
+      // 1. Batch all core counts and data fetches
+      const [
+        allTenants,
+        allConvertedLeads,
+        totalProperties,
+        occupiedProperties,
+        previousOccupiedProperties,
+        totalLeads,
+        newLeads7Days,
+        previousLeads7Days,
+        confirmedBookingsCount,
+        previousConfirmedBookings,
+        recentLeads,
+        revenueByType,
+        monthlyTrends,
+        recentProperties,
+        revenueData
+      ] = await Promise.all([
         Tenant.find().lean(),
-        Leads.find({ status: 'converted' }).lean()
+        Leads.find({ status: 'converted' }).lean(),
+        Property.countDocuments(),
+        Property.countDocuments({ availability: false }),
+        Property.countDocuments({ availability: false, updatedAt: { $lt: startOfLast7Days } }),
+        Leads.countDocuments(),
+        Leads.countDocuments({ createdAt: { $gte: startOfLast7Days } }),
+        Leads.countDocuments({ createdAt: { $gte: startOfPrevious7Days, $lt: startOfLast7Days } }),
+        Appointment.countDocuments({ status: 'Confirmed', createdAt: { $gte: startOfLast7Days } }),
+        Appointment.countDocuments({ status: 'Confirmed', createdAt: { $gte: startOfPrevious7Days, $lt: startOfLast7Days } }),
+        Leads.find().sort({ createdAt: -1 }).limit(4).lean(),
+        Property.aggregate([
+          { $match: { availability: false } },
+          {
+            $group: {
+              _id: "$category",
+              total: { $sum: { $toDouble: "$rate" } },
+              count: { $sum: 1 }
+            }
+          },
+          { $project: { _id: { $ifNull: ["$_id", "other"] }, total: 1, count: 1 } }
+        ]),
+        Tenant.aggregate([
+          { $unwind: "$Payments" },
+          { $match: { "Payments.dateOfPayment": { $gte: sixMonthsAgo } } },
+          {
+            $group: {
+              _id: {
+                year: { $year: "$Payments.dateOfPayment" },
+                month: { $month: "$Payments.dateOfPayment" }
+              },
+              total: { $sum: { $toDouble: "$Payments.amount" } }
+            }
+          },
+          { $sort: { "_id.year": 1, "_id.month": 1 } }
+        ]),
+        Property.find().sort({ updatedAt: -1 }).limit(10).lean(),
+        Tenant.aggregate([
+          {
+            $facet: {
+              currentMonth: [
+                { $unwind: "$Payments" },
+                { $match: { "Payments.dateOfPayment": { $gte: startOfCurrentMonth } } },
+                { $group: { _id: null, total: { $sum: { $toDouble: "$Payments.amount" } } } }
+              ],
+              lastMonth: [
+                { $unwind: "$Payments" },
+                { $match: { "Payments.dateOfPayment": { $gte: startOfLastMonth, $lt: startOfCurrentMonth } } },
+                { $group: { _id: null, total: { $sum: { $toDouble: "$Payments.amount" } } } }
+              ]
+            }
+          }
+        ])
       ]);
 
-      // 1. Core KPIs with Growth logic
-      const totalProperties = await Property.countDocuments();
-      const occupiedProperties = await Property.countDocuments({ availability: false });
+      // 2. Process KPIs and Growth
       const currentOccupancyRate = totalProperties > 0 ? (occupiedProperties / totalProperties) * 100 : 0;
-
-      const previousOccupiedProperties = await Property.countDocuments({
-        availability: false,
-        updatedAt: { $lt: startOfLast7Days }
-      });
       const previousOccupancyRate = totalProperties > 0 ? (previousOccupiedProperties / totalProperties) * 100 : 0;
       const occupancyGrowth = previousOccupancyRate > 0 ? ((currentOccupancyRate - previousOccupancyRate) / previousOccupancyRate) * 100 : 0;
 
-      const totalLeads = await Leads.countDocuments();
-      const newLeads7Days = await Leads.countDocuments({ createdAt: { $gte: startOfLast7Days } });
-      const previousLeads7Days = await Leads.countDocuments({
-        createdAt: { $gte: startOfPrevious7Days, $lt: startOfLast7Days }
-      });
       const leadGrowth = previousLeads7Days > 0 ? ((newLeads7Days - previousLeads7Days) / previousLeads7Days) * 100 : 0;
-
-      const confirmedBookingsCount = await Appointment.countDocuments({
-        status: 'Confirmed',
-        createdAt: { $gte: startOfLast7Days }
-      });
-      const previousConfirmedBookings = await Appointment.countDocuments({
-        status: 'Confirmed',
-        createdAt: { $gte: startOfPrevious7Days, $lt: startOfLast7Days }
-      });
       const bookingGrowth = previousConfirmedBookings > 0 ? ((confirmedBookingsCount - previousConfirmedBookings) / previousConfirmedBookings) * 100 : 0;
-
-      // 2. Optimized Revenue Data
-      const revenueData = await Tenant.aggregate([
-        {
-          $facet: {
-            currentMonth: [
-              { $unwind: "$Payments" },
-              { $match: { "Payments.dateOfPayment": { $gte: startOfMonth } } },
-              { $group: { _id: null, total: { $sum: { $toDouble: "$Payments.amount" } } } }
-            ],
-            lastMonth: [
-              { $unwind: "$Payments" },
-              { $match: { "Payments.dateOfPayment": { $gte: startOfLastMonth, $lt: startOfMonth } } },
-              { $group: { _id: null, total: { $sum: { $toDouble: "$Payments.amount" } } } }
-            ]
-          }
-        }
-      ]);
 
       const revenueThisMonth = revenueData[0].currentMonth[0]?.total || 0;
       const revenueLastMonth = revenueData[0].lastMonth[0]?.total || 0;
       const revenueGrowth = revenueLastMonth > 0 ? ((revenueThisMonth - revenueLastMonth) / revenueLastMonth) * 100 : 0;
 
-      // Calculate Outstanding Rent
+      // Projected Revenue
+      const projectedRevenue = allTenants.reduce((sum, t: any) => {
+        const rent = parseSafe(t.rent);
+        const members = parseSafe(t.members) || 1;
+        return sum + (rent * members);
+      }, 0);
+
       const outstandingRent = allTenants.reduce((sum, t: any) => {
-        const hasPaidThisMonth = (t.Payments || []).some((p: any) => p.dateOfPayment && new Date(p.dateOfPayment) >= startOfMonth);
-        if (!hasPaidThisMonth && t.startDate && new Date(t.startDate) < startOfMonth) {
+        const hasPaidThisMonth = (t.Payments || []).some((p: any) => p.dateOfPayment && new Date(p.dateOfPayment) >= startOfCurrentMonth);
+        if (!hasPaidThisMonth && t.startDate && new Date(t.startDate) < startOfCurrentMonth) {
           return sum + parseSafe(t.rent);
         }
         return sum;
       }, 0);
 
-      // 3. Occupancy Map Data
-      const properties = await Property.find().limit(80).lean();
-      const roomStatusGrid = properties.map(p => ({
+      // 3. Occupancy Map Grid (limited to 60 for performance)
+      const roomStatusGrid = recentProperties.slice(0, 60).map(p => ({
         id: p._id,
         name: p.property_name || "Unknown Unit",
         flatNo: (p as any).flat_no || "N/A",
@@ -142,42 +176,47 @@ const DashboardController = {
         type: p.category || "pg"
       }));
 
-      // 4. Lead Funnel
+      // Recent Flats
+      const recentFlats = recentProperties.slice(0, 6).map(p => ({
+        id: p._id,
+        name: p.property_name,
+        flatNo: (p as any).flat_no,
+        status: !p.availability ? 'Occupied' : 'Vacant',
+        price: p.rate
+      }));
+
+      // Recent Tenants
+      const recentTenantsData = allTenants
+        .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+        .slice(0, 6)
+        .map(t => ({
+          id: t._id,
+          name: t.name || (t.tenantDetails && t.tenantDetails[0]?.name) || "N/A",
+          flatNo: t.flatNo,
+          rent: t.rent,
+          propertyId: t.property_id
+        }));
+
+      // 4. Funnel and Trends
       const funnel = {
-        visits: await Leads.countDocuments({ status: 'inquiry' }),
+        visits: await Leads.countDocuments({ status: 'inquiry' }), // Inquiry count can be batched too if needed
         booked: await Leads.countDocuments({ status: 'contacted' }),
         converted: allConvertedLeads.length
       };
 
-      // 5. Revenue by Room Type
-      const revenueByType = await Property.aggregate([
-        { $match: { availability: false } },
-        {
-          $group: {
-            _id: "$category",
-            total: { $sum: { $toDouble: "$rate" } },
-            count: { $sum: 1 }
-          }
-        },
-        { $project: { _id: { $ifNull: ["$_id", "other"] }, total: 1, count: 1 } }
-      ]);
-
+      // Fill in months for trends (handle missing months in db)
       const trends = [];
       for (let i = 5; i >= 0; i--) {
-        const start = new Date(now.getFullYear(), now.getMonth() - i, 1);
-        const end = new Date(now.getFullYear(), now.getMonth() - i + 1, 1);
-        const monthPayments = await Tenant.aggregate([
-          { $unwind: "$Payments" },
-          { $match: { "Payments.dateOfPayment": { $gte: start, $lt: end } } },
-          { $group: { _id: null, total: { $sum: { $toDouble: "$Payments.amount" } } } }
-        ]);
+        const d = new Date(now.getFullYear(), now.getMonth() - i, 1);
+        const monthNum = d.getMonth() + 1;
+        const yearNum = d.getFullYear();
+        const found = monthlyTrends.find(t => t._id.month === monthNum && t._id.year === yearNum);
         trends.push({
-          month: start.toLocaleString('default', { month: 'short' }),
-          amount: monthPayments[0]?.total || 0
+          month: d.toLocaleString('default', { month: 'short' }),
+          amount: found?.total || 0
         });
       }
 
-      const recentLeads = await Leads.find().sort({ createdAt: -1 }).limit(4).lean();
       const smartQueue = recentLeads.map(lead => {
         const diffInMs = now.getTime() - new Date((lead as any).createdAt).getTime();
         const diffMins = Math.floor(diffInMs / 60000);
@@ -199,7 +238,7 @@ const DashboardController = {
       const insights = [];
       if (totalLeads > 5 && (funnel.converted / totalLeads) < 0.1) insights.push("Low conversion rate detected. Review follow-up speed.");
       if (outstandingRent > 50000) insights.push(`Significant arrears (₹${outstandingRent.toLocaleString()}). Prioritize collections.`);
-      const pgProp = revenueByType.find(r => r._id === 'pg');
+      const pgProp = (revenueByType as any[]).find(r => r._id === 'pg');
       if (pgProp && pgProp.count > 10) insights.push("PG category is performing well. Consider expanding capacity.");
       if (leadGrowth > 20) insights.push(`Lead volume is up ${leadGrowth.toFixed(0)}%. Scalability check required.`);
 
@@ -225,35 +264,55 @@ const DashboardController = {
         avgVelocity = totalHours / allConvertedLeads.length;
       }
 
-      res.json({
+      // Trends for AnalyticalCharts (Last 6 Months)
+      const monthsToFetch = 6;
+      const trendMonths = [];
+      for (let i = monthsToFetch - 1; i >= 0; i--) {
+        const d = new Date();
+        d.setMonth(d.getMonth() - i);
+        trendMonths.push({
+          month: d.toLocaleString('default', { month: 'short' }),
+          date: new Date(d.getFullYear(), d.getMonth(), 1)
+        });
+      }
+
+      const getMonthlyCounts = (data: any[], dateField: string) => {
+        return trendMonths.map(m => ({
+          month: m.month,
+          count: data.filter(item => {
+            const itemDate = new Date(item[dateField]);
+            return itemDate.getMonth() === m.date.getMonth() && itemDate.getFullYear() === m.date.getFullYear();
+          }).length
+        }));
+      };
+
+      const trends = {
+        users: getMonthlyCounts(allTenants, 'createdAt'), // Assuming tenants as "users" for dashboard
+        leads: getMonthlyCounts(recentLeads, 'createdAt'), // Using recentLeads for trend if total matches
+        properties: getMonthlyCounts(recentProperties, 'updatedAt')
+      };
+
+      const stats = {
         kpis: {
-          revenueThisMonth,
-          revenueGrowth,
-          occupancyRate: currentOccupancyRate,
-          occupancyGrowth,
-          vacantBeds: totalProperties - occupiedProperties,
-          newLeads7Days,
-          leadGrowth,
-          bookingsConfirmed: confirmedBookingsCount,
-          bookingGrowth,
-          outstandingRent,
-          totalLeads
+          totalUsers: (allTenants as any).reduce((acc: any, curr: any) => acc + (parseInt(curr.members) || 1), 0),
+          activeUsers: allTenants.length,
+          totalProperties,
+          occupiedProperties,
+          totalLeads,
+          totalAppointments: confirmedBookingsCount,
+          totalRevenue: projectedRevenue,
+          projectedRevenue,
+          occupancyRate: totalProperties > 0 ? (occupiedProperties / totalProperties) * 100 : 0,
+          vacantBeds: totalProperties - occupiedProperties, // Placeholder
+          outstandingRent: outstandingRent // Placeholder
         },
         revenueIntelligence: {
-          trend: trends,
-          byType: revenueByType,
-          averageRent: totalProperties > 0 ? (revenueThisMonth / totalProperties) : 0
+          trend: monthlyTrends,
+          byType: revenueByType
         },
-        occupancyMap: roomStatusGrid,
-        leadFunnel: {
-          total: totalLeads,
-          funnel: [
-            { stage: 'Inquiries', value: await Leads.countDocuments({ createdAt: { $gte: startOfMonth } }) },
-            { stage: 'Visits', value: funnel.visits },
-            { stage: 'Booked', value: funnel.booked },
-            { stage: 'Converted', value: funnel.converted }
-          ]
-        },
+        trends,
+        recentFlats,
+        recentTenants: recentTenantsData,
         smartQueue,
         insights,
         tenantHealth: {
@@ -261,7 +320,9 @@ const DashboardController = {
           retention: `${avgRetention.toFixed(1)} Months`,
           resolutionVelocity: `${avgVelocity.toFixed(1)} Hours`
         }
-      });
+      };
+
+      res.status(200).json(stats);
     } catch (err) {
       console.error("Dashboard comprehensive error:", err);
       res.status(500).json({ error: "Failed to fetch comprehensive stats" });

@@ -47,7 +47,7 @@ export default class PropertyDao {
 
   async getAllProperties(filter = {}, page = 1, limit = 10) {
     logger.info("PropertyDao -> getAllProperties called", { filter, page, limit });
-    
+
     try {
       const skip = (page - 1) * limit;
       const [results, total] = await Promise.all([
@@ -56,9 +56,10 @@ export default class PropertyDao {
           .populate("services")
           .sort({ createdAt: -1 })
           .skip(skip)
-          .limit(limit),
+          .limit(limit)
+          .lean(),
         this.Property.countDocuments(filter)
-        
+
       ]);
       logger.info("PropertyDao -> getAllProperties success", { count: results.length, total });
       return { results, total, page, limit };

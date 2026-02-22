@@ -120,7 +120,8 @@ export default class AppointmentDao {
           .populate("user_id", "-password")
           .populate("property_id")
           .skip(skip)
-          .limit(limitNum).sort({ createdAt: -1 }),
+          .limit(limitNum).sort({ createdAt: -1 })
+          .lean(),
         this.appointment.countDocuments(filter)
       ]);
 
