@@ -5,7 +5,10 @@ import { Resend } from 'resend';
 // Initialize environment variables
 dotenv.config();
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
+if (!process.env.RESEND_API_KEY) {
+  console.warn("⚠️  RESEND_API_KEY is not defined in environment variables. Admin notifications will be skipped.");
+}
 
 interface EmailResult {
   success: boolean;
@@ -149,6 +152,14 @@ export const sendAdminNotificationEmail = async (
   </div>
 </body>
 </html>`;
+
+    if (!resend) {
+      console.warn("Resend is not initialized. Skipping admin notification.");
+      return {
+        success: false,
+        message: "Resend not initialized due to missing API key",
+      };
+    }
 
     const { data, error } = await resend.emails.send({
       from: 'MotherHomes <onboarding@resend.dev>',
