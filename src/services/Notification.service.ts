@@ -25,13 +25,13 @@ export default class NotificationService {
     try {
       logger.info("src->services->notification.service->createLeadNotification");
       const description = "New Lead submitted";
-      if (data.user_id && data.property_id) {
-        await this.notificationDao.createNotification({
-          user_id: data.user_id,
-          property_id: data.property_id,
-          description,
-        });
-      }
+      // Create notification record for admin dashboard
+      await this.notificationDao.createNotification({
+        user_id: data.user_id,
+        property_id: data.property_id,
+        description,
+        adminOnly: true
+      });
       // Send email to admin
       const actionUrl = `${FRONTEND_BASE_URL}/leads${data.lead_id ? `?search=${data.lead_id}` : ""}`;
       await sendAdminNotificationEmail(
@@ -61,6 +61,7 @@ export default class NotificationService {
         user_id: data.user_id,
         property_id: data.property_id,
         description,
+        adminOnly: true
       });
       // Send email to admin
       const actionUrl = `${FRONTEND_BASE_URL}/editappointments${data.appointment_id ? `?search=${data.appointment_id}` : ""}`;

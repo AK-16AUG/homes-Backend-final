@@ -4,7 +4,7 @@ export interface NotificationType extends Document {
   user_id: Types.ObjectId;
   property_id: Types.ObjectId;
   description: string;
-  adminOnly?:boolean
+  adminOnly?: boolean
 }
 
 const NotificationSchema = new Schema<NotificationType>(
@@ -12,20 +12,20 @@ const NotificationSchema = new Schema<NotificationType>(
     user_id: {
       type: Schema.Types.ObjectId,
       ref: "User",
-      required: true,
+      required: false,
     },
     property_id: {
       type: Schema.Types.ObjectId,
       ref: "Property",
-      required: true,
+      required: false,
     },
     description: {
       type: String,
       required: true,
     },
-    adminOnly:{
+    adminOnly: {
       type: Boolean,
-      default:false
+      default: false
     }
   },
   {

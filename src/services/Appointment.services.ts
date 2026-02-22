@@ -55,13 +55,6 @@ export default class AppointmentServices {
         throw new Error("Failed to create appointment");
       }
 
-      const notification = await this.notificationDao.createNotification({
-        user_id: data.user_id,
-        property_id: data.property_id,
-        description: "New appointment created",
-        adminOnly: true
-      });
-
       // Automatically create a lead for this appointment
       // We need to fetch user details to populate lead contact info
       if (this.userDao && this.leadDao) {
