@@ -1,3 +1,6 @@
+import dotenv from "dotenv";
+dotenv.config();
+
 import express, { Request, Response } from 'express';
 import cors from 'cors';
 // import swaggerUi from 'swagger-ui-express';
@@ -11,7 +14,6 @@ import router from './routes/ServicesAmenities.route.js';
 // import { serviceAmenitiesSwaggerDefinitions } from './Schema/amenties&services.swaggger.js';
 import appointmentRouter from './routes/Appointment.routes.js';
 // import { appointmentSwaggerDefinitions } from './Schema/appointment.swagger.js';
-import dotenv from "dotenv";
 import userRouter from './routes/User.routes.js';
 import { sendOtpEmail } from './common/services/email.js';
 import asyncHandler from './utils/asyncHandler.js';
@@ -27,8 +29,6 @@ import targetRouter from './routes/Target.routes.js';
 import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
 import dashboardRouter from './routes/Dashboard.routes.js';
-
-dotenv.config();
 
 const app = express();
 app.use(morgan('dev'));

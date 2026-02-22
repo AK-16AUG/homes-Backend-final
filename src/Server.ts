@@ -1,10 +1,11 @@
+import dotenv from "dotenv";
+// Load environment variables before any other imports
+dotenv.config();
+
 import cluster from 'cluster';
 import os from 'os';
 import dbConnect from './db/db.connect.js';
 import app from './app.js';
-import dotenv from "dotenv";
-
-dotenv.config();
 
 const PORT: number = parseInt(process.env.PORT || "3000", 10);
 const numCPUs = os.cpus().length;

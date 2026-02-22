@@ -4,8 +4,8 @@ import statusCode from "../common/constant/StatusCode.js";
 import errorResponse from "../common/constant/Error.js";
 import dotenv from 'dotenv';
 
-dotenv.config()
-// Read SECRET_KEY inside the middleware to ensure it's always available after dotenv.config()
+// Load environment variables immediately
+dotenv.config();
 
 interface AuthenticatedRequest extends Request {
   user?: {
@@ -22,8 +22,9 @@ export function authMiddleware(
   next: NextFunction
 ): any {
   const authHeader = req.headers.authorization;
-  console.log(authHeader);
+
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
+    console.warn("[AuthMiddleware] Access token is missing or malformed header:", authHeader);
     return res.status(statusCode.UNAUTHORIZED).json({
       error: errorResponse.FORBIDDEN_ACCESS,
       message: "Access token is missing or invalid",
@@ -35,16 +36,23 @@ export function authMiddleware(
   try {
     const JWT_SECRET = process.env.SECRET_KEY;
     if (!JWT_SECRET) {
-      console.error("SECRET_KEY is not defined in environment variables");
+      console.error("[AuthMiddleware] SECRET_KEY is not defined in environment variables");
       return res.status(statusCode.INTERNAL_SERVER_ERROR).json({
         error: errorResponse.INTERNAL_SERVER_ERROR,
         message: "Internal server configuration error",
       });
     }
+
     const decoded = jwt.verify(token, JWT_SECRET) as AuthenticatedRequest["user"];
     req.user = decoded;
     next();
-  } catch (err) {
+  } catch (err: any) {
+    if (err.name === "TokenExpiredError") {
+      console.warn("[AuthMiddleware] Token expired at:", err.expiredAt);
+    } else {
+      console.error("[AuthMiddleware] JWT Verification Failed:", err.message);
+    }
+
     return res.status(statusCode.UNAUTHORIZED).json({
       error: errorResponse.FORBIDDEN_ACCESS,
       message: "Invalid or expired token",
