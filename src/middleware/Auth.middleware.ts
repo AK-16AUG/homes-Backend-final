@@ -2,10 +2,10 @@ import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
 import statusCode from "../common/constant/StatusCode.js";
 import errorResponse from "../common/constant/Error.js";
-import dotenv  from 'dotenv';
+import dotenv from 'dotenv';
 
 dotenv.config()
-const JWT_SECRET:any=process.env.SECRET_KEY ; 
+// Read SECRET_KEY inside the middleware to ensure it's always available after dotenv.config()
 
 interface AuthenticatedRequest extends Request {
   user?: {
@@ -22,7 +22,7 @@ export function authMiddleware(
   next: NextFunction
 ): any {
   const authHeader = req.headers.authorization;
-console.log(authHeader);
+  console.log(authHeader);
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
     return res.status(statusCode.UNAUTHORIZED).json({
       error: errorResponse.FORBIDDEN_ACCESS,
@@ -33,6 +33,14 @@ console.log(authHeader);
   const token = authHeader.split(" ")[1];
 
   try {
+    const JWT_SECRET = process.env.SECRET_KEY;
+    if (!JWT_SECRET) {
+      console.error("SECRET_KEY is not defined in environment variables");
+      return res.status(statusCode.INTERNAL_SERVER_ERROR).json({
+        error: errorResponse.INTERNAL_SERVER_ERROR,
+        message: "Internal server configuration error",
+      });
+    }
     const decoded = jwt.verify(token, JWT_SECRET) as AuthenticatedRequest["user"];
     req.user = decoded;
     next();
