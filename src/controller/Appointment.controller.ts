@@ -29,15 +29,6 @@ export default class AppointmentController {
         schedule_Time
       });
 
-      // Fire-and-forget: create notification + send admin email
-      if (createdAppointment?.user_id && createdAppointment?.property_id) {
-        this.notificationService.createAppointmentNotification({
-          user_id: String(createdAppointment.user_id),
-          property_id: String(createdAppointment.property_id),
-          appointmentDetails: `Appointment for property ${createdAppointment.property_id}${schedule_Time ? ` at ${schedule_Time}` : ""}`,
-        }).catch((err) => console.error("Appointment notification error:", err));
-      }
-
       return res.status(201).json({ message: "Appointment created successfully", appointment: createdAppointment });
     } catch (error: any) {
       logger.error("Error in createAppointment:", error);

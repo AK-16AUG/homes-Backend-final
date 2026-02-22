@@ -12,15 +12,6 @@ export default class LeadsController {
     try {
       const lead = await leadsService.createLead(req.body);
 
-      // Fire-and-forget: create notification + send admin email
-      if (lead?.user_id && lead?.property_id) {
-        notificationService.createLeadNotification({
-          user_id: String(lead.user_id),
-          property_id: String(lead.property_id),
-          leadDetails: `Lead for property ${lead.property_id} by user ${lead.user_id}`,
-        }).catch((err) => console.error("Lead notification error:", err));
-      }
-
       return res.status(statusCode.CREATED).json({
         message: "Lead created successfully",
         lead

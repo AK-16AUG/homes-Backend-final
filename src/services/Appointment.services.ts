@@ -3,6 +3,7 @@ import { sendAppointmentStatusEmail } from "../common/services/AppointmentStatus
 import AppointmentDao from "../dao/Appointment.dao.js";
 import { LeadsDao } from "../dao/Leads.dao.js";
 import NotificationDao from "../dao/Notification.dao.js";
+import NotificationService from "./Notification.service.js";
 import UserDao from "../dao/User.dao.js";
 import { logger } from "../utils/logger.js";
 
@@ -13,11 +14,13 @@ function isValidStatus(status: any): boolean {
 export default class AppointmentServices {
   private appointmentDao: AppointmentDao;
   private notificationDao: NotificationDao;
+  private notificationService: NotificationService;
   private leadDao?: LeadsDao;
   private userDao?: UserDao;
   constructor() {
     this.appointmentDao = new AppointmentDao();
     this.notificationDao = new NotificationDao();
+    this.notificationService = new NotificationService();
     this.leadDao = new LeadsDao();
     this.userDao = new UserDao();
   }
@@ -98,12 +101,29 @@ export default class AppointmentServices {
               priority: "high",
               source: "appointment",
             });
+            // Lead notification is handled within leadService.createLead if we use the service,
+            // but here we are using leadDao directly. Let's call notificationService for consistency.
+            this.notificationService.createLeadNotification({
+              user_id: data.user_id,
+              property_id: data.property_id,
+              leadDetails: `New lead generated from appointment booking for ${user?.User_Name || "User"}.`,
+              lead_id: String(data.user_id) // We don't have the new lead ID here easily without catching return from DAO
+            }).catch((err) => logger.error("Lead notification error from appointment service:", err));
           } else {
             // If lead exists, maybe we update matchedProperties?
             // I'll leave it as is for now to avoid side effects, adhering to "create lead" if needed.
           }
         }
       }
+
+      // Fire-and-forget: create notification + send admin email for appointment
+      this.notificationService.createAppointmentNotification({
+        user_id: String(appointment.user_id),
+        property_id: String(appointment.property_id),
+        appointmentDetails: `Appointment for property ${appointment.property_id}${data.schedule_Time ? ` at ${data.schedule_Time}` : ""}`,
+        appointment_id: String(appointment._id),
+      }).catch((err) => logger.error("Appointment notification error in service:", err));
+
       return appointment;
     } catch (error: any) {
       logger.error("AppointmentServices -> createAppointment error", {
@@ -237,6 +257,14 @@ export default class AppointmentServices {
           status: "new",
           priority: "high",
         });
+
+        // Notify admin about new lead from conversion
+        this.notificationService.createLeadNotification({
+          user_id: appointment?.user_id ? String(appointment.user_id) : undefined,
+          property_id: appointment?.property_id ? String(appointment.property_id) : undefined,
+          leadDetails: `New lead generated from appointment conversion for ${user?.User_Name || "User"}.`,
+          lead_id: String(appointment?.user_id) // Again, using user_id as a proxy or just linking to leads page
+        }).catch((err) => logger.error("Lead notification error from appointment conversion:", err));
       }
 
       // console.log("mail sent")

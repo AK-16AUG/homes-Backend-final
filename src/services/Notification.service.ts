@@ -4,7 +4,8 @@ import NotificationDao from "../dao/Notification.dao.js";
 import UserDao from "../dao/User.dao.js";
 import { logger } from "../utils/logger.js";
 
-const ADMIN_EMAIL = process.env.ADMIN_EMAIL || "dollybindal706@gmail.com";
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL || "anujkumar2632001@gmail.com";
+const FRONTEND_BASE_URL = process.env.FRONTEND_URL || "https://motherhomes.co.in";
 
 export default class NotificationService {
   private notificationDao: NotificationDao;
@@ -16,25 +17,30 @@ export default class NotificationService {
   }
 
   async createLeadNotification(data: {
-    user_id: string;
-    property_id: string;
+    user_id?: string;
+    property_id?: string;
     leadDetails?: string;
+    lead_id?: string;
   }) {
     try {
       logger.info("src->services->notification.service->createLeadNotification");
       const description = "New Lead submitted";
-      const notification = await this.notificationDao.createNotification({
-        user_id: data.user_id,
-        property_id: data.property_id,
-        description,
-      });
+      if (data.user_id && data.property_id) {
+        await this.notificationDao.createNotification({
+          user_id: data.user_id,
+          property_id: data.property_id,
+          description,
+        });
+      }
       // Send email to admin
+      const actionUrl = `${FRONTEND_BASE_URL}/leads${data.lead_id ? `?search=${data.lead_id}` : ""}`;
       await sendAdminNotificationEmail(
         ADMIN_EMAIL,
         "New Lead Received — MotherHomes",
-        `A new lead has been submitted${data.leadDetails ? `: <strong>${data.leadDetails}</strong>` : "."}`
+        `A new lead has been submitted${data.leadDetails ? `: <strong>${data.leadDetails}</strong>` : "."}`,
+        actionUrl
       );
-      return notification;
+      return { success: true };
     } catch (error: any) {
       logger.error("Error creating lead notification");
       logger.debug(error);
@@ -46,6 +52,7 @@ export default class NotificationService {
     user_id: string;
     property_id: string;
     appointmentDetails?: string;
+    appointment_id?: string;
   }) {
     try {
       logger.info("src->services->notification.service->createAppointmentNotification");
@@ -56,10 +63,12 @@ export default class NotificationService {
         description,
       });
       // Send email to admin
+      const actionUrl = `${FRONTEND_BASE_URL}/editappointments${data.appointment_id ? `?search=${data.appointment_id}` : ""}`;
       await sendAdminNotificationEmail(
         ADMIN_EMAIL,
         "New Appointment Booked — MotherHomes",
-        `A new appointment has been booked${data.appointmentDetails ? `: <strong>${data.appointmentDetails}</strong>` : "."}`
+        `A new appointment has been booked${data.appointmentDetails ? `: <strong>${data.appointmentDetails}</strong>` : "."}`,
+        actionUrl
       );
       return notification;
     } catch (error: any) {

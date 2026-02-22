@@ -1,8 +1,11 @@
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
+import { Resend } from 'resend';
 
 // Initialize environment variables
 dotenv.config();
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 interface EmailResult {
   success: boolean;
@@ -112,7 +115,8 @@ transporter.verify((error) => {
 export const sendAdminNotificationEmail = async (
   to: string,
   subject: string,
-  body: string
+  body: string,
+  actionUrl?: string
 ): Promise<EmailResult> => {
   try {
     if (!to) {
@@ -130,7 +134,7 @@ export const sendAdminNotificationEmail = async (
     .container { max-width: 600px; margin: 40px auto; background: #ffffff; padding: 40px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
     h1 { font-size: 22px; margin-bottom: 16px; color: #2d3748; border-bottom: 2px solid #f0f0f0; padding-bottom: 12px; }
     .body-text { font-size: 15px; color: #444; margin-bottom: 20px; }
-    .badge { display: inline-block; background: #3b82f6; color: #fff; padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 600; margin-bottom: 20px; }
+    .btn { display: inline-block; background: #3b82f6; color: #ffffff !important; padding: 12px 24px; border-radius: 6px; font-weight: 600; text-decoration: none; margin-top: 10px; }
     .footer { margin-top: 40px; font-size: 12px; color: #777; text-align: center; }
   </style>
 </head>
@@ -138,7 +142,7 @@ export const sendAdminNotificationEmail = async (
   <div class="container">
     <h1>🔔 ${subject}</h1>
     <p class="body-text">${body}</p>
-    <p class="body-text">Please log in to the admin portal to view the details.</p>
+    ${actionUrl ? `<a href="${actionUrl}" class="btn">View Details</a>` : '<p class="body-text">Please log in to the admin portal to view the details.</p>'}
     <div class="footer">
       <p>© ${new Date().getFullYear()} MotherHomes.co.in. All rights reserved.</p>
     </div>
@@ -146,23 +150,26 @@ export const sendAdminNotificationEmail = async (
 </body>
 </html>`;
 
-    const mailOptions: any = {
-      from: `"${process.env.APP_NAME || "MotherHomes"}" <${process.env.EMAIL}>`,
-      to,
-      subject,
+    const { data, error } = await resend.emails.send({
+      from: 'MotherHomes <onboarding@resend.dev>',
+      to: [to],
+      subject: subject,
       html: htmlContent,
-      priority: "high",
-    };
+    });
 
-    const info: any = await transporter.sendMail(mailOptions);
-    console.log("Admin notification email sent: %s", info.messageId);
+    if (error) {
+      console.error("Resend error:", error);
+      throw new Error(error.message);
+    }
+
+    console.log("Admin notification email sent via Resend: %s", data?.id);
 
     return {
       success: true,
-      message: "Admin notification email sent successfully",
+      message: "Admin notification email sent successfully via Resend",
     };
   } catch (error) {
-    console.error("Error sending admin notification email:", error);
+    console.error("Error sending admin notification email via Resend:", error);
     return {
       success: false,
       message: error instanceof Error ? error.message : "Failed to send admin notification email",

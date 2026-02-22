@@ -1,14 +1,17 @@
 import { LeadsDao } from "../dao/Leads.dao.js";
 import UserDao from "../dao/User.dao.js";
+import NotificationService from "./Notification.service.js";
 import { logger } from "../utils/logger.js";
 import { Types } from "mongoose";
 
 export default class LeadsService {
   private leadsDao: LeadsDao;
   private userDao: UserDao;
+  private notificationService: NotificationService;
   constructor() {
     this.leadsDao = new LeadsDao();
     this.userDao = new UserDao();
+    this.notificationService = new NotificationService();
   }
 
   async createLead(data: {
@@ -34,6 +37,15 @@ export default class LeadsService {
       }
 
       const createdLead = await this.leadsDao.createLead(data);
+
+      // Fire-and-forget: create notification + send admin email
+      this.notificationService.createLeadNotification({
+        user_id: createdLead.user_id ? String(createdLead.user_id) : undefined,
+        property_id: createdLead.matchedProperties && createdLead.matchedProperties.length > 0 ? String(createdLead.matchedProperties[0]) : undefined,
+        leadDetails: `New inquiry from ${createdLead.contactInfo?.name || "Visitor"} (${createdLead.contactInfo?.phone || "No phone"}). Search: ${createdLead.searchQuery}`,
+        lead_id: String(createdLead._id),
+      }).catch((err) => logger.error("Lead notification error in service:", err));
+
       return createdLead;
     } catch (error: any) {
       logger.error("Error creating lead in leads.service->createLead");

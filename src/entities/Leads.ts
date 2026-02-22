@@ -3,6 +3,8 @@ import { Schema, model, Document, Model, Types } from "mongoose";
 export interface IRealEstateLead extends Document {
 
   searchQuery: string;
+  user_id?: Types.ObjectId;
+  property_id?: Types.ObjectId;
   timestamp: Date;
   matchedProperties: Types.ObjectId[];
   contactInfo?: {
@@ -28,6 +30,16 @@ const RealEstateLeadSchema = new Schema<IRealEstateLead, IRealEstateLeadModel>({
     type: String,
 
     trim: true
+  },
+  user_id: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    index: true
+  },
+  property_id: {
+    type: Schema.Types.ObjectId,
+    ref: 'Property',
+    index: true
   },
   timestamp: {
     type: Date,
