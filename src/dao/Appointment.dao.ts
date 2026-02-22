@@ -35,12 +35,12 @@ export default class AppointmentDao {
       throw error;
     }
   }
-  async getAppointmentByUserId(id: string,property_id:string) {
+  async getAppointmentByUserId(id: string, property_id: string) {
     logger.info("AppointmentDao -> getAppointmentByUserId called", { id });
     try {
       const result = await this.appointment
-        .find({user_id:id,property_id})
-        .populate("user_id","-password")
+        .find({ user_id: id, property_id })
+        .populate("user_id", "-password")
         .populate("property_id");
       if (result) {
         logger.info("AppointmentDao -> getAppointmentByUserId success", { id });
@@ -53,12 +53,12 @@ export default class AppointmentDao {
       throw error;
     }
   }
-    async getAppointmentForUserId(id: string) {
+  async getAppointmentForUserId(id: string) {
     logger.info("AppointmentDao -> getAppointmentForUserId called", { id });
     try {
       const result = await this.appointment
-        .find({user_id:id})
-        .populate("user_id","-password")
+        .find({ user_id: id })
+        .populate("user_id", "-password")
         .populate("property_id");
       if (result) {
         logger.info("AppointmentDao -> getAppointmentForUserId success", { id });
@@ -71,13 +71,13 @@ export default class AppointmentDao {
       throw error;
     }
   }
-async getAppointmentByPropertyId(id: string) {
+  async getAppointmentByPropertyId(id: string) {
     logger.info("AppointmentDao -> getAppointmentByPropertyId", { id });
     try {
       const result = await this.appointment
-        .find({property_id:id})
-        .populate("user_id","-password")
-              if (result) {
+        .find({ property_id: id })
+        .populate("user_id", "-password")
+      if (result) {
         logger.info("AppointmentDao -> getAppointmentByPropertyId success", { id });
       } else {
         logger.warn("AppointmentDao -> getAppointmentByPropertyId not found", { id });
@@ -88,45 +88,55 @@ async getAppointmentByPropertyId(id: string) {
       throw error;
     }
   }
- async getAllAppointments({ page = 1, limit = 10, search = "" }) {
-  logger.info("AppointmentDao -> getAllAppointments called", { page, limit, search });
+  async getAllAppointments({ page = 1, limit = 10, search = "" }) {
+    logger.info("AppointmentDao -> getAllAppointments called", { page, limit, search });
 
-  try {
-    const skip = (page - 1) * limit;
+    try {
+      const pageNum = Number(page);
+      const limitNum = Number(limit);
+      const skip = (pageNum - 1) * limitNum;
 
 
-    const filter: any = {};
+      const filter: any = {};
 
-    if (search) {
-      filter.$or = [
-        { 'user_id.name': { $regex: search, $options: "i" } },
-        { 'user_id.email': { $regex: search, $options: "i" } }
-      ];
+      if (search) {
+        // Since we can't filter by populated fields directly in Mongoose .find(),
+        // we first find relevant user IDs
+        const User = (await import("../entities/User.entitiy.js")).default;
+        const matchingUsers = await User.find({
+          $or: [
+            { 'User_Name': { $regex: search, $options: "i" } },
+            { 'email': { $regex: search, $options: "i" } }
+          ]
+        }).select('_id');
+
+        const userIds = matchingUsers.map(u => u._id);
+        filter.user_id = { $in: userIds };
+      }
+
+      const [result, total] = await Promise.all([
+        this.appointment
+          .find(filter)
+          .populate("user_id", "-password")
+          .populate("property_id")
+          .skip(skip)
+          .limit(limitNum).sort({ createdAt: -1 }),
+        this.appointment.countDocuments(filter)
+      ]);
+
+      logger.info("AppointmentDao -> getAllAppointments success", { count: result.length });
+
+      return {
+        data: result,
+        currentPage: page,
+        totalPages: Math.ceil(total / limit),
+        totalItems: total
+      };
+    } catch (error: any) {
+      logger.error("AppointmentDao -> getAllAppointments error", { error: error.message });
+      throw error;
     }
-
-    const [result, total] = await Promise.all([
-      this.appointment
-        .find(filter)
-        .populate("user_id", "-password")
-        .populate("property_id")
-        .skip(skip)
-        .limit(limit).sort({createdAt:-1}),
-      this.appointment.countDocuments(filter)
-    ]);
-
-    logger.info("AppointmentDao -> getAllAppointments success", { count: result.length });
-
-    return {
-      data: result,
-      currentPage: page,
-      totalPages: Math.ceil(total / limit),
-      totalItems: total
-    };
-  } catch (error: any) {
-    logger.error("AppointmentDao -> getAllAppointments error", { error: error.message });
-    throw error;
   }
-}
 
   async countAllAppointments() {
     logger.info("AppointmentDao -> countAllAppointments called");
@@ -145,7 +155,7 @@ async getAppointmentByPropertyId(id: string) {
     try {
       const result = await this.appointment
         .findByIdAndUpdate(id, data, { new: true })
-        .populate("user_id","-password")
+        .populate("user_id", "-password")
         .populate("property_id");
       if (result) {
         logger.info("AppointmentDao -> updateAppointment success", { id });

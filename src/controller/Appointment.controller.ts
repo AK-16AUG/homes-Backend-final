@@ -107,7 +107,13 @@ export default class AppointmentController {
   getAllAppointments = async (req: Request, res: Response): Promise<Response> => {
     try {
       logger.info("src->controllers->appointment.controller->getAllAppointments");
-      const filter = req.query || {};
+      const { page, limit, search } = req.query as any;
+
+      const filter = {
+        page: page ? parseInt(page as string) : 1,
+        limit: limit ? parseInt(limit as string) : 10,
+        search: search || ""
+      };
 
       const appointments = await this.appointmentServices.getAllAppointments(filter);
 
