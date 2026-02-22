@@ -4,6 +4,8 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-dbConnect();
+dbConnect().catch(err => {
+    console.error("Database connection failed during initialization:", err);
+});
 
 export default app;
