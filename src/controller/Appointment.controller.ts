@@ -171,6 +171,17 @@ export default class AppointmentController {
     }
   };
 
+  getCalendarAppointments = async (req: Request, res: Response): Promise<Response> => {
+    try {
+      logger.info("src->controllers->appointment.controller->getCalendarAppointments");
+      const appointments = await this.appointmentServices.getAllAppointments({ limit: 1000 });
+      return res.status(200).json({ message: "Calendar appointments fetched successfully", appointments });
+    } catch (error: any) {
+      logger.error("Error in getCalendarAppointments:", error);
+      return res.status(500).json({ message: error.message || "Failed to fetch calendar appointments" });
+    }
+  };
+
   async createLeadFromAppointmentUpdate(req: Request, res: Response) {
     try {
       const { id } = req.params;

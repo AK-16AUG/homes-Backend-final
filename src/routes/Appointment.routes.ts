@@ -10,6 +10,10 @@ appointmentRouter.get("/", authMiddleware, authorizeRoles("admin", "superadmin")
   await appointmentController.getAllAppointments(req, res);
 }));
 
+appointmentRouter.get("/calendar", authMiddleware, authorizeRoles("admin", "superadmin"), asyncHandler(async (req, res) => {
+  await appointmentController.getCalendarAppointments(req, res);
+}));
+
 appointmentRouter.post("/", authMiddleware, asyncHandler(async (req, res) => {
   await appointmentController.createAppointment(req, res);
 }));
