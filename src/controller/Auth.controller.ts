@@ -18,6 +18,10 @@ export default class AuthController {
         return res.status(400).json({ message: "All fields are required" });
       }
 
+      if (String(phone_no).length !== 10) {
+        return res.status(400).json({ message: "The phone number must contain exactly 10 digits" });
+      }
+
       const createdUser = await this.authService.registerUser({
         email,
         password,
@@ -31,12 +35,12 @@ export default class AuthController {
       return res.status(500).json({ message: error.message || "Registration failed" });
     }
   };
-UpdateUserPass = async (req: Request, res: Response): Promise<Response> => {
+  UpdateUserPass = async (req: Request, res: Response): Promise<Response> => {
     try {
       logger.info("src->controllers->auth.controller->UpdateUserPass");
-      const { email, password} = req.body;
+      const { email, password } = req.body;
 
-      if (!email || !password ) {
+      if (!email || !password) {
         return res.status(400).json({ message: "All fields are required" });
       }
 
@@ -45,7 +49,7 @@ UpdateUserPass = async (req: Request, res: Response): Promise<Response> => {
         password
       });
 
-      return res.status(201).json({ message: "User password reset successfully", user: UpdateUser});
+      return res.status(201).json({ message: "User password reset successfully", user: UpdateUser });
     } catch (error: any) {
       logger.error("Error in UpdateUserpass:", error);
       return res.status(500).json({ message: error.message || "Pssword reset failed" });
@@ -54,38 +58,38 @@ UpdateUserPass = async (req: Request, res: Response): Promise<Response> => {
   VerifyUser = async (req: Request, res: Response): Promise<Response> => {
     try {
       logger.info("src->controllers->auth.controller->VerifyUser");
-      const { email,otp } = req.body;
+      const { email, otp } = req.body;
 
-      if (!email ) {
+      if (!email) {
         return res.status(400).json({ message: "Email  is required" });
       }
 
-     const verification=  await this.authService.UserEmailVerificationEmailSend(email,otp);
-console.log(verification)
-      return res.status(200).json({ message: "User verified"});
+      const verification = await this.authService.UserEmailVerificationEmailSend(email, otp);
+      console.log(verification)
+      return res.status(200).json({ message: "User verified" });
     } catch (error: any) {
       logger.error("Error in VerifyUser:", error);
       return res.status(401).json({ message: error.message || "Verification failed" });
     }
   };
- VerifyResetUser = async (req: Request, res: Response): Promise<Response> => {
+  VerifyResetUser = async (req: Request, res: Response): Promise<Response> => {
     try {
       logger.info("src->controllers->auth.controller->VerifyResetUser");
-      const { email,otp } = req.body;
+      const { email, otp } = req.body;
 
-      if (!email ) {
+      if (!email) {
         return res.status(400).json({ message: "Email  is required" });
       }
 
-     const verification=  await this.authService.UserResetEmailVerificationEmailSend(email,otp);
-console.log(verification)
-      return res.status(200).json({ message: "User verified"});
+      const verification = await this.authService.UserResetEmailVerificationEmailSend(email, otp);
+      console.log(verification)
+      return res.status(200).json({ message: "User verified" });
     } catch (error: any) {
       logger.error("Error in VerifyUser:", error);
       return res.status(401).json({ message: error.message || "Verification failed" });
     }
   };
- 
+
   loginUser = async (req: Request, res: Response): Promise<Response> => {
     try {
       logger.info("src->controllers->auth.controller->loginUser");
@@ -103,5 +107,5 @@ console.log(verification)
       return res.status(401).json({ message: error.message || "Login failed" });
     }
   };
- 
+
 }
