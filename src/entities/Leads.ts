@@ -71,7 +71,7 @@ const RealEstateLeadSchema = new Schema<IRealEstateLead, IRealEstateLeadModel>({
   source: {
     type: String,
     trim: true,
-    enum: ['website', 'app', 'referral', 'other', 'popup'],
+    enum: ['website', 'app', 'referral', 'other', 'popup', 'appointment'],
     default: 'website'
   },
   priority: {

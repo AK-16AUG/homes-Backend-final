@@ -52,55 +52,40 @@ export default class AppointmentServices {
         throw new Error("Failed to create appointment");
       }
 
-      const notification = await this.notificationDao.createNotification({
+      await this.notificationDao.createNotification({
         user_id: data.user_id,
         property_id: data.property_id,
         description: "New appointment created",
         adminOnly: true
       });
 
-      // Automatically create a lead for this appointment
-      // We need to fetch user details to populate lead contact info
+      // Always create a lead entry for each appointment so admin leads can show all user bookings.
       if (this.userDao && this.leadDao) {
         const user: any = await this.userDao.findByUserId(data.user_id);
         if (user) {
-          // Check if a lead already exists for this user?
-          // The requirement says "Whenever an appointment is created, the corresponding lead should also be created."
-          // It doesn't explicitly say "unless it exists", but it's good practice to avoid spam.
-          // However, a user might have multiple interests.
-          // Let's create it, assuming the Leads service or DAO handles duplication or we just create a new one.
-          // Based on 'updateAppointment' logic seen earlier, they check 'leadsCheck'.
-          // Let's check if there is an active lead for this user/property?
-          // For now, I will implement creation as requested.
-
-          // We'll check if a lead with this email already exists to avoid duplication if preferred,
-          // but the requirement is "Whenever... created... lead should also be created".
-          // I will check if a lead exists for this specific property and user to avoid COMPLETE duplicates
-          // but maybe just update it?
-          // Actually, the prompt says "Duplicate Prevention" for SIGN UP. For leads it says "corresponding lead should also be created".
-          // I'll try to find if a lead exists for this user.
-          const existingLeads = await this.leadDao.getLeadsByUserEmail(user.email);
-          // getLeadsByUserEmail returns one lead or array? It seems to be used as 'leadsCheck' in updateAppointment.
-          // If it returns *any* lead, we might not want to create another general one.
-          // But if the user is interested in a NEW property, maybe we should?
-          // The current 'updateAppointment' logic only creates if !leadsCheck. behavior suggests one lead per user?
-          // I will stick to that pattern for consistency: Create only if no lead exists for this user.
-
-          if (!existingLeads) {
+          try {
+            const scheduleTimeText = data.schedule_Time
+              ? new Date(data.schedule_Time).toISOString()
+              : "Not scheduled yet";
             await this.leadDao.createLead({
+              searchQuery: `Appointment requested for property ${data.property_id}`,
               contactInfo: {
                 name: user?.User_Name,
                 phone: String(user?.phone_no || ""),
                 email: user?.email,
               },
               matchedProperties: [new Types.ObjectId(data.property_id)],
-              status: "new",
+              status: "inquiry",
               priority: "high",
               source: "appointment",
+              notes: `Auto-created from appointment booking. Schedule time: ${scheduleTimeText}`,
             });
-          } else {
-            // If lead exists, maybe we update matchedProperties?
-            // I'll leave it as is for now to avoid side effects, adhering to "create lead" if needed.
+          } catch (leadError: any) {
+            logger.error("AppointmentServices -> lead creation failed", {
+              userId: data.user_id,
+              propertyId: data.property_id,
+              error: leadError?.message,
+            });
           }
         }
       }
