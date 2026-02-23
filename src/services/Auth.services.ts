@@ -48,20 +48,25 @@ export default class AuthService {
     try {
       logger.info("src->services->auth.service->loginUser");
 
-      const user = await this.Userdao.findByEmail(data.email);
+      const normalizedEmail = data.email.trim().toLowerCase();
+      const user = await this.Userdao.findByEmail(normalizedEmail);
       if (!user) {
         throw new Error("Invalid email or password");
       }
-      if (!user.isVerified) {
-        const deleteUser = await this.Userdao.DeleteUser(data.email)
-        throw new Error("User Not found");
+      if (!user.password) {
+        throw new Error("Invalid email or password");
       }
-
-
 
       const isMatch = await bcrypt.compare(data.password, user.password);
       if (!isMatch) {
         throw new Error("Invalid email or password");
+      }
+
+      // Backward-compatibility: allow legacy accounts with false isVerified
+      // to login after valid credentials, and mark them verified.
+      if (!user.isVerified) {
+        await this.Userdao.updateUserById(String(user._id), { isVerified: true });
+        user.isVerified = true;
       }
 
       const payload = {
@@ -70,9 +75,9 @@ export default class AuthService {
         User_Name: user.User_Name,
         role: user.role
       };
-      const JWT_SECRET = process.env.SECRET_KEY;
+      const JWT_SECRET = process.env.SECRET_KEY || process.env.JWT_SECRET;
       if (!JWT_SECRET) {
-        throw new Error("SECRET_KEY is not defined in environment variables");
+        throw new Error("JWT secret is not defined in environment variables");
       }
       const token = jwt.sign(payload, JWT_SECRET, {
         expiresIn: "20d",

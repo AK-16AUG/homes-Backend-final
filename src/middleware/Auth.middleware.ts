@@ -5,7 +5,7 @@ import errorResponse from "../common/constant/Error.js";
 import dotenv  from 'dotenv';
 
 dotenv.config()
-const JWT_SECRET:any=process.env.SECRET_KEY ; 
+const JWT_SECRET:any=process.env.SECRET_KEY || process.env.JWT_SECRET ; 
 
 interface AuthenticatedRequest extends Request {
   user?: {
