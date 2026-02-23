@@ -18,8 +18,18 @@ const fileFilter = (
   file: MulterFile,
   cb: FileFilterCallback
 ) => {
-  const allowedTypes = ['.jpeg', '.jpg', '.png', '.webp'];
-  const allowedMimeTypes = ['image/jpeg', 'image/png', 'image/webp'];
+  const isBulkUploadField = file.fieldname === "file";
+
+  const allowedTypes = isBulkUploadField
+    ? [".xlsx", ".xls", ".csv"]
+    : [".jpeg", ".jpg", ".png", ".webp"];
+  const allowedMimeTypes = isBulkUploadField
+    ? [
+        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "application/vnd.ms-excel",
+        "text/csv",
+      ]
+    : ["image/jpeg", "image/png", "image/webp"];
 
   const extname = path.extname(file.originalname).toLowerCase();
   const isValidExt = allowedTypes.includes(extname);
@@ -28,7 +38,13 @@ const fileFilter = (
   if (isValidExt && isValidMime) {
     cb(null, true);
   } else {
-    cb(new Error(`Invalid file type. Only ${allowedTypes.join(', ')} images are allowed`));
+    cb(
+      new Error(
+        isBulkUploadField
+          ? `Invalid file type. Only ${allowedTypes.join(", ")} files are allowed`
+          : `Invalid file type. Only ${allowedTypes.join(", ")} images are allowed`
+      )
+    );
   }
 };
 

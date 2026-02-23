@@ -181,7 +181,7 @@ propertyRouter.post(
   "/bulk-upload",
   authMiddleware,
   authorizeRoles("admin", "superadmin"),
-  upload.single("file"),
+  upload.array("file", 10),
   asyncHandler(async (req, res) => {
     await propertyController.bulkUploadProperties(req, res);
   })
