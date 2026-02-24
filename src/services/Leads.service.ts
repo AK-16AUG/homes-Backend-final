@@ -1,14 +1,17 @@
 import { LeadsDao } from "../dao/Leads.dao.js";
 import UserDao from "../dao/User.dao.js";
+import TenantDao from "../dao/Tenant.dao.js";
 import { logger } from "../utils/logger.js";
 import { Types } from "mongoose";
 
 export default class LeadsService {
   private leadsDao: LeadsDao;
   private userDao: UserDao;
+  private tenantDao: TenantDao;
   constructor() {
     this.leadsDao = new LeadsDao();
     this.userDao = new UserDao();
+    this.tenantDao = new TenantDao();
   }
 
   async createLead(data: {
@@ -62,12 +65,13 @@ export default class LeadsService {
 
         if (lead && lead.contactInfo && lead.contactInfo.email) {
           try {
+            let userId: Types.ObjectId | string | undefined;
             // We need a password for the new user. We can generate a random one or set a default?
             // Or we can just check if user exists.
             const existingUser = await this.userDao.findByEmail(lead.contactInfo.email);
             if (!existingUser) {
               // Create user
-              await this.userDao.createUser({
+              const newUser = await this.userDao.createUser({
                 User_Name: lead.contactInfo.name || "New User",
                 email: lead.contactInfo.email,
                 phone_no: lead.contactInfo.phone ? Number(lead.contactInfo.phone) : 0, // Ensure number
@@ -75,10 +79,27 @@ export default class LeadsService {
                 role: "user",
                 isVerified: true // Assuming converted leads are verified?
               });
-              // Ideally send an email to user with credentials.
+              userId = (newUser as any)._id as Types.ObjectId | string;
+            } else {
+              userId = (existingUser as any)._id as Types.ObjectId | string;
+            }
+
+            // Auto-create a Tenant if matched properties exist
+            if (userId && lead.matchedProperties && lead.matchedProperties.length > 0) {
+              const matchedPropertyId = lead.matchedProperties[0];
+              await this.tenantDao.createTenant({
+                name: lead.contactInfo.name || existingUser?.User_Name || "New Tenant",
+                users: [userId],
+                property_id: matchedPropertyId,
+                startDate: new Date(),
+                property_type: "Normal", // Default assumption, edit later if PG
+                rent: "0",
+                Payments: [],
+                tenantDetails: []
+              });
             }
           } catch (e) {
-            logger.error("Failed to auto-create user from lead conversion", e);
+            logger.error("Failed to auto-create user/tenant from lead conversion", e);
             // Swallow error so lead update succeeds
           }
         }
