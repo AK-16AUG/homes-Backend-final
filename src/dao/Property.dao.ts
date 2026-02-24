@@ -12,6 +12,12 @@ export default class PropertyDao {
   async createProperty(data: Partial<PropertyType>) {
     logger.info("PropertyDao -> createProperty called", { data });
     try {
+      if (data.flat_no) {
+        const existingInfo = await this.Property.findOne({ flat_no: data.flat_no });
+        if (existingInfo) {
+          throw new Error(`A property with flat_no ${data.flat_no} already exists.`);
+        }
+      }
       const result = await this.Property.create(data);
       logger.info("PropertyDao -> createProperty success", { id: result._id });
       return result;
@@ -47,7 +53,7 @@ export default class PropertyDao {
 
   async getAllProperties(filter = {}, page = 1, limit = 10) {
     logger.info("PropertyDao -> getAllProperties called", { filter, page, limit });
-    
+
     try {
       const skip = (page - 1) * limit;
       const [results, total] = await Promise.all([
@@ -58,7 +64,7 @@ export default class PropertyDao {
           .skip(skip)
           .limit(limit),
         this.Property.countDocuments(filter)
-        
+
       ]);
       logger.info("PropertyDao -> getAllProperties success", { count: results.length, total });
       return { results, total, page, limit };
@@ -71,6 +77,12 @@ export default class PropertyDao {
   async updateProperty(id: string, updateData: any) {
     logger.info("PropertyDao -> updateProperty called", { id, updateData });
     try {
+      if (updateData.flat_no) {
+        const existingInfo = await this.Property.findOne({ flat_no: updateData.flat_no, _id: { $ne: id } });
+        if (existingInfo) {
+          throw new Error(`A property with flat_no ${updateData.flat_no} already exists.`);
+        }
+      }
       const result = await this.Property.findByIdAndUpdate(id, updateData, {
         new: true,
         runValidators: true,
