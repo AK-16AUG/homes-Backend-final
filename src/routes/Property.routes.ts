@@ -187,4 +187,31 @@ propertyRouter.post(
   })
 );
 
+propertyRouter.post(
+  "/bulk-multi",
+  authMiddleware,
+  authorizeRoles("admin", "superadmin"),
+  upload.array("images", 10),
+  asyncHandler(async (req, res) => {
+    try {
+      if (req.files && Array.isArray(req.files)) {
+        const compressPromises = (req.files as Express.Multer.File[]).map(
+          (file) => compressImage(file.buffer)
+        );
+        const compressedImages = await Promise.all(compressPromises);
+        const uploadPromises = compressedImages.map((buffer) => uploadFromBuffer(buffer));
+        const results = await Promise.all(uploadPromises);
+        req.body.uploadedImages = results.map((result: any) => result.secure_url);
+      } else {
+        req.body.uploadedImages = [];
+      }
+      res.setHeader("Content-Type", "application/json");
+      await propertyController.bulkMultiEntry(req, res);
+    } catch (error: any) {
+      console.error("Error in bulk multi property creation:", error);
+      res.status(500).json({ error: error.message || "Internal server error" });
+    }
+  })
+);
+
 export default propertyRouter;

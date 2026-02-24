@@ -147,6 +147,127 @@ export default class PropertyController {
     }
   }
 
+  async bulkMultiEntry(req: Request, res: Response) {
+    try {
+      const { entries, randomizeImages } = req.body;
+      const uploadedImages = req.body.uploadedImages || [];
+
+      if (!entries) {
+        return res.status(statusCode.BAD_REQUEST).json({
+          message: "No entries provided",
+        });
+      }
+
+      let parsedEntries: any[] = [];
+      try {
+        parsedEntries = JSON.parse(entries);
+      } catch (err) {
+        return res.status(statusCode.BAD_REQUEST).json({
+          message: "Invalid entries format. Expected JSON string.",
+        });
+      }
+
+      if (!Array.isArray(parsedEntries) || parsedEntries.length === 0) {
+        return res.status(statusCode.BAD_REQUEST).json({
+          message: "Entries must be a non-empty array",
+        });
+      }
+
+      // Check duplicates within the array
+      const flatNumbers = parsedEntries.map(e => e.flat_no).filter(Boolean);
+      const uniqueFlatNumbers = new Set(flatNumbers);
+      if (flatNumbers.length !== uniqueFlatNumbers.size) {
+        return res.status(statusCode.BAD_REQUEST).json({
+          message: "Duplicate flat_no found within the provided entries",
+        });
+      }
+
+      // Check duplicates against the DB
+      const existingFlats = await PropertyModel.find({
+        flat_no: { $in: flatNumbers }
+      }).select("flat_no");
+
+      if (existingFlats.length > 0) {
+        const existingNos = existingFlats.map(f => f.flat_no).join(", ");
+        return res.status(statusCode.BAD_REQUEST).json({
+          message: `The following flat_no already exist in the database: ${existingNos}`,
+        });
+      }
+
+      const shuffleArray = (array: any[]) => {
+        const newArr = [...array];
+        for (let i = newArr.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
+        }
+        return newArr;
+      };
+
+      const normalizeCategory = (value: any): "rent" | "sale" | "pg" => {
+        const raw = String(value || "").trim().toLowerCase();
+        if (raw === "rent" || raw === "sale" || raw === "pg") return raw;
+        return "rent";
+      };
+
+      const normalizeFurnishing = (
+        value: any
+      ): "Semi-furnished" | "Fully furnished" | "Raw" => {
+        const raw = String(value || "").trim().toLowerCase();
+        if (raw === "semi-furnished" || raw === "semi furnished") return "Semi-furnished";
+        if (raw === "fully-furnished" || raw === "fully furnished") return "Fully furnished";
+        if (raw === "raw") return "Raw";
+        return "Semi-furnished";
+      };
+
+      const createdProperties = [];
+
+      for (const entry of parsedEntries) {
+        let entryImages = [...uploadedImages];
+        if (randomizeImages === 'true' || randomizeImages === true) {
+          entryImages = shuffleArray(entryImages);
+        }
+
+        const propertyData = {
+          property_name: entry.property_name,
+          description: entry.description,
+          rate: entry.rate,
+          category: normalizeCategory(entry.category),
+          furnishing_type: normalizeFurnishing(entry.furnishing_type),
+          city: entry.city,
+          state: entry.state,
+          address: entry.address,
+          flat_no: entry.flat_no,
+          area: entry.area,
+          bed: Number(entry.bed) || 0,
+          bathroom: Number(entry.bathroom) || 0,
+          availability: entry.availability !== false,
+          perPersonPrice: entry.perPersonPrice,
+          totalCapacity: entry.totalCapacity,
+          latitude: entry.latitude,
+          longitude: entry.longitude,
+          amenities: entry.amenities || [],
+          services: entry.services || [],
+          videos: entry.videos || [],
+          images: entryImages,
+        };
+
+        const property = await propertyService.createProperty(propertyData);
+        createdProperties.push(property);
+      }
+
+      return res.status(statusCode.CREATED).json({
+        message: "Successfully created multiple entries",
+        properties: createdProperties,
+      });
+    } catch (error: any) {
+      console.error("Bulk multi entry error:", error);
+      return res.status(statusCode.INTERNAL_SERVER_ERROR).json({
+        error: errorResponse.INTERNAL_SERVER_ERROR,
+        message: error.message,
+      });
+    }
+  }
+
   async createProperty(req: Request, res: Response) {
     try {
       const property = await propertyService.createProperty(req.body);
