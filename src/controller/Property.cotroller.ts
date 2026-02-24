@@ -219,7 +219,18 @@ export default class PropertyController {
         return "Semi-furnished";
       };
 
-      const createdProperties = [];
+      const propertiesToInsert = [];
+
+      const requiredFields = [
+        "property_name",
+        "description",
+        "rate",
+        "category",
+        "furnishing_type",
+        "city",
+        "state",
+        "area"
+      ];
 
       for (const entry of parsedEntries) {
         let entryImages = [...uploadedImages];
@@ -251,9 +262,17 @@ export default class PropertyController {
           images: entryImages,
         };
 
-        const property = await propertyService.createProperty(propertyData);
-        createdProperties.push(property);
+        for (const field of requiredFields) {
+          if (!propertyData[field as keyof typeof propertyData]) {
+            return res.status(statusCode.BAD_REQUEST).json({ message: `Missing required field: ${field} for property ${entry.property_name || 'unknown'}` });
+          }
+        }
+
+        propertiesToInsert.push(propertyData);
       }
+
+      // Perform a bulk insert to avoid Serverless Function timeouts on Vercel
+      const createdProperties = await PropertyModel.insertMany(propertiesToInsert);
 
       return res.status(statusCode.CREATED).json({
         message: "Successfully created multiple entries",
