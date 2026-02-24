@@ -12,7 +12,7 @@ export default class PropertyDao {
   async createProperty(data: Partial<PropertyType>) {
     logger.info("PropertyDao -> createProperty called", { data });
     try {
-      if (data.flat_no) {
+      if (data.flat_no && data.flat_no.trim() !== "") {
         const existingInfo = await this.Property.findOne({ flat_no: data.flat_no });
         if (existingInfo) {
           throw new Error(`A property with flat_no ${data.flat_no} already exists.`);
@@ -77,7 +77,7 @@ export default class PropertyDao {
   async updateProperty(id: string, updateData: any) {
     logger.info("PropertyDao -> updateProperty called", { id, updateData });
     try {
-      if (updateData.flat_no) {
+      if (updateData.flat_no && updateData.flat_no.trim() !== "") {
         const existingInfo = await this.Property.findOne({ flat_no: updateData.flat_no, _id: { $ne: id } });
         if (existingInfo) {
           throw new Error(`A property with flat_no ${updateData.flat_no} already exists.`);
