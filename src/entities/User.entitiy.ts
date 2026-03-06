@@ -17,6 +17,7 @@ export interface UserType extends Document {
   isVerified: boolean;
   address?: Address;
   otp: string;
+  comment?: string;
 }
 
 const UserSchema = new Schema<UserType>(
@@ -58,6 +59,10 @@ const UserSchema = new Schema<UserType>(
     },
     otp: {
       type: String
+    },
+    comment: {
+      type: String,
+      default: ""
     }
   },
   {

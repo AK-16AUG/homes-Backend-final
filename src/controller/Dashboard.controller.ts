@@ -68,22 +68,31 @@ const DashboardController = {
   // 3. Comprehensive Dashboard Stats
   async getComprehensiveStats(_req: Request, res: Response) {
     try {
-      // 1. Core KPIs
-      const totalUsers = await User.countDocuments();
-      const activeUsers = await User.countDocuments({ isVerified: true });
-      const totalProperties = await Property.countDocuments();
-      const occupiedProperties = await Property.countDocuments({ availability: false });
-      const totalLeads = await Leads.countDocuments();
-      const totalAppointments = await Appointment.countDocuments();
+      // 1. Core KPIs and Revenue Data in parallel
+      const [
+        totalUsers,
+        activeUsers,
+        totalProperties,
+        occupiedProperties,
+        totalLeads,
+        totalAppointments,
+        allUnavailable
+      ] = await Promise.all([
+        User.countDocuments(),
+        User.countDocuments({ isVerified: true }),
+        Property.countDocuments(),
+        Property.countDocuments({ availability: false }),
+        Leads.countDocuments(),
+        Appointment.countDocuments(),
+        Property.find({ availability: false })
+      ]);
 
-      // 2. Revenue Data
-      const allUnavailable = await Property.find({ availability: false });
       const totalRevenue = allUnavailable.reduce((sum: number, p: any) => sum + Number(p.rate || 0), 0);
 
       // 3. Last 6 Months Trends (Mocking or calculating based on createdAt/updatedAt)
       // Since we don't have historical snapshots, we calculate based on the current data's timestamps
       const getMonthlyTrend = async (Model: any, dateField = "createdAt") => {
-        const trends = [];
+        const trendPromises = [];
         for (let i = 5; i >= 0; i--) {
           const start = new Date();
           start.setMonth(start.getMonth() - i);
@@ -93,17 +102,22 @@ const DashboardController = {
           const end = new Date(start);
           end.setMonth(end.getMonth() + 1);
 
-          const count = await Model.countDocuments({
-            [dateField]: { $gte: start, $lt: end }
-          });
-          trends.push({ month: start.toLocaleString('default', { month: 'short' }), count });
+          trendPromises.push(
+            Model.countDocuments({ [dateField]: { $gte: start, $lt: end } })
+              .then((count: number) => ({
+                month: start.toLocaleString('default', { month: 'short' }),
+                count
+              }))
+          );
         }
-        return trends;
+        return Promise.all(trendPromises);
       };
 
-      const userTrends = await getMonthlyTrend(User);
-      const leadTrends = await getMonthlyTrend(Leads);
-      const propertyTrends = await getMonthlyTrend(Property);
+      const [userTrends, leadTrends, propertyTrends] = await Promise.all([
+        getMonthlyTrend(User),
+        getMonthlyTrend(Leads),
+        getMonthlyTrend(Property)
+      ]);
 
       // 4. Occupancy Rate
       const occupancyRate = totalProperties > 0 ? (occupiedProperties / totalProperties) * 100 : 0;
