@@ -71,11 +71,46 @@ propertyRouter.post(
         const results = await Promise.all(uploadPromises);
         req.body.images = results.map((result: any) => result.secure_url);
       }
+
+      // Step 2: Normalize other fields from FormData (amenities[], services[], videos[])
+      const normalizeArrayField = (fieldName: string) => {
+        const value = req.body[fieldName] || req.body[`${fieldName}[]`];
+        if (!value) return [];
+        if (Array.isArray(value)) return value.flat();
+        if (typeof value === 'string') {
+          try {
+            const parsed = JSON.parse(value);
+            return Array.isArray(parsed) ? parsed : [parsed];
+          } catch (e) {
+            return [value];
+          }
+        }
+        return [value];
+      };
+
+      req.body.amenities = normalizeArrayField('amenities');
+      req.body.services = normalizeArrayField('services');
+      req.body.videos = normalizeArrayField('videos');
+
+      // Clean up the [] version from body to avoid cluttering Mongoose
+      delete req.body['amenities[]'];
+      delete req.body['services[]'];
+      delete req.body['videos[]'];
+
+      // Step 3: Explicitly cast numeric fields
+      if (req.body.bed !== undefined) req.body.bed = Number(req.body.bed) || 0;
+      if (req.body.bathroom !== undefined) req.body.bathroom = Number(req.body.bathroom) || 0;
+      if (req.body.rate !== undefined) req.body.rate = String(req.body.rate);
+
       res.setHeader("Content-Type", "application/json");
       await propertyController.createProperty(req, res);
     } catch (error: any) {
-      console.error("Error in property creation:", error);
-      res.status(500).json({ error: error.message || "Internal server error" });
+      console.error("CRITICAL: Error in property creation route:", error);
+      res.status(500).json({
+        error: "Failed to create property",
+        message: error.message,
+        details: error.errors
+      });
     }
   })
 );
@@ -143,14 +178,44 @@ propertyRouter.put(
         const flatImages = finalImageUrls.flat(Infinity).filter((url: any) =>
           typeof url === "string" && /^https?:\/\//.test(url)
         );
-        console.log("Final images to be saved:", flatImages, "Original:", finalImageUrls);
-        if (flatImages.length > 0) {
-          req.body.images = flatImages;
-        } else {
-          // If invalid, do not update and return error
-          return res.status(400).json({ error: "Invalid images array" });
-        }
+        console.log("Final images to be saved:", flatImages);
+        // Set req.body.images to either the new list or empty array if explicitly cleared
+        req.body.images = flatImages;
+      } else if (req.body.hasOwnProperty('existingImages') || (req.files && Array.isArray(req.files))) {
+        // If existingImages was present but empty, and no new files, it means all images were removed
+        req.body.images = [];
       }
+
+      // Step 4: Normalize other fields from FormData (amenities[], services[], videos[])
+      const normalizeArrayField = (fieldName: string) => {
+        const value = req.body[fieldName] || req.body[`${fieldName}[]`];
+        if (!value) return [];
+        if (Array.isArray(value)) return value.flat();
+        if (typeof value === 'string') {
+          try {
+            const parsed = JSON.parse(value);
+            return Array.isArray(parsed) ? parsed : [parsed];
+          } catch (e) {
+            return [value];
+          }
+        }
+        return [value];
+      };
+
+      req.body.amenities = normalizeArrayField('amenities');
+      req.body.services = normalizeArrayField('services');
+      req.body.videos = normalizeArrayField('videos');
+
+      // Clean up the [] version from body to avoid cluttering Mongoose update
+      delete req.body['amenities[]'];
+      delete req.body['services[]'];
+      delete req.body['videos[]'];
+
+      // Step 5: Explicitly cast numeric fields to avoid validation errors
+      if (req.body.bed !== undefined) req.body.bed = Number(req.body.bed) || 0;
+      if (req.body.bathroom !== undefined) req.body.bathroom = Number(req.body.bathroom) || 0;
+      if (req.body.rate !== undefined) req.body.rate = String(req.body.rate); // Ensure rate is a string as per schema
+
       // Defensive: If images is set but not a valid array, block update
       if (req.body.images && (!Array.isArray(req.body.images) || req.body.images.some((img: any) => typeof img !== "string"))) {
         console.error("Invalid images array!", req.body.images);
@@ -163,8 +228,12 @@ propertyRouter.put(
       res.setHeader("Content-Type", "application/json");
       await propertyController.updateProperty(req, res);
     } catch (error: any) {
-      console.error("Error in property update:", error);
-      res.status(500).json({ error: error.message });
+      console.error("CRITICAL: Error in property update route:", error);
+      res.status(500).json({
+        error: "Failed to update property",
+        message: error.message,
+        details: error.errors // Include Mongoose validation details if present
+      });
     }
   })
 );

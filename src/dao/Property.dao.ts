@@ -18,6 +18,13 @@ export default class PropertyDao {
           throw new Error(`A property with flat_no ${data.flat_no} already exists.`);
         }
       }
+      if (data.images && data.images.length > 0) {
+        const frontImage = data.images[0];
+        const duplicateFrontImage = await this.Property.findOne({ "images.0": frontImage });
+        if (duplicateFrontImage) {
+          throw new Error("This image is already set as the front image for another property. Every listing must have a unique front image.");
+        }
+      }
       const result = await this.Property.create(data);
       logger.info("PropertyDao -> createProperty success", { id: result._id });
       return result;
@@ -81,6 +88,16 @@ export default class PropertyDao {
         const existingInfo = await this.Property.findOne({ flat_no: updateData.flat_no, _id: { $ne: id } });
         if (existingInfo) {
           throw new Error(`A property with flat_no ${updateData.flat_no} already exists.`);
+        }
+      }
+      if (updateData.images && updateData.images.length > 0) {
+        const frontImage = updateData.images[0];
+        const duplicateFrontImage = await this.Property.findOne({
+          "images.0": frontImage,
+          _id: { $ne: id }
+        });
+        if (duplicateFrontImage) {
+          throw new Error("This image is already set as the front image for another property. Every listing must have a unique front image.");
         }
       }
       const result = await this.Property.findByIdAndUpdate(id, updateData, {

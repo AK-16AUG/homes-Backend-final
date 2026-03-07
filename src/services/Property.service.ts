@@ -3,9 +3,9 @@ import TenantDao from "../dao/Tenant.dao.js";
 import AppointmentDao from "../dao/Appointment.dao.js";
 import { PropertyType } from "../entities/Properties.entity.js";
 import { logger } from "../utils/logger.js";
- import { deleteCloudinaryImage } from "../utils/deleteImageCloudinary.js";
+import { deleteCloudinaryImage } from "../utils/deleteImageCloudinary.js";
 function isValidCategory(category: any): boolean {
-  return ["rent", "sale","pg"].includes(category);
+  return ["rent", "sale", "pg"].includes(category);
 }
 
 function isValidFurnishingType(type: any): boolean {
@@ -80,7 +80,7 @@ export default class PropertyServices {
       logger.error("PropertyServices -> createProperty error", {
         error: error.message,
       });
-      throw new Error(error.message || "Failed to create property");
+      throw error; // Re-throw the original error for the controller to handle
     }
   }
 
@@ -134,67 +134,68 @@ export default class PropertyServices {
       logger.error("PropertyServices -> updateProperty error", {
         id,
         error: error.message,
+        details: error.errors
       });
-      throw new Error(error.message || "Failed to update property");
+      throw error; // Let the controller handle the specific error
     }
   }
 
 
 
-async deleteProperty(id: string) {
-  // Helper: extract public_id (e.g., "properties/abcdefg") from URL
-  function extractPublicIdFromUrl(url: string): string | null {
-    // Matches ".../upload/v1234567890/properties/abcdef...xyz.png"
-    const match = url.match(/\/upload\/(?:v\d+\/)?([^\.]+)\./);
-    if (!match) return null;
-    return match[1];
-  }
-
-  try {
-    logger.info("PropertyServices -> deleteProperty called", { id });
-
-    // Get property document (still in DB)
-    const property: any = await this.propertyDao.getPropertyById(id);
-    if (!property) {
-      throw new Error("Property not found");
+  async deleteProperty(id: string) {
+    // Helper: extract public_id (e.g., "properties/abcdefg") from URL
+    function extractPublicIdFromUrl(url: string): string | null {
+      // Matches ".../upload/v1234567890/properties/abcdef...xyz.png"
+      const match = url.match(/\/upload\/(?:v\d+\/)?([^\.]+)\./);
+      if (!match) return null;
+      return match[1];
     }
-    console.log(property);
 
-    // Cascading delete: Delete all related data
-    await this.tenantDao.deleteAllTenantsByPropertyId(id);
-    await this.appointmentDao.deleteAllAppointmentsByPropertyId(id);
-    logger.info("Deleted all related tenants and appointments", { propertyId: id });
+    try {
+      logger.info("PropertyServices -> deleteProperty called", { id });
 
-    // Delete each image in Cloudinary if images is an array of URLs
-    if (Array.isArray(property.images)) {
-      for (const imgUrl of property.images) {
-        const public_id = extractPublicIdFromUrl(imgUrl);
-        if (public_id) {
-          try {
-            await deleteCloudinaryImage(public_id);
-            logger.info(`Deleted Cloudinary image: ${public_id}`);
-          } catch (err) {
-            logger.warn(`Failed to delete Cloudinary image ${public_id}: ${err}`);
+      // Get property document (still in DB)
+      const property: any = await this.propertyDao.getPropertyById(id);
+      if (!property) {
+        throw new Error("Property not found");
+      }
+      console.log(property);
+
+      // Cascading delete: Delete all related data
+      await this.tenantDao.deleteAllTenantsByPropertyId(id);
+      await this.appointmentDao.deleteAllAppointmentsByPropertyId(id);
+      logger.info("Deleted all related tenants and appointments", { propertyId: id });
+
+      // Delete each image in Cloudinary if images is an array of URLs
+      if (Array.isArray(property.images)) {
+        for (const imgUrl of property.images) {
+          const public_id = extractPublicIdFromUrl(imgUrl);
+          if (public_id) {
+            try {
+              await deleteCloudinaryImage(public_id);
+              logger.info(`Deleted Cloudinary image: ${public_id}`);
+            } catch (err) {
+              logger.warn(`Failed to delete Cloudinary image ${public_id}: ${err}`);
+            }
           }
         }
       }
-    }
 
-    // Now delete the property from DB
-    const deletedProp = await this.propertyDao.deleteProperty(id);
-    if (!deletedProp) {
-      throw new Error("Property not found or could not be deleted after image removal");
-    }
-    return deletedProp;
+      // Now delete the property from DB
+      const deletedProp = await this.propertyDao.deleteProperty(id);
+      if (!deletedProp) {
+        throw new Error("Property not found or could not be deleted after image removal");
+      }
+      return deletedProp;
 
-  } catch (error: any) {
-    logger.error("PropertyServices -> deleteProperty error", {
-      id,
-      error: error.message,
-    });
-    throw new Error(error.message || "Failed to delete property");
+    } catch (error: any) {
+      logger.error("PropertyServices -> deleteProperty error", {
+        id,
+        error: error.message,
+      });
+      throw new Error(error.message || "Failed to delete property");
+    }
   }
-}
 
   async deletePropertyImage(id: string, imageUrl: string) {
     // Helper: extract public_id (e.g., "properties/abcdefg") from URL

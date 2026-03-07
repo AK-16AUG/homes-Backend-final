@@ -279,10 +279,11 @@ export default class PropertyController {
         properties: createdProperties,
       });
     } catch (error: any) {
-      console.error("Bulk multi entry error:", error);
+      console.error("Error creating property:", error);
       return res.status(statusCode.INTERNAL_SERVER_ERROR).json({
         error: errorResponse.INTERNAL_SERVER_ERROR,
         message: error.message,
+        details: error.errors
       });
     }
   }
@@ -294,9 +295,11 @@ export default class PropertyController {
         .status(statusCode.CREATED)
         .json({ message: "Property created", property });
     } catch (error: any) {
+      console.error("Error creating property:", error);
       return res.status(statusCode.BAD_REQUEST).json({
         error: errorResponse.BAD_REQUEST,
         message: error.message,
+        details: error.errors
       });
     }
   }
@@ -367,6 +370,7 @@ export default class PropertyController {
       return res.status(statusCode.INTERNAL_SERVER_ERROR).json({
         error: errorResponse.PROPERTY_UPDATE_FAILED,
         message: error.message || "Failed to update property",
+        details: error.errors // Return specific Mongoose validation details
       });
     }
   }
