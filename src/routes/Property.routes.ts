@@ -130,8 +130,8 @@ propertyRouter.put(
         // Extract URLs from upload results
         const newImageUrls = uploadResults.map((result: any) => result.secure_url);
 
-        // Add new URLs to final array
-        finalImageUrls = [...finalImageUrls, ...newImageUrls];
+        // Prepend new URLs so they appear first (before existing images)
+        finalImageUrls = [...newImageUrls, ...finalImageUrls];
       }
 
       // Step 3: Assign the combined array to req.body.images
