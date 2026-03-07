@@ -1,7 +1,7 @@
 import { Router } from "express";
 import PropertyController from "../controller/Property.cotroller.js";
 import asyncHandler from "../utils/asyncHandler.js";
-import upload from "../middleware/multer.middleware.js";
+import upload, { handleMulterErrors } from "../middleware/multer.middleware.js";
 import cloudinary from "../config/cloudinary.config.js";
 import streamifier from "streamifier";
 import { authMiddleware, authorizeRoles } from "../middleware/Auth.middleware.js";
@@ -59,6 +59,7 @@ propertyRouter.post(
   authMiddleware,
   authorizeRoles("admin", "superadmin"),
   upload.array("images"),
+  handleMulterErrors,
 
   asyncHandler(async (req, res) => {
     try {
@@ -124,6 +125,7 @@ propertyRouter.put(
   authMiddleware,
   authorizeRoles("admin", "superadmin"),
   upload.array("images"),
+  handleMulterErrors,
   asyncHandler(async (req, res) => {
     try {
       // Debug logs
@@ -216,10 +218,13 @@ propertyRouter.put(
       if (req.body.bathroom !== undefined) req.body.bathroom = Number(req.body.bathroom) || 0;
       if (req.body.rate !== undefined) req.body.rate = String(req.body.rate); // Ensure rate is a string as per schema
 
-      // Defensive: If images is set but not a valid array, block update
-      if (req.body.images && (!Array.isArray(req.body.images) || req.body.images.some((img: any) => typeof img !== "string"))) {
-        console.error("Invalid images array!", req.body.images);
-        return res.status(400).json({ error: "Invalid images array" });
+      // Defensive: If images is set, ensure it's an array of strings
+      if (req.body.images !== undefined) {
+        if (!Array.isArray(req.body.images)) {
+          req.body.images = typeof req.body.images === 'string' ? [req.body.images] : [];
+        }
+        // Filter out any non-string values just in case
+        req.body.images = req.body.images.filter((img: any) => typeof img === 'string' && img.trim() !== "");
       }
 
       // Log for debugging
