@@ -40,6 +40,10 @@ export class ExcelGenerator {
                 xlsx.utils.book_append_sheet(workbook, worksheet, "Leads");
             }
 
+            const dir = path.dirname(STORAGE_PATH);
+            if (!fs.existsSync(dir)) {
+                fs.mkdirSync(dir, { recursive: true });
+            }
             xlsx.writeFile(workbook, STORAGE_PATH);
             logger.info(`Lead appended to Excel: ${STORAGE_PATH}`);
         } catch (error) {
@@ -55,6 +59,10 @@ export class ExcelGenerator {
             const worksheet = xlsx.utils.json_to_sheet(leads, { header: headers });
             xlsx.utils.book_append_sheet(workbook, worksheet, "Leads");
 
+            const dir = path.dirname(STORAGE_PATH);
+            if (!fs.existsSync(dir)) {
+                fs.mkdirSync(dir, { recursive: true });
+            }
             xlsx.writeFile(workbook, STORAGE_PATH);
             logger.info(`Excel synced with ${leads.length} leads: ${STORAGE_PATH}`);
         } catch (error) {

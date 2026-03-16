@@ -21,7 +21,7 @@ export class LeadExportService {
     async syncFullExcel() {
         try {
             const leads = await this.leadsDao.getAllLeads({}, 1, 10000); // Fetch a large batch for sync
-            const rows = leads.leads.map(this.mapLeadToRow);
+            const rows = (leads as any).results.map(this.mapLeadToRow);
             await ExcelGenerator.syncExistingLeads(rows);
         } catch (error) {
             logger.error("Error in LeadExportService.syncFullExcel:", error);
