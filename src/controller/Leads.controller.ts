@@ -121,20 +121,25 @@ export default class LeadsController {
   async exportLeads(req: Request, res: Response) {
     try {
       const filePath = ExcelGenerator.getFilePath();
+      console.log(`[EXPORT] Request received. Target path: ${filePath}`);
 
       // If file doesn't exist, sync it now
       if (!fs.existsSync(filePath)) {
+        console.log("[EXPORT] File missing. Triggering syncFullExcel...");
         await leadExportService.syncFullExcel();
       }
 
       if (!fs.existsSync(filePath)) {
+        console.error("[EXPORT] ERROR: File still missing after sync attempt.");
         return res.status(statusCode.NOT_FOUND).json({
           message: "Lead sheet not found and could not be generated"
         });
       }
 
+      console.log("[EXPORT] SUCCESS: Sending file for download.");
       return res.download(filePath, "leads.xlsx");
     } catch (error: any) {
+      console.error("[EXPORT] EXCEPTION:", error);
       return res.status(statusCode.INTERNAL_SERVER_ERROR).json({
         error: errorResponse.INTERNAL_SERVER_ERROR,
         message: error.message,

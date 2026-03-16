@@ -54,6 +54,7 @@ export class ExcelGenerator {
 
     static async syncExistingLeads(leads: LeadRow[]) {
         try {
+            console.log(`[EXCEL_GEN] Syncing ${leads.length} leads to ${STORAGE_PATH}`);
             const workbook = xlsx.utils.book_new();
             const headers = ["Date", "Name", "Email", "Phone", "Query", "Source", "Status"];
             const worksheet = xlsx.utils.json_to_sheet(leads, { header: headers });
@@ -61,12 +62,15 @@ export class ExcelGenerator {
 
             const dir = path.dirname(STORAGE_PATH);
             if (!fs.existsSync(dir)) {
+                console.log(`[EXCEL_GEN] Creating directory: ${dir}`);
                 fs.mkdirSync(dir, { recursive: true });
             }
+
             xlsx.writeFile(workbook, STORAGE_PATH);
+            console.log(`[EXCEL_GEN] File written successfully: ${STORAGE_PATH}`);
             logger.info(`Excel synced with ${leads.length} leads: ${STORAGE_PATH}`);
         } catch (error) {
-            logger.error("Error syncing leads to Excel:", error);
+            console.error("[EXCEL_GEN] Error syncing leads to Excel:", error);
             throw error;
         }
     }
