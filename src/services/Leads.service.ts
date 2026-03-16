@@ -3,6 +3,8 @@ import UserDao from "../dao/User.dao.js";
 import TenantDao from "../dao/Tenant.dao.js";
 import { logger } from "../utils/logger.js";
 import { Types } from "mongoose";
+import { sendAdminInquiryNotification } from "../common/services/resend.js";
+import { leadExportService } from "./LeadExport.service.js";
 
 export default class LeadsService {
   private leadsDao: LeadsDao;
@@ -37,6 +39,29 @@ export default class LeadsService {
       }
 
       const createdLead = await this.leadsDao.createLead(data);
+
+      // Send email notification to admin via Resend
+      if (createdLead) {
+        try {
+          await sendAdminInquiryNotification({
+            name: (createdLead as any).contactInfo?.name,
+            email: (createdLead as any).contactInfo?.email,
+            phone: (createdLead as any).contactInfo?.phone,
+            location: (data as any).location, // Location isn't in lead entity but passed in create req
+            searchQuery: (createdLead as any).searchQuery,
+          });
+        } catch (emailError) {
+          logger.error("Failed to send admin notification for new lead:", emailError);
+        }
+
+        // Live Excel update
+        try {
+          await leadExportService.appendLeadToExcel(createdLead);
+        } catch (excelError) {
+          logger.error("Failed to update Excel for new lead:", excelError);
+        }
+      }
+
       return createdLead;
     } catch (error: any) {
       logger.error("Error creating lead in leads.service->createLead");

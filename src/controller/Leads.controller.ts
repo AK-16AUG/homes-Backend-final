@@ -1,5 +1,8 @@
 import { Request, Response } from "express";
 import LeadsService from "../services/Leads.service.js";
+import { ExcelGenerator } from "../utils/ExcelGenerator.js";
+import { leadExportService } from "../services/LeadExport.service.js";
+import * as fs from "fs";
 import statusCode from "../common/constant/StatusCode.js";
 import errorResponse from "../common/constant/Error.js";
 
@@ -9,9 +12,9 @@ export default class LeadsController {
   async createLead(req: Request, res: Response) {
     try {
       const lead = await leadsService.createLead(req.body);
-      return res.status(statusCode.CREATED).json({ 
-        message: "Lead created successfully", 
-        lead 
+      return res.status(statusCode.CREATED).json({
+        message: "Lead created successfully",
+        lead
       });
     } catch (error: any) {
       return res.status(statusCode.BAD_REQUEST).json({
@@ -24,9 +27,9 @@ export default class LeadsController {
   async updateLead(req: Request, res: Response) {
     try {
       const lead = await leadsService.updateLeadById(req.params.id, req.body);
-      return res.status(statusCode.OK).json({ 
-        message: "Lead updated successfully", 
-        lead 
+      return res.status(statusCode.OK).json({
+        message: "Lead updated successfully",
+        lead
       });
     } catch (error: any) {
       return res.status(statusCode.NOT_FOUND).json({
@@ -66,9 +69,9 @@ export default class LeadsController {
   async deleteLead(req: Request, res: Response) {
     try {
       const lead = await leadsService.deleteLeadById(req.params.id);
-      return res.status(statusCode.OK).json({ 
-        message: "Lead deleted successfully", 
-        lead 
+      return res.status(statusCode.OK).json({
+        message: "Lead deleted successfully",
+        lead
       });
     } catch (error: any) {
       return res.status(statusCode.NOT_FOUND).json({
@@ -107,6 +110,30 @@ export default class LeadsController {
     try {
       const count = await leadsService.getTotalLeads();
       return res.status(statusCode.OK).json({ totalLeads: count });
+    } catch (error: any) {
+      return res.status(statusCode.INTERNAL_SERVER_ERROR).json({
+        error: errorResponse.INTERNAL_SERVER_ERROR,
+        message: error.message,
+      });
+    }
+  }
+
+  async exportLeads(req: Request, res: Response) {
+    try {
+      const filePath = ExcelGenerator.getFilePath();
+
+      // If file doesn't exist, sync it now
+      if (!fs.existsSync(filePath)) {
+        await leadExportService.syncFullExcel();
+      }
+
+      if (!fs.existsSync(filePath)) {
+        return res.status(statusCode.NOT_FOUND).json({
+          message: "Lead sheet not found and could not be generated"
+        });
+      }
+
+      return res.download(filePath, "leads.xlsx");
     } catch (error: any) {
       return res.status(statusCode.INTERNAL_SERVER_ERROR).json({
         error: errorResponse.INTERNAL_SERVER_ERROR,
