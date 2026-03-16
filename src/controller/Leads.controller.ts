@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import LeadsService from "../services/Leads.service.js";
 import { ExcelGenerator } from "../utils/ExcelGenerator.js";
 import { leadExportService } from "../services/LeadExport.service.js";
+import { googleSheetsService } from "../services/GoogleSheets.service.js";
 import * as fs from "fs";
 import statusCode from "../common/constant/StatusCode.js";
 import errorResponse from "../common/constant/Error.js";
@@ -140,6 +141,23 @@ export default class LeadsController {
       return res.download(filePath, "leads.xlsx");
     } catch (error: any) {
       console.error("[EXPORT] EXCEPTION:", error);
+      return res.status(statusCode.INTERNAL_SERVER_ERROR).json({
+        error: errorResponse.INTERNAL_SERVER_ERROR,
+        message: error.message,
+      });
+    }
+  }
+
+  async syncSheets(req: Request, res: Response) {
+    try {
+      console.log("[EXPORT] Full Google Sheets sync requested.");
+      const leads = await leadsService.getAllLeads({}, 1, 10000);
+      await googleSheetsService.syncAllLeads(leads.results);
+      return res.status(statusCode.OK).json({
+        message: "Google Sheets synced successfully"
+      });
+    } catch (error: any) {
+      console.error("[EXPORT] Sync Error:", error);
       return res.status(statusCode.INTERNAL_SERVER_ERROR).json({
         error: errorResponse.INTERNAL_SERVER_ERROR,
         message: error.message,

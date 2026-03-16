@@ -19,6 +19,10 @@ leadsRouter.get("/export-sheet", authMiddleware, authorizeRoles("admin", "supera
   await leadsController.exportLeads(req, res);
 }));
 
+leadsRouter.post("/sync-sheets", authMiddleware, authorizeRoles("admin", "superadmin"), asyncHandler(async (req, res) => {
+  await leadsController.syncSheets(req, res);
+}));
+
 leadsRouter.post("/", authMiddleware, asyncHandler(async (req, res) => {
   await leadsController.createLead(req, res);
 }));

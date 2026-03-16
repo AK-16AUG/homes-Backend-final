@@ -5,6 +5,7 @@ import { logger } from "../utils/logger.js";
 import { Types } from "mongoose";
 import { sendAdminInquiryNotification } from "../common/services/resend.js";
 import { leadExportService } from "./LeadExport.service.js";
+import { googleSheetsService } from "./GoogleSheets.service.js";
 
 export default class LeadsService {
   private leadsDao: LeadsDao;
@@ -57,8 +58,9 @@ export default class LeadsService {
         // Live Excel update
         try {
           await leadExportService.appendLeadToExcel(createdLead);
+          await googleSheetsService.appendLead(createdLead);
         } catch (excelError) {
-          logger.error("Failed to update Excel for new lead:", excelError);
+          logger.error("Failed to update tracking for new lead:", excelError);
         }
       }
 
