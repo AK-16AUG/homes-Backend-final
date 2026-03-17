@@ -213,6 +213,18 @@ export default class LeadsService {
     }
   }
 
+  async getLeadsByUserEmail(email: string) {
+    try {
+      logger.info("src->services->leads.service->getLeadsByUserEmail");
+      const result = await this.leadsDao.getLeadsByUserEmail(email);
+      return result;
+    } catch (error: any) {
+      logger.error("Error fetching leads by user email in leads.service->getLeadsByUserEmail");
+      logger.debug(error);
+      throw new Error(error.message || "Failed to fetch leads by user email");
+    }
+  }
+
   async getTotalLeads() {
     try {
       logger.info("src->services->leads.service->getTotalLeads");

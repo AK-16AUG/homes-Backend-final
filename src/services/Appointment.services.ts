@@ -5,6 +5,7 @@ import { LeadsDao } from "../dao/Leads.dao.js";
 import NotificationDao from "../dao/Notification.dao.js";
 import UserDao from "../dao/User.dao.js";
 import { logger } from "../utils/logger.js";
+import LeadsService from "./Leads.service.js";
 
 function isValidStatus(status: any): boolean {
   return ["Pending", "Confirmed", "Cancelled", "Completed", "Convert to lead"].includes(status);
@@ -14,11 +15,13 @@ export default class AppointmentServices {
   private appointmentDao: AppointmentDao;
   private notificationDao: NotificationDao;
   private leadDao?: LeadsDao;
+  private leadsService?: LeadsService;
   private userDao?: UserDao;
   constructor() {
     this.appointmentDao = new AppointmentDao();
     this.notificationDao = new NotificationDao();
     this.leadDao = new LeadsDao();
+    this.leadsService = new LeadsService();
     this.userDao = new UserDao();
   }
 
@@ -67,7 +70,8 @@ export default class AppointmentServices {
             const scheduleTimeText = data.schedule_Time
               ? new Date(data.schedule_Time).toISOString()
               : "Not scheduled yet";
-            await this.leadDao.createLead({
+            await this.leadsService?.createLead({
+              user_id: data.user_id,
               searchQuery: `Appointment requested for property ${data.property_id}`,
               contactInfo: {
                 name: user?.User_Name,
@@ -75,7 +79,7 @@ export default class AppointmentServices {
                 email: user?.email,
               },
               matchedProperties: [new Types.ObjectId(data.property_id)],
-              status: "inquiry",
+              status: "new",
               priority: "high",
               source: "appointment",
               notes: `Auto-created from appointment booking. Schedule time: ${scheduleTimeText}`,
@@ -210,9 +214,11 @@ export default class AppointmentServices {
       }
 
       const user: any = await this.userDao?.findByUserId(appointment?.user_id);
-      const leadsCheck = await this.leadDao?.getLeadsByUserEmail(user?.email);
+      const leadsCheck = await this.leadsService?.getLeadsByUserEmail(user?.email);
       if (!leadsCheck && appointment?.status === "Convert to lead") {
-        await this.leadDao?.createLead({
+        await this.leadsService?.createLead({
+          user_id: appointment?.user_id,
+          searchQuery: `Converted from appointment for property ${appointment?.property_id}`,
           contactInfo: {
             name: user?.User_Name,
             phone: user?.phone_no,
