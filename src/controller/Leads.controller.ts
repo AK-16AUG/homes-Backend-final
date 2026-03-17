@@ -170,4 +170,29 @@ export default class LeadsController {
       });
     }
   }
+
+  async testSheets(req: Request, res: Response) {
+    try {
+      console.log("[DIAGNOSTIC] Testing Google Sheets connection...");
+      const doc = await googleSheetsService.getDoc();
+      if (!doc) {
+        return res.status(statusCode.INTERNAL_SERVER_ERROR).json({
+          status: "Error",
+          message: "Could not authenticate with Google Sheets. Check your private key and email in Vercel."
+        });
+      }
+
+      return res.status(statusCode.OK).json({
+        status: "Success",
+        message: "Google Sheets connection established!",
+        sheetTitle: doc.title,
+        sheets: doc.sheetsByIndex.map(s => s.title)
+      });
+    } catch (error: any) {
+      console.error("[DIAGNOSTIC] Error:", error);
+      return res.status(statusCode.INTERNAL_SERVER_ERROR).json({
+        error: error.message
+      });
+    }
+  }
 }
