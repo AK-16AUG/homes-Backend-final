@@ -63,6 +63,15 @@ export class GoogleSheetsService {
             if (!doc) return;
 
             const sheet = doc.sheetsByIndex[0];
+            const headers = ['Date', 'Name', 'Email', 'Phone', 'Query', 'Source', 'Status'];
+
+            try {
+                await sheet.loadHeaderRow();
+            } catch (e) {
+                // If sheet is empty, set headers
+                await sheet.setHeaderRow(headers);
+            }
+
             const row = {
                 Date: leadData.createdAt ? new Date(leadData.createdAt).toLocaleString() : new Date().toLocaleString(),
                 Name: leadData.contactInfo?.name || "N/A",
@@ -86,9 +95,11 @@ export class GoogleSheetsService {
             if (!doc) return;
 
             const sheet = doc.sheetsByIndex[0];
+            const headers = ['Date', 'Name', 'Email', 'Phone', 'Query', 'Source', 'Status'];
 
-            // Clear existing rows (keep headers)
-            await sheet.clearRows();
+            // Clear the sheet completely and start fresh with headers
+            await sheet.clear();
+            await sheet.setHeaderRow(headers);
 
             const rows = leads.map(lead => ({
                 Date: lead.createdAt ? new Date(lead.createdAt).toLocaleString() : new Date().toLocaleString(),
@@ -100,7 +111,9 @@ export class GoogleSheetsService {
                 Status: lead.status || "new",
             }));
 
-            await sheet.addRows(rows);
+            if (rows.length > 0) {
+                await sheet.addRows(rows);
+            }
             logger.info(`Synced ${rows.length} leads to Google Sheets.`);
         } catch (error) {
             logger.error("Error syncing all leads to Google Sheets:", error);
