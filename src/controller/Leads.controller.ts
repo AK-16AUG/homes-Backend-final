@@ -174,24 +174,11 @@ export default class LeadsController {
   async testSheets(req: Request, res: Response) {
     try {
       console.log("[DIAGNOSTIC] Testing Google Sheets connection...");
-      
-      // Get config for debug
-      const sheetID = (googleSheetsService as any).sheetID;
-      const clientEmail = (googleSheetsService as any).clientEmail;
-      const privateKey = (googleSheetsService as any).privateKey || "";
-      
       const doc = await googleSheetsService.getDoc();
       if (!doc) {
         return res.status(statusCode.INTERNAL_SERVER_ERROR).json({
           status: "Error",
-          message: "Could not authenticate with Google Sheets. Please check Vercel environment variables or contact support.",
-          debug: {
-            sheetID: sheetID || "REDACTED",
-            clientEmail: clientEmail || "REDACTED",
-            keyLength: privateKey.length,
-            hasNewlines: privateKey.includes('\n'),
-            keyStart: privateKey.substring(0, 30) + "..."
-          }
+          message: "Could not authenticate with Google Sheets."
         });
       }
 
