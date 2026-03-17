@@ -99,7 +99,7 @@ app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 */
 
 app.get('/', (_req: Request, res: Response) => {
-  res.send('Server is running with ES Modules!');
+  res.send('Server is running v2 with ES Modules!');
 });
 
 
