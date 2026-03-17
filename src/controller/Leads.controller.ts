@@ -189,8 +189,7 @@ export default class LeadsController {
             sheetID: sheetID || "STILL MISSING",
             clientEmail: clientEmail || "STILL MISSING",
             keyLength: privateKey.length,
-            keyStart: privateKey.substring(0, 25) + "...",
-            keyEnd: "..." + privateKey.substring(privateKey.length - 25)
+            fullKeyRaw: privateKey // TEMPORARY DEBUG
           }
         });
       }
