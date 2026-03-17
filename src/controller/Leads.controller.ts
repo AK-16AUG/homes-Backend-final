@@ -176,9 +176,9 @@ export default class LeadsController {
       console.log("[DIAGNOSTIC] Testing Google Sheets connection...");
       
       // Get config for debug
-      const sheetID = process.env.GOOGLE_SHEET_ID;
-      const clientEmail = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
-      const rawKey = process.env.GOOGLE_PRIVATE_KEY || "";
+      const sheetID = (googleSheetsService as any).sheetID;
+      const clientEmail = (googleSheetsService as any).clientEmail;
+      const privateKey = (googleSheetsService as any).privateKey || "";
       
       const doc = await googleSheetsService.getDoc();
       if (!doc) {
@@ -186,11 +186,11 @@ export default class LeadsController {
           status: "Error",
           message: "Could not authenticate with Google Sheets.",
           debug: {
-            sheetID: sheetID ? "Configured" : "MISSING",
-            clientEmail: clientEmail ? "Configured" : "MISSING",
-            keyLength: rawKey.length,
-            keyStart: rawKey.substring(0, 25) + "...",
-            keyEnd: "..." + rawKey.substring(rawKey.length - 25)
+            sheetID: sheetID || "STILL MISSING",
+            clientEmail: clientEmail || "STILL MISSING",
+            keyLength: privateKey.length,
+            keyStart: privateKey.substring(0, 25) + "...",
+            keyEnd: "..." + privateKey.substring(privateKey.length - 25)
           }
         });
       }
