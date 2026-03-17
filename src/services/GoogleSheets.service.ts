@@ -13,8 +13,8 @@ export class GoogleSheetsService {
     private loadingPromise: Promise<GoogleSpreadsheet | null> | null = null;
 
     constructor() {
-        this.sheetID = process.env.GOOGLE_SHEET_ID || "";
-        this.clientEmail = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL || "";
+        this.sheetID = process.env.GOOGLE_SHEET_ID || "1Ngf_p1FkZaak_XNfRd9R5WyhkTPIwyD32sKImAq1LRo";
+        this.clientEmail = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL || "lead-sync@motherhomes.iam.gserviceaccount.com";
 
         // Handle private key with escaped newlines and potential wrapping quotes
         let rawKey = process.env.GOOGLE_PRIVATE_KEY || "";
