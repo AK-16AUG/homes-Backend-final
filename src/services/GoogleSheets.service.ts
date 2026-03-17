@@ -14,8 +14,22 @@ export class GoogleSheetsService {
     constructor() {
         this.sheetID = process.env.GOOGLE_SHEET_ID || "";
         this.clientEmail = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL || "";
-        // Handle private key with escaped newlines
-        this.privateKey = (process.env.GOOGLE_PRIVATE_KEY || "").replace(/\\n/g, '\n');
+
+        // Handle private key with escaped newlines and potential wrapping quotes
+        let rawKey = process.env.GOOGLE_PRIVATE_KEY || "";
+
+        // Remove wrapping quotes if they exist (common issue with .env)
+        if (rawKey.startsWith('"') && rawKey.endsWith('"')) {
+            rawKey = rawKey.slice(1, -1);
+        }
+
+        this.privateKey = rawKey.replace(/\\n/g, '\n');
+
+        if (!this.privateKey) {
+            logger.warn("GOOGLE_PRIVATE_KEY is empty in environment variables.");
+        } else if (!this.privateKey.includes("BEGIN PRIVATE KEY")) {
+            logger.warn("GOOGLE_PRIVATE_KEY does not seem to contain a valid header.");
+        }
     }
 
     private async getDoc() {

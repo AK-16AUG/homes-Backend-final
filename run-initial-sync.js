@@ -4,8 +4,8 @@ import { googleSheetsService } from './dist/services/GoogleSheets.service.js';
 import { LeadsDao } from './dist/dao/Leads.dao.js';
 // Register models to avoid populate errors
 import './dist/entities/Leads.js';
-import './dist/entities/Properties.js';
-import './dist/entities/User.js';
+import './dist/entities/Properties.entity.js';
+import './dist/entities/User.entitiy.js';
 
 dotenv.config();
 

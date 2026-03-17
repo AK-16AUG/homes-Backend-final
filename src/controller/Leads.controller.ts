@@ -150,11 +150,17 @@ export default class LeadsController {
 
   async syncSheets(req: Request, res: Response) {
     try {
-      console.log("[EXPORT] Full Google Sheets sync requested.");
+      console.log("[EXPORT] Full sync requested for both Excel and Google Sheets.");
       const leads = await leadsService.getAllLeads({}, 1, 10000);
+
+      // Sync Google Sheets
       await googleSheetsService.syncAllLeads(leads.results);
+
+      // Also sync local Excel file
+      await leadExportService.syncFullExcel();
+
       return res.status(statusCode.OK).json({
-        message: "Google Sheets synced successfully"
+        message: "All spreadsheets synced successfully"
       });
     } catch (error: any) {
       console.error("[EXPORT] Sync Error:", error);
