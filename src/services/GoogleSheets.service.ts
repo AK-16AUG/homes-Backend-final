@@ -28,15 +28,18 @@ export class GoogleSheetsService {
             rawKey = rawKey.slice(1, -1);
         }
 
-        // Convert both escaped \n and literal newlines to standard newlines
-        this.privateKey = rawKey.replace(/\\n/g, '\n').replace(/\n/g, '\n');
+        // Convert literal \n strings to real newlines, and handle escaped versions
+        this.privateKey = rawKey
+            .replace(/\\n/g, '\n')
+            .replace(/\\r/g, '\r')
+            .replace(/\r/g, ''); // Remove carriage returns if any
 
         if (!this.privateKey) {
             logger.warn("GOOGLE_PRIVATE_KEY is empty in environment variables.");
         } else if (!this.privateKey.includes("BEGIN PRIVATE KEY")) {
             logger.warn("GOOGLE_PRIVATE_KEY does not seem to contain a valid header.");
-            // Log a safe preview of the key to help debugging
-            logger.debug(`Key preview: ${rawKey.substring(0, 20)}...`);
+            // Log a safe preview for debugging (first 15 chars)
+            logger.debug(`Key start: ${rawKey.substring(0, 15)}...`);
         }
     }
 
