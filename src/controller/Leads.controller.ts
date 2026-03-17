@@ -184,12 +184,13 @@ export default class LeadsController {
       if (!doc) {
         return res.status(statusCode.INTERNAL_SERVER_ERROR).json({
           status: "Error",
-          message: "Could not authenticate with Google Sheets.",
+          message: "Could not authenticate with Google Sheets. Please check Vercel environment variables or contact support.",
           debug: {
-            sheetID: sheetID || "STILL MISSING",
-            clientEmail: clientEmail || "STILL MISSING",
+            sheetID: sheetID || "REDACTED",
+            clientEmail: clientEmail || "REDACTED",
             keyLength: privateKey.length,
-            fullKeyRaw: privateKey // TEMPORARY DEBUG
+            hasNewlines: privateKey.includes('\n'),
+            keyStart: privateKey.substring(0, 30) + "..."
           }
         });
       }

@@ -28,11 +28,24 @@ export class GoogleSheetsService {
             rawKey = rawKey.slice(1, -1);
         }
 
-        // Convert literal \n strings to real newlines, and handle escaped versions
-        this.privateKey = rawKey
-            .replace(/\\n/g, '\n')
-            .replace(/\\r/g, '\r')
-            .replace(/\r/g, ''); // Remove carriage returns if any
+        // Convert literal \n strings to real newlines
+        let key = rawKey.replace(/\\n/g, '\n');
+
+        // IF the key has NO newlines but HAS the header, it's likely collapsed (common Vercel issue)
+        if (!key.includes('\n') && key.includes('-----BEGIN PRIVATE KEY-----')) {
+            const header = '-----BEGIN PRIVATE KEY-----';
+            const footer = '-----END PRIVATE KEY-----';
+            let body = key.replace(header, '').replace(footer, '').replace(/\s/g, '');
+            
+            // Reconstruct with 64-char lines
+            let formattedBody = '';
+            for (let i = 0; i < body.length; i += 64) {
+                formattedBody += body.substring(i, i + 64) + '\n';
+            }
+            key = `${header}\n${formattedBody}${footer}\n`;
+        }
+
+        this.privateKey = key;
 
         if (!this.privateKey) {
             logger.warn("GOOGLE_PRIVATE_KEY is empty in environment variables.");
