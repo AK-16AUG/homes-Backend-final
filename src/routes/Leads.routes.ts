@@ -6,7 +6,10 @@ import { authMiddleware, authorizeRoles } from "../middleware/Auth.middleware.js
 const leadsRouter = Router();
 const leadsController = new LeadsController();
 
-// Public endpoint for inquiry form (no auth required)
+leadsRouter.get("/test-sheets", asyncHandler(async (req, res) => {
+  await leadsController.testSheets(req, res);
+}));
+
 leadsRouter.post("/inquiry", asyncHandler(async (req, res) => {
   await leadsController.createLead(req, res);
 }));
