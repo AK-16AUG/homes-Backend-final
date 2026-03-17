@@ -41,6 +41,11 @@ export class GoogleSheetsService {
         }
 
         try {
+            if (!this.privateKey) {
+                logger.error("Google Sheets Sync: Private key is missing.");
+                return null;
+            }
+
             const serviceAccountAuth = new JWT({
                 email: this.clientEmail,
                 key: this.privateKey,
@@ -48,11 +53,14 @@ export class GoogleSheetsService {
             });
 
             const doc = new GoogleSpreadsheet(this.sheetID, serviceAccountAuth);
+            logger.info(`Google Sheets Sync: Attempting to load doc ${this.sheetID}...`);
             await doc.loadInfo();
+            logger.info(`Google Sheets Sync: Successfully loaded doc "${doc.title}"`);
             this.doc = doc;
             return this.doc;
-        } catch (error) {
-            logger.error("Error connecting to Google Sheets:", error);
+        } catch (error: any) {
+            logger.error("Google Sheets Sync: Error connecting to Google Sheets:", error.message);
+            if (error.stack) logger.debug(error.stack);
             return null;
         }
     }
