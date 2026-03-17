@@ -42,7 +42,7 @@ export class LeadsDao {
             const [results, total] = await Promise.all([
                 RealEstateLeadModel.find(filter)
                     .populate('matchedProperties')
-                    .sort({ timestamp: -1 })
+                    .sort({ createdAt: -1 })
                     .skip(skip)
                     .limit(limit),
                 RealEstateLeadModel.countDocuments(filter)
