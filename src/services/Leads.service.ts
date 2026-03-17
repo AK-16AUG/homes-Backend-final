@@ -55,12 +55,22 @@ export default class LeadsService {
           logger.error("Failed to send admin notification for new lead:", emailError);
         }
 
-        // Live Excel update
+        // Live tracking update
         try {
-          await leadExportService.appendLeadToExcel(createdLead);
-          await googleSheetsService.appendLead(createdLead);
-        } catch (excelError) {
-          logger.error("Failed to update tracking for new lead:", excelError);
+          // Wrap each call in its own try/catch to ensure independent execution
+          try {
+            await leadExportService.appendLeadToExcel(createdLead);
+          } catch (excelError) {
+            logger.error("Failed to append lead to Excel:", excelError);
+          }
+
+          try {
+            await googleSheetsService.appendLead(createdLead);
+          } catch (sheetsError) {
+            logger.error("Failed to append lead to Google Sheets:", sheetsError);
+          }
+        } catch (generalTrackingError) {
+          logger.error("Unexpected error in lead tracking update:", generalTrackingError);
         }
       }
 

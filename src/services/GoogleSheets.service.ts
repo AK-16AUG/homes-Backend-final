@@ -10,6 +10,7 @@ export class GoogleSheetsService {
     private sheetID: string;
     private clientEmail: string;
     private privateKey: string;
+    private loadingPromise: Promise<GoogleSpreadsheet | null> | null = null;
 
     constructor() {
         this.sheetID = process.env.GOOGLE_SHEET_ID || "";
@@ -18,51 +19,60 @@ export class GoogleSheetsService {
         // Handle private key with escaped newlines and potential wrapping quotes
         let rawKey = process.env.GOOGLE_PRIVATE_KEY || "";
 
-        // Remove wrapping quotes if they exist (common issue with .env)
+        // Clean up key: remove literal quotes and handle escaped/real newlines
+        rawKey = rawKey.trim();
         if (rawKey.startsWith('"') && rawKey.endsWith('"')) {
             rawKey = rawKey.slice(1, -1);
         }
+        if (rawKey.startsWith("'") && rawKey.endsWith("'")) {
+            rawKey = rawKey.slice(1, -1);
+        }
 
-        this.privateKey = rawKey.replace(/\\n/g, '\n');
+        // Convert both escaped \n and literal newlines to standard newlines
+        this.privateKey = rawKey.replace(/\\n/g, '\n').replace(/\n/g, '\n');
 
         if (!this.privateKey) {
             logger.warn("GOOGLE_PRIVATE_KEY is empty in environment variables.");
         } else if (!this.privateKey.includes("BEGIN PRIVATE KEY")) {
             logger.warn("GOOGLE_PRIVATE_KEY does not seem to contain a valid header.");
+            // Log a safe preview of the key to help debugging
+            logger.debug(`Key preview: ${rawKey.substring(0, 20)}...`);
         }
     }
 
-    private async getDoc() {
+    public async getDoc() {
         if (this.doc) return this.doc;
+        if (this.loadingPromise) return this.loadingPromise;
 
-        if (!this.sheetID || !this.clientEmail || !this.privateKey) {
-            logger.warn("Google Sheets credentials not fully configured.");
-            return null;
-        }
-
-        try {
-            if (!this.privateKey) {
-                logger.error("Google Sheets Sync: Private key is missing.");
+        this.loadingPromise = (async () => {
+            if (!this.sheetID || !this.clientEmail || !this.privateKey) {
+                logger.warn("Google Sheets credentials not fully configured.");
                 return null;
             }
 
-            const serviceAccountAuth = new JWT({
-                email: this.clientEmail,
-                key: this.privateKey,
-                scopes: ['https://www.googleapis.com/auth/spreadsheets'],
-            });
+            try {
+                const serviceAccountAuth = new JWT({
+                    email: this.clientEmail,
+                    key: this.privateKey,
+                    scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+                });
 
-            const doc = new GoogleSpreadsheet(this.sheetID, serviceAccountAuth);
-            logger.info(`Google Sheets Sync: Attempting to load doc ${this.sheetID}...`);
-            await doc.loadInfo();
-            logger.info(`Google Sheets Sync: Successfully loaded doc "${doc.title}"`);
-            this.doc = doc;
-            return this.doc;
-        } catch (error: any) {
-            logger.error("Google Sheets Sync: Error connecting to Google Sheets:", error.message);
-            if (error.stack) logger.debug(error.stack);
-            return null;
-        }
+                const doc = new GoogleSpreadsheet(this.sheetID, serviceAccountAuth);
+                logger.info(`Google Sheets Sync: Attempting to load doc ${this.sheetID}...`);
+                await doc.loadInfo();
+                logger.info(`Google Sheets Sync: Successfully loaded doc "${doc.title}"`);
+                this.doc = doc;
+                return this.doc;
+            } catch (error: any) {
+                logger.error("Google Sheets Sync: Error connecting to Google Sheets:", error.message);
+                if (error.stack) logger.debug(error.stack);
+                return null;
+            } finally {
+                this.loadingPromise = null;
+            }
+        })();
+
+        return this.loadingPromise;
     }
 
     async appendLead(leadData: any) {
