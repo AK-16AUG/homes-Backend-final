@@ -19,14 +19,15 @@ export default class UserDao {
       // Check if user already exists
       const existingUser = await this.user.findOne({ email: userData.email });
       if (existingUser) {
-        throw new Error("User already exists");
+        logger.info("User already exists, returning existing user");
+        return existingUser;
       }
 
       const data = await this.user.create(userData);
       return data;
-    } catch (error) {
+    } catch (error: any) {
       logger.error("Failed user creation", error);
-      throw new Error("Failed user creation");
+      throw new Error(error.message || "Failed user creation");
     }
   }
   async DeleteUser(email: any) {
