@@ -93,7 +93,9 @@ async updateUser(req: Request, res: Response) {
 
   async getAllAdmins(req: Request, res: Response) {
     try {
-      const admins = await userService.getAllAdmins();
+      const page = parseInt(req.query.page as string) || 1;
+      const limit = parseInt(req.query.limit as string) || 10;
+      const admins = await userService.getAllAdmins({ page, limit });
       return res.status(statusCode.OK).json(admins);
     } catch (error: any) {
       return res.status(statusCode.INTERNAL_SERVER_ERROR).json({

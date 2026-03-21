@@ -107,10 +107,19 @@ export default class UserDao {
     }
   }
 
-  async getAllAdmins() {
+  async getAllAdmins({ page = 1, limit = 10 }: PaginationParams = { page: 1, limit: 10 }) {
     try {
       logger.info("src->dao->user.dao->getAllAdmins");
-      return await this.user.find({ role: "admin" });
+      const skip = (page - 1) * limit;
+      const admins = await this.user.find({ role: "admin" }).sort({ createdAt: -1 }).skip(skip).limit(limit);
+      const total = await this.user.countDocuments({ role: "admin" });
+      return {
+        admins,
+        total,
+        page,
+        limit,
+        totalPages: Math.ceil(total / limit),
+      };
     } catch (error) {
       logger.error("Failed to fetch admins", error);
       throw new Error("Failed to fetch admins");

@@ -168,10 +168,14 @@ export default class AppointmentServices {
     }
   }
 
-  async getAllAppointments(filter = {}) {
+  async getAllAppointments(options: { page?: number; limit?: number; search?: string } = {}) {
     try {
-      logger.info("AppointmentServices -> getAllAppointments called", { filter });
-      const appointments = await this.appointmentDao.getAllAppointments(filter)
+      logger.info("AppointmentServices -> getAllAppointments called", { options });
+      const appointments = await this.appointmentDao.getAllAppointments({
+        page: options.page || 1,
+        limit: options.limit || 10,
+        search: options.search || ""
+      });
       return appointments;
     } catch (error: any) {
       logger.error("AppointmentServices -> getAllAppointments error", {

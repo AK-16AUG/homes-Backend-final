@@ -65,5 +65,10 @@ const PropertySchema = new Schema<PropertyType>(
   { timestamps: true }
 );
 
+// Add indexes for dashboard performance
+PropertySchema.index({ availability: 1, category: 1 });
+PropertySchema.index({ updatedAt: 1 });
+PropertySchema.index({ city: 1, state: 1 });
+
 export const PropertyModel = model<PropertyType>("Property", PropertySchema);
 export default PropertyModel;

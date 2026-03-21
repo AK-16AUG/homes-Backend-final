@@ -141,10 +141,10 @@ async updateUserById(id: string, data: any) {
     }
   }
 
-  async getAllAdmins() {
+  async getAllAdmins({ page, limit }: PaginationParams = { page: 1, limit: 10 }) {
     try {
       logger.info("src->services->user.service->getAllAdmins");
-      return await this.userDao.getAllAdmins();
+      return await this.userDao.getAllAdmins({ page, limit });
     } catch (error: any) {
       logger.error("Error fetching all admins in user.service->getAllAdmins");
       logger.debug(error);

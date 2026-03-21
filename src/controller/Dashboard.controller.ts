@@ -76,7 +76,7 @@ const DashboardController = {
         occupiedProperties,
         totalLeads,
         totalAppointments,
-        allUnavailable
+        revenueData
       ] = await Promise.all([
         User.countDocuments(),
         User.countDocuments({ isVerified: true }),
@@ -84,39 +84,56 @@ const DashboardController = {
         Property.countDocuments({ availability: false }),
         Leads.countDocuments(),
         Appointment.countDocuments(),
-        Property.find({ availability: false })
+        Property.aggregate([
+          { $match: { availability: false } },
+          { $group: { _id: null, total: { $sum: { $toDouble: "$rate" } } } }
+        ])
       ]);
 
-      const totalRevenue = allUnavailable.reduce((sum: number, p: any) => sum + Number(p.rate || 0), 0);
+      const totalRevenue = revenueData.length > 0 ? revenueData[0].total : 0;
 
-      // 3. Last 6 Months Trends (Mocking or calculating based on createdAt/updatedAt)
-      // Since we don't have historical snapshots, we calculate based on the current data's timestamps
-      const getMonthlyTrend = async (Model: any, dateField = "createdAt") => {
-        const trendPromises = [];
+      // 3. Last 6 Months Trends using Aggregation
+      const getMonthlyTrendAgg = async (Model: any, dateField = "createdAt") => {
+        const sixMonthsAgo = new Date();
+        sixMonthsAgo.setMonth(sixMonthsAgo.getMonth() - 5);
+        sixMonthsAgo.setDate(1);
+        sixMonthsAgo.setHours(0, 0, 0, 0);
+
+        const results = await Model.aggregate([
+          { $match: { [dateField]: { $gte: sixMonthsAgo } } },
+          {
+            $group: {
+              _id: {
+                month: { $month: "$" + dateField },
+                year: { $year: "$" + dateField }
+              },
+              count: { $sum: 1 }
+            }
+          },
+          { $sort: { "_id.year": 1, "_id.month": 1 } }
+        ]);
+
+        // Map back to the expected format (last 6 months including zeroes)
+        const trend = [];
         for (let i = 5; i >= 0; i--) {
-          const start = new Date();
-          start.setMonth(start.getMonth() - i);
-          start.setDate(1);
-          start.setHours(0, 0, 0, 0);
-
-          const end = new Date(start);
-          end.setMonth(end.getMonth() + 1);
-
-          trendPromises.push(
-            Model.countDocuments({ [dateField]: { $gte: start, $lt: end } })
-              .then((count: number) => ({
-                month: start.toLocaleString('default', { month: 'short' }),
-                count
-              }))
-          );
+          const d = new Date();
+          d.setMonth(d.getMonth() - i);
+          const monthNum = d.getMonth() + 1;
+          const yearNum = d.getFullYear();
+          
+          const found = results.find((r: any) => r._id.month === monthNum && r._id.year === yearNum);
+          trend.push({
+            month: d.toLocaleString('default', { month: 'short' }),
+            count: found ? found.count : 0
+          });
         }
-        return Promise.all(trendPromises);
+        return trend;
       };
 
       const [userTrends, leadTrends, propertyTrends] = await Promise.all([
-        getMonthlyTrend(User),
-        getMonthlyTrend(Leads),
-        getMonthlyTrend(Property)
+        getMonthlyTrendAgg(User),
+        getMonthlyTrendAgg(Leads),
+        getMonthlyTrendAgg(Property)
       ]);
 
       // 4. Occupancy Rate
