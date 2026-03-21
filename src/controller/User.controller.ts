@@ -95,8 +95,10 @@ async updateUser(req: Request, res: Response) {
     try {
       const page = parseInt(req.query.page as string) || 1;
       const limit = parseInt(req.query.limit as string) || 10;
-      const admins = await userService.getAllAdmins({ page, limit });
-      return res.status(statusCode.OK).json(admins);
+      const result = await userService.getAllAdmins({ page, limit });
+      // If client didn't ask for pagination explicitly (by sending page/limit), 
+      // or if we want to keep it simple for the existing frontend table:
+      return res.status(statusCode.OK).json(result.admins);
     } catch (error: any) {
       return res.status(statusCode.INTERNAL_SERVER_ERROR).json({
         error: errorResponse.INTERNAL_SERVER_ERROR,
@@ -108,8 +110,15 @@ async updateUser(req: Request, res: Response) {
     try {
       const page = parseInt(req.query.page as string) || 1;
       const limit = parseInt(req.query.limit as string) || 10;
-      const Users = await userService.getAllUsers({ page, limit });
-      return res.status(statusCode.OK).json(Users);
+      const result = await userService.getAllUsers({ page, limit });
+      return res.status(statusCode.OK).json({
+        message: "Users fetched successfully",
+        data: result.users,
+        total: result.total,
+        page: result.page,
+        limit: result.limit,
+        totalPages: result.totalPages
+      });
     } catch (error: any) {
       return res.status(statusCode.INTERNAL_SERVER_ERROR).json({
         error: errorResponse.INTERNAL_SERVER_ERROR,

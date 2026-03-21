@@ -107,13 +107,13 @@ getAppointmentByPropertyId = async (req: Request, res: Response): Promise<Respon
       logger.info("src->controllers->appointment.controller->getAllAppointments");
       const { page = 1, limit = 10, search = "" } = req.query;
 
-      const appointments = await this.appointmentServices.getAllAppointments({
+      const result = await this.appointmentServices.getAllAppointments({
         page: Number(page),
         limit: Number(limit),
         search: String(search)
       });
 
-      return res.status(200).json({ message: "Appointments fetched successfully", ...appointments });
+      return res.status(200).json({ message: "Appointments fetched successfully", appointments: result });
     } catch (error: any) {
       logger.error("Error in getAllAppointments:", error);
       return res.status(500).json({ message: error.message || "Failed to fetch appointments" });
