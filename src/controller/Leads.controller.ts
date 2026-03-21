@@ -171,6 +171,20 @@ export default class LeadsController {
     }
   }
 
+  async syncFromSheets(req: Request, res: Response) {
+    try {
+      console.log("[EXPORT] Sync from Google Sheets to DB and Excel requested.");
+      const result = await leadsService.syncFromSheets();
+      return res.status(statusCode.OK).json(result);
+    } catch (error: any) {
+      console.error("[EXPORT] Sync from Sheets Error:", error);
+      return res.status(statusCode.INTERNAL_SERVER_ERROR).json({
+        error: errorResponse.INTERNAL_SERVER_ERROR,
+        message: error.message,
+      });
+    }
+  }
+
   async testSheets(req: Request, res: Response) {
     try {
       console.log("[DIAGNOSTIC] Testing Google Sheets connection...");

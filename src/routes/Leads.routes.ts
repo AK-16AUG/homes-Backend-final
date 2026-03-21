@@ -26,6 +26,10 @@ leadsRouter.post("/sync-sheets", asyncHandler(async (req, res) => {
   await leadsController.syncSheets(req, res);
 }));
 
+leadsRouter.post("/sync-from-sheets", asyncHandler(async (req, res) => {
+  await leadsController.syncFromSheets(req, res);
+}));
+
 leadsRouter.post("/", authMiddleware, asyncHandler(async (req, res) => {
   await leadsController.createLead(req, res);
 }));

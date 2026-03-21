@@ -235,6 +235,32 @@ export default class LeadsService {
     }
   }
 
+  async syncFromSheets() {
+    try {
+      logger.info("src->services->leads.service->syncFromSheets");
+      const sheetLeads = await googleSheetsService.readLeads();
+      logger.info(`Fetched ${sheetLeads.length} leads from Google Sheets.`);
+
+      for (const sheetLead of sheetLeads) {
+        if (sheetLead.Email && sheetLead.Email !== 'N/A') {
+          await this.leadsDao.updateLeadByEmail(sheetLead.Email, {
+            status: sheetLead.Status ? sheetLead.Status.toLowerCase() : 'new',
+            notes: `Updated from Google Sheets at ${new Date().toLocaleString()}`
+          });
+        }
+      }
+
+      // After updating DB from Sheets, sync the local Excel to match
+      await leadExportService.syncFullExcel();
+      
+      return { success: true, message: `Synced ${sheetLeads.length} leads from Google Sheets to Database and Excel.` };
+    } catch (error: any) {
+      logger.error("Error syncing from sheets in leads.service->syncFromSheets");
+      logger.debug(error);
+      throw new Error(error.message || "Failed to sync from sheets");
+    }
+  }
+
   async getTotalLeads() {
     try {
       logger.info("src->services->leads.service->getTotalLeads");

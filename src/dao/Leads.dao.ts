@@ -128,6 +128,21 @@ export class LeadsDao {
         }
     }
 
+    async updateLeadByEmail(email: string, data: any) {
+        logger.info("LeadsDao -> updateLeadByEmail called", { email, data });
+        try {
+            const result = await RealEstateLeadModel.findOneAndUpdate(
+                { "contactInfo.email": email },
+                data,
+                { new: true }
+            );
+            return result;
+        } catch (error: any) {
+            logger.error("LeadsDao -> updateLeadByEmail error", { email, error: error.message });
+            throw error;
+        }
+    }
+
     async countAllLeads() {
         logger.info("LeadsDao -> countAllLeads called");
         try {

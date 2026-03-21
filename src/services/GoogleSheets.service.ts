@@ -153,6 +153,29 @@ export class GoogleSheetsService {
             logger.error("Error syncing all leads to Google Sheets:", error);
         }
     }
+
+    async readLeads() {
+        try {
+            const doc = await this.getDoc();
+            if (!doc) return [];
+
+            const sheet = doc.sheetsByIndex[0];
+            const rows = await sheet.getRows();
+
+            return rows.map(row => ({
+                Date: row.get('Date'),
+                Name: row.get('Name'),
+                Email: row.get('Email'),
+                Phone: row.get('Phone'),
+                Query: row.get('Query'),
+                Source: row.get('Source'),
+                Status: row.get('Status'),
+            }));
+        } catch (error) {
+            logger.error("Error reading leads from Google Sheets:", error);
+            return [];
+        }
+    }
 }
 
 export const googleSheetsService = new GoogleSheetsService();
