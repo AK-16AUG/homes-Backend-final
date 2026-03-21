@@ -33,7 +33,7 @@ export const sendAdminInquiryNotification = async (leadData: {
     searchQuery?: string;
 }): Promise<EmailResult> => {
     try {
-        const adminEmail = process.env.ADMIN_EMAIL || 'keshavbruh@gmail.com';
+        const adminEmail = process.env.ADMIN_EMAIL || 'motherhomes1608@gmail.com';
 
         logger.info(`Attempting to send admin notification to: ${adminEmail} via Gmail/Nodemailer`);
 
