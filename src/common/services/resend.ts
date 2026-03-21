@@ -35,16 +35,24 @@ export const sendAdminInquiryNotification = async (leadData: {
     try {
         const adminEmail = process.env.ADMIN_EMAIL || 'motherhomes1608@gmail.com';
 
-        logger.info(`Attempting to send admin notification to: ${adminEmail} via Gmail/Nodemailer`);
+        logger.info(`Lead Notification Triggered: Sending to ${adminEmail}`, {
+            receivedData: leadData,
+            sender: process.env.EMAIL
+        });
+
+        if (!process.env.EMAIL || !process.env.APP_PASS) {
+            logger.error("Email credentials missing in .env");
+            return { success: false, message: "Server email configuration incomplete" };
+        }
 
         const mailOptions = {
             from: `"${process.env.APP_NAME || "MotherHomes"}" <${process.env.EMAIL}>`,
             to: adminEmail,
-            subject: `New Lead Inquiry: ${leadData.name || 'Anonymous'}`,
+            subject: `New Lead Alert: ${leadData.name || 'Anonymous'}`,
             html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; border: 1px solid #e0e0e0; padding: 20px; border-radius: 10px;">
           <h1 style="color: #2d3748; border-bottom: 2px solid #4f46e5; padding-bottom: 10px;">New Lead Alert!</h1>
-          <p style="font-size: 16px; color: #4a5568;">A new inquiry has been submitted through the website pop-up.</p>
+          <p style="font-size: 16px; color: #4a5568;">A new inquiry has been submitted through the website.</p>
           <div style="background-color: #f7fafc; padding: 15px; border-radius: 8px; margin: 20px 0;">
             <p><strong>Name:</strong> ${leadData.name || 'N/A'}</p>
             <p><strong>Email:</strong> ${leadData.email || 'N/A'}</p>
@@ -60,14 +68,14 @@ export const sendAdminInquiryNotification = async (leadData: {
         };
 
         const info = await transporter.sendMail(mailOptions);
-        logger.info("Admin inquiry notification sent via Gmail. ID:", info.messageId);
+        logger.info("✅ Lead notification sent successfully! ID:", info.messageId);
 
         return {
             success: true,
             message: "Inquiry notification sent successfully via Gmail",
         };
     } catch (error) {
-        logger.error("Error sending admin inquiry notification via Gmail:", error);
+        logger.error("❌ CRITICAL: Failed to send lead notification:", error);
         return {
             success: false,
             message: error instanceof Error ? error.message : "Failed to send notification via Gmail",
