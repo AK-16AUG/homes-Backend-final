@@ -1,7 +1,7 @@
 import { Schema, model, Document, Model, Types } from "mongoose";
 
 export interface IRealEstateLead extends Document {
-
+  user_id?: Types.ObjectId;
   searchQuery: string;
   timestamp: Date;
   matchedProperties: Types.ObjectId[];
@@ -23,7 +23,11 @@ interface IRealEstateLeadModel extends Model<IRealEstateLead> {
 }
 
 const RealEstateLeadSchema = new Schema<IRealEstateLead, IRealEstateLeadModel>({
-
+  user_id: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    index: true
+  },
   searchQuery: {
     type: String,
 
