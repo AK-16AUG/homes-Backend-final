@@ -25,8 +25,8 @@ export interface PropertyType extends Document {
   bathroom: number;
   availability: boolean;
   area: string;
-  latitude?: string;
-  longitude?: string;
+  latitude?: number;
+  longitude?: number;
   currentTenant?: Types.ObjectId | null;
 }
 
@@ -52,8 +52,8 @@ const PropertySchema = new Schema<PropertyType>(
     address: { type: String, required: true },
     flat_no: { type: String },
     area: { type: String, required: true },
-    latitude: { type: String },
-    longitude: { type: String },
+    latitude: { type: Number },
+    longitude: { type: Number },
     scheduledVisit: [{ type: Schema.Types.ObjectId, ref: "Visit" }],
     total_views: { type: Number, default: 0 },
     bed: { type: Number, default: 0 },
